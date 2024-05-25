@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  site: {
+    url: "http://localhost:300",
+  },
+
   modules: [
     "nitro-cloudflare-dev",
     "@nuxtjs/tailwindcss",
@@ -9,7 +13,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/seo",
     "@nuxt/fonts",
-    "@nuxt/content"
+    "@nuxt/content",
   ],
 
   nitro: {

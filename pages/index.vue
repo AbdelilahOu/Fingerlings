@@ -2,7 +2,7 @@
 defineOgImage({
   component: "root",
   props: {
-    title: "",
+    title: "hi",
     description: "",
     bgImage: "",
   },
