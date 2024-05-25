@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/i18n",
     "@nuxtjs/seo",
+    "@nuxt/fonts",
+    "@nuxt/content"
   ],
 
   nitro: {
