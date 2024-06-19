@@ -1,12 +1,20 @@
 <script setup>
 import { Github, Phone, Linkedin, Mail } from "lucide-vue-next";
+defineOgImage({
+  component: "default",
+});
 useSeoMeta({
+  lang: "en-US",
   title: "Abdelilah's Resume",
+  titleTemplate: "%s | abdelilah4dev",
+  ogLocale: "en-US",
   ogTitle: "Backend dev resume",
   description: "Backend dev role resume in english.",
   ogDescription: "Backend dev role resume in english.",
-  ogImage: "https://example.com/image.png",
-  twitterCard: "summary_large_image",
+  ogImage: "http://localhost:300/backend-en.png",
+  twitterTitle: "http://localhost:300/Backend dev resume",
+  twitterDescription: "Backend dev role resume in english.",
+  twitterImage: "backend-en.png",
 });
 </script>
 
