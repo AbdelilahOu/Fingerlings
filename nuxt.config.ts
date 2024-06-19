@@ -16,6 +16,19 @@ export default defineNuxtConfig({
     "@nuxt/content",
   ],
 
+  fonts: {
+    families: [
+      {
+        name: "IBM Plex Sans Condensed",
+        provider: "google",
+      },
+      {
+        name: "Barlow Semi Condensed",
+        provider: "google",
+      },
+    ],
+  },
+
   nitro: {
     preset: "cloudflare-pages",
   },
