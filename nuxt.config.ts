@@ -6,6 +6,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     ghToken: process.env.GITHUB_TOKEN,
   },
+  routeRules: {
+    "/": { swr: 86400 },
+  },
   fonts: {
     families: [
       {
