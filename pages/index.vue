@@ -36,31 +36,6 @@ const { data, error } = useLazyAsyncData<{ data: any }>(
   }
 );
 
-// Projects data
-const projects = [
-  {
-    title: "E-commerce Microservice",
-    description:
-      "High-performance e-commerce backend built with Go, featuring product management, order processing, and inventory tracking.",
-    tech: ["Go", "gRPC", "PostgreSQL", "Docker"],
-    github: "https://github.com/AbdelilahOu/ecommerce-service",
-  },
-  {
-    title: "Real-time Chat System",
-    description:
-      "Scalable chat application backend using WebSocket protocol and Go channels for real-time message delivery.",
-    tech: ["Go", "WebSocket", "Redis", "MongoDB"],
-    github: "https://github.com/AbdelilahOu/chat-system",
-  },
-  {
-    title: "API Gateway",
-    description:
-      "Custom API gateway implementing rate limiting, request routing, and authentication middleware.",
-    tech: ["Go", "JWT", "Redis", "Docker"],
-    github: "https://github.com/AbdelilahOu/api-gateway",
-  },
-];
-
 const githubContributions = computed(() => {
   if (!data.value || error.value) {
     return {
@@ -93,6 +68,31 @@ const githubContributions = computed(() => {
     totalGH,
   };
 });
+
+// Projects data
+const projects = [
+  {
+    title: "E-commerce Microservice",
+    description:
+      "High-performance e-commerce backend built with Go, featuring product management, order processing, and inventory tracking.",
+    tech: ["Go", "gRPC", "PostgreSQL", "Docker"],
+    github: "https://github.com/AbdelilahOu/ecommerce-service",
+  },
+  {
+    title: "Real-time Chat System",
+    description:
+      "Scalable chat application backend using WebSocket protocol and Go channels for real-time message delivery.",
+    tech: ["Go", "WebSocket", "Redis", "MongoDB"],
+    github: "https://github.com/AbdelilahOu/chat-system",
+  },
+  {
+    title: "API Gateway",
+    description:
+      "Custom API gateway implementing rate limiting, request routing, and authentication middleware.",
+    tech: ["Go", "JWT", "Redis", "Docker"],
+    github: "https://github.com/AbdelilahOu/api-gateway",
+  },
+];
 </script>
 
 <template>
