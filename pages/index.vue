@@ -158,7 +158,7 @@ const projects = [
               <span
                 v-for="tech in project.tech"
                 :key="tech"
-                class="px-2 py-1 bg-zinc-600 text-slate-300 text-sm rounded"
+                class="px-2 py-1 bg-zinc-600 text-slate-300 text-sm"
               >
                 {{ tech }}
               </span>
