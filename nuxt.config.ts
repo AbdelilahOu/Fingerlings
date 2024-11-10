@@ -12,6 +12,11 @@ export default defineNuxtConfig({
         name: "Pixelify Sans",
         provider: "google",
       },
+      {
+        name: "Vermin Vibes 1989",
+        provider: "local",
+        weights: ["700"],
+      },
     ],
   },
   tailwindcss: {

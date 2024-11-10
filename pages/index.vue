@@ -100,7 +100,7 @@ const projects = [
     <div class="w-full max-w-3xl space-y-8 m-auto">
       <!--  -->
       <section class="space-y-4">
-        <h1 class="font-semibold text-4xl text-slate-50">
+        <h1 class="font-vermin font-semibold text-4xl text-slate-50">
           Abdelilah Ouaadouch
         </h1>
         <div class="text-slate-300">

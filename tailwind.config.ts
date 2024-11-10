@@ -22,6 +22,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        vermin: ["Vermin Vibes 1989", ...defaultTheme.fontFamily.sans],
         pixelify: ["Pixelify Sans", ...defaultTheme.fontFamily.sans],
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
