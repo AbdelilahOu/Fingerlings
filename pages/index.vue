@@ -135,9 +135,7 @@ const projects = [
               githubContributions.totalGH
             }}</span>
           </p>
-          <ClientOnly>
-            <GithubGraph :data="githubContributions" />
-          </ClientOnly>
+          <GithubGraph :data="githubContributions" />
         </div>
       </section>
 
