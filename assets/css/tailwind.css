@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-0;
+  }
+  body {
+    @apply font-pixelify;
+  }
+  html {
+    overscroll-behavior: none;
+  }
+}

@@ -1,56 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-
-  site: {
-    url: "http://localhost:300",
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts"],
+  runtimeConfig: {
+    ghToken: process.env.GITHUB_TOKEN,
   },
-
-  modules: [
-    "nitro-cloudflare-dev",
-    "@nuxtjs/tailwindcss",
-    "@nuxt/image",
-    "@nuxtjs/i18n",
-    "@nuxtjs/seo",
-    "@nuxt/fonts",
-    "@nuxt/content",
-  ],
-
   fonts: {
     families: [
       {
-        name: "IBM Plex Sans Condensed",
-        provider: "google",
-      },
-      {
-        name: "Barlow Semi Condensed",
+        name: "Pixelify Sans",
         provider: "google",
       },
     ],
   },
-
-  nitro: {
-    preset: "cloudflare-pages",
-  },
-
   tailwindcss: {
-    cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
-    configPath: "tailwind.config",
-    exposeConfig: {
-      level: 2,
-    },
     viewer: false,
-  },
-
-  i18n: {
-    locales: ["fr", "en"],
-    defaultLocale: "en",
-    customRoutes: "config",
-    pages: {
-      backend: {
-        en: "/en",
-        fr: "/fr",
-      },
-    },
+    configPath: "tailwind.config.ts",
+    cssPath: "~/assets/css/tailwind.css",
   },
 });
