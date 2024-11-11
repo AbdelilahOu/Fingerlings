@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    "/": { ssr: true },
+    "/": { prerender: true },
   },
   app: {
     head: {
