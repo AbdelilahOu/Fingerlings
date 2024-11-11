@@ -1,5 +1,23 @@
 <script setup lang="ts">
-// GitHub contributions fetch logic
+useHead({
+  title: 'Home',
+  htmlAttrs: {
+    lang: 'en',
+    dir: 'ltr',
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.png',
+    },
+    {
+      rel: 'canonical',
+      href: `https://trymahalli.com`,
+    },
+  ],
+})
+
 const { ghToken } = useRuntimeConfig()
 const { data, error } = useLazyAsyncData<{ data: any }>(
   'github_contributions',
@@ -71,46 +89,46 @@ const githubContributions = computed(() => {
 })
 
 const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css', 'Sql', 'PostgreSQl']
-const frameworks = ['Gin (golang)', 'Chi (golang)', 'Actix (rust)', 'Express.js', 'Nitro.js', 'Nuxt.js','Tailwindcss', 'Vue.js', 'Next.js', 'Tauri']
+const frameworks = ['Gin (golang)', 'Chi (golang)', 'Actix (rust)', 'Express.js', 'Nitro.js', 'Nuxt.js', 'Tailwindcss', 'Vue.js', 'Next.js', 'Tauri']
 const tools = ['Docker', 'Git', 'Github', 'Postman']
 
 // Projects data
 const projects = [
- {
-   title: 'Mahalli',
-   description: 'A web app that makes running your business easier. Keep track of inventory, manage client relationships, and create professional quotes and orders all in one place.',
-   tech: ['Nuxt3', 'Typescript', 'Tailwindcss', 'Golang', 'PostgreSQL', 'Gin', 'SQLC', 'Clerk'],
-   web: 'https://trymahalli.com',
-   github: ''
- },
- {
-   title: 'Cobracase E-commerce',
-   description: 'An online store where you can design your own unique phone cases. Upload photos, add text, and create cases that tell your story.',
-   tech: ['NextJs', 'Typescript', 'Tailwindcss', 'DrizzleOrm', 'PostgreSQL', 'Stripe', 'Kind'],
-   web: 'https://case-ecommerce.vercel.app/',
-   github: 'https://github.com/AbdelilahOu/Case-ecommerce'
- },
- {
-   title: 'Pet Setting App',
-   description: 'A friendly platform where pet owners can find trusted pet sitters in their area. Browse sitters on a map, chat with them, schedule visits, and share reviews. Perfect for both pet owners looking for care and sitters looking for work.',
-   tech: ['Vue.js', 'Firebase', 'Tailwindcss'],
-   web: '',
-   github: 'https://github.com/AbdelilahOu/Pets-vue'
- },
- {
-   title: 'Wikipedia Proxy',
-   description: 'A Go-based tool I built for a coding challenge that sits between you and Wikipedia, tweaking the links you see as you browse. It was a fun way to explore how web proxies work.',
-   tech: ['Go'],
-   web: '',
-   github: 'https://github.com/AbdelilahOu/Online-test'
- },
- {
-   title: 'Rusty School API',
-   description: 'A simple but reliable backend for managing school data, built with Rust. Handles things like student records and school tasks, with Google login to keep everything secure.',
-   tech: ['Rust', 'Actix', 'PostgreSQL', 'Google Auth', 'Docker'],
-   web: '',
-   github: 'https://github.com/AbdelilahOu/Rusty-school'
- },
+  {
+    title: 'Mahalli',
+    description: 'A web app that makes running your business easier. Keep track of inventory, manage client relationships, and create professional quotes and orders all in one place.',
+    tech: ['Nuxt3', 'Typescript', 'Tailwindcss', 'Golang', 'PostgreSQL', 'Gin', 'SQLC', 'Clerk'],
+    web: 'https://trymahalli.com',
+    github: '',
+  },
+  {
+    title: 'Cobracase E-commerce',
+    description: 'An online store where you can design your own unique phone cases. Upload photos, add text, and create cases that tell your story.',
+    tech: ['NextJs', 'Typescript', 'Tailwindcss', 'DrizzleOrm', 'PostgreSQL', 'Stripe', 'Kind'],
+    web: 'https://case-ecommerce.vercel.app/',
+    github: 'https://github.com/AbdelilahOu/Case-ecommerce',
+  },
+  {
+    title: 'Pet Setting App',
+    description: 'A friendly platform where pet owners can find trusted pet sitters in their area. Browse sitters on a map, chat with them, schedule visits, and share reviews. Perfect for both pet owners looking for care and sitters looking for work.',
+    tech: ['Vue.js', 'Firebase', 'Tailwindcss'],
+    web: '',
+    github: 'https://github.com/AbdelilahOu/Pets-vue',
+  },
+  {
+    title: 'Wikipedia Proxy',
+    description: 'A Go-based tool I built for a coding challenge that sits between you and Wikipedia, tweaking the links you see as you browse. It was a fun way to explore how web proxies work.',
+    tech: ['Go'],
+    web: '',
+    github: 'https://github.com/AbdelilahOu/Online-test',
+  },
+  {
+    title: 'Rusty School API',
+    description: 'A simple but reliable backend for managing school data, built with Rust. Handles things like student records and school tasks, with Google login to keep everything secure.',
+    tech: ['Rust', 'Actix', 'PostgreSQL', 'Google Auth', 'Docker'],
+    web: '',
+    github: 'https://github.com/AbdelilahOu/Rusty-school',
+  },
 ]
 </script>
 

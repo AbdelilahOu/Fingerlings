@@ -7,7 +7,13 @@ export default defineNuxtConfig({
     ghToken: process.env.GITHUB_TOKEN,
   },
   routeRules: {
-    // "/": { swr: 86400 },
+    '/': { swr: 86400 },
+  },
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    },
   },
   fonts: {
     families: [
