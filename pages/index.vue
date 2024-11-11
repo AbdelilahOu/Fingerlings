@@ -1,29 +1,33 @@
 <script setup lang="ts">
+definePageMeta({
+  colorMode: 'dark',
+})
+
 useSeoMeta({
-  title: "Abdelilah Ouaadouch Backend developer",
-  description: "",
-  twitterTitle: "Abdelilah Ouaadouch Backend developer",
-  twitterDescription: "",
-  twitterCard: "summary_large_image",
-  twitterCreator: "@Abdelilah4dev",
-  twitterImage: "/__og-image__/image/og.png",
-  ogTitle: "Abdelilah Ouaadouch Backend developer",
-  ogDescription: "",
-  ogType: "website",
-  ogSiteName: "Ar7al",
-  ogLocale: "en",
-  ogImage: "/__og-image__/image/og.png",
-  ogUrl: "https://ar7al.com",
-});
+  title: 'Abdelilah Ouaadouch - Backend Developer',
+  description: 'Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.',
+  twitterTitle: 'Abdelilah Ouaadouch - Backend Developer',
+  twitterDescription: 'Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.',
+  twitterCard: 'summary_large_image',
+  twitterCreator: '@Abdelilah4dev',
+  twitterImage: '/__og-image__/image/og.png',
+  ogTitle: 'Abdelilah Ouaadouch - Backend Developer',
+  ogDescription: 'Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.',
+  ogType: 'website',
+  ogSiteName: 'Abdelilah Ouaadouch',
+  ogLocale: 'en',
+  ogImage: '/__og-image__/image/og.png',
+  ogUrl: 'https://ar7al.com',
+})
 
 defineOgImage({
-  component: "HomeOgImage",
+  component: 'HomeOgImage',
   fonts: [
     {
-      name: "Pixelify Sans",
+      name: 'Pixelify Sans',
     },
   ],
-});
+})
 
 const { ghToken } = useRuntimeConfig()
 const { data, error } = useLazyAsyncData<{ data: any }>(
@@ -144,7 +148,7 @@ const projects = [
     <div class="w-full max-w-3xl space-y-8 m-auto">
       <!--  -->
       <section class="space-y-4">
-        <h1 class="font-vermin font-semibold uppercase text-4xl text-white">
+        <h1 class="font-semibold uppercase text-4xl text-white">
           Abdelilah Ouaadouch
         </h1>
         <div class="text-slate-300">
@@ -209,18 +213,18 @@ const projects = [
         <h2 class="text-2xl font-semibold text-white">
           Languages, Frameworks & tools I use
         </h2>
-        <div class="flex flex-wrap bg-zinc-800 text-slate-300 p-4">
-          <span v-for="language in languages" :key="language" class="m-2 whitespace-nowrap">
+        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4">
+          <span v-for="language in languages" :key="language" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
             {{ language }}
           </span>
         </div>
-        <div class="flex flex-wrap bg-zinc-800 text-slate-300 p-4">
-          <span v-for="framework in frameworks" :key="framework" class="m-2 whitespace-nowrap">
+        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4">
+          <span v-for="framework in frameworks" :key="framework" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
             {{ framework }}
           </span>
         </div>
-        <div class="flex flex-wrap bg-zinc-800 text-slate-300 p-4">
-          <span v-for="tool in tools" :key="tool" class="m-2 whitespace-nowrap">
+        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4">
+          <span v-for="tool in tools" :key="tool" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
             {{ tool }}
           </span>
         </div>
@@ -247,7 +251,7 @@ const projects = [
         <h2 class="text-2xl font-semibold text-white">
           Featured Projects
         </h2>
-        <div class="grid gap-4">
+        <div class="grid gap-4 relative">
           <div
             v-for="project in projects" :key="project.title"
             class="bg-zinc-800 p-4"
