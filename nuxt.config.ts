@@ -21,6 +21,9 @@ export default defineNuxtConfig({
       viewport: "width=device-width, initial-scale=1",
     },
   },
+  ogImage: {
+    zeroRuntime: true,
+  },
   site: {
     url:
       process.env.NODE_ENV !== "production"
