@@ -13,7 +13,7 @@ useHead({
     },
     {
       rel: 'canonical',
-      href: `https://trymahalli.com`,
+      href: `https://ar7al.com`,
     },
   ],
 })
