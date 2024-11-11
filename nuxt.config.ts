@@ -1,30 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts"],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts'],
   runtimeConfig: {
     ghToken: process.env.GITHUB_TOKEN,
   },
   routeRules: {
-    "/": { swr: 86400 },
+    // "/": { swr: 86400 },
   },
   fonts: {
     families: [
       {
-        name: "Pixelify Sans",
-        provider: "google",
-      },
-      {
-        name: "Vermin Vibes 1989",
-        provider: "local",
-        weights: ["700"],
+        name: 'Pixelify Sans',
+        provider: 'google',
       },
     ],
   },
   tailwindcss: {
     viewer: false,
-    configPath: "tailwind.config.ts",
-    cssPath: "~/assets/css/tailwind.css",
+    configPath: 'tailwind.config.ts',
+    cssPath: '~/assets/css/tailwind.css',
   },
-});
+})

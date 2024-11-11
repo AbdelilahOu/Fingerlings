@@ -1,4 +1,4 @@
-import defaultTheme from "tailwindcss/defaultTheme";
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -16,16 +16,15 @@ module.exports = {
     `./error.{js,ts,vue}`,
     `./app.config.{js,ts}`,
   ],
-  darkMode: ["class"],
-  safelist: ["dark"],
-  prefix: "",
+  darkMode: ['class'],
+  safelist: ['dark'],
+  prefix: '',
   theme: {
     extend: {
       fontFamily: {
-        vermin: ["Vermin Vibes 1989", ...defaultTheme.fontFamily.sans],
-        pixelify: ["Pixelify Sans", ...defaultTheme.fontFamily.sans],
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        pixelify: ['Pixelify Sans', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
     },
   },
-};
+}

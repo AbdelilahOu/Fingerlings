@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -20,5 +20,9 @@
     "nuxt": "^3.14.159",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.8.0",
+    "eslint": "^9.14.0"
   }
 }
