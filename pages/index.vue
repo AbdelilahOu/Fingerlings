@@ -1,22 +1,29 @@
 <script setup lang="ts">
-useHead({
-  title: 'Home',
-  htmlAttrs: {
-    lang: 'en',
-    dir: 'ltr',
-  },
-  link: [
+useSeoMeta({
+  title: "Abdelilah Ouaadouch Backend developer",
+  description: "",
+  twitterTitle: "Abdelilah Ouaadouch Backend developer",
+  twitterDescription: "",
+  twitterCard: "summary_large_image",
+  twitterCreator: "@Abdelilah4dev",
+  twitterImage: "/__og-image__/image/og.png",
+  ogTitle: "Abdelilah Ouaadouch Backend developer",
+  ogDescription: "",
+  ogType: "website",
+  ogSiteName: "Ar7al",
+  ogLocale: "en",
+  ogImage: "/__og-image__/image/og.png",
+  ogUrl: "https://ar7al.com",
+});
+
+defineOgImage({
+  component: "HomeOgImage",
+  fonts: [
     {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon.png',
-    },
-    {
-      rel: 'canonical',
-      href: `https://ar7al.com`,
+      name: "Pixelify Sans",
     },
   ],
-})
+});
 
 const { ghToken } = useRuntimeConfig()
 const { data, error } = useLazyAsyncData<{ data: any }>(

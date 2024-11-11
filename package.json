@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "personal-portfolio",
   "type": "module",
   "private": true,
   "scripts": {
@@ -15,11 +15,12 @@
   "dependencies": {
     "@date-fns/utc": "^2.1.0",
     "@nuxt/fonts": "^0.10.2",
+    "@nuxtjs/seo": "^2.0.0-rc.23",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "date-fns": "^4.1.0",
-    "nuxt": "^3.14.159",
-    "vue": "latest",
-    "vue-router": "latest"
+    "nuxt": "^3.13.0",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.8.0",
