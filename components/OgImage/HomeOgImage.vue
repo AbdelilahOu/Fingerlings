@@ -7,7 +7,7 @@
         Abdelilah ouaadouch (Ar7al)
       </h1>
       <p class="text-3xl text-gray-100 max-w-3xl mx-auto text-center">
-        Bakcend developer based in morocco,
+        Bakcend developer specializing in Go (Golang) and Typescript,
       </p>
     </div>
   </div>
