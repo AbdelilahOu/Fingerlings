@@ -1,44 +1,44 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxtjs/seo'],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts", "@nuxtjs/seo"],
   runtimeConfig: {
     ghToken: process.env.GITHUB_TOKEN,
     public: {
       siteUrl:
-        process.env.NODE_ENV !== 'production'
-          ? 'http://localhost:3002'
-          : 'https://ar7al.com',
+        process.env.NODE_ENV !== "production"
+          ? "http://localhost:3002"
+          : "https://ar7al.com",
     },
   },
   routeRules: {
-    '/': { swr: 86400 },
+    "/": { swr: 60 * 60 * 24 },
   },
   app: {
     head: {
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
     },
   },
   site: {
     url:
-      process.env.NODE_ENV !== 'production'
-        ? 'http://localhost:3002'
-        : 'https://ar7al.com',
-    name: 'Ar7al',
+      process.env.NODE_ENV !== "production"
+        ? "http://localhost:3002"
+        : "https://ar7al.com",
+    name: "Ar7al",
   },
   fonts: {
     families: [
       {
-        name: 'Pixelify Sans',
-        provider: 'google',
+        name: "Pixelify Sans",
+        provider: "google",
       },
     ],
   },
   tailwindcss: {
     viewer: false,
-    configPath: 'tailwind.config.ts',
-    cssPath: '~/assets/css/tailwind.css',
+    configPath: "tailwind.config.ts",
+    cssPath: "~/assets/css/tailwind.css",
   },
-})
+});
