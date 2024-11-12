@@ -160,8 +160,9 @@ const projects = [
             to="mailto:abdelilah4dev@gmail.com"
             title="abdelilah4dev@gmail.com"
             alt="email address"
-            class="block"
-            target="_blank" rel="noopener noreferrer"
+            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+            target="_blank" 
+            rel="noopener noreferrer"
           >
             {{ "<Email>" }} abdelilah4dev@gmail.com
           </NuxtLink>
@@ -169,7 +170,9 @@ const projects = [
             to="https://www.linkedin.com/in/abdelilah-ouaadouch-464060295/"
             title="Abdelilah ouaadouch"
             alt="linkedin profile"
-            class="block" target="_blank" rel="noopener noreferrer"
+            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300" 
+            target="_blank" 
+            rel="noopener noreferrer"
           >
             {{ "<Linkedin>" }} Abdelilah ouaadouch
           </NuxtLink>
@@ -177,8 +180,9 @@ const projects = [
             to="https://github.com/AbdelilahOu"
             title="@AbdelilahOu"
             alt="github profile"
-            class="block"
-            target="_blank" rel="noopener noreferrer"
+            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+            target="_blank" 
+            rel="noopener noreferrer"
           >
             {{ "<Github>" }} @AbdelilahOu
           </NuxtLink>
@@ -186,7 +190,8 @@ const projects = [
             to="https://x.com/Abdelilah4dev"
             title="@Abdelilah4dev"
             alt="twitter profile"
-            class="block" target="_blank"
+            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300" 
+            target="_blank"
             rel="noopener noreferrer"
           >
             {{ "<Twitter/x>" }} @Abdelilah4dev
