@@ -1,41 +1,41 @@
 <script setup lang="ts">
 useHead({
-  title: "Home",
+  title: 'Home',
   htmlAttrs: {
-    lang: "en",
-    dir: "ltr",
+    lang: 'en',
+    dir: 'ltr',
   },
-  titleTemplate: (title) => `Ar7al - %s`,
+  titleTemplate: title => `Ar7al - %s`,
   link: [
     {
-      rel: "icon",
-      type: "image/png",
-      href: "/favicon.png",
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.png',
     },
     {
-      rel: "canonical",
+      rel: 'canonical',
       href: `https://ar7al.com`,
     },
   ],
-});
+})
 
 useSeoMeta({
-  title: "Abdelilah Ouaadouch - Backend Developer",
+  title: 'Abdelilah Ouaadouch - Backend Developer',
   description:
-    "Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.",
-  twitterTitle: "Abdelilah Ouaadouch - Backend Developer",
+    'Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.',
+  twitterTitle: 'Abdelilah Ouaadouch - Backend Developer',
   twitterDescription:
-    "Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.",
-  twitterCard: "summary_large_image",
-  twitterCreator: "@Abdelilah4dev",
-  ogTitle: "Abdelilah Ouaadouch - Backend Developer",
+    'Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.',
+  twitterCard: 'summary_large_image',
+  twitterCreator: '@Abdelilah4dev',
+  ogTitle: 'Abdelilah Ouaadouch - Backend Developer',
   ogDescription:
-    "Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.",
-  ogType: "website",
-  ogSiteName: "Abdelilah Ouaadouch",
-  ogLocale: "en",
-  ogUrl: "https://ar7al.com",
-});
+    'Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.',
+  ogType: 'website',
+  ogSiteName: 'Abdelilah Ouaadouch',
+  ogLocale: 'en',
+  ogUrl: 'https://ar7al.com',
+})
 </script>
 
 <template>
