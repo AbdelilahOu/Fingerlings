@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/': { prerender: true },
+    '/__og-image__/image/og.png': { prerender: true },
+    '/': { swr: 60 * 60 * 60 * 24 },
   },
   app: {
     head: {

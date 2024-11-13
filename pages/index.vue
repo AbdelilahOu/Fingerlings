@@ -161,7 +161,7 @@ const projects = [
             title="abdelilah4dev@gmail.com"
             alt="email address"
             class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
           >
             {{ "<Email>" }} abdelilah4dev@gmail.com
@@ -170,8 +170,8 @@ const projects = [
             to="https://www.linkedin.com/in/abdelilah-ouaadouch-464060295/"
             title="Abdelilah ouaadouch"
             alt="linkedin profile"
-            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300" 
-            target="_blank" 
+            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+            target="_blank"
             rel="noopener noreferrer"
           >
             {{ "<Linkedin>" }} Abdelilah ouaadouch
@@ -181,7 +181,7 @@ const projects = [
             title="@AbdelilahOu"
             alt="github profile"
             class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
           >
             {{ "<Github>" }} @AbdelilahOu
@@ -190,7 +190,7 @@ const projects = [
             to="https://x.com/Abdelilah4dev"
             title="@Abdelilah4dev"
             alt="twitter profile"
-            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300" 
+            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
             target="_blank"
             rel="noopener noreferrer"
           >
