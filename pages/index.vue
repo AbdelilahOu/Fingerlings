@@ -3,17 +3,17 @@ definePageMeta({
   colorMode: 'dark',
 })
 
-defineOgImageComponent(
-  'HomeOgImage',
-  {},
-  {
-    fonts: [
-      {
-        name: 'Pixelify Sans',
-      },
-    ],
-  },
-)
+// defineOgImageComponent(
+//   'HomeOgImage',
+//   {},
+//   {
+//     fonts: [
+//       {
+//         name: 'Pixelify Sans',
+//       },
+//     ],
+//   },
+// )
 
 const { ghToken } = useRuntimeConfig()
 const { data, error } = useLazyAsyncData<{ data: any }>(
