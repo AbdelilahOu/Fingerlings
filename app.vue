@@ -20,7 +20,7 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Abdelilah Ouaadouch - Backend Developer',
+  title: 'Abdelilah Ouaadouch',
   description:
     'Backend Developer specializing in Go (Golang) and Typescript. Building fast, reliable systems.',
   twitterTitle: 'Abdelilah Ouaadouch - Backend Developer',
