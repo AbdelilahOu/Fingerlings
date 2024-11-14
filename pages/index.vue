@@ -282,6 +282,27 @@ const projects = [
           </div>
         </div>
       </section>
+
+      <footer class="my-4 h-11 m-auto text-center text-white flex items-center justify-center">
+        made with
+        <div class="size-12 tex-xs grid grid-cols-2 mx-2">
+          <spna>1</spna>
+          <spna>0</spna>
+          <spna>0</spna>
+          <spna>1</spna>
+        </div>
+        using
+        <NuxtLink
+          to="https://nuxt.com"
+          title="NuxtJs"
+          alt="nuxtjs website"
+          target="_blank"
+          class="mx-1"
+          rel="noopener noreferrer"
+        >
+          NuxtJs
+        </NuxtLink>
+      </footer>
     </div>
   </div>
 </template>
