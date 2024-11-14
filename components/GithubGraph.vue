@@ -74,9 +74,9 @@ const weeks = computed(() => {
 
 function getTileColor(contributions: number): string {
   if (contributions === -1)
-    return 'bg-gray-800'
+    return 'bg-zinc-900'
   if (contributions === 0)
-    return 'bg-gray-800'
+    return 'bg-zinc-900'
   if (contributions <= 2)
     return 'bg-emerald-900'
   if (contributions <= 4)
@@ -89,7 +89,7 @@ function getTileColor(contributions: number): string {
 function getColorClass(level: number): string {
   switch (level) {
     case 0:
-      return 'bg-gray-800'
+      return 'bg-zinc-900'
     case 1:
       return 'bg-emerald-900'
     case 2:
@@ -148,7 +148,8 @@ function getTooltip(day: DayData): string {
             <div
               v-for="(day, dayIndex) in week"
               :key="dayIndex"
-              class="h-4 w-4 my-1" :class="[getTileColor(day.contributions)]"
+              class="h-4 w-4 my-1"
+              :class="[getTileColor(day.contributions)]"
               :title="getTooltip(day)"
             />
           </div>
@@ -162,7 +163,8 @@ function getTooltip(day: DayData): string {
           <div
             v-for="level in contributionLevels"
             :key="level"
-            class="h-4 w-4 mx-0.5" :class="[getColorClass(level)]"
+            class="h-4 w-4 mx-0.5"
+            :class="[getColorClass(level)]"
           />
         </div>
         <span class="ml-1">More</span>
