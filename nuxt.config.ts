@@ -12,9 +12,9 @@ export default defineNuxtConfig({
           : "https://ar7al.com",
     },
   },
-  // routeRules: {
-  //   "/": { swr: 60 * 60 * 60 * 24 },
-  // },
+  routeRules: {
+    "/": { swr: 60 * 60 * 60 * 24 },
+  },
   app: {
     head: {
       charset: "utf-8",
