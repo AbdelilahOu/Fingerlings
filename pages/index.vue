@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
-  colorMode: 'dark',
-})
+  colorMode: "dark",
+});
 
 // defineOgImageComponent(
 //   'HomeOgImage',
@@ -15,17 +15,17 @@ definePageMeta({
 //   },
 // )
 
-const { ghToken } = useRuntimeConfig()
+const { ghToken } = useRuntimeConfig();
 const { data, error } = useLazyAsyncData<{ data: any }>(
-  'github_contributions',
+  "github_contributions",
   () => {
-    const currYr = new Date().getFullYear()
-    return $fetch('https://api.github.com/graphql', {
-      method: 'POST',
+    const currYr = new Date().getFullYear();
+    return $fetch("https://api.github.com/graphql", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': `Bearer ${ghToken}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": `Bearer ${ghToken}`,
       },
       body: JSON.stringify({
         query: `
@@ -45,21 +45,21 @@ const { data, error } = useLazyAsyncData<{ data: any }>(
             }
           }
         `,
-        variables: { username: 'AbdelilahOu' },
+        variables: { username: "AbdelilahOu" },
       }),
-    })
+    });
   },
-)
+);
 
 const githubContributions = computed(() => {
   if (!data.value || error.value) {
     return {
       cal: {},
       totalGH: 0,
-    }
+    };
   }
-  const cal: { [date: string]: { github: number } } = {}
-  let totalGH = 0
+  const cal: { [date: string]: { github: number } } = {};
+  let totalGH = 0;
   if (
     data.value.data
     && data.value.data.user
@@ -67,66 +67,66 @@ const githubContributions = computed(() => {
   ) {
     totalGH
       = data.value.data.user.contributionsCollection.contributionCalendar
-        .totalContributions || 0
+        .totalContributions || 0;
     const ghCalData
       = data.value.data.user.contributionsCollection.contributionCalendar.weeks
-      || []
+      || [];
     for (const week of ghCalData) {
       for (const day of week.contributionDays) {
         if (!cal[day.date])
-          cal[day.date] = { github: 0 }
-        cal[day.date].github = day.contributionCount
+          cal[day.date] = { github: 0 };
+        cal[day.date].github = day.contributionCount;
       }
     }
   }
   return {
     cal,
     totalGH,
-  }
-})
+  };
+});
 
-const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css', 'Sql', 'PostgreSQl']
-const frameworks = ['Gin (golang)', 'Chi (golang)', 'Actix (rust)', 'Express.js', 'Nitro.js', 'Nuxt.js', 'Tailwindcss', 'Vue.js', 'Next.js', 'Tauri']
-const tools = ['Docker', 'Git', 'Github', 'Postman']
+const languages = ["Golang", "Rust", "Typescript", "Javascript", "Html", "Css", "Sql", "PostgreSQl"];
+const frameworks = ["Gin (golang)", "Chi (golang)", "Actix (rust)", "Express.js", "Nitro.js", "Nuxt.js", "Tailwindcss", "Vue.js", "Next.js", "Tauri"];
+const tools = ["Docker", "Git", "Github", "Postman"];
 
 // Projects data
 const projects = [
   {
-    title: 'Mahalli',
-    description: 'A web app that makes running your business easier. Keep track of inventory, manage client relationships, and create professional quotes and orders all in one place.',
-    tech: ['Nuxt3', 'Typescript', 'Tailwindcss', 'Golang', 'PostgreSQL', 'Gin', 'SQLC', 'Clerk'],
-    web: 'https://trymahalli.com',
-    github: '',
+    title: "Mahalli",
+    description: "A web app that makes running your business easier. Keep track of inventory, manage client relationships, and create professional quotes and orders all in one place.",
+    tech: ["Nuxt3", "Typescript", "Tailwindcss", "Golang", "PostgreSQL", "Gin", "SQLC", "Clerk"],
+    web: "https://trymahalli.com",
+    github: "",
   },
   {
-    title: 'Cobracase E-commerce',
-    description: 'An online store where you can design your own unique phone cases. Upload photos, add text, and create cases that tell your story.',
-    tech: ['NextJs', 'Typescript', 'Tailwindcss', 'DrizzleOrm', 'PostgreSQL', 'Stripe', 'Kind'],
-    web: 'https://case-ecommerce.vercel.app/',
-    github: 'https://github.com/AbdelilahOu/Case-ecommerce',
+    title: "Cobracase E-commerce",
+    description: "An online store where you can design your own unique phone cases. Upload photos, add text, and create cases that tell your story.",
+    tech: ["NextJs", "Typescript", "Tailwindcss", "DrizzleOrm", "PostgreSQL", "Stripe", "Kind"],
+    web: "https://case-ecommerce.vercel.app/",
+    github: "https://github.com/AbdelilahOu/Case-ecommerce",
   },
   {
-    title: 'Pet Setting App',
-    description: 'A friendly platform where pet owners can find trusted pet sitters in their area. Browse sitters on a map, chat with them, schedule visits, and share reviews. Perfect for both pet owners looking for care and sitters looking for work.',
-    tech: ['Vue.js', 'Firebase', 'Tailwindcss'],
-    web: '',
-    github: 'https://github.com/AbdelilahOu/Pets-vue',
+    title: "Pet Setting App",
+    description: "A friendly platform where pet owners can find trusted pet sitters in their area. Browse sitters on a map, chat with them, schedule visits, and share reviews. Perfect for both pet owners looking for care and sitters looking for work.",
+    tech: ["Vue.js", "Firebase", "Tailwindcss"],
+    web: "",
+    github: "https://github.com/AbdelilahOu/Pets-vue",
   },
   {
-    title: 'Wikipedia Proxy',
-    description: 'A Go-based tool I built for a coding challenge that sits between you and Wikipedia, tweaking the links you see as you browse. It was a fun way to explore how web proxies work.',
-    tech: ['Go'],
-    web: '',
-    github: 'https://github.com/AbdelilahOu/Online-test',
+    title: "Wikipedia Proxy",
+    description: "A Go-based tool I built for a coding challenge that sits between you and Wikipedia, tweaking the links you see as you browse. It was a fun way to explore how web proxies work.",
+    tech: ["Go"],
+    web: "",
+    github: "https://github.com/AbdelilahOu/Online-test",
   },
   {
-    title: 'Rusty School API',
-    description: 'A simple but reliable backend for managing school data, built with Rust. Handles things like student records and school tasks, with Google login to keep everything secure.',
-    tech: ['Rust', 'Actix', 'PostgreSQL', 'Google Auth', 'Docker'],
-    web: '',
-    github: 'https://github.com/AbdelilahOu/Rusty-school',
+    title: "Rusty School API",
+    description: "A simple but reliable backend for managing school data, built with Rust. Handles things like student records and school tasks, with Google login to keep everything secure.",
+    tech: ["Rust", "Actix", "PostgreSQL", "Google Auth", "Docker"],
+    web: "",
+    github: "https://github.com/AbdelilahOu/Rusty-school",
   },
-]
+];
 </script>
 
 <template>
@@ -243,7 +243,7 @@ const projects = [
           Featured Projects
         </h2>
         <div class="grid gap-4 relative">
-          <div
+          <article
             v-for="project in projects" :key="project.title"
             class="bg-zinc-800 p-4"
           >
@@ -279,7 +279,7 @@ const projects = [
                 View Live →
               </NuxtLink>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
