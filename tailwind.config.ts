@@ -23,7 +23,6 @@ module.exports = {
     extend: {
       fontFamily: {
         display: ["VT323", ...defaultTheme.fontFamily.sans],
-        title: ["VCRosdNEUE", ...defaultTheme.fontFamily.sans],
       },
     },
   },
