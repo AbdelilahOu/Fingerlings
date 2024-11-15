@@ -1,115 +1,115 @@
 <script setup lang="ts">
-import { UTCDate } from '@date-fns/utc'
-import { eachDayOfInterval, format, getDay } from 'date-fns'
-import { computed } from 'vue'
+import { UTCDate } from "@date-fns/utc";
+import { eachDayOfInterval, format, getDay } from "date-fns";
+import { computed } from "vue";
 
 interface ContributionData {
   cal: {
     [key: string]: {
-      github: number
-    }
-  }
+      github: number;
+    };
+  };
 }
 
 interface DayData {
-  date: Date
-  contributions: number
+  date: Date;
+  contributions: number;
 }
 
 interface Props {
-  data: ContributionData
+  data: ContributionData;
 }
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
-const today = new Date()
+const today = new Date();
 const dates = eachDayOfInterval({
   start: new UTCDate(`${today.getFullYear()}-01-01T00:00:00.000Z`),
   end: new UTCDate(`${today.getFullYear()}-12-31T00:00:00.000Z`),
-})
+});
 
-const contributionLevels = [0, 1, 2, 3, 4]
+const contributionLevels = [0, 1, 2, 3, 4];
 const monthLabels = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec',
-]
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 const weeks = computed(() => {
-  const weeksArray: DayData[][] = []
-  let currentWeek: DayData[] = []
+  const weeksArray: DayData[][] = [];
+  let currentWeek: DayData[] = [];
 
   dates.forEach((date, index) => {
     if (index === 0 || getDay(date) === 0) {
       if (currentWeek.length > 0) {
-        weeksArray.push(currentWeek)
+        weeksArray.push(currentWeek);
       }
-      currentWeek = []
+      currentWeek = [];
     }
 
-    const dateIdx = date.toISOString().split('T')[0]
-    const contributions = props.data.cal[dateIdx]?.github ?? 0
+    const dateIdx = date.toISOString().split("T")[0];
+    const contributions = props.data.cal[dateIdx]?.github ?? 0;
 
     currentWeek.push({
       date,
       contributions: date > today ? -1 : contributions,
-    })
-  })
+    });
+  });
 
   if (currentWeek.length > 0) {
-    weeksArray.push(currentWeek)
+    weeksArray.push(currentWeek);
   }
 
-  return weeksArray
-})
+  return weeksArray;
+});
 
 function getTileColor(contributions: number): string {
   if (contributions === -1)
-    return 'bg-zinc-900'
+    return "bg-zinc-900";
   if (contributions === 0)
-    return 'bg-zinc-900'
+    return "bg-zinc-900";
   if (contributions <= 2)
-    return 'bg-emerald-900'
+    return "bg-emerald-900";
   if (contributions <= 4)
-    return 'bg-emerald-700'
+    return "bg-emerald-700";
   if (contributions <= 6)
-    return 'bg-emerald-500'
-  return 'bg-emerald-300'
+    return "bg-emerald-500";
+  return "bg-emerald-300";
 }
 
 function getColorClass(level: number): string {
   switch (level) {
     case 0:
-      return 'bg-zinc-900'
+      return "bg-zinc-900";
     case 1:
-      return 'bg-emerald-900'
+      return "bg-emerald-900";
     case 2:
-      return 'bg-emerald-700'
+      return "bg-emerald-700";
     case 3:
-      return 'bg-emerald-500'
+      return "bg-emerald-500";
     case 4:
-      return 'bg-emerald-300'
+      return "bg-emerald-300";
     default:
-      return 'bg-gray-800'
+      return "bg-gray-800";
   }
 }
 
 function getTooltip(day: DayData): string {
   if (day.contributions === -1) {
-    return format(day.date, 'MMM d, yyyy')
+    return format(day.date, "MMM d, yyyy");
   }
-  return `${format(day.date, 'MMM d, yyyy')}: ${
+  return `${format(day.date, "MMM d, yyyy")}: ${
     day.contributions
-  } contributions`
+  } contributions`;
 }
 </script>
 
