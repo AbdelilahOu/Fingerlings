@@ -137,17 +137,14 @@ const projects = [
         <h1 class="font-display font-semibold uppercase text-5xl text-white">
           Abdelilah Ouaadouch
         </h1>
-        <div class="text-slate-300">
-          <p class="text-xl mb-4">
-            Backend Developer specializing in Go (Golang) and Typescript
-          </p>
-          <p class="text-xl">
-            Backend wizard who speaks fluent Go/Gin, dabbles in Rust for that
-            extra speed boost, and crafts slick frontends with TypeScript +
-            Nuxt.js. Building fast, reliable systems is my jam. <br>
-            let's ship some awesome code!
-          </p>
-        </div>
+        <p class="text-xl text-slate-300">
+          Backend Developer specializing in Go (Golang) and Typescript
+          <br>
+          Backend wizard who speaks fluent Go/Gin, dabbles in Rust for that
+          extra speed boost, and crafts slick frontends with TypeScript +
+          Nuxt.js. Building fast, reliable systems is my jam. <br>
+          let's ship some awesome code!
+        </p>
       </section>
 
       <!--  -->
