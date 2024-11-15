@@ -134,14 +134,14 @@ const projects = [
     <div class="w-full max-w-3xl space-y-8 m-auto">
       <!--  -->
       <section class="space-y-4">
-        <h1 class="font-semibold uppercase text-4xl text-white">
+        <h1 class="font-title font-semibold uppercase text-5xl text-white">
           Abdelilah Ouaadouch
         </h1>
         <div class="text-slate-300">
-          <p class="text-lg mb-4">
+          <p class="text-xl mb-4">
             Backend Developer specializing in Go (Golang) and Typescript
           </p>
-          <p class="text-base opacity-90">
+          <p class="text-xl">
             Backend wizard who speaks fluent Go/Gin, dabbles in Rust for that
             extra speed boost, and crafts slick frontends with TypeScript +
             Nuxt.js. Building fast, reliable systems is my jam. <br>
@@ -152,7 +152,7 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-2xl font-semibold text-white">
+        <h2 class="text-3xl font-medium text-white">
           Contacts
         </h2>
         <div class="bg-zinc-800 text-slate-300 space-y-2 p-4">
@@ -160,7 +160,7 @@ const projects = [
             to="mailto:abdelilah4dev@gmail.com"
             title="abdelilah4dev@gmail.com"
             alt="email address"
-            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+            class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -170,7 +170,7 @@ const projects = [
             to="https://www.linkedin.com/in/abdelilah-ouaadouch-464060295/"
             title="Abdelilah ouaadouch"
             alt="linkedin profile"
-            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+            class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -180,7 +180,7 @@ const projects = [
             to="https://github.com/AbdelilahOu"
             title="@AbdelilahOu"
             alt="github profile"
-            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+            class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -190,7 +190,7 @@ const projects = [
             to="https://x.com/Abdelilah4dev"
             title="@Abdelilah4dev"
             alt="twitter profile"
-            class="block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+            class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -201,20 +201,20 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-2xl font-semibold text-white">
+        <h2 class="text-3xl font-medium text-white">
           Languages, Frameworks & tools I use
         </h2>
-        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4">
+        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4 text-lg">
           <span v-for="language in languages" :key="language" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
             {{ language }}
           </span>
         </div>
-        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4">
+        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4 text-lg">
           <span v-for="framework in frameworks" :key="framework" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
             {{ framework }}
           </span>
         </div>
-        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4">
+        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4 text-lg">
           <span v-for="tool in tools" :key="tool" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
             {{ tool }}
           </span>
@@ -223,7 +223,7 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-2xl font-semibold text-white">
+        <h2 class="text-3xl font-medium text-white">
           GitHub Contributions
         </h2>
         <div class="bg-zinc-800 p-4">
@@ -239,7 +239,7 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-2xl font-semibold text-white">
+        <h2 class="text-3xl font-medium text-white">
           Featured Projects
         </h2>
         <div class="grid gap-4 relative">
@@ -247,10 +247,10 @@ const projects = [
             v-for="project in projects" :key="project.title"
             class="bg-zinc-800 p-4"
           >
-            <h3 class="text-xl font-medium text-white">
+            <h3 class="text-2xl font-medium text-white">
               {{ project.title }}
             </h3>
-            <p class="text-slate-300 mt-2">
+            <p class="text-slate-300 mt-2 text-xl">
               {{ project.description }}
             </p>
             <div class="mt-3 flex flex-wrap gap-2">
@@ -283,13 +283,13 @@ const projects = [
         </div>
       </section>
 
-      <footer class="my-4 h-11 m-auto text-center text-white flex items-center justify-center">
+      <footer class="font-title uppercase text-lg my-4 h-11 m-auto text-center text-white flex items-center justify-center">
         made with
         <div class="size-12 tex-xs grid grid-cols-2 mx-2">
-          <spna>1</spna>
-          <spna>0</spna>
-          <spna>0</spna>
-          <spna>1</spna>
+          <span>1</span>
+          <span>0</span>
+          <span>0</span>
+          <span>1</span>
         </div>
         using
         <NuxtLink

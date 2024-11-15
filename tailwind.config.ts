@@ -22,7 +22,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        pixelify: ["Pixelify Sans", ...defaultTheme.fontFamily.sans],
+        display: ["VT323", ...defaultTheme.fontFamily.sans],
+        title: ["VCRosdNEUE", ...defaultTheme.fontFamily.sans],
       },
     },
   },

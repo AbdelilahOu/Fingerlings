@@ -7,7 +7,7 @@
     @apply border-0;
   }
   body {
-    @apply font-pixelify;
+    @apply font-display;
   }
   html {
     overscroll-behavior: none;
