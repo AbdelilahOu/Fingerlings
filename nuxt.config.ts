@@ -34,6 +34,10 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
+        name: "VT323",
+        provider: "google",
+      },
+      {
         name: "VCRosdNEUE",
         provider: "local",
       },
