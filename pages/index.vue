@@ -243,7 +243,7 @@ const projects = [
           Featured Projects
         </h2>
         <div class="grid gap-4 relative">
-          <div
+          <article
             v-for="project in projects" :key="project.title"
             class="bg-zinc-800 p-4"
           >
@@ -279,7 +279,7 @@ const projects = [
                 View Live →
               </NuxtLink>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 

@@ -5,7 +5,7 @@ useHead({
     lang: "en",
     dir: "ltr",
   },
-  titleTemplate: title => `Ar7al - %s`,
+  titleTemplate: () => `Ar7al - %s`,
   link: [
     {
       rel: "icon",
@@ -41,16 +41,16 @@ useSchemaOrg([
 useSeoMeta({
   title: "Abdelilah Ouaadouch",
   description:
-    "Personal website of Abdelilah ouaadouch - Developer specializing in Typescript + Nuxt and Golang",
+    "Backend Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.",
   twitterTitle: "Abdelilah Ouaadouch - Backend Developer",
   twitterDescription:
-    "Personal website of Abdelilah ouaadouch - Developer specializing in Typescript + Nuxt and Golang",
+    "Backend Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.",
   twitterCard: "summary_large_image",
   twitterImage: "/og.png",
   twitterCreator: "@Abdelilah4dev",
   ogTitle: "Abdelilah Ouaadouch - Backend Developer",
   ogDescription:
-    "Personal website of Abdelilah ouaadouch - Developer specializing in Typescript + Nuxt and Golang",
+    "Backend Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.",
   ogType: "website",
   ogSiteName: "Abdelilah Ouaadouch",
   ogLocale: "en",
