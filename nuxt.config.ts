@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    "/": { swr: 60 * 60 * 60 * 24 },
+    "/": { swr: 60 * 60 * 24 },
   },
   app: {
     head: {
@@ -36,10 +36,6 @@ export default defineNuxtConfig({
       {
         name: "VT323",
         provider: "google",
-      },
-      {
-        name: "VCRosdNEUE",
-        provider: "local",
       },
     ],
   },

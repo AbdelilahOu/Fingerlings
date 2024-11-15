@@ -134,7 +134,7 @@ const projects = [
     <div class="w-full max-w-3xl space-y-8 m-auto">
       <!--  -->
       <section class="space-y-4">
-        <h1 class="font-title font-semibold uppercase text-5xl text-white">
+        <h1 class="font-display font-semibold uppercase text-5xl text-white">
           Abdelilah Ouaadouch
         </h1>
         <div class="text-slate-300">
@@ -283,7 +283,7 @@ const projects = [
         </div>
       </section>
 
-      <footer class="font-title uppercase text-lg my-4 h-11 m-auto text-center text-white flex items-center justify-center">
+      <footer class="font-display uppercase text-lg my-4 h-11 m-auto text-center text-white flex items-center justify-center">
         made with
         <div class="size-12 tex-xs grid grid-cols-2 mx-2">
           <span>1</span>
