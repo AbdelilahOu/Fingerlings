@@ -22,7 +22,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        pixelify: ["Pixelify Sans", ...defaultTheme.fontFamily.sans],
+        pixelify: ["VCRosdNEUE", ...defaultTheme.fontFamily.sans],
       },
     },
   },

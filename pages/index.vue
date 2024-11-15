@@ -152,7 +152,7 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-2xl font-semibold text-white">
+        <h2 class="text-2xl font-medium text-white">
           Contacts
         </h2>
         <div class="bg-zinc-800 text-slate-300 space-y-2 p-4">
@@ -201,7 +201,7 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-2xl font-semibold text-white">
+        <h2 class="text-2xl font-medium text-white">
           Languages, Frameworks & tools I use
         </h2>
         <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4">
@@ -223,7 +223,7 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-2xl font-semibold text-white">
+        <h2 class="text-2xl font-medium text-white">
           GitHub Contributions
         </h2>
         <div class="bg-zinc-800 p-4">
@@ -239,7 +239,7 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-2xl font-semibold text-white">
+        <h2 class="text-2xl font-medium text-white">
           Featured Projects
         </h2>
         <div class="grid gap-4 relative">
@@ -286,10 +286,10 @@ const projects = [
       <footer class="my-4 h-11 m-auto text-center text-white flex items-center justify-center">
         made with
         <div class="size-12 tex-xs grid grid-cols-2 mx-2">
-          <spna>1</spna>
-          <spna>0</spna>
-          <spna>0</spna>
-          <spna>1</spna>
+          <span>1</span>
+          <span>0</span>
+          <span>0</span>
+          <span>1</span>
         </div>
         using
         <NuxtLink
