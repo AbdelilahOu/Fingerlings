@@ -294,13 +294,13 @@ const projects = [
         using
         <NuxtLink
           to="https://nuxt.com"
-          title="NuxtJs"
+          title="Nuxt"
           alt="nuxtjs website"
           target="_blank"
           class="mx-1"
           rel="noopener noreferrer"
         >
-          NuxtJs
+          Nuxt
         </NuxtLink>
       </footer>
     </div>
