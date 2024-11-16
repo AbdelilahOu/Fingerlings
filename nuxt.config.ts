@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts", "@nuxtjs/seo"],
   runtimeConfig: {
-    ghToken: process.env.GITHUB_TOKEN,
+    ghToken: process.env.NUXT_GITHUB_TOKEN,
     public: {
       siteUrl:
         process.env.NODE_ENV !== "production"
