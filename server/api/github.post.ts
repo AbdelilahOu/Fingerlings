@@ -9,10 +9,15 @@ export default defineEventHandler(async () => {
     const currYr = new Date().getFullYear();
     const response = await $fetch("https://api.github.com/graphql", {
       method: "POST",
+      mode: "cors",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
         Authorization: `Bearer ${ghToken}`,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
       body: JSON.stringify({
         query: `
