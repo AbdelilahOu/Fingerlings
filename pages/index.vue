@@ -15,10 +15,41 @@ definePageMeta({
 //   },
 // )
 
-
-const { data, error } =  useLazyFetch<{data:any}>("/api/github",{
-  method: "POST"
-});
+const { ghToken } = useRuntimeConfig();
+const { data, error } = useLazyAsyncData<{ data: any }>(
+  "github_contributions",
+  () => {
+    const currYr = new Date().getFullYear();
+    return $fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": `Bearer ${ghToken}`,
+      },
+      body: JSON.stringify({
+        query: `
+          query ($username: String!) {
+            user(login: $username) {
+              contributionsCollection(from: "${currYr}-01-01T00:00:00", to: "${currYr}-12-01T00:00:00") {
+                contributionCalendar {
+                  totalContributions
+                  weeks {
+                    contributionDays {
+                      contributionCount
+                      date
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `,
+        variables: { username: "AbdelilahOu" },
+      }),
+    });
+  },
+);
 
 const githubContributions = computed(() => {
   if (!data.value || error.value) {
@@ -103,7 +134,7 @@ const projects = [
     <div class="w-full max-w-3xl space-y-8 m-auto">
       <!--  -->
       <section class="space-y-4">
-        <h1 class="font-display font-semibold whitespace-nowrap overflow-hidden uppercase text-5xl text-white">
+        <h1 class="font-display font-semibold uppercase text-5xl text-white">
           Abdelilah Ouaadouch
         </h1>
         <p class="text-xl text-slate-300">
