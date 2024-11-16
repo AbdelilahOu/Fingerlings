@@ -16,6 +16,7 @@ definePageMeta({
 // )
 
 const { ghToken } = useRuntimeConfig();
+console.log(ghToken)
 const { data, error } = useLazyAsyncData<{ data: any }>(
   "github_contributions",
   () => {
