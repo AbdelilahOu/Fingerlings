@@ -20,6 +20,8 @@ const { data, error } =  useLazyFetch<{data:any}>("/api/github",{
   method: "POST"
 });
 
+console.log(data.value, error.value)
+
 const githubContributions = computed(() => {
   if (!data.value || error.value) {
     return {
