@@ -4,8 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts", "@nuxtjs/seo"],
   runtimeConfig: {
-    ghToken: process.env.NUXT_GITHUB_TOKEN,
     public: {
+      ghToken: process.env.NUXT_GITHUB_TOKEN,
       siteUrl:
         process.env.NODE_ENV !== "production"
           ? "http://localhost:3002"
@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    "/": { ssr: true },
+    "/": { swr: 60 * 60 * 24 },
   },
   app: {
     head: {
