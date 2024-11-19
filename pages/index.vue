@@ -26,6 +26,7 @@ const { data, error } = useLazyAsyncData<{ data: any }>(
         "Content-Type": "application/json",
         "Accept": "application/json",
         "Authorization": `Bearer ${ghToken}`,
+        "User-Agent": "request",
       },
       body: JSON.stringify({
         query: `
