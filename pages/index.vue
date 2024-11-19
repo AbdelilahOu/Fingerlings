@@ -52,9 +52,6 @@ const { data, error } = useLazyAsyncData<{ data: any }>(
   },
 );
 
-console.log(error.value);
-
-
 const githubContributions = computed(() => {
   if (!data.value || error.value) {
     return {
