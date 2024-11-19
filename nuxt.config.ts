@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    "/": { ssr: true },
+    "/": { swr: 60 * 60 },
   },
   app: {
     head: {
