@@ -122,6 +122,13 @@ const projects = [
     github: "https://github.com/AbdelilahOu/Online-test",
   },
   {
+    title: "Go GraphQL api",
+    description: "GoferQL API is a GraphQL server that provides a flexible API for managing posts, comments, users, categories, and tags. It uses SQLC for type-safe database operations and the graphql-go package for GraphQL implementation.",
+    tech: ["Go", "GraphQl"],
+    web: "",
+    github: "https://github.com/AbdelilahOu/GoferQl-api",
+  },
+  {
     title: "Rusty School API",
     description: "A simple but reliable backend for managing school data, built with Rust. Handles things like student records and school tasks, with Google login to keep everything secure.",
     tech: ["Rust", "Actix", "PostgreSQL", "Google Auth", "Docker"],
@@ -154,7 +161,7 @@ const projects = [
         <h2 class="text-3xl font-medium text-white">
           Contacts
         </h2>
-        <div class="bg-zinc-800 text-slate-300 space-y-2 p-4">
+        <div class="bg-zinc-800 text-slate-300 space-y-2 p-[20px]">
           <NuxtLink
             to="mailto:abdelilah4dev@gmail.com"
             title="abdelilah4dev@gmail.com"
@@ -203,17 +210,17 @@ const projects = [
         <h2 class="text-3xl font-medium text-white">
           Languages, Frameworks & tools I use
         </h2>
-        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4 text-lg">
+        <div class="flex flex-wrap gap-[20px] bg-zinc-800 text-slate-300 p-[20px] text-lg">
           <span v-for="language in languages" :key="language" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
             {{ language }}
           </span>
         </div>
-        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4 text-lg">
+        <div class="flex flex-wrap gap-[20px] bg-zinc-800 text-slate-300 p-[20px] text-lg">
           <span v-for="framework in frameworks" :key="framework" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
             {{ framework }}
           </span>
         </div>
-        <div class="flex flex-wrap gap-4 bg-zinc-800 text-slate-300 p-4 text-lg">
+        <div class="flex flex-wrap gap-[20px] bg-zinc-800 text-slate-300 p-[20px] text-lg">
           <span v-for="tool in tools" :key="tool" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
             {{ tool }}
           </span>
@@ -225,7 +232,7 @@ const projects = [
         <h2 class="text-3xl font-medium text-white">
           GitHub Contributions
         </h2>
-        <div class="bg-zinc-800 p-4">
+        <div class="bg-zinc-800 p-[20px]">
           <p class="text-slate-300 mb-4">
             Total Contributions in {{ new Date().getFullYear() }}:
             <span class="font-semibold text-green-400">{{
@@ -241,44 +248,11 @@ const projects = [
         <h2 class="text-3xl font-medium text-white">
           Featured Projects
         </h2>
-        <div class="grid gap-4 relative">
-          <article
+        <div class="grid gap-[20px] relative">
+          <ProjectCard
             v-for="project in projects" :key="project.title"
-            class="bg-zinc-800 p-4"
-          >
-            <h3 class="text-2xl font-medium text-white">
-              {{ project.title }}
-            </h3>
-            <p class="text-slate-300 mt-2 text-xl">
-              {{ project.description }}
-            </p>
-            <div class="mt-3 flex flex-wrap gap-2">
-              <span
-                v-for="tech in project.tech" :key="tech"
-                class="px-2 py-1 bg-zinc-600 text-slate-300 text-sm"
-              >
-                {{ tech }}
-              </span>
-            </div>
-            <div class="space-x-5">
-              <NuxtLink
-                v-if="project.github"
-                :to="project.github" target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block mt-3 text-blue-400 hover:text-blue-300"
-              >
-                View on GitHub →
-              </NuxtLink>
-              <NuxtLink
-                v-if="project.web"
-                :to="project.web" target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block mt-3 text-blue-400 hover:text-blue-300"
-              >
-                View Live →
-              </NuxtLink>
-            </div>
-          </article>
+            :project="project"
+          />
         </div>
       </section>
 
