@@ -6,6 +6,7 @@ defineProps<{
 const svgElement = ref<HTMLElement | null>(null);
 const width = computed(() => svgElement.value?.clientWidth || 768);
 const height = computed(() => svgElement.value?.clientHeight || 768);
+const size = computed(() => Math.floor(width.value * 0.02));
 </script>
 
 <template>
@@ -15,34 +16,34 @@ const height = computed(() => svgElement.value?.clientHeight || 768);
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <template v-for="x in Math.ceil(width / 16)">
+    <template v-for="x in Math.ceil(width / size)">
       <rect
         v-for="y in Math.floor(Math.random() * 5 + 1)"
         :key="`${x}-${y}`"
-        :x="(x - 1) * 16"
-        :y="height - 16 * y"
-        width="16"
-        height="16"
+        :x="(x - 1) * size"
+        :y="height - size * y"
+        :width="size"
+        :height="size"
         :style="{
           animationDelay: `${Math.random() * 2000}ms`,
           fill: bgColor || '#0c0c0c',
           stroke: bgColor || '#0c0c0c',
         }"
-        class="opacity-10 absolute animate-pulse duration-500"
+        class="opacity-5 animate-pulse duration-700"
       ></rect>
       <rect
         v-for="y in Math.floor(Math.random() * 5 + 1)"
         :key="`${x}-${y}`"
-        :x="(x - 1) * 16"
-        :y="16 * (y - 1)"
-        width="16"
-        height="16"
+        :x="(x - 1) * size"
+        :y="size * (y - 1)"
+        :width="size"
+        :height="size"
         :style="{
           animationDelay: `${Math.random() * 2000}ms`,
           fill: bgColor || '#0c0c0c',
           stroke: bgColor || '#0c0c0c',
         }"
-        class="opacity-10 absolute animate-pulse duration-500"
+        class="opacity-5 animate-pulse duration-700"
       ></rect>
     </template>
   </svg>
