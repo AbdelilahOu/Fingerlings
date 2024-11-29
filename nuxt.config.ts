@@ -13,7 +13,10 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    "/": { swr: 60 * 60 * 24 },
+    "/":
+      process.env.NODE_ENV === "production"
+        ? { swr: 60 * 60 * 24 }
+        : { ssr: true },
   },
   app: {
     head: {
