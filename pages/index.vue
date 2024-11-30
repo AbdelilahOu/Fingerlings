@@ -111,8 +111,8 @@ const projects = [
     title: "Pet Setting App",
     description: "A friendly platform where pet owners can find trusted pet sitters in their area. Browse sitters on a map, chat with them, schedule visits, and share reviews. Perfect for both pet owners looking for care and sitters looking for work.",
     tech: ["Vue.js", "Firebase", "Tailwindcss"],
-    web: "",
-    github: "https://github.com/AbdelilahOu/Pets-vue",
+    web: "https://pets-app-sage.vercel.app/",
+    github: "",
   },
   {
     title: "Wikipedia Proxy",
