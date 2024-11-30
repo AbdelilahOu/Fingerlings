@@ -73,16 +73,11 @@ const weeks = computed(() => {
 });
 
 function getTileColor(contributions: number): string {
-  if (contributions === -1)
-    return "bg-zinc-900";
-  if (contributions === 0)
-    return "bg-zinc-900";
-  if (contributions <= 2)
-    return "bg-emerald-900";
-  if (contributions <= 4)
-    return "bg-emerald-700";
-  if (contributions <= 6)
-    return "bg-emerald-500";
+  if (contributions === -1) return "bg-zinc-900";
+  if (contributions === 0) return "bg-zinc-900";
+  if (contributions <= 2) return "bg-emerald-900";
+  if (contributions <= 4) return "bg-emerald-700";
+  if (contributions <= 6) return "bg-emerald-500";
   return "bg-emerald-300";
 }
 
@@ -118,17 +113,11 @@ function getTooltip(day: DayData): string {
     <div class="flex overflow-hidden max-w-screen-md">
       <div class="w-10 pr-2 pt-5">
         <div class="h-5" />
-        <div class="h-5 text-xs text-gray-400 text-center leading-6">
-          Mon
-        </div>
+        <div class="h-5 text-xs text-gray-400 text-center leading-6">Mon</div>
         <div class="h-5" />
-        <div class="h-5 text-xs text-gray-400 text-center leading-6">
-          Wed
-        </div>
+        <div class="h-5 text-xs text-gray-400 text-center leading-6">Wed</div>
         <div class="h-5" />
-        <div class="h-5 text-xs text-gray-400 text-center leading-6">
-          Fri
-        </div>
+        <div class="h-5 text-xs text-gray-400 text-center leading-6">Fri</div>
       </div>
       <div class="flex w-full overflow-x-auto scrollbar-hide">
         <div class="relative flex gap-1 mt-5">
@@ -148,7 +137,7 @@ function getTooltip(day: DayData): string {
             <div
               v-for="(day, dayIndex) in week"
               :key="dayIndex"
-              class="h-4 w-4 my-1"
+              class="size-4 my-1"
               :class="[getTileColor(day.contributions)]"
               :title="getTooltip(day)"
             />
