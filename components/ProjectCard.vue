@@ -11,9 +11,9 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-zinc-800 relative p-[20px]">
+  <div class="bg-zinc-800 group relative p-[20px]">
     <ClientOnly>
-      <BackgroundGrid class="absolute inset-0 z-0" />
+      <BackgroundGrid class="group-hover:blur-sm" />
     </ClientOnly>
 
     <article class="relative z-10">

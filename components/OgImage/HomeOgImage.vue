@@ -1,6 +1,8 @@
 <template>
-  <div class="h-full w-full bg-[#0c0c0c]">
-    <div class="flex flex-col my-auto items-center justify-center">
+  <div class="h-full w-full bg-[#0c0c0c] relative">
+    <div
+      class="flex flex-col my-auto items-center relative z-30 justify-center"
+    >
       <h1
         class="text-6xl text-white flex items-center justify-center w-full m-auto font-extrabold tracking-tight"
       >

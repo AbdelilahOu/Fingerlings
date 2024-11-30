@@ -161,47 +161,52 @@ const projects = [
         <h2 class="text-3xl font-medium text-white">
           Contacts
         </h2>
-        <div class="bg-zinc-800 text-slate-300 space-y-2 p-[20px]">
-          <NuxtLink
-            to="mailto:abdelilah4dev@gmail.com"
-            title="abdelilah4dev@gmail.com"
-            alt="email address"
-            class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ "<Email>" }} abdelilah4dev@gmail.com
-          </NuxtLink>
-          <NuxtLink
-            to="https://www.linkedin.com/in/abdelilah-ouaadouch-464060295/"
-            title="Abdelilah ouaadouch"
-            alt="linkedin profile"
-            class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ "<Linkedin>" }} Abdelilah ouaadouch
-          </NuxtLink>
-          <NuxtLink
-            to="https://github.com/AbdelilahOu"
-            title="@AbdelilahOu"
-            alt="github profile"
-            class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ "<Github>" }} @AbdelilahOu
-          </NuxtLink>
-          <NuxtLink
-            to="https://x.com/Abdelilah4dev"
-            title="@Abdelilah4dev"
-            alt="twitter profile"
-            class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ "<Twitter/x>" }} @Abdelilah4dev
-          </NuxtLink>
+        <div class="w-full relative group bg-zinc-800 text-slate-300">
+          <ClientOnly>
+            <BackgroundGrid class="group-hover:blur-sm"/>
+          </ClientOnly>
+          <div class="space-y-2 relative z-10 p-[20px]">
+            <NuxtLink
+              to="mailto:abdelilah4dev@gmail.com"
+              title="abdelilah4dev@gmail.com"
+              alt="email address"
+              class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ "<Email>" }} abdelilah4dev@gmail.com
+            </NuxtLink>
+            <NuxtLink
+              to="https://www.linkedin.com/in/abdelilah-ouaadouch-464060295/"
+              title="Abdelilah ouaadouch"
+              alt="linkedin profile"
+              class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ "<Linkedin>" }} Abdelilah ouaadouch
+            </NuxtLink>
+            <NuxtLink
+              to="https://github.com/AbdelilahOu"
+              title="@AbdelilahOu"
+              alt="github profile"
+              class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ "<Github>" }} @AbdelilahOu
+            </NuxtLink>
+            <NuxtLink
+              to="https://x.com/Abdelilah4dev"
+              title="@Abdelilah4dev"
+              alt="twitter profile"
+              class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ "<Twitter/x>" }} @Abdelilah4dev
+            </NuxtLink>
+          </div>
         </div>
       </section>
 

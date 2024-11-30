@@ -14,6 +14,7 @@ const size = computed(() => {
 
 <template>
   <svg
+    data-nosnippet
     ref="svgElement"
     class="absolute opacity-70 left-0 top-0 z-0 w-full h-full"
     fill="none"
@@ -21,7 +22,7 @@ const size = computed(() => {
   >
     <template v-for="x in Math.ceil(width / size)">
       <rect
-        v-for="y in Math.floor(Math.random() * 5 + 1)"
+        v-for="y in Math.floor(Math.random() * (height / 2 / size))"
         :key="`${x}-${y}`"
         :x="(x - 1) * size"
         :y="height - size * y"
@@ -35,7 +36,7 @@ const size = computed(() => {
         class="opacity-0 animate-pulse"
       ></rect>
       <rect
-        v-for="y in Math.floor(Math.random() * 5 + 1)"
+        v-for="y in Math.floor(Math.random() * (height / 2 / size))"
         :key="`${x}-${y}`"
         :x="(x - 1) * size"
         :y="size * (y - 1)"
