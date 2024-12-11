@@ -3,20 +3,35 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts", "@nuxtjs/seo"],
-  runtimeConfig: {
-    public: {
-      ghToken: process.env.NUXT_GITHUB_TOKEN,
-      siteUrl:
-        process.env.NODE_ENV !== "production"
-          ? "http://localhost:3002"
-          : "https://ar7al.com",
+  $development: {
+    routeRules: {
+      "/": { ssr: true },
+    },
+    site: {
+      url: "http://localhost:3002",
+      name: "Ar7al",
+    },
+    runtimeConfig: {
+      public: {
+        ghToken: process.env.NUXT_GITHUB_TOKEN,
+        siteUrl: "http://localhost:3002",
+      },
     },
   },
-  routeRules: {
-    "/":
-      process.env.NODE_ENV === "production"
-        ? { swr: 60 * 60 * 24 }
-        : { ssr: true },
+  $production: {
+    routeRules: {
+      "/": { swr: 60 * 60 * 24 },
+    },
+    site: {
+      url: "https://ar7al.com",
+      name: "Ar7al",
+    },
+    runtimeConfig: {
+      public: {
+        ghToken: process.env.NUXT_GITHUB_TOKEN,
+        siteUrl: "https://ar7al.com",
+      },
+    },
   },
   app: {
     head: {
@@ -26,13 +41,6 @@ export default defineNuxtConfig({
   },
   ogImage: {
     zeroRuntime: true,
-  },
-  site: {
-    url:
-      process.env.NODE_ENV !== "production"
-        ? "http://localhost:3002"
-        : "https://ar7al.com",
-    name: "Ar7al",
   },
   fonts: {
     families: [
