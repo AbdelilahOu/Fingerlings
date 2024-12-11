@@ -29,7 +29,8 @@ const size = computed(() => {
         :width="size"
         :height="size"
         :style="{
-          animationDelay: `${Math.random() * 3}s`,
+          animationDelay: `${Math.random() * 5}s`,
+          animationDuration: `${Math.random() * 5 + 2}s`,
           fill: bgColor || '#0c0c0c',
           stroke: bgColor || '#0c0c0c',
         }"
@@ -43,7 +44,8 @@ const size = computed(() => {
         :width="size"
         :height="size"
         :style="{
-          animationDelay: `${Math.random() * 3}s`,
+          animationDelay: `${Math.random() * 5}s`,
+          animationDuration: `${Math.random() * 5 + 2}s`,
           fill: bgColor || '#0c0c0c',
           stroke: bgColor || '#0c0c0c',
         }"
