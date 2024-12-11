@@ -163,7 +163,7 @@ const projects = [
         </h2>
         <div class="w-full relative group bg-zinc-800 text-slate-300">
           <ClientOnly>
-            <BackgroundGrid class="group-hover:blur-sm"/>
+            <BackgroundGrid class="group-hover:blur-sm" />
           </ClientOnly>
           <div class="space-y-2 relative z-10 p-[20px]">
             <NuxtLink

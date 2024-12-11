@@ -14,8 +14,8 @@ const size = computed(() => {
 
 <template>
   <svg
-    data-nosnippet
     ref="svgElement"
+    data-nosnippet
     class="absolute opacity-70 left-0 top-0 z-0 w-full h-full"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const size = computed(() => {
           stroke: bgColor || '#0c0c0c',
         }"
         class="opacity-0 animate-pulse"
-      ></rect>
+      />
       <rect
         v-for="y in Math.floor(Math.random() * (height / 2 / size))"
         :key="`${x}-${y}`"
@@ -48,7 +48,7 @@ const size = computed(() => {
           stroke: bgColor || '#0c0c0c',
         }"
         class="opacity-0 animate-pulse"
-      ></rect>
+      />
     </template>
   </svg>
 </template>
