@@ -144,7 +144,7 @@ const projects = [
       <!--  -->
       <section class="space-y-4">
         <h1 class="font-display font-semibold uppercase text-5xl text-white">
-          Abdelilah Ouaadouch
+          Abdelilah Ouaadouch | ar7al
         </h1>
         <p class="text-xl text-slate-300">
           Backend Developer specializing in Go (Golang) and Typescript
