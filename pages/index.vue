@@ -55,9 +55,8 @@ const { data, error } = useLazyAsyncData<{ data: any }>(
 const githubContributions = computed(() => {
   if (!data.value || error.value) {
     return {
-      cal: {
-      },
-      totalGH: 0
+      cal: {},
+      totalGH: 0,
     };
   }
   const cal: { [date: string]: { github: number } } = {};
@@ -68,14 +67,14 @@ const githubContributions = computed(() => {
     && data.value.data.user.contributionsCollection
   ) {
     totalGH
-      = data.value.data.user.contributionsCollection.contributionCalendar
+            = data.value.data.user.contributionsCollection.contributionCalendar
         .totalContributions || 0;
     const ghCalData
-      = data.value.data.user.contributionsCollection.contributionCalendar.weeks
-      || [];
+            = data.value.data.user.contributionsCollection.contributionCalendar
+              .weeks || [];
     for (const week of ghCalData) {
       for (const day of week.contributionDays) {
-        if (!cal[day.date])
+        if (!cal[day.date]) 
           cal[day.date] = { github: 0 };
         cal[day.date].github = day.contributionCount;
       }
@@ -88,49 +87,82 @@ const githubContributions = computed(() => {
 });
 
 const languages = ["Golang", "Rust", "Typescript", "Javascript", "Html", "Css"];
-const frameworks = ["Next.js", "Tauri", "Hono.js", "Nuxt.js", "Gin", "Chi", "Actix", "Express.js", "Tailwindcss"];
+const frameworks = [
+  "Next.js",
+  "Tauri",
+  "Hono.js",
+  "Nuxt.js",
+  "Gin",
+  "Chi",
+  "Actix",
+  "Express.js",
+  "Tailwindcss",
+];
 const tools = ["Docker", "Git", "Github", "Postman"];
 
 // Projects data
 const projects = [
   {
     title: "Mahalli",
-    description: "A web app that makes running your business easier. Keep track of inventory, manage client relationships, and create professional quotes and orders all in one place.",
-    tech: ["Nuxt3", "Typescript", "Tailwindcss", "Golang", "PostgreSQL", "Gin", "SQLC", "Clerk"],
+    description:
+            "A web app that makes running your business easier. Keep track of inventory, manage client relationships, and create professional quotes and orders all in one place.",
+    tech: [
+      "Nuxt3",
+      "Typescript",
+      "Tailwindcss",
+      "Golang",
+      "PostgreSQL",
+      "Gin",
+      "SQLC",
+      "Clerk",
+    ],
     web: "https://trymahalli.com",
     github: "",
   },
   {
     title: "Cobracase E-commerce",
-    description: "An online store where you can design your own unique phone cases. Upload photos, add text, and create cases that tell your story.",
-    tech: ["NextJs", "Typescript", "Tailwindcss", "DrizzleOrm", "PostgreSQL", "Stripe", "Kind"],
+    description:
+            "An online store where you can design your own unique phone cases. Upload photos, add text, and create cases that tell your story.",
+    tech: [
+      "NextJs",
+      "Typescript",
+      "Tailwindcss",
+      "DrizzleOrm",
+      "PostgreSQL",
+      "Stripe",
+      "Kind",
+    ],
     web: "https://case-ecommerce.vercel.app/",
     github: "https://github.com/AbdelilahOu/Case-ecommerce",
   },
   {
     title: "Pet Setting App",
-    description: "A friendly platform where pet owners can find trusted pet sitters in their area. Browse sitters on a map, chat with them, schedule visits, and share reviews. Perfect for both pet owners looking for care and sitters looking for work.",
+    description:
+            "A friendly platform where pet owners can find trusted pet sitters in their area. Browse sitters on a map, chat with them, schedule visits, and share reviews. Perfect for both pet owners looking for care and sitters looking for work.",
     tech: ["Vue.js", "Firebase", "Tailwindcss"],
     web: "https://pets-app-sage.vercel.app/",
     github: "",
   },
   {
     title: "Wikipedia Proxy",
-    description: "A Go-based tool I built for a coding challenge that sits between you and Wikipedia, tweaking the links you see as you browse. It was a fun way to explore how web proxies work.",
+    description:
+            "A Go-based tool I built for a coding challenge that sits between you and Wikipedia, tweaking the links you see as you browse. It was a fun way to explore how web proxies work.",
     tech: ["Go"],
     web: "",
     github: "https://github.com/AbdelilahOu/Online-test",
   },
   {
     title: "Go GraphQL api",
-    description: "GoferQL API is a GraphQL server that provides a flexible API for managing posts, comments, users, categories, and tags. It uses SQLC for type-safe database operations and the graphql-go package for GraphQL implementation.",
+    description:
+            "GoferQL API is a GraphQL server that provides a flexible API for managing posts, comments, users, categories, and tags. It uses SQLC for type-safe database operations and the graphql-go package for GraphQL implementation.",
     tech: ["Go", "GraphQl"],
     web: "",
     github: "https://github.com/AbdelilahOu/GoferQl-api",
   },
   {
     title: "Rusty School API",
-    description: "A simple but reliable backend for managing school data, built with Rust. Handles things like student records and school tasks, with Google login to keep everything secure.",
+    description:
+            "A simple but reliable backend for managing school data, built with Rust. Handles things like student records and school tasks, with Google login to keep everything secure.",
     tech: ["Rust", "Actix", "PostgreSQL", "Google Auth", "Docker"],
     web: "",
     github: "https://github.com/AbdelilahOu/Rusty-school",
@@ -143,13 +175,18 @@ const projects = [
     <div class="w-full max-w-3xl space-y-8 m-auto">
       <!--  -->
       <section class="space-y-4">
-        <h1 class="font-display font-semibold uppercase text-3xl md:text-4xl text-white">
+        <h1
+          class="font-display font-semibold uppercase text-3xl md:text-4xl text-white"
+        >
           Abdelilah Ouaadouch
         </h1>
         <p class="text-base md:text-lg text-white">
           Backend Developer specializing in Go (Golang) and Typescript
           <br>
-          Backend developer with 2+ years of experience building performant and reliable systems. My primary focus is backend development with Go (Gin) and Typescript, complemented by experience creating frontends with Next.js.
+          Backend developer with 2+ years of experience building
+          performant and reliable systems. My primary focus is backend
+          development with Go (Gin) and Typescript, complemented by
+          experience creating frontends with Next.js.
         </p>
       </section>
 
@@ -167,41 +204,61 @@ const projects = [
               to="mailto:abdelilah4dev@gmail.com"
               title="abdelilah4dev@gmail.com"
               alt="email address"
-              class="text-base block underline underline-offset-2 hover:border-l hover:pl-2 border-white"
+              class="text-base block hover:border-l hover:pl-2 border-white"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {{ "<Email>" }} abdelilah4dev@gmail.com
+              <span class="min-w-32 w-32 inline-block">
+                Email
+              </span>
+              <span class="underline underline-offset-2">
+                abdelilah4dev@gmail.com
+              </span>
             </NuxtLink>
             <NuxtLink
               to="https://www.linkedin.com/in/ar7al/"
               title="Abdelilah ouaadouch"
               alt="linkedin profile"
-              class="text-base block underline underline-offset-2 hover:border-l hover:pl-2 border-white"
+              class="text-base block hover:border-l hover:pl-2 border-white"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {{ "<Linkedin>" }} Abdelilah ouaadouch
+              <span class="min-w-32 w-32 inline-block">
+                Linkedin
+              </span>
+              <span class="underline underline-offset-2">
+                Abdelilah ouaadouch
+              </span>
             </NuxtLink>
             <NuxtLink
               to="https://github.com/AbdelilahOu"
               title="@AbdelilahOu"
               alt="github profile"
-              class="text-base block underline underline-offset-2 hover:border-l hover:pl-2 border-white"
+              class="text-base block hover:border-l hover:pl-2 border-white"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {{ "<Github>" }} @AbdelilahOu
+              <span class="min-w-32 w-32 inline-block">
+                Github
+              </span>
+              <span class="underline underline-offset-2">
+                @AbdelilahOu
+              </span>
             </NuxtLink>
             <NuxtLink
               to="https://x.com/Abdelilah4dev"
               title="@Abdelilah4dev"
               alt="twitter profile"
-              class="text-base block underline underline-offset-2 hover:border-l hover:pl-2 border-white"
+              class="text-base block hover:border-l hover:pl-2 border-white"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {{ "<Twitter/x>" }} @Abdelilah4dev
+              <span class="min-w-32 w-32 inline-block">
+                Twitter/x
+              </span>
+              <span class="underline underline-offset-2">
+                @Abdelilah4dev
+              </span>
             </NuxtLink>
           </div>
         </div>
@@ -212,18 +269,36 @@ const projects = [
         <h2 class="text-2xl font-bold text-white">
           <span class="text-accent">$</span> cat ./skills
         </h2>
-        <div class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base">
-          <span v-for="language in languages" :key="language" class="whitespace-nowrap px-2 py-1 border text-white flex-1 w-full text-center">
+        <div
+          class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
+        >
+          <span
+            v-for="language in languages"
+            :key="language"
+            class="whitespace-nowrap px-2 py-1 border text-white flex-1 w-full text-center"
+          >
             - {{ language }} -
           </span>
         </div>
-        <div class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base">
-          <span v-for="framework in frameworks" :key="framework" class="whitespace-nowrap px-2 py-1 border text-white flex-1 w-full text-center">
+        <div
+          class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
+        >
+          <span
+            v-for="framework in frameworks"
+            :key="framework"
+            class="whitespace-nowrap px-2 py-1 border text-white flex-1 w-full text-center"
+          >
             - {{ framework }} -
           </span>
         </div>
-        <div class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base">
-          <span v-for="tool in tools" :key="tool" class="whitespace-nowrap px-2 py-1 border text-white flex-1 w-full text-center">
+        <div
+          class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
+        >
+          <span
+            v-for="tool in tools"
+            :key="tool"
+            class="whitespace-nowrap px-2 py-1 border text-white flex-1 w-full text-center"
+          >
             - {{ tool }} -
           </span>
         </div>
@@ -252,13 +327,16 @@ const projects = [
         </h2>
         <div class="grid gap-[20px] relative">
           <ProjectCard
-            v-for="project in projects" :key="project.title"
+            v-for="project in projects"
+            :key="project.title"
             :project="project"
           />
         </div>
       </section>
 
-      <footer class="font-display uppercase text-lg my-4 h-11 m-auto text-center text-white flex items-center justify-center">
+      <footer
+        class="font-display uppercase text-lg my-4 h-11 m-auto text-center text-white flex items-center justify-center"
+      >
         made with
         <div class="size-12 tex-xs grid grid-cols-2 mx-2">
           <span>1</span>
