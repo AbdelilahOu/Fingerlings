@@ -74,9 +74,9 @@ const weeks = computed(() => {
 
 function getTileColor(contributions: number): string {
   if (contributions === -1) 
-    return "bg-zinc-900";
+    return "bg-neutral-900";
   if (contributions === 0) 
-    return "bg-zinc-900";
+    return "bg-neutral-900";
   if (contributions <= 2) 
     return "bg-emerald-900";
   if (contributions <= 4) 
@@ -89,7 +89,7 @@ function getTileColor(contributions: number): string {
 function getColorClass(level: number): string {
   switch (level) {
     case 0:
-      return "bg-zinc-900";
+      return "bg-neutral-900";
     case 1:
       return "bg-emerald-900";
     case 2:
@@ -135,7 +135,11 @@ function getTooltip(day: DayData): string {
           <div
             class="absolute flex w-full justify-around gap-1 text-gray-400 -mt-5"
           >
-            <div v-for="month in monthLabels" :key="month" class="text-xs">
+            <div
+              v-for="month in monthLabels"
+              :key="month"
+              class="text-xs"
+            >
               {{ month }}
             </div>
           </div>

@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-zinc-800 group relative p-[20px]">
+  <div class="bg-neutral-800 group relative p-[20px]">
     <ClientOnly>
       <BackgroundGrid class="group-hover:blur-sm" />
     </ClientOnly>
@@ -27,7 +27,7 @@ defineProps<{
         <span
           v-for="tech in project.tech"
           :key="tech"
-          class="px-2 py-1 bg-zinc-600 text-white text-sm"
+          class="px-2 py-1 bg-neutral-600 text-white text-sm"
         >
           {{ tech }}
         </span>

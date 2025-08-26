@@ -88,7 +88,7 @@ const githubContributions = computed(() => {
 });
 
 const languages = ["Golang", "Rust", "Typescript", "Javascript", "Html", "Css"];
-const frameworks = ["Next.js", "Tauri" ,"Hono.js", "Nuxt.js", "Gin", "Chi", "Actix", "Express.js", "Tailwindcss"];
+const frameworks = ["Next.js", "Tauri", "Hono.js", "Nuxt.js", "Gin", "Chi", "Actix", "Express.js", "Tailwindcss"];
 const tools = ["Docker", "Git", "Github", "Postman"];
 
 // Projects data
