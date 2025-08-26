@@ -13,7 +13,7 @@ defineProps<{
 <template>
   <div class="bg-neutral-800 group relative p-[20px]">
     <ClientOnly>
-      <BackgroundGrid class="group-hover:blur-sm" />
+      <BackgroundGrid />
     </ClientOnly>
 
     <article class="relative z-10">
