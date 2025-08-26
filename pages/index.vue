@@ -9,7 +9,7 @@ definePageMeta({
 //   {
 //     fonts: [
 //       {
-//         name: 'Pixelify Sans',
+//         name: 'JetBrains Mono',
 //       },
 //     ],
 //   },
@@ -87,8 +87,8 @@ const githubContributions = computed(() => {
   };
 });
 
-const languages = ["Golang", "Rust", "Typescript", "Javascript", "Html", "Css", "Sql", "PostgreSQl"];
-const frameworks = ["Gin (golang)", "Chi (golang)", "Actix (rust)", "Express.js", "Nitro.js", "Nuxt.js", "Tailwindcss", "Vue.js", "Next.js", "Tauri"];
+const languages = ["Golang", "Rust", "Typescript", "Javascript", "Html", "Css"];
+const frameworks = ["Gin (golang)", "Chi (golang)", "Actix (rust)", "Express.js", "Hono.js", "Nuxt.js", "Tailwindcss", "Next.js", "Tauri"];
 const tools = ["Docker", "Git", "Github", "Postman"];
 
 // Projects data
@@ -143,25 +143,22 @@ const projects = [
     <div class="w-full max-w-3xl space-y-8 m-auto">
       <!--  -->
       <section class="space-y-4">
-        <h1 class="font-display font-semibold uppercase text-5xl text-white">
+        <h1 class="font-display font-semibold uppercase text-4xl text-white">
           Abdelilah Ouaadouch | ar7al
         </h1>
-        <p class="text-xl text-slate-300">
+        <p class="text-lg text-white">
           Backend Developer specializing in Go (Golang) and Typescript
           <br>
-          Backend wizard who speaks fluent Go/Gin, dabbles in Rust for that
-          extra speed boost, and crafts slick frontends with TypeScript +
-          Nuxt.js. Building fast, reliable systems is my jam. <br>
-          let's ship some awesome code!
+          Backend developer with 2+ years of experience building performant and reliable systems. My primary focus is backend development with Go (Gin) and Typescript, complemented by experience creating frontends with Next.js.
         </p>
       </section>
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-3xl font-medium text-white">
-          Contacts
+        <h2 class="text-2xl font-bold text-white">
+          <span class="text-accent">$</span> ls -contacts
         </h2>
-        <div class="w-full relative group bg-zinc-800 text-slate-300">
+        <div class="w-full relative group bg-neutral-800 text-white">
           <ClientOnly>
             <BackgroundGrid class="group-hover:blur-sm" />
           </ClientOnly>
@@ -170,17 +167,17 @@ const projects = [
               to="mailto:abdelilah4dev@gmail.com"
               title="abdelilah4dev@gmail.com"
               alt="email address"
-              class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+              class="text-base block underline underline-offset-2 hover:border-l hover:pl-2 border-white"
               target="_blank"
               rel="noopener noreferrer"
             >
               {{ "<Email>" }} abdelilah4dev@gmail.com
             </NuxtLink>
             <NuxtLink
-              to="https://www.linkedin.com/in/abdelilah-ouaadouch-464060295/"
+              to="https://www.linkedin.com/in/ar7al/"
               title="Abdelilah ouaadouch"
               alt="linkedin profile"
-              class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+              class="text-base block underline underline-offset-2 hover:border-l hover:pl-2 border-white"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -190,7 +187,7 @@ const projects = [
               to="https://github.com/AbdelilahOu"
               title="@AbdelilahOu"
               alt="github profile"
-              class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+              class="text-base block underline underline-offset-2 hover:border-l hover:pl-2 border-white"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -200,7 +197,7 @@ const projects = [
               to="https://x.com/Abdelilah4dev"
               title="@Abdelilah4dev"
               alt="twitter profile"
-              class="text-xl block underline underline-offset-2 hover:border-l hover:pl-2 border-slate-300"
+              class="text-base block underline underline-offset-2 hover:border-l hover:pl-2 border-white"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -212,33 +209,33 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-3xl font-medium text-white">
-          Languages, Frameworks & tools I use
+        <h2 class="text-2xl font-bold text-white">
+          <span class="text-accent">$</span> cat ./skills
         </h2>
-        <div class="flex flex-wrap gap-[20px] bg-zinc-800 text-slate-300 p-[20px] text-lg">
-          <span v-for="language in languages" :key="language" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
-            {{ language }}
+        <div class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base">
+          <span v-for="language in languages" :key="language" class="whitespace-nowrap px-2 py-1 border text-white">
+            - {{ language }} -
           </span>
         </div>
-        <div class="flex flex-wrap gap-[20px] bg-zinc-800 text-slate-300 p-[20px] text-lg">
-          <span v-for="framework in frameworks" :key="framework" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
-            {{ framework }}
+        <div class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base">
+          <span v-for="framework in frameworks" :key="framework" class="whitespace-nowrap px-2 py-1 border text-white">
+            - {{ framework }} -
           </span>
         </div>
-        <div class="flex flex-wrap gap-[20px] bg-zinc-800 text-slate-300 p-[20px] text-lg">
-          <span v-for="tool in tools" :key="tool" class="whitespace-nowrap px-2 py-1 bg-zinc-600 text-slate-300">
-            {{ tool }}
+        <div class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base">
+          <span v-for="tool in tools" :key="tool" class="whitespace-nowrap px-2 py-1 border text-white">
+            - {{ tool }} -
           </span>
         </div>
       </section>
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-3xl font-medium text-white">
-          GitHub Contributions
+        <h2 class="text-2xl font-bold text-white">
+          <span class="text-accent">$</span> git log --stat
         </h2>
-        <div class="bg-zinc-800 p-[20px]">
-          <p class="text-slate-300 mb-4">
+        <div class="bg-neutral-800 p-[20px]">
+          <p class="text-white mb-4">
             Total Contributions in {{ new Date().getFullYear() }}:
             <span class="font-semibold text-green-400">{{
               githubContributions.totalGH
@@ -250,8 +247,8 @@ const projects = [
 
       <!--  -->
       <section class="space-y-4">
-        <h2 class="text-3xl font-medium text-white">
-          Featured Projects
+        <h2 class="text-2xl font-bold text-white">
+          <span class="text-accent">$</span> ls ./projects
         </h2>
         <div class="grid gap-[20px] relative">
           <ProjectCard
