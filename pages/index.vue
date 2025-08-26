@@ -208,7 +208,7 @@ const projects = [
                             rel="noopener noreferrer"
                         >
                             <span
-                                class="md:min-w-32 md:w-32 min-w-16 w-16 inline-block"
+                                class="md:min-w-32 md:w-32 min-w-20 w-20 inline-block"
                             >
                                 Email
                             </span>
@@ -225,7 +225,7 @@ const projects = [
                             rel="noopener noreferrer"
                         >
                             <span
-                                class="md:min-w-32 md:w-32 min-w-16 w-16 inline-block"
+                                class="md:min-w-32 md:w-32 min-w-20 w-20 inline-block"
                             >
                                 Linkedin
                             </span>
@@ -242,7 +242,7 @@ const projects = [
                             rel="noopener noreferrer"
                         >
                             <span
-                                class="md:min-w-32 md:w-32 min-w-16 w-16 inline-block"
+                                class="md:min-w-32 md:w-32 min-w-20 w-20 inline-block"
                             >
                                 Github
                             </span>
@@ -259,7 +259,7 @@ const projects = [
                             rel="noopener noreferrer"
                         >
                             <span
-                                class="md:min-w-32 md:w-32 min-w-16 w-16 inline-block"
+                                class="md:min-w-32 md:w-32 min-w-20 w-20 inline-block"
                             >
                                 Twitter/x
                             </span>
