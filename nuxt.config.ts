@@ -44,8 +44,11 @@ export default defineNuxtConfig({
       {
         name: "JetBrains Mono",
         provider: "google",
+        weights: [400],
       },
     ],
+    preload: true,
+    subsets: ["latin"],
   },
   tailwindcss: {
     viewer: false,
