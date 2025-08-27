@@ -4,9 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts", "@nuxtjs/seo"],
   $development: {
-    routeRules: {
-      "/": { ssr: true },
-    },
     site: {
       url: "http://localhost:3002",
       name: "Ar7al",
