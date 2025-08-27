@@ -22,7 +22,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["JetBrains Mono", ...defaultTheme.fontFamily.sans],
+        display: ["JetBrains Mono"],
       },
     },
   },
