@@ -314,7 +314,7 @@ const projects = [
             </section>
 
             <footer
-                class="font-display uppercase text-lg my-4 h-11 m-auto text-center text-white flex items-center justify-center"
+                class="font-display uppercase text-sm md:text-lg my-4 h-11 m-auto text-center text-white flex items-center justify-center"
             >
                 made with
                 <div class="size-12 tex-xs grid grid-cols-2 mx-2">
