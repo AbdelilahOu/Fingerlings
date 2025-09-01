@@ -182,7 +182,7 @@ const projects = [
                 <h2 class="text-2xl font-bold text-white">
                     <span class="text-accent">$</span> ls -contacts
                 </h2>
-                <div class="w-full relative group bg-neutral-800 text-white">
+                <div class="w-full relative group bg-neutral-800 text-white clip-polygon-cut">
                     <ClientOnly>
                         <BackgroundGrid />
                     </ClientOnly>
