@@ -182,7 +182,9 @@ const projects = [
                 <h2 class="text-2xl font-bold text-white">
                     <span class="text-accent">$</span> ls -contacts
                 </h2>
-                <div class="w-full relative group bg-neutral-800 text-white clip-polygon-cut">
+                <div
+                    class="corner-brackets-simple w-full relative group bg-neutral-800 text-white"
+                >
                     <ClientOnly>
                         <BackgroundGrid />
                     </ClientOnly>
@@ -249,7 +251,7 @@ const projects = [
                     <span class="text-accent">$</span> cat ./skills
                 </h2>
                 <div
-                    class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
+                    class="corner-brackets-simple flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
                 >
                     <span
                         v-for="language in languages"
@@ -260,7 +262,7 @@ const projects = [
                     </span>
                 </div>
                 <div
-                    class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
+                    class="corner-brackets-simple flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
                 >
                     <span
                         v-for="framework in frameworks"
@@ -271,7 +273,7 @@ const projects = [
                     </span>
                 </div>
                 <div
-                    class="flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
+                    class="corner-brackets-simple flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
                 >
                     <span
                         v-for="tool in tools"
@@ -288,7 +290,7 @@ const projects = [
                 <h2 class="text-2xl font-bold text-white">
                     <span class="text-accent">$</span> git log --stat
                 </h2>
-                <div class="bg-neutral-800 p-[20px]">
+                <div class="corner-brackets-simple bg-neutral-800 p-[20px]">
                     <p class="text-white mb-4">
                         Total Contributions in {{ new Date().getFullYear() }}:
                         <span class="font-semibold text-green-400">{{
