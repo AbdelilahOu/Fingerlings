@@ -7,7 +7,7 @@ const svgElement = ref<HTMLElement | null>(null);
 const width = computed(() => svgElement.value?.clientWidth || 768);
 const height = computed(() => svgElement.value?.clientHeight || 768);
 const size = computed(() => {
-    const widthPercentage = 0.02;
+    const widthPercentage = window.innerWidth <= 768 ? 0.05 : 0.02;
     return Math.floor(width.value * widthPercentage);
 });
 </script>
