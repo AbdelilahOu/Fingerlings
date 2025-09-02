@@ -185,7 +185,7 @@ const projects = [
                 <div
                     class="corner-brackets-simple w-full relative group bg-neutral-800 text-white"
                 >
-                    <ClientOnly>
+                    <ClientOnly lazy>
                         <BackgroundGrid />
                     </ClientOnly>
                     <div class="space-y-2 relative z-10 p-[20px]">

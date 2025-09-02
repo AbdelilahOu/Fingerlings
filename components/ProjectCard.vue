@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
     <div class="corner-brackets-simple bg-neutral-800 group relative p-[20px]">
-        <ClientOnly>
+        <ClientOnly lazy>
             <BackgroundGrid />
         </ClientOnly>
 
