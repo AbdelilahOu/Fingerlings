@@ -11,9 +11,9 @@ defineProps<{
 </script>
 
 <template>
-    <div class="corner-brackets-simple bg-neutral-800 group relative p-[20px]">
-        <ClientOnly lazy>
-            <BackgroundGrid />
+    <div class="corner-brackets bg-neutral-800 group relative p-[20px]">
+        <ClientOnly>
+            <LazyBackgroundGrid />
         </ClientOnly>
 
         <article class="relative z-10">

@@ -16,104 +16,12 @@
 
 .corner-brackets {
     position: relative;
-}
-
-.corner-brackets::before,
-.corner-brackets::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
-    z-index: 10;
-}
-
-/* Top corners */
-.corner-brackets::before {
-    top: 0;
-    left: 0;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-}
-
-.corner-brackets::after {
-    top: 0;
-    right: 0;
-    border-top: 2px solid white;
-    border-right: 2px solid white;
-}
-
-/* Bottom corners using box-shadow trick */
-.corner-brackets {
-    box-shadow:
-        inset 0 -20px 0 -18px transparent,
-        inset -20px 0 0 -18px transparent;
-}
-
-.corner-brackets::before {
-    box-shadow:
-        0 calc(100vh - 20px) 0 0 transparent,
-        0 calc(100vh - 20px) 0 0 transparent;
-}
-
-/* Alternative approach using a more reliable method */
-.corner-brackets {
-    --bracket-size: 20px;
-    --bracket-width: 2px;
-    --bracket-color: white;
-}
-
-.corner-brackets::before {
-    background:
-        linear-gradient(
-            to right,
-            var(--bracket-color) var(--bracket-width),
-            transparent var(--bracket-width)
-        ),
-        linear-gradient(
-            to bottom,
-            var(--bracket-color) var(--bracket-width),
-            transparent var(--bracket-width)
-        );
-    background-size:
-        var(--bracket-size) var(--bracket-width),
-        var(--bracket-width) var(--bracket-size);
-    background-repeat: no-repeat;
-    background-position:
-        0 0,
-        0 0;
-}
-
-.corner-brackets::after {
-    background:
-        linear-gradient(
-            to left,
-            var(--bracket-color) var(--bracket-width),
-            transparent var(--bracket-width)
-        ),
-        linear-gradient(
-            to bottom,
-            var(--bracket-color) var(--bracket-width),
-            transparent var(--bracket-width)
-        );
-    background-size:
-        var(--bracket-size) var(--bracket-width),
-        var(--bracket-width) var(--bracket-size);
-    background-repeat: no-repeat;
-    background-position:
-        100% 0,
-        100% 0;
-}
-
-/* Simpler and more reliable version */
-.corner-brackets-simple {
-    position: relative;
-    --size: 20px;
+    --size: 13px;
     --width: 2px;
     --color: gray;
 }
 
-.corner-brackets-simple::before {
+.corner-brackets::before {
     content: "";
     position: absolute;
     top: 0;
