@@ -87,8 +87,15 @@ const frameworks = [
 ];
 const tools = ["Docker", "Git", "Github", "Postman"];
 
-// Projects data
 const projects = [
+    {
+        title: "DBMcp - Database MCP Server",
+        description:
+            "A database MCP server to connect to any PostgreSQL and MySQL connection and run queries. Explore databases instead of using a GUI, giving AI extra context to test and run queries.",
+        tech: ["Golang", "MCP", "PostgreSQL", "MySQL"],
+        web: "",
+        github: "https://github.com/AbdelilahOu/DBMcp",
+    },
     {
         title: "Mahalli",
         description:
@@ -121,38 +128,6 @@ const projects = [
         ],
         web: "https://case-ecommerce.vercel.app/",
         github: "https://github.com/AbdelilahOu/Case-ecommerce",
-    },
-    {
-        title: "Pet Setting App",
-        description:
-            "A friendly platform where pet owners can find trusted pet sitters in their area. Browse sitters on a map, chat with them, schedule visits, and share reviews. Perfect for both pet owners looking for care and sitters looking for work.",
-        tech: ["Vue.js", "Firebase", "Tailwindcss"],
-        web: "https://pets-app-sage.vercel.app/",
-        github: "",
-    },
-    {
-        title: "Wikipedia Proxy",
-        description:
-            "A Go-based tool I built for a coding challenge that sits between you and Wikipedia, tweaking the links you see as you browse. It was a fun way to explore how web proxies work.",
-        tech: ["Go"],
-        web: "",
-        github: "https://github.com/AbdelilahOu/Online-test",
-    },
-    {
-        title: "Go GraphQL api",
-        description:
-            "GoferQL API is a GraphQL server that provides a flexible API for managing posts, comments, users, categories, and tags. It uses SQLC for type-safe database operations and the graphql-go package for GraphQL implementation.",
-        tech: ["Go", "GraphQl"],
-        web: "",
-        github: "https://github.com/AbdelilahOu/GoferQl-api",
-    },
-    {
-        title: "Rusty School API",
-        description:
-            "A simple but reliable backend for managing school data, built with Rust. Handles things like student records and school tasks, with Google login to keep everything secure.",
-        tech: ["Rust", "Actix", "PostgreSQL", "Google Auth", "Docker"],
-        web: "",
-        github: "https://github.com/AbdelilahOu/Rusty-school",
     },
 ];
 </script>
