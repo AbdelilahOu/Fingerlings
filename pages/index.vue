@@ -87,7 +87,6 @@ const frameworks = [
 ];
 const tools = ["Docker", "Git", "Github", "Postman"];
 
-// Projects data
 const projects = [
     {
         title: "DBMcp - Database MCP Server",
