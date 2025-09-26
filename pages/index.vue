@@ -158,7 +158,7 @@ const projects = [
 </script>
 
 <template>
-    <div class="w-screen min-h-screen bg-[#0c0c0c] py-8 px-4">
+    <div class="w-screen min-h-screen bg-[#0d0d0d] py-8 px-4">
         <div class="w-full max-w-3xl space-y-8 m-auto">
             <!--  -->
             <section class="space-y-4">
@@ -183,7 +183,7 @@ const projects = [
                     <span class="text-accent">$</span> ls -contacts
                 </h2>
                 <div
-                    class="corner-brackets w-full relative group bg-neutral-800 text-white"
+                    class="corner-brackets w-full relative group bg-[#131313] text-white"
                 >
                     <ClientOnly>
                         <LazyBackgroundGrid />
@@ -251,7 +251,7 @@ const projects = [
                     <span class="text-accent">$</span> cat ./skills
                 </h2>
                 <div
-                    class="corner-brackets flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
+                    class="corner-brackets flex flex-wrap gap-[20px] bg-[#131313] text-white p-[20px] text-base"
                 >
                     <span
                         v-for="language in languages"
@@ -262,7 +262,7 @@ const projects = [
                     </span>
                 </div>
                 <div
-                    class="corner-brackets flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
+                    class="corner-brackets flex flex-wrap gap-[20px] bg-[#131313] text-white p-[20px] text-base"
                 >
                     <span
                         v-for="framework in frameworks"
@@ -273,7 +273,7 @@ const projects = [
                     </span>
                 </div>
                 <div
-                    class="corner-brackets flex flex-wrap gap-[20px] bg-neutral-800 text-white p-[20px] text-base"
+                    class="corner-brackets flex flex-wrap gap-[20px] bg-[#131313] text-white p-[20px] text-base"
                 >
                     <span
                         v-for="tool in tools"
@@ -290,7 +290,7 @@ const projects = [
                 <h2 class="text-2xl font-bold text-white">
                     <span class="text-accent">$</span> git log --stat
                 </h2>
-                <div class="corner-brackets bg-neutral-800 p-[20px]">
+                <div class="corner-brackets bg-[#131313] p-[20px]">
                     <p class="text-white mb-4">
                         Total Contributions in {{ new Date().getFullYear() }}:
                         <span class="font-semibold text-green-400">{{
