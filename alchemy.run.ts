@@ -21,7 +21,7 @@ export const server = await Worker("server", {
   entrypoint: "src/index.ts",
   compatibility: "node",
   bindings: {
-    CORS_ORIGIN: alchemy.env.CORS_ORIGIN,
+    CORS_ORIGINS: alchemy.env.CORS_ORIGINS,
     GH_TOKEN: alchemy.env.GH_TOKEN,
   },
   dev: {

@@ -35,7 +35,7 @@ npm run dev
 PUBLIC_SERVER_URL=http://localhost:3000
 
 # apps/server/.env
-CORS_ORIGIN=http://localhost:5173
+CORS_ORIGINS=http://localhost:5173
 GH_TOKEN=your_GH_TOKEN
 ```
 
