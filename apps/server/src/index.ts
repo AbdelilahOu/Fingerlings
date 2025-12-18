@@ -17,11 +17,12 @@ app.use(logger());
 app.use(
 	"/*",
 	cors({
-  	origin: (origin) => {
-      if (!env.CORS_ORIGINS) return "*";
-      const allowed = env.CORS_ORIGINS.split(",").map(o => o.trim());
-      return allowed.includes(origin) ? origin : null;
-    },
+  	// origin: (origin) => {
+   //    if (!env.CORS_ORIGINS) return "*";
+   //    const allowed = env.CORS_ORIGINS.split(",").map(o => o.trim());
+   //    return allowed.includes(origin) ? origin : null;
+   //  },
+    origin: env.CORS_ORIGINS.split(",").map(o => o.trim()),
   	allowMethods: ["GET", "POST", "OPTIONS"],
   	allowHeaders: ["Content-Type", "Authorization"],
   	credentials: true,
