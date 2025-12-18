@@ -37,10 +37,10 @@
 		{
 			title: 'Mahalli',
 			description:
-				'A web app that makes running your business easier. Keep track of inventory, manage client relationships, and create professional quotes and orders all in one place.',
-			tech: ['Nuxt3', 'Typescript', 'Tailwindcss', 'Golang', 'PostgreSQL', 'Gin', 'SQLC', 'Clerk'],
-			web: 'https://trymahalli.com',
-			github: ''
+				'A Desktop app that makes running your business easier. Keep track of inventory, manage client relationships, and create professional quotes and orders all in one place.',
+			tech: ['Nuxt3', 'Typescript', 'Tailwindcss', 'Tauri', 'Sqlite', 'Rust'],
+			web: 'https://mahalli-web.pages.dev/',
+			github: 'https://github.com/AbdelilahOu/Mahalli'
 		},
 		{
 			title: 'Cobracase E-commerce',
