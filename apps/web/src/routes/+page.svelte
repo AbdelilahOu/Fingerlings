@@ -7,7 +7,8 @@
 	import GithubGraph from '../components/GithubGraph.svelte';
 
 	const githubContributions = createQuery(orpc.githubContributions.queryOptions({
-	  retry: false
+     	retry: false,
+     	refetchOnWindowFocus: false,
 	}));
 
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];
