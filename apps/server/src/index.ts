@@ -9,6 +9,7 @@ import { appRouter } from "@portfolio/api/routers/index";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
+import { CORSPlugin } from "@orpc/server/plugins";
 
 const app = new Hono();
 
@@ -16,7 +17,11 @@ app.use(logger());
 app.use(
 	"/*",
 	cors({
-  	origin: env.CORS_ORIGINS.split(","),
+  	origin: (origin) => {
+      if (!env.CORS_ORIGINS) return "*";
+      const allowed = env.CORS_ORIGINS.split(",").map(o => o.trim());
+      return allowed.includes(origin) ? origin : null;
+    },
   	allowMethods: ["GET", "POST", "OPTIONS"],
   	allowHeaders: ["Content-Type", "Authorization"],
   	credentials: true,
@@ -37,7 +42,8 @@ export const apiHandler = new OpenAPIHandler(appRouter, {
 });
 
 export const rpcHandler = new RPCHandler(appRouter, {
-	interceptors: [
+	plugins: [new CORSPlugin()],
+  interceptors: [
 		onError((error) => {
 			console.error(error);
 		}),
@@ -69,7 +75,7 @@ app.use("/*", async (c, next) => {
 });
 
 app.get("/", (c) => {
-	return c.text(env.CORS_ORIGINS);
+	return c.text("OK");
 });
 
 export default app;
