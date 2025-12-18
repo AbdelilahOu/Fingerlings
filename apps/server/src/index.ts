@@ -9,7 +9,6 @@ import { appRouter } from "@portfolio/api/routers/index";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
-import { CORSPlugin } from "@orpc/server/plugins";
 
 const app = new Hono();
 
@@ -17,11 +16,6 @@ app.use(logger());
 app.use(
 	"/*",
 	cors({
-  	// origin: (origin) => {
-   //    if (!env.CORS_ORIGINS) return "*";
-   //    const allowed = env.CORS_ORIGINS.split(",").map(o => o.trim());
-   //    return allowed.includes(origin) ? origin : null;
-   //  },
     origin: env.CORS_ORIGINS.split(",").map(o => o.trim()),
   	allowMethods: ["GET", "POST", "OPTIONS"],
   	allowHeaders: ["Content-Type", "Authorization"],
