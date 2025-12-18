@@ -6,7 +6,9 @@
 	import ProjectCard from '../components/ProjectCard.svelte';
 	import GithubGraph from '../components/GithubGraph.svelte';
 
-	const githubContributions = createQuery(orpc.githubContributions.queryOptions());
+	const githubContributions = createQuery(orpc.githubContributions.queryOptions({
+	  retry: false
+	}));
 
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];
 	const frameworks = [
