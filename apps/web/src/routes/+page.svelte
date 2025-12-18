@@ -11,6 +11,11 @@
      	refetchOnWindowFocus: false,
 	}));
 
+	const title = 'Abdelilah Ouaadouch - Backend Developer';
+	const description = 'Backend Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
+	const url = 'https://ar7al.com';
+	const image = '/og.png';
+
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];
 	const frameworks = [
 		'Next.js',
@@ -52,6 +57,48 @@
 		}
 	];
 </script>
+
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta name="keywords" content="Go, Golang, Typescript, Rust, Backend Developer, Software Engineer, Web Development, API Development" />
+	<link rel="canonical" href={url} />
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={url} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={image} />
+	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
+	<meta property="og:locale" content="en" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={url} />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={image} />
+	<meta name="twitter:creator" content="@Abdelilah4dev" />
+
+	<!-- JSON-LD Structured Data -->
+	{@html `<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Abdelilah Ouaadouch",
+		"jobTitle": "Backend Developer",
+		"email": "mailto:abdelilah4dev@gmail.com",
+		"url": "${url}",
+		"sameAs": [
+			"https://www.linkedin.com/in/ar7al/",
+			"https://github.com/AbdelilahOu",
+			"https://x.com/Abdelilah4dev"
+		],
+		"knowsAbout": ["Go", "Golang", "Typescript", "Rust", "Backend Development", "API Development", "Next.js", "Hono.js", "Gin", "Docker"]
+	}
+	</script>`}
+</svelte:head>
 
 <div class="min-h-screen w-screen bg-[#0d0d0d] px-4 py-8">
 	<div class="m-auto w-full max-w-3xl space-y-8">
