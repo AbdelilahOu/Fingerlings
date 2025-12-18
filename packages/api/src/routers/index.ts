@@ -38,7 +38,7 @@ export const appRouter = {
 				headers: {
 					"Content-Type": "application/json",
 					Accept: "application/json",
-					Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+					Authorization: `Bearer ${env.GH_TOKEN}`,
 					"User-Agent": "portfolio-app",
 				},
 				body: JSON.stringify({

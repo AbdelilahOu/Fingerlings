@@ -36,7 +36,7 @@ PUBLIC_SERVER_URL=http://localhost:3000
 
 # apps/server/.env
 CORS_ORIGIN=http://localhost:5173
-GITHUB_TOKEN=your_github_token
+GH_TOKEN=your_GH_TOKEN
 ```
 
 ## Project Structure
