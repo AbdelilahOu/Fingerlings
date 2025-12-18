@@ -1,5 +1,49 @@
 @import 'tailwindcss';
 
+@theme {
+	--color-accent: #10b981;
+	--font-display: 'JetBrains Mono', monospace;
+	--font-mono: 'JetBrains Mono', monospace;
+}
+
 body {
-    @apply bg-neutral-950 text-neutral-100;
+	@apply bg-neutral-950 text-neutral-100;
+	font-family: 'JetBrains Mono', monospace;
+}
+
+.corner-brackets {
+	position: relative;
+	overflow: hidden;
+}
+
+.corner-brackets::before,
+.corner-brackets::after {
+	content: '';
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	border-color: #fff;
+	border-style: solid;
+	z-index: 20;
+}
+
+.corner-brackets::before {
+	top: 0;
+	left: 0;
+	border-width: 2px 0 0 2px;
+}
+
+.corner-brackets::after {
+	bottom: 0;
+	right: 0;
+	border-width: 0 2px 2px 0;
+}
+
+.scrollbar-hide {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
 }
