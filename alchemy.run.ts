@@ -13,7 +13,7 @@ export const web = await SvelteKit("web", {
   cwd: "apps/web",
   name: "personal-website",
   bindings: {
-    PUBLIC_SERVER_URL: alchemy.env.PUBLIC_SERVER_URL,
+    PUBLIC_SERVER_URL: alchemy.env.PUBLIC_SERVER_URL!,
   },
 });
 
@@ -23,8 +23,8 @@ export const server = await Worker("server", {
   entrypoint: "src/index.ts",
   compatibility: "node",
   bindings: {
-    CORS_ORIGINS: alchemy.env.CORS_ORIGINS,
-    GH_TOKEN: alchemy.env.GH_TOKEN,
+    CORS_ORIGINS: alchemy.env.CORS_ORIGINS!,
+    GH_TOKEN: alchemy.env.GH_TOKEN!,
   },
   dev: {
     port: 3000,
