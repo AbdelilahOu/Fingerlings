@@ -69,7 +69,7 @@ app.use("/*", async (c, next) => {
 });
 
 app.get("/", (c) => {
-	return c.text("OK");
+	return c.text(env.CORS_ORIGINS);
 });
 
 export default app;
