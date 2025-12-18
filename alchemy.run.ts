@@ -7,26 +7,26 @@ config({ path: "./.env" });
 config({ path: "./apps/web/.env" });
 config({ path: "./apps/server/.env" });
 
-const app = await alchemy("portfolio");
+const app = await alchemy("Personal-website");
 
 export const web = await SvelteKit("web", {
-	cwd: "apps/web",
-	bindings: {
-		PUBLIC_SERVER_URL: alchemy.env.PUBLIC_SERVER_URL,
-	},
+  cwd: "apps/web",
+  bindings: {
+    PUBLIC_SERVER_URL: alchemy.env.PUBLIC_SERVER_URL,
+  },
 });
 
 export const server = await Worker("server", {
-	cwd: "apps/server",
-	entrypoint: "src/index.ts",
-	compatibility: "node",
-	bindings: {
-		CORS_ORIGIN: alchemy.env.CORS_ORIGIN,
-		GITHUB_TOKEN: alchemy.env.GITHUB_TOKEN,
-	},
-	dev: {
-		port: 3000,
-	},
+  cwd: "apps/server",
+  entrypoint: "src/index.ts",
+  compatibility: "node",
+  bindings: {
+    CORS_ORIGIN: alchemy.env.CORS_ORIGIN,
+    GITHUB_TOKEN: alchemy.env.GITHUB_TOKEN,
+  },
+  dev: {
+    port: 3000,
+  },
 });
 
 console.log(`Web    -> ${web.url}`);
