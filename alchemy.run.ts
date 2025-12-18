@@ -1,6 +1,5 @@
 import alchemy from "alchemy";
-import { SvelteKit } from "alchemy/cloudflare";
-import { Worker } from "alchemy/cloudflare";
+import { SvelteKit, Worker } from "alchemy/cloudflare";
 import { config } from "dotenv";
 
 config({ path: "./.env" });
