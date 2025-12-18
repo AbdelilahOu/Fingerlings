@@ -30,3 +30,4 @@ jobs:
           PUBLIC_SERVER_URL: ${{ vars.PUBLIC_SERVER_URL }}
           CORS_ORIGIN: ${{ vars.CORS_ORIGIN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          ALCHEMY_CI_STATE_STORE_CHECK: "false"
