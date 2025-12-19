@@ -31,31 +31,31 @@
 	const tools = ['Docker', 'Git', 'Github', 'Postman'];
 
 	const projects = [
-		{
-			title: 'DBMcp - Database MCP Server',
-			description:
-				'A database MCP server to connect to any PostgreSQL and MySQL connection and run queries. Explore databases instead of using a GUI, giving AI extra context to test and run queries.',
-			tech: ['Golang', 'MCP', 'PostgreSQL', 'MySQL'],
-			web: '',
-			github: 'https://github.com/AbdelilahOu/DBMcp'
-		},
-		{
-			title: 'Mahalli',
-			description:
-				'A Desktop app that makes running your business easier. Keep track of inventory, manage client relationships, and create professional quotes and orders all in one place.',
-			tech: ['Nuxt3', 'Typescript', 'Tailwindcss', 'Tauri', 'Sqlite', 'Rust'],
-			web: 'https://mahalli-web.pages.dev/',
-			github: 'https://github.com/AbdelilahOu/Mahalli'
-		},
-		{
-			title: 'Cobracase E-commerce',
-			description:
-				"An online store where you can design your own unique phone cases. Upload photos, add text, and create cases that tell your story.",
-			tech: ['NextJs', 'Typescript', 'Tailwindcss', 'DrizzleOrm', 'PostgreSQL', 'Stripe', 'Kind'],
-			web: 'https://case-ecommerce.vercel.app/',
-			github: 'https://github.com/AbdelilahOu/Case-ecommerce'
-		}
-	];
+      {
+        title: 'DBMcp',
+        description:
+          'Golang MCP server for secure PostgreSQL/MySQL connections. Run queries and explore databases programmatically — great for AI-driven testing without a GUI.',
+        tech: ['Golang', 'MCP', 'PostgreSQL', 'MySQL'],
+        web: '',
+        github: 'https://github.com/AbdelilahOu/DBMcp'
+      },
+      {
+        title: 'Mahalli',
+        description:
+          'Tauri desktop app for small businesses. Manages inventory, customers, quotes, and orders using Nuxt 3, TypeScript, Rust, and SQLite.',
+        tech: ['Nuxt 3', 'TypeScript', 'Tailwind CSS', 'Tauri', 'SQLite', 'Rust'],
+        web: 'https://mahalli-web.pages.dev/',
+        github: 'https://github.com/AbdelilahOu/Mahalli'
+      },
+      {
+        title: 'Cobracase',
+        description:
+          'Custom phone case e-commerce store. Users upload images, add text, preview, and buy. Built with Next.js, PostgreSQL, Drizzle ORM, and Stripe.',
+        tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Drizzle ORM', 'PostgreSQL', 'Stripe', 'Kind'],
+        web: 'https://case-ecommerce.vercel.app/',
+        github: 'https://github.com/AbdelilahOu/Case-ecommerce'
+      }
+    ];
 </script>
 
 <svelte:head>
@@ -108,11 +108,9 @@
 				Abdelilah Ouaadouch
 			</h1>
 			<p class="text-base text-white md:text-lg">
-				Backend Developer specializing in Go (Golang) and Typescript
-				<br />
-				Backend developer with 2+ years of experience building performant and reliable systems. My primary
-				focus is backend development with Go (Gin) and Typescript, complemented by experience creating
-				frontends with Next.js.
+			Abdelilah Ouaadouch – Backend Developer
+		    <br/>
+			With expertise in Go (Golang), TypeScript, and Rust. 2+ years building performant APIs, full-stack apps, and desktop tools using Gin, Next.js, Tauri, and more.
 			</p>
 		</section>
 
