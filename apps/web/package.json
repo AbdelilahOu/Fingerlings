@@ -22,10 +22,10 @@
     "vite": "^7.1.2",
     "typescript": "^5",
     "@portfolio/config": "*",
-    "alchemy": "^0.81.2"
+    "alchemy": "^0.81.2",
+    "@sveltejs/adapter-cloudflare": "^7.2.4"
   },
   "dependencies": {
-    "@tanstack/svelte-form": "^1.19.2",
     "@orpc/tanstack-query": "^1.12.2",
     "@orpc/client": "^1.12.2",
     "@orpc/server": "^1.12.2",
