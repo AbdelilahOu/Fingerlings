@@ -28,6 +28,7 @@ jobs:
           PUBLIC_SERVER_URL: ${{ vars.PUBLIC_SERVER_URL }}
           CORS_ORIGINS: ${{ vars.CORS_ORIGINS }}
           # secrets
+          SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

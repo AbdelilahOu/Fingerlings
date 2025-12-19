@@ -6,7 +6,9 @@ config({ path: "./.env" });
 config({ path: "./apps/web/.env" });
 config({ path: "./apps/server/.env" });
 
-const app = await alchemy("Personal-website");
+const app = await alchemy("Personal-website", {
+  password: process.env.SECRET_PASSPHRASE!,
+});
 
 export const web = await SvelteKit("web", {
   cwd: "apps/web",
