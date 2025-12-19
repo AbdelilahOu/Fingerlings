@@ -12,32 +12,42 @@ body {
 }
 
 .corner-brackets {
-	position: relative;
-	overflow: hidden;
-}
-
-.corner-brackets::before,
-.corner-brackets::after {
-	content: '';
-	position: absolute;
-	width: 15px;
-	height: 15px;
-	border-color: #fff;
-	border-style: solid;
-	z-index: 20;
+    position: relative;
+    --size: 13px;
+    --width: 2px;
+    --color: gray;
 }
 
 .corner-brackets::before {
-	top: 0;
-	left: 0;
-	border-width: 2px 0 0 2px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        /* Top-left corner */
+        linear-gradient(var(--color), var(--color)) 0 0 / var(--size)
+            var(--width),
+        linear-gradient(var(--color), var(--color)) 0 0 / var(--width)
+            var(--size),
+        /* Top-right corner */ linear-gradient(var(--color), var(--color)) 100%
+            0 / var(--size) var(--width),
+        linear-gradient(var(--color), var(--color)) 100% 0 / var(--width)
+            var(--size),
+        /* Bottom-left corner */ linear-gradient(var(--color), var(--color)) 0
+            100% / var(--size) var(--width),
+        linear-gradient(var(--color), var(--color)) 0 100% / var(--width)
+            var(--size),
+        /* Bottom-right corner */ linear-gradient(var(--color), var(--color))
+            100% 100% / var(--size) var(--width),
+        linear-gradient(var(--color), var(--color)) 100% 100% / var(--width)
+            var(--size);
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10;
 }
 
-.corner-brackets::after {
-	bottom: 0;
-	right: 0;
-	border-width: 0 2px 2px 0;
-}
 
 .scrollbar-hide {
 	-ms-overflow-style: none;
