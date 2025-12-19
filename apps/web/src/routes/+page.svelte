@@ -108,7 +108,7 @@
 				Abdelilah Ouaadouch
 			</h1>
 			<p class="text-base text-white md:text-lg">
-			Abdelilah Ouaadouch – Backend Developer
+			Fullstack Developer
 		    <br/>
 			With expertise in Go (Golang), TypeScript, and Rust. 2+ years building performant APIs, full-stack apps, and desktop tools using Gin, Next.js, Tauri, and more.
 			</p>
