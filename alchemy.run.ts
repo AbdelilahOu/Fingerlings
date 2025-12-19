@@ -25,7 +25,7 @@ export const server = await Worker("server", {
   compatibility: "node",
   bindings: {
     CORS_ORIGINS: alchemy.env.CORS_ORIGINS!,
-    GH_TOKEN: alchemy.env.GH_TOKEN!,
+    GH_TOKEN: alchemy.secret(process.env.GH_TOKEN!),
   },
   dev: {
     port: 3000,
