@@ -1,59 +1,53 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-	--color-accent: #10b981;
-	--font-display: 'JetBrains Mono', monospace;
-	--font-mono: 'JetBrains Mono', monospace;
+  --color-accent: #10b981;
+  --font-display: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 body {
-	@apply bg-neutral-950 text-neutral-100;
-	font-family: 'JetBrains Mono', monospace;
+  @apply bg-neutral-950 text-neutral-100;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .corner-brackets {
-    position: relative;
-    --size: 13px;
-    --width: 2px;
-    --color: gray;
+  position: relative;
+  --size: 13px;
+  --width: 2px;
+  --color: gray;
 }
 
 .corner-brackets::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
         /* Top-left corner */
-        linear-gradient(var(--color), var(--color)) 0 0 / var(--size)
-            var(--width),
-        linear-gradient(var(--color), var(--color)) 0 0 / var(--width)
-            var(--size),
-        /* Top-right corner */ linear-gradient(var(--color), var(--color)) 100%
-            0 / var(--size) var(--width),
-        linear-gradient(var(--color), var(--color)) 100% 0 / var(--width)
-            var(--size),
-        /* Bottom-left corner */ linear-gradient(var(--color), var(--color)) 0
-            100% / var(--size) var(--width),
-        linear-gradient(var(--color), var(--color)) 0 100% / var(--width)
-            var(--size),
-        /* Bottom-right corner */ linear-gradient(var(--color), var(--color))
-            100% 100% / var(--size) var(--width),
-        linear-gradient(var(--color), var(--color)) 100% 100% / var(--width)
-            var(--size);
-    background-repeat: no-repeat;
-    pointer-events: none;
-    z-index: 10;
+    linear-gradient(var(--color), var(--color)) 0 0 / var(--size) var(--width),
+    linear-gradient(var(--color), var(--color)) 0 0 / var(--width) var(--size),
+    /* Top-right corner */ linear-gradient(var(--color), var(--color)) 100% 0 / var(--size)
+      var(--width),
+    linear-gradient(var(--color), var(--color)) 100% 0 / var(--width) var(--size),
+    /* Bottom-left corner */ linear-gradient(var(--color), var(--color)) 0 100% / var(--size)
+      var(--width),
+    linear-gradient(var(--color), var(--color)) 0 100% / var(--width) var(--size),
+    /* Bottom-right corner */ linear-gradient(var(--color), var(--color)) 100% 100% / var(--size)
+      var(--width),
+    linear-gradient(var(--color), var(--color)) 100% 100% / var(--width) var(--size);
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 10;
 }
 
-
 .scrollbar-hide {
-	-ms-overflow-style: none;
-	scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-	display: none;
+  display: none;
 }

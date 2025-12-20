@@ -1,14 +1,14 @@
 import type { Context as HonoContext } from "hono";
 
 export type CreateContextOptions = {
-	context: HonoContext;
+  context: HonoContext;
 };
 
 export async function createContext({ context }: CreateContextOptions) {
-	return {
-		session: null,
-		honoContext: context,
-	};
+  return {
+    session: null,
+    honoContext: context,
+  };
 }
 
 export type Context = Awaited<ReturnType<typeof createContext>>;

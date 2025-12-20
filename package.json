@@ -1,13 +1,15 @@
 {
   "name": "portfolio",
   "private": true,
-  "type": "module",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
+  "type": "module",
   "scripts": {
     "check": "oxlint",
+    "fmt": "oxfmt --write .",
+    "fmt:check": "oxfmt --check .",
     "dev": "alchemy dev",
     "build": "turbo build",
     "check-types": "turbo check-types",
@@ -22,12 +24,13 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
-    "turbo": "^2.6.3",
-    "oxlint": "^1.32.0",
-    "typescript": "^5",
+    "@cloudflare/workers-types": "^4.20251213.0",
     "@types/node": "^22.13.11",
     "alchemy": "^0.81.2",
-    "@cloudflare/workers-types": "^4.20251213.0"
+    "oxfmt": "^0.19.0",
+    "oxlint": "^1.32.0",
+    "turbo": "^2.6.3",
+    "typescript": "^5"
   },
   "packageManager": "npm@10.5.2"
 }

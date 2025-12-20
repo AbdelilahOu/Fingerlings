@@ -1,7 +1,7 @@
 {
   "name": "server",
-  "main": "src/index.ts",
   "type": "module",
+  "main": "src/index.ts",
   "scripts": {
     "build": "tsdown",
     "check-types": "tsc -b",
@@ -11,21 +11,21 @@
     "destroy": "alchemy destroy"
   },
   "dependencies": {
-    "hono": "^4.8.2",
-    "@orpc/server": "^1.12.2",
     "@orpc/openapi": "^1.12.2",
+    "@orpc/server": "^1.12.2",
     "@orpc/zod": "^1.12.2",
+    "@portfolio/api": "*",
     "dotenv": "^17.2.2",
-    "zod": "^4.1.13",
-    "@portfolio/api": "*"
+    "hono": "^4.8.2",
+    "zod": "^4.1.13"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "tsdown": "^0.16.5",
+    "@cloudflare/workers-types": "^4.20251213.0",
     "@portfolio/config": "*",
-    "alchemy": "^0.81.2",
-    "wrangler": "^4.54.0",
     "@types/node": "^22.13.11",
-    "@cloudflare/workers-types": "^4.20251213.0"
+    "alchemy": "^0.81.2",
+    "tsdown": "^0.16.5",
+    "typescript": "^5",
+    "wrangler": "^4.54.0"
   }
 }

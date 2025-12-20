@@ -9,13 +9,8 @@
   "orm": "none",
   "backend": "hono",
   "runtime": "workers",
-  "frontend": [
-    "svelte"
-  ],
-  "addons": [
-    "oxlint",
-    "turborepo"
-  ],
+  "frontend": ["svelte"],
+  "addons": ["oxlint", "turborepo"],
   "examples": [],
   "auth": "none",
   "payments": "none",
@@ -23,5 +18,5 @@
   "dbSetup": "none",
   "api": "orpc",
   "webDeploy": "alchemy",
-  "serverDeploy": "alchemy"
+  "serverDeploy": "alchemy",
 }

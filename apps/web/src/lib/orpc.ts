@@ -6,15 +6,15 @@ import { QueryCache, QueryClient } from "@tanstack/svelte-query";
 import type { AppRouterClient } from "@portfolio/api/routers/index";
 
 export const queryClient = new QueryClient({
-	queryCache: new QueryCache({
-		onError: (error) => {
-			console.error(`Error: ${error.message}`);
-		},
-	}),
+  queryCache: new QueryCache({
+    onError: (error) => {
+      console.error(`Error: ${error.message}`);
+    },
+  }),
 });
 
 export const link = new RPCLink({
-	url: `${PUBLIC_SERVER_URL}/rpc`,
+  url: `${PUBLIC_SERVER_URL}/rpc`,
 });
 
 export const client: AppRouterClient = createORPCClient(link);
