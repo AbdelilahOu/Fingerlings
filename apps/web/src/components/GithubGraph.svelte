@@ -45,6 +45,7 @@
 	}
 
 	const dates = getDatesInYear(year);
+	// 0 = Empty, 4 = Max
 	const contributionLevels = [0, 1, 2, 3, 4];
 	const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -76,13 +77,18 @@
 		return weeksArray;
 	});
 
+	// --- COLOR LOGIC CHANGED HERE ---
 	function getTileColor(contributions: number): string {
-		if (contributions === -1) return 'bg-neutral-950';
-		if (contributions === 0) return 'bg-neutral-950';
-		if (contributions <= 2) return 'bg-emerald-900';
-		if (contributions <= 4) return 'bg-emerald-700';
-		if (contributions <= 6) return 'bg-emerald-500';
-		return 'bg-emerald-300';
+		// Future dates
+		if (contributions === -1) return 'bg-neutral-900/50'; 
+		// No contributions
+		if (contributions === 0) return 'bg-neutral-900';
+		
+		// Activity Levels
+		if (contributions <= 2) return 'bg-slate-800'; // Level 1
+		if (contributions <= 4) return 'bg-slate-600'; // Level 2
+		if (contributions <= 6) return 'bg-slate-400'; // Level 3
+		return 'bg-white';                             // Level 4 (Max)
 	}
 
 	function getColorClass(level: number): string {
@@ -90,15 +96,15 @@
 			case 0:
 				return 'bg-neutral-900';
 			case 1:
-				return 'bg-emerald-900';
+				return 'bg-slate-800';
 			case 2:
-				return 'bg-emerald-700';
+				return 'bg-slate-600';
 			case 3:
-				return 'bg-emerald-500';
+				return 'bg-slate-400';
 			case 4:
-				return 'bg-emerald-300';
+				return 'bg-white';
 			default:
-				return 'bg-gray-800';
+				return 'bg-neutral-900';
 		}
 	}
 
@@ -114,38 +120,45 @@
 	<div class="flex max-w-3xl overflow-hidden">
 		<div class="w-10 pr-2 pt-5">
 			<div class="h-5"></div>
-			<div class="h-5 text-center text-xs leading-6 text-gray-400">Mon</div>
+			<div class="h-5 text-center text-xs leading-6 text-slate-500">Mon</div>
 			<div class="h-5"></div>
-			<div class="h-5 text-center text-xs leading-6 text-gray-400">Wed</div>
+			<div class="h-5 text-center text-xs leading-6 text-slate-500">Wed</div>
 			<div class="h-5"></div>
-			<div class="h-5 text-center text-xs leading-6 text-gray-400">Fri</div>
+			<div class="h-5 text-center text-xs leading-6 text-slate-500">Fri</div>
 		</div>
+
 		<div class="scrollbar-hide flex w-full overflow-x-auto">
 			<div class="relative mt-5 flex gap-1">
-				<div class="absolute -mt-5 flex w-full justify-around gap-1 text-gray-400">
+				<div class="absolute -mt-5 flex w-full justify-around gap-1 text-slate-400">
 					{#each monthLabels as month}
 						<div class="text-xs">{month}</div>
 					{/each}
 				</div>
+				
 				{#each weeks as week, weekIndex}
 					<div class="w-4" class:mt-auto={weekIndex === 0}>
 						{#each week as day}
-							<div class="my-1 size-4 {getTileColor(day.contributions)}" title={getTooltip(day)}></div>
+							<div 
+								class="my-1 size-4 rounded-sm {getTileColor(day.contributions)}" 
+								title={getTooltip(day)}
+							></div>
 						{/each}
 					</div>
 				{/each}
 			</div>
 		</div>
 	</div>
-	<div class="mt-2 flex justify-end gap-2 text-xs text-gray-400">
-		<div class="flex items-center">
-			<span class="mr-1">Less</span>
-			<div class="flex">
+
+	<div class="mt-2 flex justify-end gap-2 text-xs text-slate-400">
+		<div class="flex items-center gap-1">
+			<span>Less</span>
+			<div class="flex gap-1">
 				{#each contributionLevels as level}
-					<div class="mx-0.5 h-4 w-4 {getColorClass(level)}"></div>
+					<div class="h-4 w-4 rounded-sm {getColorClass(level)}"></div>
 				{/each}
 			</div>
-			<span class="ml-1">More</span>
+			<span>More</span>
 		</div>
 	</div>
 </div>
+
