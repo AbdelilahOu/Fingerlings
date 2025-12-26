@@ -45,7 +45,7 @@ export const appRouter = {
           query: `
 						query ($username: String!) {
 							user(login: $username) {
-								contributionsCollection(from: "${currYr}-01-01T00:00:00", to: "${currYr}-12-01T00:00:00") {
+								contributionsCollection(from: "${currYr}-01-01T00:00:00", to: "${currYr}-12-31T23:59:59") {
 									contributionCalendar {
 										totalContributions
 										weeks {
