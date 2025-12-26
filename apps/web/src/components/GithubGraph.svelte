@@ -45,7 +45,6 @@
 	}
 
 	const dates = getDatesInYear(year);
-	// 0 = Empty, 4 = Max
 	const contributionLevels = [0, 1, 2, 3, 4];
 	const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -77,34 +76,27 @@
 		return weeksArray;
 	});
 
-	// --- COLOR LOGIC CHANGED HERE ---
 	function getTileColor(contributions: number): string {
 		// Future dates
 		if (contributions === -1) return 'bg-neutral-900/50'; 
 		// No contributions
 		if (contributions === 0) return 'bg-neutral-900';
 		
-		// Activity Levels
-		if (contributions <= 2) return 'bg-slate-800'; // Level 1
-		if (contributions <= 4) return 'bg-slate-600'; // Level 2
-		if (contributions <= 6) return 'bg-slate-400'; // Level 3
-		return 'bg-white';                             // Level 4 (Max)
+		// Activity Levels (Slate -> White)
+		if (contributions <= 2) return 'bg-slate-800'; 
+		if (contributions <= 4) return 'bg-slate-600'; 
+		if (contributions <= 6) return 'bg-slate-400'; 
+		return 'bg-white';
 	}
 
 	function getColorClass(level: number): string {
 		switch (level) {
-			case 0:
-				return 'bg-neutral-900';
-			case 1:
-				return 'bg-slate-800';
-			case 2:
-				return 'bg-slate-600';
-			case 3:
-				return 'bg-slate-400';
-			case 4:
-				return 'bg-white';
-			default:
-				return 'bg-neutral-900';
+			case 0: return 'bg-neutral-900';
+			case 1: return 'bg-slate-800';
+			case 2: return 'bg-slate-600';
+			case 3: return 'bg-slate-400';
+			case 4: return 'bg-white';
+			default: return 'bg-neutral-900';
 		}
 	}
 
@@ -139,7 +131,7 @@
 					<div class="w-4" class:mt-auto={weekIndex === 0}>
 						{#each week as day}
 							<div 
-								class="my-1 size-4 rounded-sm {getTileColor(day.contributions)}" 
+								class="my-1 size-4 {getTileColor(day.contributions)}" 
 								title={getTooltip(day)}
 							></div>
 						{/each}
@@ -154,11 +146,11 @@
 			<span>Less</span>
 			<div class="flex gap-1">
 				{#each contributionLevels as level}
-					<div class="h-4 w-4 rounded-sm {getColorClass(level)}"></div>
+					<div class="h-4 w-4 {getColorClass(level)}"></div>
 				{/each}
 			</div>
 			<span>More</span>
 		</div>
 	</div>
 </div>
-
+ 
