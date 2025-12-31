@@ -18,6 +18,7 @@
 	}
 
 	let { data }: Props = $props();
+	let scrollContainer: HTMLDivElement | null = null;
 
 	const today = new Date();
 	const year = today.getFullYear();
@@ -76,6 +77,32 @@
 		return weeksArray;
 	});
 
+	function centerCurrentWeek(): void {
+		if (!scrollContainer) return;
+		const todayIndex = dates.findIndex(
+			(date) => date.toISOString().split('T')[0] === toDateString(today)
+		);
+		if (todayIndex === -1) return;
+
+		let weekIndex = 0;
+		for (let i = 0; i <= todayIndex; i += 1) {
+			if (i === 0 || dates[i].getUTCDay() === 0) weekIndex += 1;
+		}
+		weekIndex = Math.max(0, weekIndex - 1);
+
+		const weekColumn = scrollContainer.querySelectorAll<HTMLDivElement>('.gh-week');
+		const target = weekColumn[weekIndex];
+		if (!target) return;
+
+		const containerWidth = scrollContainer.clientWidth;
+		const targetCenter = target.offsetLeft + target.clientWidth / 2;
+		scrollContainer.scrollLeft = Math.max(0, targetCenter - containerWidth / 2);
+	}
+
+	$effect(() => {
+		centerCurrentWeek();
+	});
+
 	function getTileColor(contributions: number): string {
 		// Future dates
 		if (contributions === -1) return 'bg-neutral-900/50'; 
@@ -119,7 +146,7 @@
 			<div class="h-5 text-center text-xs leading-6 text-slate-500">Fri</div>
 		</div>
 
-		<div class="scrollbar-hide flex w-full overflow-x-auto">
+		<div class="scrollbar-hide flex w-full overflow-x-auto" bind:this={scrollContainer}>
 			<div class="relative mt-5 flex gap-1">
 				<div class="absolute -mt-5 flex w-full justify-around gap-1 text-slate-400">
 					{#each monthLabels as month}
@@ -128,7 +155,7 @@
 				</div>
 				
 				{#each weeks as week, weekIndex}
-					<div class="w-4" class:mt-auto={weekIndex === 0}>
+					<div class="gh-week w-4" class:mt-auto={weekIndex === 0}>
 						{#each week as day}
 							<div 
 								class="my-1 size-4 {getTileColor(day.contributions)}" 
