@@ -11,8 +11,8 @@
      	refetchOnWindowFocus: false,
 	}));
 
-	const title = 'Abdelilah Ouaadouch - Backend Developer';
-	const description = 'Backend Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
+	const title = 'Abdelilah Ouaadouch - Fullstack Developer';
+	const description = 'Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
 	const url = 'https://ar7al.com';
 	const image = '/og.png';
 
@@ -61,7 +61,7 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description} />
-	<meta name="keywords" content="Go, Golang, Typescript, Rust, Backend Developer, Software Engineer, Web Development, API Development" />
+	<meta name="keywords" content="Go, Golang, Typescript, Rust, Fullstack Developer, Software Engineer, Web Development, API Development" />
 	<link rel="canonical" href={url} />
 
 	<!-- Open Graph -->
@@ -87,7 +87,7 @@
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Abdelilah Ouaadouch",
-		"jobTitle": "Backend Developer",
+		"jobTitle": "Fullstack Developer",
 		"email": "mailto:abdelilah4dev@gmail.com",
 		"url": "${url}",
 		"sameAs": [
@@ -95,7 +95,7 @@
 			"https://github.com/AbdelilahOu",
 			"https://x.com/Abdelilah4dev"
 		],
-		"knowsAbout": ["Go", "Golang", "Typescript", "Rust", "Backend Development", "API Development", "Next.js", "Hono.js", "Gin", "Docker"]
+		"knowsAbout": ["Go", "Golang", "Typescript", "Rust", "Fullstack Development", "API Development", "Next.js", "Hono.js", "Gin", "Docker"]
 	}
 	</script>`}
 </svelte:head>
