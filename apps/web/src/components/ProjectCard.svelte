@@ -42,11 +42,12 @@
 		<div class="mt-3 flex items-center gap-5">
 			<a
 				href="/projects/{project.slug}"
-				class="text-green-400 hover:text-green-300 transition-colors"
+				class="text-blue-400 hover:text-blue-300 transition-colors"
 			>
 				Read More
 			</a>
 			{#if project.github}
+			-
 				<a
 					href={project.github}
 					target="_blank"
@@ -57,6 +58,7 @@
 				</a>
 			{/if}
 			{#if project.web}
+			-
 				<a
 					href={project.web}
 					target="_blank"
