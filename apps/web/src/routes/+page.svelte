@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { orpc } from '$lib/orpc';
+	import { projects } from '$lib/projects';
 	import { createQuery } from '@tanstack/svelte-query';
 	import BackgroundGrid from '../components/BackgroundGrid.svelte';
 	import ProjectCard from '../components/ProjectCard.svelte';
@@ -29,39 +30,12 @@
 		'Tailwindcss'
 	];
 	const tools = ['Docker', 'Git', 'Github', 'Postman'];
-
-	const projects = [
-      {
-        title: 'DBMcp',
-        description:
-          'Golang MCP server for secure PostgreSQL/MySQL connections. Run queries and explore databases programmatically — great for AI-driven testing without a GUI.',
-        tech: ['Golang', 'MCP', 'PostgreSQL', 'MySQL'],
-        web: '',
-        github: 'https://github.com/AbdelilahOu/DBMcp'
-      },
-      {
-        title: 'Mahalli',
-        description:
-          'Tauri desktop app for small businesses. Manages inventory, customers, quotes, and orders using Nuxt 3, TypeScript, Rust, and SQLite.',
-        tech: ['Nuxt 3', 'TypeScript', 'Tailwind CSS', 'Tauri', 'SQLite', 'Rust'],
-        web: 'https://mahalli-web.pages.dev/',
-        github: 'https://github.com/AbdelilahOu/Mahalli'
-      },
-      {
-        title: 'Cobracase',
-        description:
-          'Custom phone case e-commerce store. Users upload images, add text, preview, and buy. Built with Next.js, PostgreSQL, Drizzle ORM, and Stripe.',
-        tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Drizzle ORM', 'PostgreSQL', 'Stripe', 'Kind'],
-        web: 'https://case-ecommerce.vercel.app/',
-        github: 'https://github.com/AbdelilahOu/Case-ecommerce'
-      }
-    ];
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description} />
-	<meta name="keywords" content="Go, Golang, Typescript, Rust, Fullstack Developer, Software Engineer, Web Development, API Development" />
+	<meta name="keywords" content="Go, Golang, Typescript, Rust, Fullstack Developer, Software Engineer, Web Development, API Development, Portfolio, Hire Developer, Backend Developer, Frontend Developer, Abdelilah Ouaadouch" />
 	<link rel="canonical" href={url} />
 
 	<!-- Open Graph -->
@@ -81,21 +55,39 @@
 	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
-	<!-- JSON-LD Structured Data -->
+	<!-- JSON-LD Structured Data - Person -->
 	{@html `<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Abdelilah Ouaadouch",
+		"alternateName": "Ar7al",
 		"jobTitle": "Fullstack Developer",
+		"description": "Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.",
 		"email": "mailto:abdelilah4dev@gmail.com",
 		"url": "${url}",
+		"image": "${url}/og.png",
 		"sameAs": [
 			"https://www.linkedin.com/in/ar7al/",
 			"https://github.com/AbdelilahOu",
 			"https://x.com/Abdelilah4dev"
 		],
-		"knowsAbout": ["Go", "Golang", "Typescript", "Rust", "Fullstack Development", "API Development", "Next.js", "Hono.js", "Gin", "Docker"]
+		"knowsAbout": ["Go", "Golang", "Typescript", "Rust", "Fullstack Development", "API Development", "Next.js", "Hono.js", "Gin", "Docker", "Tauri", "PostgreSQL", "MySQL"]
+	}
+	</script>`}
+
+	<!-- JSON-LD Structured Data - WebSite -->
+	{@html `<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+		"url": "${url}",
+		"description": "Portfolio of Abdelilah Ouaadouch, a Fullstack Developer specializing in Go, Rust, and TypeScript.",
+		"author": {
+			"@type": "Person",
+			"name": "Abdelilah Ouaadouch"
+		}
 	}
 	</script>`}
 </svelte:head>
@@ -105,12 +97,10 @@
 		<!-- Hero Section -->
 		<section class="space-y-4">
 			<h1 class="font-display text-3xl font-semibold uppercase text-white md:text-4xl">
-				Abdelilah Ouaadouch
+				Abdelilah Ouaadouch <span class="block text-xl md:text-2xl font-normal normal-case text-gray-300">Fullstack Developer</span>
 			</h1>
 			<p class="text-base text-white md:text-lg">
-			Fullstack Developer
-		    <br/>
-			With expertise in Go (Golang), TypeScript, and Rust. 2+ years building performant APIs, full-stack apps, and desktop tools using Gin, Next.js, Tauri, and more.
+				With expertise in Go (Golang), TypeScript, and Rust. 2+ years building performant APIs, full-stack apps, and desktop tools using Gin, Next.js, Tauri, and more.
 			</p>
 		</section>
 
@@ -163,6 +153,14 @@
 					>
 						<span class="underline underline-offset-2">@Abdelilah4dev</span>
 						<span class="inline-block">Twitter/x</span>
+					</a>
+					<a
+						href="/blog"
+						title="Technical Blog"
+						class="flex justify-between border-white text-base hover:border-l hover:pl-2"
+					>
+						<span class="underline underline-offset-2">Technical Articles</span>
+						<span class="inline-block">Blog</span>
 					</a>
 				</div>
 			</div>

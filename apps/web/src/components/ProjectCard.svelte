@@ -3,6 +3,7 @@
 	import BackgroundGrid from './BackgroundGrid.svelte';
 
 	interface Project {
+		slug: string;
 		title: string;
 		description: string;
 		tech: string[];
@@ -23,9 +24,11 @@
 	{/if}
 
 	<article class="relative z-10">
-		<h3 class="block w-full text-xl font-medium text-white">
-			{project.title}
-		</h3>
+		<a href="/projects/{project.slug}" class="block">
+			<h3 class="text-xl font-medium text-white hover:text-gray-300 transition-colors">
+				{project.title}
+			</h3>
+		</a>
 		<p class="mt-2 block text-lg text-gray-200">
 			{project.description}
 		</p>
@@ -36,15 +39,21 @@
 				</span>
 			{/each}
 		</div>
-		<div class="space-x-5">
+		<div class="mt-3 flex items-center gap-5">
+			<a
+				href="/projects/{project.slug}"
+				class="text-green-400 hover:text-green-300 transition-colors"
+			>
+				Read More
+			</a>
 			{#if project.github}
 				<a
 					href={project.github}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="mt-3 inline-block text-blue-400 hover:text-blue-300"
+					class="text-blue-400 hover:text-blue-300 transition-colors"
 				>
-					View on GitHub
+					GitHub
 				</a>
 			{/if}
 			{#if project.web}
@@ -52,9 +61,9 @@
 					href={project.web}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="mt-3 inline-block text-blue-400 hover:text-blue-300"
+					class="text-blue-400 hover:text-blue-300 transition-colors"
 				>
-					View Live
+					Live Demo
 				</a>
 			{/if}
 		</div>
