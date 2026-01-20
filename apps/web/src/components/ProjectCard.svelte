@@ -24,7 +24,7 @@
 	{/if}
 
 	<article class="relative z-10">
-		<a href="/projects/{project.slug}" class="block">
+		<a href="/projects/{project.slug}" class="block" title="{project.title} - {project.description}">
 			<h3 class="text-xl font-medium text-white hover:text-gray-300 transition-colors">
 				{project.title}
 			</h3>
@@ -42,6 +42,7 @@
 		<div class="mt-3 flex items-center gap-5">
 			<a
 				href="/projects/{project.slug}"
+				title="Read more about {project.title}"
 				class="text-blue-400 hover:text-blue-300 transition-colors"
 			>
 				Read More
@@ -52,6 +53,7 @@
 					href={project.github}
 					target="_blank"
 					rel="noopener noreferrer"
+					title="View {project.title} source code on GitHub"
 					class="text-blue-400 hover:text-blue-300 transition-colors"
 				>
 					GitHub
@@ -63,6 +65,7 @@
 					href={project.web}
 					target="_blank"
 					rel="noopener noreferrer"
+					title="View {project.title} live demo"
 					class="text-blue-400 hover:text-blue-300 transition-colors"
 				>
 					Live Demo
