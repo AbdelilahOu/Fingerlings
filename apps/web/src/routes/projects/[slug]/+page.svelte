@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import BackgroundGrid from '../../../components/BackgroundGrid.svelte';
-	import type { PageData } from './$types';
 
-	let { data }: { data: PageData } = $props();
+	let { data } = $props();
 
-	const project = data.project;
-	const url = `https://ar7al.com/projects/${project.slug}`;
-	const title = `${project.title} - Abdelilah Ouaadouch`;
-	const description = project.description;
+	let project = $derived(data.project);
+	let url = $derived(`https://ar7al.com/projects/${project.slug}`);
+	let title = $derived(`${project.title} - Abdelilah Ouaadouch`);
+	let description = $derived(project.description);
 </script>
 
 <svelte:head>

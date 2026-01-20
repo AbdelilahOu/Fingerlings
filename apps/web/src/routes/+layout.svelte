@@ -4,7 +4,6 @@
 	import { queryClient } from '$lib/orpc';
 
 	let { children } = $props();
-	export const ssr = true;
 </script>
 
 <QueryClientProvider client={queryClient}>
