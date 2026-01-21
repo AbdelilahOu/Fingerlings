@@ -39,13 +39,13 @@
 				</span>
 			{/each}
 		</div>
-		<div class="mt-3 flex items-center gap-5">
+		<div class="mt-3 flex items-center gap-2 md:gap-5">
 			<a
 				href="/projects/{project.slug}"
 				title="{project.title} project overview"
-				class="text-blue-400 hover:text-blue-300 transition-colors"
+				class="text-blue-400 hover:text-blue-300 transition-colors text-sm md:text-base"
 			>
-				Project overview
+				Overview
 			</a>
 			{#if project.github}
 			-
@@ -54,7 +54,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					title="View {project.title} source code on GitHub"
-					class="text-blue-400 hover:text-blue-300 transition-colors"
+					class="text-blue-400 hover:text-blue-300 transition-colors text-sm md:text-base"
 				>
 					GitHub
 				</a>
@@ -66,7 +66,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					title="View {project.title} live demo"
-					class="text-blue-400 hover:text-blue-300 transition-colors"
+					class="text-blue-400 hover:text-blue-300 transition-colors text-sm md:text-base"
 				>
 					Live Demo
 				</a>
