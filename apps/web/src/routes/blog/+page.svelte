@@ -77,7 +77,7 @@
 					Technical Articles & Tutorials
 				</span>
 			</h1>
-			<p class="text-lg text-gray-300">
+			<p class="text-base md:text-lg text-gray-300">
 				Thoughts on Go, Rust, TypeScript, and building software that works. Deep dives into
 				technical challenges, tutorials, and lessons learned from real projects.
 			</p>
@@ -85,7 +85,7 @@
 
 		<!-- Blog Posts -->
 		<section class="space-y-4">
-			<h2 class="text-2xl font-bold text-white">
+			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> ls ./posts
 			</h2>
 
@@ -94,7 +94,7 @@
 					{#each posts as post}
 						<article class="corner-brackets bg-[#131313] p-5 transition-colors hover:bg-[#1a1a1a]">
 							<a href="/blog/{post.slug}" class="block">
-								<h3 class="text-xl font-medium text-white">{post.title}</h3>
+								<h3 class="text-lg md:text-xl font-medium text-white">{post.title}</h3>
 								<p class="mt-2 text-gray-400">{post.excerpt}</p>
 								<div class="mt-3 flex items-center justify-between">
 									<div class="flex gap-2">
@@ -124,7 +124,7 @@
 
 		<!-- Topics I Write About -->
 		<section class="space-y-4">
-			<h2 class="text-2xl font-bold text-white">
+			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> cat ./topics
 			</h2>
 			<div class="corner-brackets bg-[#131313] p-5">

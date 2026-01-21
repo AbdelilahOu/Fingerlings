@@ -25,11 +25,11 @@
 
 	<article class="relative z-10">
 		<a href="/projects/{project.slug}" class="block" title="{project.title} - {project.description}">
-			<h3 class="text-xl font-medium text-white hover:text-gray-300 transition-colors">
+			<h3 class="text-lg md:text-xl font-medium text-white hover:text-gray-300 transition-colors">
 				{project.title}
 			</h3>
 		</a>
-		<p class="mt-2 block text-lg text-gray-200">
+		<p class="mt-2 block text-base md:text-lg text-gray-200">
 			{project.description}
 		</p>
 		<div class="mt-3 flex flex-wrap gap-2">
@@ -42,10 +42,10 @@
 		<div class="mt-3 flex items-center gap-5">
 			<a
 				href="/projects/{project.slug}"
-				title="Read more about {project.title}"
+				title="{project.title} project overview"
 				class="text-blue-400 hover:text-blue-300 transition-colors"
 			>
-				Read More
+				Project overview
 			</a>
 			{#if project.github}
 			-

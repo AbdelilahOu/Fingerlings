@@ -78,7 +78,7 @@
 			<h1 class="font-display text-3xl font-semibold text-white md:text-4xl">
 				{project.title}
 			</h1>
-			<p class="text-lg text-gray-300">
+			<p class="text-base md:text-lg text-gray-300">
 				{project.description}
 			</p>
 			<div class="flex flex-wrap gap-2">
@@ -116,7 +116,7 @@
 
 		<!-- About Section -->
 		<section class="space-y-4">
-			<h2 class="text-2xl font-bold text-white">
+			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> cat ./about
 			</h2>
 			<div class="corner-brackets group relative bg-[#131313] p-5">
@@ -133,7 +133,7 @@
 
 		<!-- Features Section -->
 		<section class="space-y-4">
-			<h2 class="text-2xl font-bold text-white">
+			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> ls ./features
 			</h2>
 			<div class="corner-brackets bg-[#131313] p-5">
@@ -150,7 +150,7 @@
 
 		<!-- Challenges Section -->
 		<section class="space-y-4">
-			<h2 class="text-2xl font-bold text-white">
+			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> git log --challenges
 			</h2>
 			<div class="corner-brackets bg-[#131313] p-5">

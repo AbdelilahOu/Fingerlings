@@ -106,7 +106,7 @@
 
 		<!-- Contacts Section -->
 		<section class="space-y-4">
-			<h2 class="text-2xl font-bold text-white">
+			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> ls -contacts
 			</h2>
 			<div class="corner-brackets group relative w-full bg-[#131313] text-white">
@@ -117,7 +117,7 @@
 					<a
 						href="mailto:abdelilah4dev@gmail.com"
 						title="abdelilah4dev@gmail.com"
-						class="flex justify-between border-white text-base hover:border-l hover:pl-2"
+						class="flex justify-between border-white text-sm md:text-base hover:border-l hover:pl-2"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -127,7 +127,7 @@
 					<a
 						href="https://www.linkedin.com/in/ar7al/"
 						title="Abdelilah ouaadouch"
-						class="flex justify-between border-white text-base hover:border-l hover:pl-2"
+						class="flex justify-between border-white text-sm md:text-base hover:border-l hover:pl-2"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -137,7 +137,7 @@
 					<a
 						href="https://github.com/AbdelilahOu"
 						title="@AbdelilahOu"
-						class="flex justify-between border-white text-base hover:border-l hover:pl-2"
+						class="flex justify-between border-white text-sm md:text-base hover:border-l hover:pl-2"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -147,7 +147,7 @@
 					<a
 						href="https://x.com/Abdelilah4dev"
 						title="@Abdelilah4dev"
-						class="flex justify-between border-white text-base hover:border-l hover:pl-2"
+						class="flex justify-between border-white text-sm md:text-base hover:border-l hover:pl-2"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -157,7 +157,7 @@
 					<a
 						href="/blog"
 						title="Technical Blog"
-						class="flex justify-between border-white text-base hover:border-l hover:pl-2"
+						class="flex justify-between border-white text-sm md:text-base hover:border-l hover:pl-2"
 					>
 						<span class="underline underline-offset-2">Technical Articles</span>
 						<span class="inline-block">Blog</span>
@@ -168,11 +168,11 @@
 
 		<!-- Skills Section -->
 		<section class="space-y-4">
-			<h2 class="text-2xl font-bold text-white">
+			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> cat ./skills
 			</h2>
 			<div
-				class="corner-brackets flex flex-wrap gap-5 bg-[#131313] p-5 text-base text-white"
+				class="corner-brackets flex flex-wrap gap-5 bg-[#131313] p-5 text-sm md:text-base text-white"
 			>
 				{#each languages as language}
 					<span class="w-full flex-1 whitespace-nowrap border px-2 py-1 text-center text-white">
@@ -181,7 +181,7 @@
 				{/each}
 			</div>
 			<div
-				class="corner-brackets flex flex-wrap gap-5 bg-[#131313] p-5 text-base text-white"
+				class="corner-brackets flex flex-wrap gap-5 bg-[#131313] p-5 text-sm md:text-base text-white"
 			>
 				{#each frameworks as framework}
 					<span class="w-full flex-1 whitespace-nowrap border px-2 py-1 text-center text-white">
@@ -190,7 +190,7 @@
 				{/each}
 			</div>
 			<div
-				class="corner-brackets flex flex-wrap gap-5 bg-[#131313] p-5 text-base text-white"
+				class="corner-brackets flex flex-wrap gap-5 bg-[#131313] p-5 text-sm md:text-base text-white"
 			>
 				{#each tools as tool}
 					<span class="w-full flex-1 whitespace-nowrap border px-2 py-1 text-center text-white">
@@ -202,7 +202,7 @@
 
 		<!-- GitHub Contributions Section -->
 		<section class="space-y-4">
-			<h2 class="text-2xl font-bold text-white">
+			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> git log --stat
 			</h2>
 			<div class="corner-brackets bg-[#131313] p-5">
@@ -224,7 +224,7 @@
 
 		<!-- Projects Section -->
 		<section class="space-y-4">
-			<h2 class="text-2xl font-bold text-white">
+			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> ls ./projects
 			</h2>
 			<div class="relative grid gap-5">
