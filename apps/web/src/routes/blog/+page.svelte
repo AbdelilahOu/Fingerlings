@@ -64,7 +64,7 @@
 				href="/"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
-				<span>&larr;</span>
+				<span>{"<"}</span>
 				<span>Back to Home</span>
 			</a>
 		</nav>
@@ -142,7 +142,7 @@
 				href="/"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
-				<span>&larr;</span>
+				<span>{"<"}</span>
 				<span>Back to Home</span>
 			</a>
 		</footer>

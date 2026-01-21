@@ -3,9 +3,9 @@
 	import { orpc } from '$lib/orpc';
 	import { projects } from '$lib/projects';
 	import { createQuery } from '@tanstack/svelte-query';
-	import BackgroundGrid from '../components/BackgroundGrid.svelte';
-	import ProjectCard from '../components/ProjectCard.svelte';
-	import GithubGraph from '../components/GithubGraph.svelte';
+	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import GithubGraph from '$lib/components/GithubGraph.svelte';
 
 	const githubContributions = createQuery(orpc.githubContributions.queryOptions({
      	retry: false,

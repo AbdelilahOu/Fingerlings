@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import BackgroundGrid from '../../../components/BackgroundGrid.svelte';
+	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 
 	let { data } = $props();
 
@@ -68,7 +68,7 @@
 				href="/"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
-				<span>&larr;</span>
+				<span>{"<"}</span>
 				<span>Back to Home</span>
 			</a>
 		</nav>
@@ -171,7 +171,7 @@
 				href="/"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
-				<span>&larr;</span>
+				<span>{"<"}</span>
 				<span>Back to all projects</span>
 			</a>
 		</footer>
