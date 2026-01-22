@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>%sveltekit.status% - Abdelilah Ouaadouch</title>
+	<meta name="robots" content="noindex" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+			background-color: #0d0d0d;
+			color: #fff;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1rem;
+		}
+		.container {
+			max-width: 32rem;
+			width: 100%;
+			text-align: center;
+		}
+		.error-box {
+			background-color: #131313;
+			padding: 2rem;
+			position: relative;
+		}
+		.error-box::before,
+		.error-box::after {
+			content: '';
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			border-color: #fff;
+			border-style: solid;
+		}
+		.error-box::before {
+			top: 0;
+			left: 0;
+			border-width: 2px 0 0 2px;
+		}
+		.error-box::after {
+			bottom: 0;
+			right: 0;
+			border-width: 0 2px 2px 0;
+		}
+		h1 {
+			font-size: 4rem;
+			font-weight: 700;
+			line-height: 1;
+		}
+		.message {
+			margin-top: 1rem;
+			font-size: 1.125rem;
+			color: #d1d5db;
+		}
+		.log {
+			margin-top: 1.5rem;
+			color: #9ca3af;
+		}
+		.log-cmd {
+			font-size: 0.875rem;
+		}
+		.log-cmd span {
+			color: #f87171;
+		}
+		.log-msg {
+			margin-top: 0.5rem;
+			font-size: 0.75rem;
+			color: #6b7280;
+		}
+		.home-link {
+			display: inline-block;
+			margin-top: 1.5rem;
+			background-color: #131313;
+			padding: 0.75rem 1.5rem;
+			color: #fff;
+			text-decoration: none;
+			position: relative;
+			transition: background-color 0.2s;
+		}
+		.home-link:hover {
+			background-color: #1a1a1a;
+		}
+		.home-link::before,
+		.home-link::after {
+			content: '';
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			border-color: #fff;
+			border-style: solid;
+		}
+		.home-link::before {
+			top: 0;
+			left: 0;
+			border-width: 2px 0 0 2px;
+		}
+		.home-link::after {
+			bottom: 0;
+			right: 0;
+			border-width: 0 2px 2px 0;
+		}
+		.home-link span {
+			color: #4ade80;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="error-box">
+			<h1>%sveltekit.status%</h1>
+			<p class="message">%sveltekit.error.message%</p>
+		</div>
+		<div class="log">
+			<p class="log-cmd"><span>$</span> cat ./error.log</p>
+			<p class="log-msg">Error: %sveltekit.error.message%</p>
+		</div>
+		<a href="/" class="home-link">
+			<span>$</span> cd ~
+		</a>
+	</div>
+</body>
+</html>

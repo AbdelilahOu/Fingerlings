@@ -1,0 +1,30 @@
+---
+title: Hello World - My First Blog Post
+description: Welcome to my blog where I share thoughts on Go, Rust, TypeScript, and building software.
+date: '2026-01-22'
+tags:
+  - General
+  - Introduction
+published: true
+---
+
+Welcome to my blog! This is my first post where I'll be sharing my journey as a fullstack developer.
+
+## What to Expect
+
+I'll be writing about:
+
+- **Go/Golang** - Building performant APIs and CLI tools
+- **Rust** - Systems programming and desktop apps with Tauri
+- **TypeScript** - Full-stack web development with Next.js and SvelteKit
+- **Developer Tools** - MCP servers, automation, and productivity
+
+## Why I Started This Blog
+
+As developers, we solve interesting problems every day. I wanted a place to document solutions, share learnings, and connect with others in the community.
+
+## Let's Connect
+
+Feel free to reach out on [Twitter](https://x.com/Abdelilah4dev) or check out my projects on [GitHub](https://github.com/AbdelilahOu).
+
+Stay tuned for more posts!

@@ -1,17 +1,20 @@
 <script lang="ts">
+	import type { Post } from '$lib/types';
+
+	let { data }: { data: { posts: Post[] } } = $props();
+
 	const title = 'Blog - Abdelilah Ouaadouch';
 	const description =
 		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
 	const url = 'https://ar7al.com/blog';
 
-	// Placeholder for future blog posts
-	const posts: {
-		slug: string;
-		title: string;
-		excerpt: string;
-		date: string;
-		tags: string[];
-	}[] = [];
+	function formatDate(dateStr: string): string {
+		return new Date(dateStr).toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		});
+	}
 </script>
 
 <svelte:head>
@@ -77,7 +80,7 @@
 					Technical Articles & Tutorials
 				</span>
 			</h1>
-			<p class="text-base md:text-lg text-gray-300">
+			<p class="text-base text-gray-300 md:text-lg">
 				Thoughts on Go, Rust, TypeScript, and building software that works. Deep dives into
 				technical challenges, tutorials, and lessons learned from real projects.
 			</p>
@@ -85,24 +88,26 @@
 
 		<!-- Blog Posts -->
 		<section class="space-y-4">
-			<h2 class="text-xl md:text-2xl font-bold text-white">
+			<h2 class="text-xl font-bold text-white md:text-2xl">
 				<span>$</span> ls ./posts
 			</h2>
 
-			{#if posts.length > 0}
+			{#if data.posts.length > 0}
 				<div class="space-y-4">
-					{#each posts as post}
-						<article class="corner-brackets bg-[#131313] p-5 transition-colors hover:bg-[#1a1a1a]">
+					{#each data.posts as post}
+						<article
+							class="corner-brackets bg-[#131313] p-5 transition-colors hover:bg-[#1a1a1a]"
+						>
 							<a href="/blog/{post.slug}" class="block">
-								<h3 class="text-lg md:text-xl font-medium text-white">{post.title}</h3>
-								<p class="mt-2 text-gray-400">{post.excerpt}</p>
+								<h3 class="text-lg font-medium text-white md:text-xl">{post.title}</h3>
+								<p class="mt-2 text-gray-400">{post.description}</p>
 								<div class="mt-3 flex items-center justify-between">
-									<div class="flex gap-2">
+									<div class="flex flex-wrap gap-2">
 										{#each post.tags as tag}
 											<span class="bg-neutral-700 px-2 py-1 text-xs text-gray-300">{tag}</span>
 										{/each}
 									</div>
-									<time class="text-sm text-gray-500">{post.date}</time>
+									<time class="text-sm text-gray-500">{formatDate(post.date)}</time>
 								</div>
 							</a>
 						</article>
@@ -110,7 +115,9 @@
 				</div>
 			{:else}
 				<div class="corner-brackets bg-[#131313] p-8 text-center">
-					<p class="text-gray-400">No posts yet. Check back soon for technical articles and tutorials.</p>
+					<p class="text-gray-400">
+						No posts yet. Check back soon for technical articles and tutorials.
+					</p>
 					<p class="mt-2 text-sm text-gray-500">
 						In the meantime, check out my
 						<a href="https://github.com/AbdelilahOu" class="text-blue-400 hover:text-blue-300">
@@ -124,7 +131,7 @@
 
 		<!-- Topics I Write About -->
 		<section class="space-y-4">
-			<h2 class="text-xl md:text-2xl font-bold text-white">
+			<h2 class="text-xl font-bold text-white md:text-2xl">
 				<span>$</span> cat ./topics
 			</h2>
 			<div class="corner-brackets bg-[#131313] p-5">
