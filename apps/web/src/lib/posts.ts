@@ -1,10 +1,7 @@
 import type { Post, PostMetadata } from "./types";
 
 export async function getPosts(): Promise<Post[]> {
-  const paths = import.meta.glob<{ metadata: PostMetadata }>(
-    "/src/posts/*.md",
-    { eager: true }
-  );
+  const paths = import.meta.glob<{ metadata: PostMetadata }>("/src/posts/*.md", { eager: true });
 
   const posts: Post[] = [];
 
@@ -25,7 +22,5 @@ export async function getPosts(): Promise<Post[]> {
   }
 
   // Sort by date (newest first)
-  return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
