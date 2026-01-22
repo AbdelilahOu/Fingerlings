@@ -1,7 +1,12 @@
 import { error } from "@sveltejs/kit";
-import type { PostMetadata } from "$lib/types";
+import { getPosts } from "$lib/posts";
 
 export const prerender = true;
+
+export async function entries() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
 
 export async function load({ params }) {
   try {
@@ -9,7 +14,7 @@ export async function load({ params }) {
 
     return {
       content: post.default,
-      meta: post.metadata as PostMetadata,
+      meta: post.metadata,
       slug: params.slug,
     };
   } catch {
