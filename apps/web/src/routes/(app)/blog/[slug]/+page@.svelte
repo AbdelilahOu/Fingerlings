@@ -77,7 +77,7 @@
 				href="/blog"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
-				<span>{"<"}</span>
+				<span>{"<-"}</span>
 				<span>Back to Blog</span>
 			</a>
 		</nav>
@@ -123,7 +123,7 @@
 				href="/blog"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
-				<span>{"<"}</span>
+				<span>{"<-"}</span>
 				<span>Back to all posts</span>
 			</a>
 		</footer>

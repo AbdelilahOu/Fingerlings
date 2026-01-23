@@ -1,4 +1,4 @@
-import type { Post, PostMetadata } from "./types";
+import type { Post, PostMetadata } from "../types";
 
 export async function getPosts(): Promise<Post[]> {
   const paths = import.meta.glob<{ metadata: PostMetadata }>("/src/posts/*.md", { eager: true });

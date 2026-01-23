@@ -68,7 +68,7 @@
 				href="/projects"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
-				<span>{"<"}</span>
+				<span>{"<-"}</span>
 				<span>Back to Projects</span>
 			</a>
 		</nav>
@@ -171,7 +171,7 @@
 				href="/projects"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
-				<span>{"<"}</span>
+				<span>{"<-"}</span>
 				<span>Back to all projects</span>
 			</a>
 		</footer>
