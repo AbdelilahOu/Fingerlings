@@ -24,6 +24,7 @@ Imagine we want to build a dashboard, for this dashboard we must fetch data from
 Create a `DashboardAggregator` struct and a method `Aggregate(id int)` that orchestrates this fetching.
 
 Requirements:
+
 - The Aggregator must be configurable (timeout, logger).
 - Both services must be queried concurrently.
 - Fail if timeout is surpassed
@@ -100,6 +101,7 @@ func (a *DashboardAggregator) Aggregate(ctx context.Context, id int) (string, er
 ```
 
 let's break this down:
+
 - `context.WithTimeout` wraps our context with a deadline, if we exceed it everything cancels
 - `errgroup.WithContext` creates a group that shares a context, if any goroutine fails the context cancels
 - `g.Go` spawns a goroutine and tracks it

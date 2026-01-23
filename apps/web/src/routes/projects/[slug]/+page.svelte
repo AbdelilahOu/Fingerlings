@@ -65,11 +65,11 @@
 		<!-- Back Navigation -->
 		<nav>
 			<a
-				href="/"
+				href="/projects"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
 				<span>{"<"}</span>
-				<span>Back to Home</span>
+				<span>Back to Projects</span>
 			</a>
 		</nav>
 
@@ -168,7 +168,7 @@
 		<!-- Footer -->
 		<footer class="border-t border-neutral-800 pt-8">
 			<a
-				href="/"
+				href="/projects"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
 			>
 				<span>{"<"}</span>

@@ -9,6 +9,7 @@ export interface Project {
   github?: string;
   web?: string;
   ogImage?: string;
+  createdAt: string;
 }
 
 export const projects: Project[] = [
@@ -37,6 +38,7 @@ Key design decisions included prioritizing security through parameterized querie
       "Optimizing connection pooling for concurrent requests",
     ],
     github: "https://github.com/AbdelilahOu/DBMcp",
+    createdAt: "2026-01-20",
   },
   {
     slug: "mahalli",
@@ -65,6 +67,7 @@ The application handles the complete business workflow from customer management 
     ],
     web: "https://mahalli-web.pages.dev/",
     github: "https://github.com/AbdelilahOu/Mahalli",
+    createdAt: "2026-01-15",
   },
   {
     slug: "cobracase",
@@ -93,9 +96,16 @@ The image processing pipeline handles uploads, applies transformations for the c
     ],
     web: "https://case-ecommerce.vercel.app/",
     github: "https://github.com/AbdelilahOu/Case-ecommerce",
+    createdAt: "2026-01-10",
   },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
+}
+
+export function getLatestProjects(count: number): Project[] {
+  return [...projects]
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    .slice(0, count);
 }

@@ -177,26 +177,51 @@
 	}
 
 	:global(.prose code) {
-		background-color: #1f2937;
+		background-color: #131313;
 		padding: 0.125rem 0.375rem;
-		border-radius: 0.1rem;*/
 		font-size: 0.875em;
 		color: #f9fafb;
 	}
 
 	:global(.prose pre) {
-		background-color: #131313;
-		padding: 1rem;
-		border-radius: 0.2rem;
+		position: relative;
+		background-color: #131313 !important;
+		padding: 1.25rem;
 		overflow-x: auto;
 		margin-bottom: 1rem;
-		border: 1px solid #374151;
+		--size: 13px;
+		--width: 2px;
+		--color: gray;
+	}
+
+	:global(.prose pre)::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background:
+			/* Top-left corner */
+			linear-gradient(var(--color), var(--color)) 0 0 / var(--size) var(--width),
+			linear-gradient(var(--color), var(--color)) 0 0 / var(--width) var(--size),
+			/* Top-right corner */
+			linear-gradient(var(--color), var(--color)) 100% 0 / var(--size) var(--width),
+			linear-gradient(var(--color), var(--color)) 100% 0 / var(--width) var(--size),
+			/* Bottom-left corner */
+			linear-gradient(var(--color), var(--color)) 0 100% / var(--size) var(--width),
+			linear-gradient(var(--color), var(--color)) 0 100% / var(--width) var(--size),
+			/* Bottom-right corner */
+			linear-gradient(var(--color), var(--color)) 100% 100% / var(--size) var(--width),
+			linear-gradient(var(--color), var(--color)) 100% 100% / var(--width) var(--size);
+		background-repeat: no-repeat;
+		pointer-events: none;
+		z-index: 10;
 	}
 
 	:global(.prose pre code) {
 		background-color: transparent;
 		padding: 0;
-		border-radius: 0;
 	}
 
 	:global(.prose blockquote) {

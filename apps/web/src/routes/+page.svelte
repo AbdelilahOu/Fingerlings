@@ -1,16 +1,21 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { orpc } from '$lib/orpc';
-	import { projects } from '$lib/projects';
+	import type { Project } from '$lib/data/projects';
+	import type { Post } from '$lib/types';
 	import { createQuery } from '@tanstack/svelte-query';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import GithubGraph from '$lib/components/GithubGraph.svelte';
+	import BlogCard from '$lib/components/BlogCard.svelte';
+
+	let { data }: { data: { featuredProjects: Project[]; latestPosts: Post[] } } = $props();
 
 	const githubContributions = createQuery(orpc.githubContributions.queryOptions({
      	retry: false,
      	refetchOnWindowFocus: false,
 	}));
+
 
 	const title = 'Abdelilah Ouaadouch - Fullstack Developer';
 	const description = 'Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
@@ -94,6 +99,13 @@
 
 <div class="min-h-screen w-screen bg-[#0d0d0d] px-4 py-8">
 	<div class="m-auto w-full max-w-3xl space-y-8">
+		<!-- Navigation -->
+		<nav class="flex items-center gap-6 text-sm md:text-base">
+			<a href="/" class="text-white hover:text-gray-300 transition-colors">Home</a>
+			<a href="/projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+			<a href="/blog" class="text-gray-400 hover:text-white transition-colors">Blog</a>
+		</nav>
+
 		<!-- Hero Section -->
 		<section class="space-y-4">
 			<h1 class="font-display text-3xl font-semibold uppercase text-white md:text-4xl">
@@ -153,14 +165,6 @@
 					>
 						<span class="underline underline-offset-2">@Abdelilah4dev</span>
 						<span class="inline-block">Twitter/x</span>
-					</a>
-					<a
-						href="/blog"
-						title="Technical Blog"
-						class="flex justify-between border-white text-sm md:text-base hover:border-l hover:pl-2"
-					>
-						<span class="underline underline-offset-2">Technical Articles</span>
-						<span class="inline-block">Blog</span>
 					</a>
 				</div>
 			</div>
@@ -222,16 +226,44 @@
 			</div>
 		</section>
 
-		<!-- Projects Section -->
+		<!-- Featured Projects Section -->
 		<section class="space-y-4">
-			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> ls ./projects
-			</h2>
-			<div class="relative grid gap-5">
-				{#each projects as project}
+			<div class="flex items-center justify-between">
+				<h2 class="text-xl md:text-2xl font-bold text-white">
+					<span>$</span> ls ./featured-projects
+				</h2>
+				<a href="/projects" class="text-sm text-gray-400 transition-colors hover:text-white">
+					View all {">"}
+				</a>
+			</div>
+			<div class="space-y-4">
+				{#each data.featuredProjects as project}
 					<ProjectCard {project} />
 				{/each}
 			</div>
+		</section>
+
+		<!-- Latest Blog Posts Section -->
+		<section class="space-y-4">
+			<div class="flex items-center justify-between">
+				<h2 class="text-xl md:text-2xl font-bold text-white">
+					<span>$</span> head ./latest-posts
+				</h2>
+				<a href="/blog" class="text-sm text-gray-400 transition-colors hover:text-white">
+					View all {">"}
+				</a>
+			</div>
+			{#if data.latestPosts.length > 0}
+				<div class="space-y-4">
+					{#each data.latestPosts as post}
+						<BlogCard {post} />
+					{/each}
+				</div>
+			{:else}
+				<div class="corner-brackets bg-[#131313] p-5 text-center">
+					<p class="text-gray-400">No blog posts yet. Check back soon!</p>
+				</div>
+			{/if}
 		</section>
 
 		<!-- Footer -->

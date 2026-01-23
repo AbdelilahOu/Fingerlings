@@ -1,10 +1,48 @@
 import alchemy from "alchemy/cloudflare/sveltekit";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
-import { mdsvex } from "mdsvex";
+import { mdsvex, escapeSvelte } from "mdsvex";
+import { createHighlighter } from "shiki";
+
+const theme = "poimandres";
+const langs = [
+  "go",
+  "typescript",
+  "javascript",
+  "rust",
+  "bash",
+  "json",
+  "html",
+  "css",
+  "svelte",
+  "sql",
+  "yaml",
+  "markdown",
+];
+
+/** @type {ReturnType<typeof createHighlighter> | null} */
+let highlighterPromise = null;
+
+function getHighlighter() {
+  if (!highlighterPromise) {
+    highlighterPromise = createHighlighter({
+      themes: [theme],
+      langs: langs,
+    });
+  }
+  return highlighterPromise;
+}
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
   extensions: [".md", ".svx"],
+  highlight: {
+    highlighter: async (code, lang = "text") => {
+      const highlighter = await getHighlighter();
+      const supportedLang = langs.includes(lang) ? lang : "text";
+      const html = escapeSvelte(highlighter.codeToHtml(code, { lang: supportedLang, theme }));
+      return `{@html \`${html}\`}`;
+    },
+  },
 };
 
 /** @type {import('@sveltejs/kit').Config} */

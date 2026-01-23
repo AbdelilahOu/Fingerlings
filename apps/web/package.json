@@ -18,6 +18,7 @@
     "@portfolio/api": "*",
     "@tanstack/svelte-query": "^5.85.3",
     "dotenv": "^17.2.2",
+    "shiki": "^3.21.0",
     "zod": "^4.1.13"
   },
   "devDependencies": {

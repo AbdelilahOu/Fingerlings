@@ -1,13 +1,13 @@
 <script lang="ts">
-	import type { Post } from '$lib/types';
-	import BlogCard from '$lib/components/BlogCard.svelte';
+	import type { Project } from '$lib/data/projects';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
-	let { data }: { data: { posts: Post[] } } = $props();
+	let { data }: { data: { projects: Project[] } } = $props();
 
-	const title = 'Blog - Abdelilah Ouaadouch';
+	const title = 'Projects - Abdelilah Ouaadouch';
 	const description =
-		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
-	const url = 'https://ar7al.com/blog';
+		'Portfolio of software projects including desktop apps, web applications, and developer tools. Built with Go, Rust, TypeScript, and modern frameworks.';
+	const url = 'https://ar7al.com/projects';
 </script>
 
 <svelte:head>
@@ -15,7 +15,7 @@
 	<meta name="description" content={description} />
 	<meta
 		name="keywords"
-		content="Go, Golang, Rust, TypeScript, Blog, Technical Articles, Web Development, API Development, Tutorials"
+		content="Go, Golang, Rust, TypeScript, Projects, Portfolio, Web Development, Desktop Apps, Developer Tools"
 	/>
 	<link rel="canonical" href={url} />
 
@@ -39,8 +39,8 @@
 	{@html `<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
-		"@type": "Blog",
-		"name": "Abdelilah Ouaadouch's Blog",
+		"@type": "CollectionPage",
+		"name": "Abdelilah Ouaadouch's Projects",
 		"description": "${description}",
 		"url": "${url}",
 		"author": {
@@ -65,36 +65,51 @@
 			</a>
 		</nav>
 
-		<!-- Blog Header -->
+		<!-- Projects Header -->
 		<header class="space-y-4">
 			<h1 class="font-display text-3xl font-semibold text-white md:text-4xl">
-				Blog
+				Projects
 				<span class="block text-xl font-normal normal-case text-gray-300 md:text-2xl">
-					Technical Articles & Tutorials
+					Software I've Built
 				</span>
 			</h1>
 			<p class="text-base text-gray-300 md:text-lg">
-				Thoughts on Go, Rust, TypeScript, and building software that works. Deep dives into
-				technical challenges, tutorials, and lessons learned from real projects.
+				A collection of projects spanning desktop applications, web platforms, and developer tools.
+				Built with Go, Rust, TypeScript, and modern frameworks.
 			</p>
 		</header>
 
-		<!-- Blog Posts -->
+		<!-- Projects List -->
 		<section class="space-y-4">
 			<h2 class="text-xl font-bold text-white md:text-2xl">
-				<span>$</span> ls ./posts
+				<span>$</span> ls ./projects
 			</h2>
 
-			{#if data.posts.length > 0}
+			{#if data.projects.length > 0}
 				<div class="space-y-4">
-					{#each data.posts as post}
-						<BlogCard {post} />
+					{#each data.projects as project}
+						<ProjectCard {project} />
 					{/each}
+				</div>
+
+				<div class="corner-brackets bg-[#131313] p-5 text-center">
+					<p class="text-gray-400">
+						Want to see more? Check out my
+						<a
+							href="https://github.com/AbdelilahOu"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-blue-400 hover:text-blue-300"
+						>
+							GitHub
+						</a>
+						for additional projects and experiments.
+					</p>
 				</div>
 			{:else}
 				<div class="corner-brackets bg-[#131313] p-8 text-center">
 					<p class="text-gray-400">
-						No posts yet. Check back soon for technical articles and tutorials.
+						No projects yet. Check back soon for new additions.
 					</p>
 					<p class="mt-2 text-sm text-gray-500">
 						In the meantime, check out my
@@ -107,15 +122,15 @@
 			{/if}
 		</section>
 
-		<!-- Topics I Write About -->
+		<!-- Tech Stack -->
 		<section class="space-y-4">
 			<h2 class="text-xl font-bold text-white md:text-2xl">
-				<span>$</span> cat ./topics
+				<span>$</span> cat ./tech-stack
 			</h2>
 			<div class="corner-brackets bg-[#131313] p-5">
 				<div class="flex flex-wrap gap-3">
-					{#each ['Go/Golang', 'Rust', 'TypeScript', 'APIs', 'System Design', 'Developer Tools', 'Database Optimization', 'Desktop Apps'] as topic}
-						<span class="border border-neutral-600 px-3 py-1 text-gray-300">{topic}</span>
+					{#each ['Go/Golang', 'Rust', 'TypeScript', 'Next.js', 'Nuxt', 'Tauri', 'PostgreSQL', 'SQLite'] as tech}
+						<span class="border border-neutral-600 px-3 py-1 text-gray-300">{tech}</span>
 					{/each}
 				</div>
 			</div>
