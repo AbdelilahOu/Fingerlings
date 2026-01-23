@@ -76,7 +76,7 @@ usage becomes clean and readable: `NewAggregator(WithTimeout(5*time.Second), Wit
 
 now for the main part, this is where errgroup and context work together. the idea of context propagation is simple: you pass a context from the top level down to every function that does work, and when that context gets cancelled, everything stops.
 
-`errgroup.WithContext` gives us a group and a derived context. when any goroutine in the group returns an error, the context gets cancelled automatically and all other goroutines can check `ctx.Done()` to bail out. I didn't know this was possible before and I was manually handling cancellation which was a mess.
+`errgroup.WithContext` gives us a group and a derived context. when any goroutine in the group returns an error, the context gets cancelled automatically and all other goroutines can check `ctx.Done()` to bail out.
 
 ```go
 func (a *DashboardAggregator) Aggregate(ctx context.Context, id int) (string, error) {
@@ -154,4 +154,4 @@ honestly this kata taught me a lot about how Go handles concurrency properly, be
 
 - use `errgroup` instead of `sync.WaitGroup` when you need error propagation and cancellation
 - functional options keep your constructors clean, especially when you have a lot of optional config
-- always pass context and respect `ctx.Done()` in your goroutines, your future self will thank you
+- always pass context and respect `ctx.Done()` in your goroutines
