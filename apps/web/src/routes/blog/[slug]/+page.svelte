@@ -177,7 +177,7 @@
 	}
 
 	:global(.prose code) {
-		background-color: #131313;
+		background-color: #202020;
 		padding: 0.125rem 0.375rem;
 		font-size: 0.875em;
 		color: #f9fafb;
