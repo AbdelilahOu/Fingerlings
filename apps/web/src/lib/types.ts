@@ -14,3 +14,12 @@ export interface PostMetadata {
   tags: string[];
   published: boolean;
 }
+
+export interface ContributionData {
+		cal: {
+			[key: string]: {
+				github: number;
+			};
+		};
+		totalGH: number;
+	}

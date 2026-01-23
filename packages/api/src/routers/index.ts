@@ -76,6 +76,7 @@ export const appRouter = {
         for (const week of ghCalData) {
           for (const day of week.contributionDays) {
             if (!cal[day.date]) cal[day.date] = { github: 0 };
+            // @ts-ignore
             cal[day.date].github = day.contributionCount;
           }
         }

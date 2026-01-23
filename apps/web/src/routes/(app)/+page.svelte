@@ -1,22 +1,22 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { orpc } from '$lib/orpc';
 	import type { Project } from '$lib/data/projects';
-	import type { Post } from '$lib/types';
-	import { createQuery } from '@tanstack/svelte-query';
+	import type { ContributionData, Post } from '$lib/types';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import GithubGraph from '$lib/components/GithubGraph.svelte';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 
-	let { data }: { data: { featuredProjects: Project[]; latestPosts: Post[] } } = $props();
 
-	const githubContributions = createQuery(
-		orpc.githubContributions.queryOptions({
-			retry: false,
-			refetchOnWindowFocus: false
-		})
-	);
+	let {
+		data
+	}: {
+		data: {
+			featuredProjects: Project[];
+			latestPosts: Post[];
+			githubContributions: Promise<ContributionData | null>;
+		};
+	} = $props();
 
 	const title = 'Abdelilah Ouaadouch - Fullstack Developer';
 	const description =
@@ -204,19 +204,31 @@
 		<span>$</span> git log --stat
 	</h2>
 	<div class="corner-brackets bg-[#131313] p-5">
-		<p class="mb-4 text-white">
-			Total Contributions in {new Date().getFullYear()}:
-			<span class="font-semibold text-green-400">
-				{$githubContributions.data?.totalGH ?? 0}
-			</span>
-		</p>
-		{#if $githubContributions.data}
-			<GithubGraph data={$githubContributions.data} />
-		{:else if $githubContributions.isLoading}
+		{#await data.githubContributions}
+			<p class="mb-4 text-white">
+				Total Contributions in {new Date().getFullYear()}:
+				<span class="font-semibold text-gray-400">...</span>
+			</p>
 			<div class="text-gray-400">Loading contributions...</div>
-		{:else}
+		{:then contributions}
+			<p class="mb-4 text-white">
+				Total Contributions in {new Date().getFullYear()}:
+				<span class="font-semibold text-green-400">
+					{contributions?.totalGH ?? 0}
+				</span>
+			</p>
+			{#if contributions}
+				<GithubGraph data={contributions} />
+			{:else}
+				<div class="text-gray-400">Unable to load contributions</div>
+			{/if}
+		{:catch}
+			<p class="mb-4 text-white">
+				Total Contributions in {new Date().getFullYear()}:
+				<span class="font-semibold text-gray-400">0</span>
+			</p>
 			<div class="text-gray-400">Unable to load contributions</div>
-		{/if}
+		{/await}
 	</div>
 </section>
 

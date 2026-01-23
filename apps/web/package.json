@@ -14,9 +14,7 @@
   "dependencies": {
     "@orpc/client": "^1.12.2",
     "@orpc/server": "^1.12.2",
-    "@orpc/tanstack-query": "^1.12.2",
     "@portfolio/api": "*",
-    "@tanstack/svelte-query": "^5.85.3",
     "dotenv": "^17.2.2",
     "shiki": "^3.21.0",
     "zod": "^4.1.13"

@@ -1,12 +1,5 @@
 <script lang="ts">
-	interface ContributionData {
-		cal: {
-			[key: string]: {
-				github: number;
-			};
-		};
-		totalGH: number;
-	}
+    import type { ContributionData } from "$lib/types";
 
 	interface DayData {
 		date: Date;
@@ -105,14 +98,14 @@
 
 	function getTileColor(contributions: number): string {
 		// Future dates
-		if (contributions === -1) return 'bg-neutral-900/50'; 
+		if (contributions === -1) return 'bg-neutral-900/50';
 		// No contributions
 		if (contributions === 0) return 'bg-neutral-900';
-		
+
 		// Activity Levels (Slate -> White)
-		if (contributions <= 2) return 'bg-slate-800'; 
-		if (contributions <= 4) return 'bg-slate-600'; 
-		if (contributions <= 6) return 'bg-slate-400'; 
+		if (contributions <= 2) return 'bg-slate-800';
+		if (contributions <= 4) return 'bg-slate-600';
+		if (contributions <= 6) return 'bg-slate-400';
 		return 'bg-white';
 	}
 
@@ -153,12 +146,12 @@
 						<div class="text-xs">{month}</div>
 					{/each}
 				</div>
-				
+
 				{#each weeks as week, weekIndex}
 					<div class="gh-week w-4" class:mt-auto={weekIndex === 0}>
 						{#each week as day}
-							<div 
-								class="my-1 size-4 {getTileColor(day.contributions)}" 
+							<div
+								class="my-1 size-4 {getTileColor(day.contributions)}"
 								title={getTooltip(day)}
 							></div>
 						{/each}
@@ -180,4 +173,3 @@
 		</div>
 	</div>
 </div>
- 
