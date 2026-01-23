@@ -33,97 +33,49 @@ Requirements:
 
 Before I got into this challenge, I thought that using goroutines with `sync.WaitGroup` is enough and that it's the only solution, to be fair it was the only way I knew, but `sync.WaitGroup` doesn't fail-fast, let's say we run 100 goroutines using `sync.WaitGroup` our program will have to wait for all those 100 goroutines to finish which isn't what we want, if one fails we stop.
 
-### Create the aggregator with functional options
+### Functional Options
 
-Our Aggregator is pretty straightforward:
+before we get into the concurrency stuff, let's talk about how we configure our aggregator. you could do the classic constructor with all the params:
 
 ```go
-package main
-
-import (
-	...
-)
-
-type DashboardAggregator struct {
-	timeout time.Duration
-	logger  *slog.Logger
-}
-
-func NewUserAggregator(timeout time.Duration, logger *slog.Logger) *DashboardAggregator {
-	userAggr := &DashboardAggregator{
-		timeout,
-		logger,
-	}
-
-	return userAggr
-}
+func NewAggregator(timeout time.Duration, logger *slog.Logger) *DashboardAggregator
 ```
 
-This code works fine, but imagine we have more options, more configuration, what if some options are optional, do we keep passing those options to the function? Of course not, that's absurd, it will become big and ugly. 
+but what happens when you need to add more config? retry count, custom HTTP client, rate limiting? your constructor becomes a mess and callers don't know which params are required vs optional.
 
-There are a bunch of ways to achieve this but you can read this [article](https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis) which goes into more details about this.
-
-The solution to this is using Functional Options, functions that mutate the struct options directly and return the same type so that we don't have to worry about typing errors in Golang. 
+the [functional options pattern](https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis) solves this, instead of passing values directly, you pass functions that modify the struct. each option is self-contained and optional:
 
 ```go
 type Option func(*DashboardAggregator)
 
 func WithTimeout(t time.Duration) Option {
-	return func(a *DashboardAggregator) {
-		a.timeout = t
-	}
+	return func(a *DashboardAggregator) { a.timeout = t }
 }
 
-func WithLogger() Option {
-	return func(a *DashboardAggregator) {
-		a.logger = slog.Default()
-	}
+func WithLogger(l *slog.Logger) Option {
+	return func(a *DashboardAggregator) { a.logger = l }
 }
 ```
 
-Here's the full code of our struct definition and its configuration:
+now your constructor takes variadic options and applies them one by one:
 
 ```go
-package main
-
-import (
-	...
-)
-
-type Option func(*DashboardAggregator)
-
-type DashboardAggregator struct {
-	timeout time.Duration
-	logger  *slog.Logger
-}
-
-func WithTimeout(t time.Duration) Option {
-	return func(a *DashboardAggregator) {
-		a.timeout = t
+func NewAggregator(opts ...Option) *DashboardAggregator {
+	a := &DashboardAggregator{} // sensible defaults
+	for _, opt := range opts {
+		opt(a)
 	}
+	return a
 }
-
-func WithLogger() Option {
-	return func(a *DashboardAggregator) {
-		a.logger = slog.Default()
-	}
-}
-
-func NewUserAggregator(options ...Option) *DashboardAggregator {
-	userAggr := &DashboardAggregator{}
-
-	for _, opt := range options {
-		opt(userAggr)
-	}
-
-	return userAggr
-}
-
 ```
 
-### The Aggregate method
+usage becomes clean and readable: `NewAggregator(WithTimeout(5*time.Second), WithLogger(myLogger))`. no more guessing what nil means or which param goes where.
 
-Now for the main part, this is where errgroup shines, we use `errgroup.WithContext` which gives us a group and a derived context, when any goroutine in the group returns an error the context gets cancelled automatically, I didn't know this was possible before and I was manually handling cancellation which was a mess.
+### Errgroup and Context Propagation
+
+now for the main part, this is where errgroup and context work together. the idea of context propagation is simple: you pass a context from the top level down to every function that does work, and when that context gets cancelled, everything stops.
+
+`errgroup.WithContext` gives us a group and a derived context. when any goroutine in the group returns an error, the context gets cancelled automatically and all other goroutines can check `ctx.Done()` to bail out. I didn't know this was possible before and I was manually handling cancellation which was a mess.
 
 ```go
 func (a *DashboardAggregator) Aggregate(ctx context.Context, id int) (string, error) {
@@ -147,11 +99,15 @@ func (a *DashboardAggregator) Aggregate(ctx context.Context, id int) (string, er
 }
 ```
 
-so `g.Go` spawns a goroutine and tracks it, and `g.Wait` waits for all of them to finish and returns the first error if any, the cool thing is if one fails the context cancels and other goroutines can check `ctx.Done()` to bail out early, no more waiting for stuff that doesn't matter anymore
+let's break this down:
+- `context.WithTimeout` wraps our context with a deadline, if we exceed it everything cancels
+- `errgroup.WithContext` creates a group that shares a context, if any goroutine fails the context cancels
+- `g.Go` spawns a goroutine and tracks it
+- `g.Wait` blocks until all goroutines finish and returns the first error if any
 
-### The fetch functions
+### Context Propagation in Action
 
-these are just mock functions that simulate API calls, in real life you'd have HTTP requests or database queries here, they use select to either return data or respect context cancellation.
+these are mock functions that simulate API calls, but they show the important part: how to make your goroutines respect context cancellation. in real life you'd have HTTP requests or database queries here.
 
 ```go
 func fetchProfile(ctx context.Context, id int) (string, error) {
@@ -173,7 +129,7 @@ func fetchOrder(ctx context.Context, id int) (string, error) {
 }
 ```
 
-the select statement is listening on both channels at the same time, if context gets cancelled before the timer fires we return the context error immediately, this is how you make your goroutines respect cancellation and not just keep running in the background doing useless work.
+the key here is the select statement, it's listening on both channels at the same time. either the work finishes and we return data, or the context gets cancelled and we return early. this is context propagation in action: the parent says "stop" and the children listen. without this your goroutines would keep running in the background doing useless work even after the caller gave up.
 
 ### Putting it all together
 
