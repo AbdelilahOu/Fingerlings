@@ -192,31 +192,41 @@
 		--size: 13px;
 		--width: 2px;
 		--color: gray;
-	}
-
-	:global(.prose pre)::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background:
+		/* Corner brackets as background on the element itself - stays fixed when scrolling */
+		background-color: #131313;
+		background-image:
 			/* Top-left corner */
-			linear-gradient(var(--color), var(--color)) 0 0 / var(--size) var(--width),
-			linear-gradient(var(--color), var(--color)) 0 0 / var(--width) var(--size),
+			linear-gradient(var(--color), var(--color)),
+			linear-gradient(var(--color), var(--color)),
 			/* Top-right corner */
-			linear-gradient(var(--color), var(--color)) 100% 0 / var(--size) var(--width),
-			linear-gradient(var(--color), var(--color)) 100% 0 / var(--width) var(--size),
+			linear-gradient(var(--color), var(--color)),
+			linear-gradient(var(--color), var(--color)),
 			/* Bottom-left corner */
-			linear-gradient(var(--color), var(--color)) 0 100% / var(--size) var(--width),
-			linear-gradient(var(--color), var(--color)) 0 100% / var(--width) var(--size),
+			linear-gradient(var(--color), var(--color)),
+			linear-gradient(var(--color), var(--color)),
 			/* Bottom-right corner */
-			linear-gradient(var(--color), var(--color)) 100% 100% / var(--size) var(--width),
-			linear-gradient(var(--color), var(--color)) 100% 100% / var(--width) var(--size);
+			linear-gradient(var(--color), var(--color)),
+			linear-gradient(var(--color), var(--color));
+		background-size:
+			var(--size) var(--width),
+			var(--width) var(--size),
+			var(--size) var(--width),
+			var(--width) var(--size),
+			var(--size) var(--width),
+			var(--width) var(--size),
+			var(--size) var(--width),
+			var(--width) var(--size);
+		background-position:
+			0 0,
+			0 0,
+			100% 0,
+			100% 0,
+			0 100%,
+			0 100%,
+			100% 100%,
+			100% 100%;
 		background-repeat: no-repeat;
-		pointer-events: none;
-		z-index: 10;
+		/* background-attachment: scroll is default - keeps corners fixed to visible area */
 	}
 
 	:global(.prose pre code) {
