@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Post } from '$lib/types';
 	import BlogCard from '$lib/components/BlogCard.svelte';
+	import Nav from '$lib/components/Nav.svelte';
 
 	let { data }: { data: { posts: Post[] } } = $props();
 
@@ -54,16 +55,8 @@
 
 <div class="min-h-screen w-screen bg-[#0d0d0d] px-4 py-8">
 	<div class="m-auto w-full max-w-3xl space-y-8">
-		<!-- Back Navigation -->
-		<nav>
-			<a
-				href="/"
-				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
-			>
-				<span>{"<"}</span>
-				<span>Back to Home</span>
-			</a>
-		</nav>
+		<!-- Navigation -->
+		<Nav />
 
 		<!-- Blog Header -->
 		<header class="space-y-4">

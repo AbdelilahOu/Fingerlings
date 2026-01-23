@@ -8,6 +8,7 @@
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	import GithubGraph from '$lib/components/GithubGraph.svelte';
 	import BlogCard from '$lib/components/BlogCard.svelte';
+	import Nav from '$lib/components/Nav.svelte';
 
 	let { data }: { data: { featuredProjects: Project[]; latestPosts: Post[] } } = $props();
 
@@ -100,11 +101,7 @@
 <div class="min-h-screen w-screen bg-[#0d0d0d] px-4 py-8">
 	<div class="m-auto w-full max-w-3xl space-y-8">
 		<!-- Navigation -->
-		<nav class="flex items-center gap-6 text-sm md:text-base">
-			<a href="/" class="text-white hover:text-gray-300 transition-colors">Home</a>
-			<a href="/projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
-			<a href="/blog" class="text-gray-400 hover:text-white transition-colors">Blog</a>
-		</nav>
+		<Nav />
 
 		<!-- Hero Section -->
 		<section class="space-y-4">

@@ -72,7 +72,7 @@
 <div class="min-h-screen w-screen bg-[#0d0d0d] px-4 py-8">
 	<div class="m-auto w-full max-w-3xl space-y-8">
 		<!-- Back Navigation -->
-		<nav>
+		<nav class="flex items-center gap-6 text-sm md:text-base">
 			<a
 				href="/blog"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
