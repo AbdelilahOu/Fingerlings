@@ -20,17 +20,17 @@
     "destroy": "alchemy destroy"
   },
   "dependencies": {
-    "dotenv": "^17.2.2",
-    "zod": "^4.1.13"
+    "dotenv": "^17.2.3",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20251213.0",
-    "@types/node": "^22.13.11",
-    "alchemy": "^0.81.2",
+    "@cloudflare/workers-types": "^4.20260123.0",
+    "@types/node": "^22.19.7",
+    "alchemy": "^0.81.4",
     "oxfmt": "^0.19.0",
-    "oxlint": "^1.32.0",
-    "turbo": "^2.6.3",
-    "typescript": "^5"
+    "oxlint": "^1.41.0",
+    "turbo": "^2.7.5",
+    "typescript": "^5.9.3"
   },
   "packageManager": "npm@10.5.2"
 }

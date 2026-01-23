@@ -179,7 +179,7 @@
 	:global(.prose code) {
 		background-color: #1f2937;
 		padding: 0.125rem 0.375rem;
-		border-radius: 0.25rem;
+		border-radius: 0.1rem;*/
 		font-size: 0.875em;
 		color: #f9fafb;
 	}
@@ -187,7 +187,7 @@
 	:global(.prose pre) {
 		background-color: #131313;
 		padding: 1rem;
-		border-radius: 0.5rem;
+		border-radius: 0.2rem;
 		overflow-x: auto;
 		margin-bottom: 1rem;
 		border: 1px solid #374151;
