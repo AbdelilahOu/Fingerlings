@@ -236,7 +236,7 @@
 <section class="space-y-4">
 	<div class="flex items-center justify-between">
 		<h2 class="text-xl font-bold text-white md:text-2xl">
-			<span>$</span> ls ./featured-projects
+			<span>$</span> ls ./projects
 		</h2>
 		<a href="/projects" class="text-sm text-gray-400 transition-colors hover:text-white">
 			View all {"->"}

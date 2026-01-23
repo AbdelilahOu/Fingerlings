@@ -16,10 +16,10 @@ export interface PostMetadata {
 }
 
 export interface ContributionData {
-		cal: {
-			[key: string]: {
-				github: number;
-			};
-		};
-		totalGH: number;
-	}
+  cal: {
+    [key: string]: {
+      github: number;
+    };
+  };
+  totalGH: number;
+}
