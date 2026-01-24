@@ -9,7 +9,7 @@ tags:
 published: true
 ---
 
-As I'm in the process of learning more about Golang and Golang's concurrency model, I'm building a lot of CLI tools, backend services, etc.
+As I dive deeper into Go and its concurrency model, I’ve been building various CLI tools and backend services,etc.
 
 I'm relying on this [Github repo](https://github.com/MedUnes/go-kata) that explores those concepts using problem solving, for example the first Kata is about building a fail-fast data aggregator using solely [errgroup](https://pkg.go.dev/golang.org/x/sync/errgroup).
 
