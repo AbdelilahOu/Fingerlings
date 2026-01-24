@@ -137,7 +137,7 @@ the key here is the select statement, it's listening on both channels at the sam
 
 ```go
 func main() {
-	a := NewUserAggregator(WithLogger(), WithTimeout(1*time.Second))
+	a := NewAggregator(WithLogger(), WithTimeout(1*time.Second))
 	result, err := a.Aggregate(context.Background(), 1)
 	if err != nil {
 		fmt.Printf("error: %s", err.Error())
