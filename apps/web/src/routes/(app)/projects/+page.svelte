@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import type { Project } from '$lib/data/projects';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
@@ -7,7 +8,8 @@
 	const title = 'Projects - Abdelilah Ouaadouch';
 	const description =
 		'Portfolio of software projects including desktop apps, web applications, and developer tools. Built with Go, Rust, TypeScript, and modern frameworks.';
-	const url = 'https://ar7al.com/projects';
+	const url = `${page.url.origin}/projects`;
+	const image = `${page.url.origin}/projects/social.png`;
 </script>
 
 <svelte:head>
@@ -24,7 +26,7 @@
 	<meta property="og:url" content={url} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content="/og.png" />
+	<meta property="og:image" content={image} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 
 	<!-- Twitter -->
@@ -32,7 +34,7 @@
 	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="/og.png" />
+	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data -->

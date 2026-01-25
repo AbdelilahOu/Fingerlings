@@ -15,7 +15,10 @@
     "@orpc/client": "^1.12.2",
     "@orpc/server": "^1.12.2",
     "@portfolio/api": "*",
+    "@resvg/resvg-js": "^2.6.2",
     "dotenv": "^17.2.2",
+    "satori": "^0.19.1",
+    "satori-html": "^0.3.2",
     "shiki": "^3.21.0",
     "zod": "^4.1.13"
   },

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import type { Component } from 'svelte';
 	import type { PostMetadata } from '$lib/types';
 
@@ -6,7 +7,10 @@
 
 	let meta = $derived(data.meta);
 	let slug = $derived(data.slug);
-	let url = $derived(`https://ar7al.com/blog/${slug}`);
+	let url = $derived(`${page.url.origin}/blog/${slug}`);
+	let image = $derived(
+		`${page.url.origin}/blog/${slug}/social.png?title=${encodeURIComponent(meta.title)}&tags=${encodeURIComponent(meta.tags.join(','))}`
+	);
 	let title = $derived(`${meta.title} - Abdelilah Ouaadouch`);
 
 	function formatDate(dateStr: string): string {
@@ -29,7 +33,7 @@
 	<meta property="og:url" content={url} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={meta.description} />
-	<meta property="og:image" content="/og.png" />
+	<meta property="og:image" content={image} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 	<meta property="article:published_time" content={meta.date} />
 	<meta property="article:author" content="Abdelilah Ouaadouch" />
@@ -42,7 +46,7 @@
 	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={meta.description} />
-	<meta name="twitter:image" content="/og.png" />
+	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data -->

@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { page } from '$app/state';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 
 	let { data } = $props();
 
 	let project = $derived(data.project);
-	let url = $derived(`https://ar7al.com/projects/${project.slug}`);
+	let url = $derived(`${page.url.origin}/projects/${project.slug}`);
+	let image = $derived(
+		`${page.url.origin}/projects/${project.slug}/social.png?title=${encodeURIComponent(project.title)}&description=${encodeURIComponent(project.description)}&tech=${encodeURIComponent(project.tech.join(','))}`
+	);
 	let title = $derived(`${project.title} - Abdelilah Ouaadouch`);
 	let description = $derived(project.description);
 </script>
@@ -24,7 +28,7 @@
 	<meta property="og:url" content={url} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content="/og.png" />
+	<meta property="og:image" content={image} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 
 	<!-- Twitter -->
@@ -32,7 +36,7 @@
 	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="/og.png" />
+	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data -->

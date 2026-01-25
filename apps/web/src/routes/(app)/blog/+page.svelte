@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import type { Post } from '$lib/types';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 
@@ -7,7 +8,8 @@
 	const title = 'Blog - Abdelilah Ouaadouch';
 	const description =
 		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
-	const url = 'https://ar7al.com/blog';
+	const url = `${page.url.origin}/blog`;
+	const image = `${page.url.origin}/blog/social.png`;
 </script>
 
 <svelte:head>
@@ -24,7 +26,7 @@
 	<meta property="og:url" content={url} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content="/og.png" />
+	<meta property="og:image" content={image} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 
 	<!-- Twitter -->
@@ -32,7 +34,7 @@
 	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="/og.png" />
+	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data -->

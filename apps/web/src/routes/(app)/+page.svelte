@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { page } from '$app/state';
 	import type { Project } from '$lib/data/projects';
 	import type { ContributionData, Post } from '$lib/types';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
@@ -21,8 +22,8 @@
 	const title = 'Abdelilah Ouaadouch - Fullstack Developer';
 	const description =
 		'Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
-	const url = 'https://ar7al.com';
-	const image = '/og.png';
+	const url = page.url.origin;
+	const image = `${page.url.origin}/social.png`;
 
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];
 	const frameworks = [
