@@ -2,7 +2,8 @@ import OgBlog from "$lib/components/og/OgBlog.svelte";
 import { render } from "svelte/server";
 import { html } from "satori-html";
 import satori from "satori";
-import { Resvg } from "@resvg/resvg-js";
+import { Resvg, initWasm } from "@resvg/resvg-wasm";
+import resvgWasm from "@resvg/resvg-wasm/index_bg.wasm?url";
 import { read } from "$app/server";
 import fontSource from "$lib/assets/fonts/JetBrainsMono-Regular.ttf";
 
@@ -11,7 +12,16 @@ const height = 630;
 
 const fontData = read(fontSource).arrayBuffer();
 
-export async function GET({ url }) {
+let wasmInitialized = false;
+
+export async function GET({ url, fetch }) {
+  if (!wasmInitialized) {
+    const wasmResponse = await fetch(resvgWasm);
+    const wasmBuffer = await wasmResponse.arrayBuffer();
+    await initWasm(wasmBuffer);
+    wasmInitialized = true;
+  }
+
   const title = url.searchParams.get("title") ?? "";
   const tags = url.searchParams.get("tags")?.split(",").filter(Boolean) ?? [];
 
@@ -44,6 +54,7 @@ export async function GET({ url }) {
   });
 
   const png = resvg.render();
+
   //@ts-ignore
   return new Response(png.asPng(), {
     headers: {
