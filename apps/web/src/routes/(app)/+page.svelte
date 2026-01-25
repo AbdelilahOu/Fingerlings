@@ -23,7 +23,7 @@
 	const description =
 		'Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
 	const url = page.url.origin;
-	const image = `${page.url.origin}/social.png`;
+	const image = `${page.url.origin}/og.png`;
 
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];
 	const frameworks = [

@@ -7,9 +7,7 @@
 
 	let project = $derived(data.project);
 	let url = $derived(`${page.url.origin}/projects/${project.slug}`);
-	let image = $derived(
-		`${page.url.origin}/projects/${project.slug}/social.png?title=${encodeURIComponent(project.title)}&description=${encodeURIComponent(project.description)}&tech=${encodeURIComponent(project.tech.join(','))}`
-	);
+	let image = $derived(`${page.url.origin}/projects/${project.slug}/og.png`);
 	let title = $derived(`${project.title} - Abdelilah Ouaadouch`);
 	let description = $derived(project.description);
 </script>

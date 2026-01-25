@@ -8,9 +8,7 @@
 	let meta = $derived(data.meta);
 	let slug = $derived(data.slug);
 	let url = $derived(`${page.url.origin}/blog/${slug}`);
-	let image = $derived(
-		`${page.url.origin}/blog/${slug}/social.png?title=${encodeURIComponent(meta.title)}&tags=${encodeURIComponent(meta.tags.join(','))}`
-	);
+	let image = $derived(`${page.url.origin}/blog/${slug}/og.png`);
 	let title = $derived(`${meta.title} - Abdelilah Ouaadouch`);
 
 	function formatDate(dateStr: string): string {

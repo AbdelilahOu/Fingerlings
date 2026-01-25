@@ -9,7 +9,7 @@
 	const description =
 		'Portfolio of software projects including desktop apps, web applications, and developer tools. Built with Go, Rust, TypeScript, and modern frameworks.';
 	const url = `${page.url.origin}/projects`;
-	const image = `${page.url.origin}/projects/social.png`;
+	const image = `${page.url.origin}/projects/og.png`;
 </script>
 
 <svelte:head>
