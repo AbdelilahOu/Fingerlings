@@ -1,15 +1,14 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import type { Project } from '$lib/data/projects';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
-	let { data }: { data: { projects: Project[] } } = $props();
+	let { data }: { data: { projects: Project[]; url: string } } = $props();
 
 	const title = 'Projects - Abdelilah Ouaadouch';
 	const description =
 		'Portfolio of software projects including desktop apps, web applications, and developer tools. Built with Go, Rust, TypeScript, and modern frameworks.';
-	const url = $derived(`${page.url.origin}/projects`);
-	const image = $derived(`${page.url.origin}/og/image/projects/og.png`);
+	const url = $derived(`${data.url}/projects`);
+	const image = $derived(`${data.url}/og/image/projects/og.png`);
 </script>
 
 <svelte:head>

@@ -2,7 +2,7 @@ import { getPosts } from "$lib/data/posts";
 
 export const prerender = true;
 
-export async function load() {
+export async function load({ url }) {
   const posts = await getPosts();
-  return { posts };
+  return { posts, url: url.origin };
 }

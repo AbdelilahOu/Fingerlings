@@ -1,14 +1,13 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import type { Component } from 'svelte';
 	import type { PostMetadata } from '$lib/types';
 
-	let { data }: { data: { content: Component; meta: PostMetadata; slug: string } } = $props();
+	let { data }: { data: { content: Component; meta: PostMetadata; slug: string; url: string } } = $props();
 
 	const meta = $derived(data.meta);
 	const slug = $derived(data.slug);
-	const url = $derived(`${page.url.origin}/blog/${data.slug}`);
-	const image = $derived(`${page.url.origin}/og/image/blog/${data.slug}/og.png`);
+	const url = $derived(`${data.url}/blog/${data.slug}`);
+	const image = $derived(`${data.url}/og/image/blog/${data.slug}/og.png`);
 	const title = $derived(`${data.meta.title} - Abdelilah Ouaadouch`);
 
 	function formatDate(dateStr: string): string {

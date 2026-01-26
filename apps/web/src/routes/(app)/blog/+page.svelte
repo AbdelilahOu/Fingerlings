@@ -1,15 +1,14 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import type { Post } from '$lib/types';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 
-	let { data }: { data: { posts: Post[] } } = $props();
+	let { data }: { data: { posts: Post[]; url: string } } = $props();
 
 	const title = 'Blog - Abdelilah Ouaadouch';
 	const description =
 		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
-	const url = $derived(`${page.url.origin}/blog`);
-	const image = $derived(`${page.url.origin}/og/image/blog/og.png`);
+	const url = $derived(`${data.url}/blog`);
+	const image = $derived(`${data.url}/og/image/blog/og.png`);
 </script>
 
 <svelte:head>

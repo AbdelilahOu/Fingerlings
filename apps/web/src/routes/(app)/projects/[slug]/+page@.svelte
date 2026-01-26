@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { page } from '$app/state';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 
 	let { data } = $props();
 
 	const project = $derived(data.project);
-	const url = $derived(`${page.url.origin}/projects/${data.project.slug}`);
-	const image = $derived(`${page.url.origin}/og/image/projects/${data.project.slug}/og.png`);
+	const url = $derived(`${data.url}/projects/${data.project.slug}`);
+	const image = $derived(`${data.url}/og/image/projects/${data.project.slug}/og.png`);
 	const title = $derived(`${data.project.title} - Abdelilah Ouaadouch`);
 	const description = $derived(data.project.description);
 </script>
