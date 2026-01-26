@@ -4,10 +4,7 @@ import { mdsvex, escapeSvelte } from "mdsvex";
 import { createHighlighter } from "shiki";
 
 const theme = "poimandres";
-const langs = [
-  "go",
-  "markdown",
-];
+const langs = ["go", "markdown"];
 
 /** @type {ReturnType<typeof createHighlighter> | null} */
 let highlighterPromise = null;
@@ -43,11 +40,11 @@ const config = {
   kit: {
     adapter: alchemy(),
     alias: {
-      "@posts": "src/posts"
+      "@posts": "src/posts",
     },
     prerender: {
-      origin: "https://personal-website.ar7al.workers.dev"
-    }
+      origin: "https://personal-website.ar7al.workers.dev",
+    },
   },
 };
 

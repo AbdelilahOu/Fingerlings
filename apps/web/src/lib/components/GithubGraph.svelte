@@ -8,13 +8,14 @@
 
 	interface Props {
 		data: ContributionData;
+		year: number;
 	}
 
-	let { data }: Props = $props();
+	let { data, year }: Props = $props();
 	let scrollContainer: HTMLDivElement | null = null;
 
 	const today = new Date();
-	const year = today.getFullYear();
+	const endOfYear = new Date(Date.UTC(year, 11, 31));
 
 	function getDatesInYear(year: number): Date[] {
 		const dates: Date[] = [];
@@ -57,9 +58,11 @@
 			const dateIdx = toDateString(date);
 			const contributions = data.cal[dateIdx]?.github ?? 0;
 
+
+			const isFuture = year === today.getFullYear() && date > today;
 			currentWeek.push({
 				date,
-				contributions: date > today ? -1 : contributions
+				contributions: isFuture ? -1 : contributions
 			});
 		});
 
@@ -72,6 +75,13 @@
 
 	function centerCurrentWeek(): void {
 		if (!scrollContainer) return;
+
+
+		if (year < today.getFullYear()) {
+			scrollContainer.scrollLeft = scrollContainer.scrollWidth;
+			return;
+		}
+
 		const todayIndex = dates.findIndex(
 			(date) => date.toISOString().split('T')[0] === toDateString(today)
 		);
@@ -97,12 +107,12 @@
 	});
 
 	function getTileColor(contributions: number): string {
-		// Future dates
+
 		if (contributions === -1) return 'bg-neutral-900/50';
-		// No contributions
+
 		if (contributions === 0) return 'bg-neutral-900';
 
-		// Activity Levels (Slate -> White)
+
 		if (contributions <= 2) return 'bg-slate-800';
 		if (contributions <= 4) return 'bg-slate-600';
 		if (contributions <= 6) return 'bg-slate-400';

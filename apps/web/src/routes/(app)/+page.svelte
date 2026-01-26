@@ -220,7 +220,7 @@
 				</span>
 			</p>
 			{#if contributions}
-				<GithubGraph data={contributions} />
+				<GithubGraph data={contributions} year={data.year} />
 			{:else}
 				<div class="text-gray-400">Unable to load contributions</div>
 			{/if}

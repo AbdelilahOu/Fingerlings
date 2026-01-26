@@ -27,7 +27,7 @@ export const GET = async ({ params }) => {
       },
     );
   } catch (e) {
-    console.log(e)
+    console.log(e);
     return new Response("Not found", { status: 404 });
   }
 };
