@@ -5,4 +5,5 @@ import { sveltekitOG } from "@ethercorps/sveltekit-og/plugin";
 
 export default defineConfig({
   plugins: [tailwindcss(), sveltekit(), sveltekitOG()],
+  logLevel: "info"
 });
