@@ -2,13 +2,13 @@
 	import { browser } from '$app/environment';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 
-	let { data } = $props();
+	let props = $props();
 
-	const project = data.project;
-	const url = `${data.url}/projects/${data.project.slug}`;
-	const image = `${data.url}/og/image/projects/${data.project.slug}/og.png`;
-	const title = `${data.project.title} - Abdelilah Ouaadouch`;
-	const description = data.project.description;
+	const project = props.data.project;
+	const url = `${props.data.url}/projects/${props.data.project.slug}`;
+	const image = `${props.data.url}/og/image/projects/${props.data.project.slug}/og.png`;
+	const title = `${props.data.project.title} - Abdelilah Ouaadouch`;
+	const description = props.data.project.description;
 </script>
 
 <svelte:head>

@@ -11,11 +11,11 @@
 		year: number;
 	}
 
-	let { data, year }: Props = $props();
+	let props: Props = $props();
 	let scrollContainer: HTMLDivElement | null = null;
 
 	const today = new Date();
-	const endOfYear = new Date(Date.UTC(year, 11, 31));
+	const endOfYear = new Date(Date.UTC(props.year, 11, 31));
 
 	function getDatesInYear(year: number): Date[] {
 		const dates: Date[] = [];
@@ -39,7 +39,7 @@
 		return date.toISOString().split('T')[0];
 	}
 
-	const dates = getDatesInYear(year);
+	const dates = getDatesInYear(props.year);
 	const contributionLevels = [0, 1, 2, 3, 4];
 	const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -56,10 +56,10 @@
 			}
 
 			const dateIdx = toDateString(date);
-			const contributions = data.cal[dateIdx]?.github ?? 0;
+			const contributions = props.data.cal[dateIdx]?.github ?? 0;
 
 
-			const isFuture = year === today.getFullYear() && date > today;
+			const isFuture = props.year === today.getFullYear() && date > today;
 			currentWeek.push({
 				date,
 				contributions: isFuture ? -1 : contributions
@@ -77,7 +77,7 @@
 		if (!scrollContainer) return;
 
 
-		if (year < today.getFullYear()) {
+		if (props.year < today.getFullYear()) {
 			scrollContainer.scrollLeft = scrollContainer.scrollWidth;
 			return;
 		}

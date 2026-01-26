@@ -3,4 +3,4 @@ import type { Context } from "./context";
 
 export const o = os.$context<Context>();
 
-export const publicProcedure = o;
+export const procedure = o;

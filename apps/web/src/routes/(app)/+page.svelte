@@ -8,9 +8,7 @@
 	import BlogCard from '$lib/components/BlogCard.svelte';
 
 
-	let {
-		data
-	}: {
+	let props: {
 		data: {
 			featuredProjects: Project[];
 			latestPosts: Post[];
@@ -23,8 +21,8 @@
 	const title = 'Abdelilah Ouaadouch - Fullstack Developer';
 	const description =
 		'Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
-	const url = data.url;
-	const image = `${data.url}/og/image/og.png`;
+	const url = props.data.url;
+	const image = `${props.data.url}/og/image/og.png`;
 
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];
 	const frameworks = [
@@ -206,27 +204,27 @@
 		<span>$</span> git log --stat
 	</h2>
 	<div class="corner-brackets bg-[#131313] p-5">
-		{#await data.githubContributions}
+		{#await props.data.githubContributions}
 			<p class="mb-4 text-white">
-				Total Contributions in {data.year}:
+				Total Contributions in {props.data.year}:
 				<span class="font-semibold text-gray-400">...</span>
 			</p>
 			<div class="text-gray-400">Loading contributions...</div>
 		{:then contributions}
 			<p class="mb-4 text-white">
-				Total Contributions in {data.year}:
+				Total Contributions in {props.data.year}:
 				<span class="font-semibold text-green-400">
 					{contributions?.totalGH ?? 0}
 				</span>
 			</p>
 			{#if contributions}
-				<GithubGraph data={contributions} year={data.year} />
+				<GithubGraph data={contributions} year={props.data.year} />
 			{:else}
 				<div class="text-gray-400">Unable to load contributions</div>
 			{/if}
 		{:catch}
 			<p class="mb-4 text-white">
-				Total Contributions in {data.year}:
+				Total Contributions in {props.data.year}:
 				<span class="font-semibold text-gray-400">0</span>
 			</p>
 			<div class="text-gray-400">Unable to load contributions</div>
@@ -245,7 +243,7 @@
 		</a>
 	</div>
 	<div class="space-y-4">
-		{#each data.featuredProjects as project}
+		{#each props.data.featuredProjects as project}
 			<ProjectCard {project} />
 		{/each}
 	</div>
@@ -261,9 +259,9 @@
 			View all {"->"}
 		</a>
 	</div>
-	{#if data.latestPosts.length > 0}
+	{#if props.data.latestPosts.length > 0}
 		<div class="space-y-4">
-			{#each data.latestPosts as post}
+			{#each props.data.latestPosts as post}
 				<BlogCard {post} />
 			{/each}
 		</div>

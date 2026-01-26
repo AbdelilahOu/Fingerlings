@@ -2,13 +2,13 @@
 	import type { Post } from '$lib/types';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 
-	let { data }: { data: { posts: Post[]; url: string } } = $props();
+	let props: { data: { posts: Post[]; url: string } } = $props();
 
 	const title = 'Blog - Abdelilah Ouaadouch';
 	const description =
 		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
-	const url = `${data.url}/blog`;
-	const image = `${data.url}/og/image/blog/og.png`;
+	const url = `${props.data.url}/blog`;
+	const image = `${props.data.url}/og/image/blog/og.png`;
 </script>
 
 <svelte:head>
@@ -73,9 +73,9 @@
 		<span>$</span> ls ./posts
 	</h2>
 
-	{#if data.posts.length > 0}
+	{#if props.data.posts.length > 0}
 		<div class="space-y-4">
-			{#each data.posts as post}
+			{#each props.data.posts as post}
 				<BlogCard {post} />
 			{/each}
 		</div>

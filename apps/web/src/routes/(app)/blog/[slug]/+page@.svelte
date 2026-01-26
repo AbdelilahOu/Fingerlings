@@ -2,13 +2,12 @@
 	import type { Component } from 'svelte';
 	import type { PostMetadata } from '$lib/types';
 
-	let { data }: { data: { content: Component; meta: PostMetadata; slug: string; url: string } } = $props();
+	let props: { data: { content: Component; meta: PostMetadata; slug: string; url: string } } = $props();
 
-	const meta = data.meta;
-	const slug = data.slug;
-	const url = `${data.url}/blog/${data.slug}`;
-	const image = `${data.url}/og/image/blog/${data.slug}/og.png`;
-	const title = `${data.meta.title} - Abdelilah Ouaadouch`;
+	const meta = props.data.meta;
+	const url = `${props.data.url}/blog/${props.data.slug}`;
+	const image = `${props.data.url}/og/image/blog/${props.data.slug}/og.png`;
+	const title = `${props.data.meta.title} - Abdelilah Ouaadouch`;
 
 	function formatDate(dateStr: string): string {
 		return new Date(dateStr).toLocaleDateString('en-US', {
@@ -100,7 +99,7 @@
 
 		<!-- Post Content -->
 		<article class="prose prose-invert prose-lg max-w-none">
-			<data.content />
+			<props.data.content />
 		</article>
 
 		<!-- Footer -->

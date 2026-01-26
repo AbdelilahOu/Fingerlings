@@ -24,12 +24,12 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260123.0",
+    "@cloudflare/workers-types": "^4.20260124.0",
     "@types/node": "^22.19.7",
     "alchemy": "^0.81.4",
     "oxfmt": "^0.19.0",
     "oxlint": "^1.41.0",
-    "turbo": "^2.7.5",
+    "turbo": "^2.7.6",
     "typescript": "^5.9.3"
   },
   "packageManager": "npm@10.5.2"
