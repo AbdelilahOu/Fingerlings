@@ -1,6 +1,6 @@
-import alchemy from "alchemy/cloudflare/sveltekit";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
-import { mdsvex, escapeSvelte } from "mdsvex";
+import alchemy from "alchemy/cloudflare/sveltekit";
+import { escapeSvelte, mdsvex } from "mdsvex";
 import { createHighlighter } from "shiki";
 
 const theme = "poimandres";

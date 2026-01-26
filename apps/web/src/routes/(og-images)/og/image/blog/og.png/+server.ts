@@ -1,8 +1,8 @@
+import { read } from "$app/server";
+import fontSource from "$lib/assets/fonts/JetBrainsMono-Regular.ttf";
+import OgBlogList from "$lib/components/og/OgBlogList.svelte";
 import { ImageResponse } from "@ethercorps/sveltekit-og";
 import { CustomFont, resolveFonts } from "@ethercorps/sveltekit-og/fonts";
-import OgBlogList from "$lib/components/og/OgBlogList.svelte";
-import fontSource from "$lib/assets/fonts/JetBrainsMono-Regular.ttf";
-import { read } from "$app/server";
 
 export const GET = async () => {
   const fonts = [

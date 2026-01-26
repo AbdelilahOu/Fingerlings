@@ -7,7 +7,7 @@
   ],
   "type": "module",
   "scripts": {
-    "check": "oxlint",
+    "check": "oxlint --fix",
     "fmt": "oxfmt --write .",
     "fmt:check": "oxfmt --check .",
     "dev": "alchemy dev",

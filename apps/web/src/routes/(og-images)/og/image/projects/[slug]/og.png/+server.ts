@@ -1,9 +1,9 @@
+import { read } from "$app/server";
+import fontSource from "$lib/assets/fonts/JetBrainsMono-Regular.ttf";
+import OgProject from "$lib/components/og/OgProject.svelte";
+import { getProjectBySlug, projects } from "$lib/data/projects";
 import { ImageResponse } from "@ethercorps/sveltekit-og";
 import { CustomFont, resolveFonts } from "@ethercorps/sveltekit-og/fonts";
-import OgProject from "$lib/components/og/OgProject.svelte";
-import fontSource from "$lib/assets/fonts/JetBrainsMono-Regular.ttf";
-import { getProjectBySlug, projects } from "$lib/data/projects";
-import { read } from "$app/server";
 
 const fontData = read(fontSource).arrayBuffer();
 

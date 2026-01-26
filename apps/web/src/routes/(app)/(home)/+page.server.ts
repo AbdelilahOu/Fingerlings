@@ -1,7 +1,7 @@
-import { getLatestProjects } from "$lib/data/projects";
-import { getPosts } from "$lib/data/posts";
-import { type GitHubGraphQLResponse } from "$lib/types";
 import { GH_TOKEN } from "$env/static/private";
+import { getPosts } from "$lib/data/posts";
+import { getLatestProjects } from "$lib/data/projects";
+import { type GitHubGraphQLResponse } from "$lib/types";
 
 async function fetchGitHubContributions(year: number) {
   const username = "AbdelilahOu";
