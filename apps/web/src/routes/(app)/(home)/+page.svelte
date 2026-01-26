@@ -1,7 +1,3 @@
-<script context="module" lang="ts">
-	export const ssr = true;
-</script>
-
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import type { Project } from '$lib/data/projects';
