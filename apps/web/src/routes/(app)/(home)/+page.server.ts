@@ -1,4 +1,4 @@
-import { GH_TOKEN } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 import { getPosts } from "$lib/data/posts";
 import { getLatestProjects } from "$lib/data/projects";
 import { type GitHubGraphQLResponse } from "$lib/types";
@@ -12,7 +12,7 @@ async function fetchGitHubContributions(year: number) {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: `Bearer ${GH_TOKEN}`,
+        Authorization: `Bearer ${env.GH_TOKEN}`,
         "User-Agent": "portfolio-app",
       },
       body: JSON.stringify({
@@ -81,5 +81,3 @@ export async function load({ url }) {
     year,
   };
 }
-
-export const prerender = true;
