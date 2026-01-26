@@ -4,7 +4,7 @@
 	import type { ContributionData, Post } from '$lib/types';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
-	import GithubGraph from '$lib/components/GithubGraph.svelte';
+	// import GithubGraph from '$lib/components/GithubGraph.svelte';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 
 
@@ -201,7 +201,7 @@
 </section>
 
 <!-- GitHub Contributions Section -->
-<section class="space-y-4">
+<!-- <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
 		<span>$</span> git log --stat
 	</h2>
@@ -232,7 +232,7 @@
 			<div class="text-gray-400">Unable to load contributions</div>
 		{/await}
 	</div>
-</section>
+</section> -->
 
 <!-- Featured Projects Section -->
 <section class="space-y-4">

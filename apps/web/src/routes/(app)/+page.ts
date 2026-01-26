@@ -2,7 +2,7 @@ import { getLatestProjects } from "$lib/data/projects";
 import { getPosts } from "$lib/data/posts";
 import { client } from "$lib/orpc";
 
-export const prerender = true;
+export const ssr = true;
 export const csr = false;
 
 export async function load({ url }) {
@@ -10,17 +10,17 @@ export async function load({ url }) {
   const posts = await getPosts();
   const latestPosts = posts.slice(0, 2);
 
-  const year = new Date().getFullYear() - 1;
-  const githubContributions = client.githubContributions({ year }).catch((e) => {
-    console.error("Failed to fetch GitHub contributions:", e);
-    return null;
-  });
+  // const year = new Date().getFullYear() - 1;
+  // const githubContributions = client.githubContributions({ year }).catch((e) => {
+  //   console.error("Failed to fetch GitHub contributions:", e);
+  //   return null;
+  // });
 
   return {
     featuredProjects,
     latestPosts,
-    githubContributions,
+    // githubContributions,
     url: url.origin,
-    year,
+    // year,
   };
 }
