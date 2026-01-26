@@ -3,6 +3,7 @@ import { getPosts } from "$lib/data/posts";
 import { client } from "$lib/orpc";
 
 export const prerender = true;
+export const csr = false;
 
 export async function load({ url }) {
   const featuredProjects = getLatestProjects(2);
