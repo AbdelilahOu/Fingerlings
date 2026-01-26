@@ -9,7 +9,7 @@ const fontData = read(fontSource).arrayBuffer();
 
 export const GET = async ({ params }) => {
   try {
-    const post = await import(`../../../../posts/${params.slug}.md`);
+    const post = await import(`@posts/${params.slug}.md`);
     const meta = post.metadata;
 
     const fonts = [new CustomFont("JetBrainsMono", fontData, { weight: 400 })];
@@ -26,7 +26,8 @@ export const GET = async ({ params }) => {
         tags: meta.tags || [],
       },
     );
-  } catch {
+  } catch (e) {
+    console.log(e)
     return new Response("Not found", { status: 404 });
   }
 };

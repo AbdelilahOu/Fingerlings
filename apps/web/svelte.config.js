@@ -6,16 +6,6 @@ import { createHighlighter } from "shiki";
 const theme = "poimandres";
 const langs = [
   "go",
-  "typescript",
-  "javascript",
-  "rust",
-  "bash",
-  "json",
-  "html",
-  "css",
-  "svelte",
-  "sql",
-  "yaml",
   "markdown",
 ];
 
@@ -52,6 +42,9 @@ const config = {
 
   kit: {
     adapter: alchemy(),
+    alias: {
+      "@posts": "src/posts"
+    }
   },
 };
 
