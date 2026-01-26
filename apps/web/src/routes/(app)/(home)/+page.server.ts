@@ -1,6 +1,6 @@
 import { getLatestProjects } from "$lib/data/projects";
 import { getPosts } from "$lib/data/posts";
-import { GitHubGraphQLResponse } from "$lib/types";
+import { type GitHubGraphQLResponse } from "$lib/types";
 import { GH_TOKEN } from "$env/static/private";
 
 async function fetchGitHubContributions(year: number) {
