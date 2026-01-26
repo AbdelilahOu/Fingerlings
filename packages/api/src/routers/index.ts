@@ -3,7 +3,6 @@ import type { RouterClient } from "@orpc/server";
 import { env } from "cloudflare:workers";
 import { z } from "zod";
 
-
 export const appRouter = {
   healthCheck: procedure.handler(() => {
     return "OK";

@@ -2,7 +2,6 @@ import { getLatestProjects } from "$lib/data/projects";
 import { getPosts } from "$lib/data/posts";
 import { GH_TOKEN } from "$env/static/private";
 
-
 interface GitHubContributionDay {
   contributionCount: number;
   date: string;
@@ -104,4 +103,4 @@ export async function load({ url }) {
   };
 }
 
-export const csr = false
+export const ssr = true;
