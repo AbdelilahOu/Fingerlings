@@ -5,8 +5,8 @@
 	let props = $props();
 
 	const project = props.data.project;
-	const url = `${props.data.url}/projects/${props.data.project.slug}`;
-	const image = `${props.data.url}/og/image/projects/${props.data.project.slug}/og.png`;
+	const url = `https://personal-website.ar7al.workers.dev/projects/${props.data.project.slug}`;
+	const image = `https://personal-website.ar7al.workers.dev/og/image/projects/${props.data.project.slug}/og.png`;
 	const title = `${props.data.project.title} - Abdelilah Ouaadouch`;
 	const description = props.data.project.description;
 </script>

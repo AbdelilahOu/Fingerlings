@@ -62,7 +62,7 @@ async function fetchGitHubContributions(year: number) {
   }
 }
 
-export async function load({ url }) {
+export async function load() {
   const featuredProjects = getLatestProjects(2);
   const posts = await getPosts();
   const latestPosts = posts.slice(0, 2);
@@ -77,7 +77,6 @@ export async function load({ url }) {
     featuredProjects,
     latestPosts,
     githubContributions,
-    url: url.origin,
     year,
   };
 }

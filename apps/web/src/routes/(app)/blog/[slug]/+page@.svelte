@@ -5,8 +5,8 @@
 	let props: { data: { content: Component; meta: PostMetadata; slug: string; url: string } } = $props();
 
 	const meta = props.data.meta;
-	const url = `${props.data.url}/blog/${props.data.slug}`;
-	const image = `${props.data.url}/og/image/blog/${props.data.slug}/og.png`;
+	const url = `https://personal-website.ar7al.workers.dev/blog/${props.data.slug}`;
+	const image = `https://personal-website.ar7al.workers.dev/og/image/blog/${props.data.slug}/og.png`;
 	const title = `${props.data.meta.title} - Abdelilah Ouaadouch`;
 
 	function formatDate(dateStr: string): string {

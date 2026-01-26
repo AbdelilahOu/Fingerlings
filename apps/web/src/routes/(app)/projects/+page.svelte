@@ -7,8 +7,8 @@
 	const title = 'Projects - Abdelilah Ouaadouch';
 	const description =
 		'Portfolio of software projects including desktop apps, web applications, and developer tools. Built with Go, Rust, TypeScript, and modern frameworks.';
-	const url = `${props.data.url}/projects`;
-	const image = `${props.data.url}/og/image/projects/og.png`;
+	const url = `https://personal-website.ar7al.workers.dev/projects`;
+	const image = `https://personal-website.ar7al.workers.dev/og/image/projects/og.png`;
 </script>
 
 <svelte:head>

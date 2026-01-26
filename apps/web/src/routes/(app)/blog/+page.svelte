@@ -7,8 +7,8 @@
 	const title = 'Blog - Abdelilah Ouaadouch';
 	const description =
 		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
-	const url = `${props.data.url}/blog`;
-	const image = `${props.data.url}/og/image/blog/og.png`;
+	const url = `https://personal-website.ar7al.workers.dev/blog`;
+	const image = `https://personal-website.ar7al.workers.dev/og/image/blog/og.png`;
 </script>
 
 <svelte:head>

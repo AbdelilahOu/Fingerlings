@@ -8,7 +8,7 @@ export async function entries() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export async function load({ params, url }) {
+export async function load({ params }) {
   try {
     const post = await import(`@posts/${params.slug}.md`);
 
@@ -16,7 +16,6 @@ export async function load({ params, url }) {
       content: post.default,
       meta: post.metadata,
       slug: params.slug,
-      url: url.origin,
     };
   } catch {
     throw error(404, `Post not found: ${params.slug}`);
