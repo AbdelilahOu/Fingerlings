@@ -1,28 +1,7 @@
 import { getLatestProjects } from "$lib/data/projects";
 import { getPosts } from "$lib/data/posts";
+import { GitHubGraphQLResponse } from "$lib/types";
 import { GH_TOKEN } from "$env/static/private";
-
-interface GitHubContributionDay {
-  contributionCount: number;
-  date: string;
-}
-
-interface GitHubContributionWeek {
-  contributionDays: GitHubContributionDay[];
-}
-
-interface GitHubGraphQLResponse {
-  data?: {
-    user?: {
-      contributionsCollection?: {
-        contributionCalendar?: {
-          totalContributions: number;
-          weeks: GitHubContributionWeek[];
-        };
-      };
-    };
-  };
-}
 
 async function fetchGitHubContributions(year: number) {
   const username = "AbdelilahOu";
@@ -103,4 +82,4 @@ export async function load({ url }) {
   };
 }
 
-export const prerender = true;
+export const ssr = true;
