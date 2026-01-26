@@ -22,8 +22,8 @@
 	const title = 'Abdelilah Ouaadouch - Fullstack Developer';
 	const description =
 		'Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
-	const url = $derived(data.url);
-	const image = $derived(`${data.url}/og/image/og.png`);
+	const url = data.url;
+	const image = `${data.url}/og/image/og.png`;
 
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];
 	const frameworks = [
