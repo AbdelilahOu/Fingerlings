@@ -9,7 +9,7 @@
 	const description =
 		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
 	const url = `${page.url.origin}/blog`;
-	const image = `${page.url.origin}/blog/og.png`;
+	const image = `${page.url.origin}/og/image/blog/og.png`;
 </script>
 
 <svelte:head>

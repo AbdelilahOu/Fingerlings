@@ -23,7 +23,7 @@
 	const description =
 		'Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
 	const url = page.url.origin;
-	const image = `${page.url.origin}/og.png`;
+	const image = `${page.url.origin}/og/image/og.png`;
 
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];
 	const frameworks = [
@@ -77,7 +77,7 @@
 		"description": "Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.",
 		"email": "mailto:abdelilah4dev@gmail.com",
 		"url": "${url}",
-		"image": "${url}/og.png",
+		"image": "${url}/og/image/og.png",
 		"sameAs": [
 			"https://www.linkedin.com/in/ar7al/",
 			"https://github.com/AbdelilahOu",
