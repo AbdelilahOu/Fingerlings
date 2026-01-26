@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/state';
+	import { SITE_ORIGIN } from '$lib/constants';
 	import type { Project } from '$lib/data/projects';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
@@ -8,8 +8,8 @@
 	const title = 'Projects - Abdelilah Ouaadouch';
 	const description =
 		'Portfolio of software projects including desktop apps, web applications, and developer tools. Built with Go, Rust, TypeScript, and modern frameworks.';
-	const url = `${page.url.origin}/projects`;
-	const image = `${page.url.origin}/og/image/projects/og.png`;
+	const url = `${SITE_ORIGIN}/projects`;
+	const image = `${SITE_ORIGIN}/og/image/projects/og.png`;
 </script>
 
 <svelte:head>
