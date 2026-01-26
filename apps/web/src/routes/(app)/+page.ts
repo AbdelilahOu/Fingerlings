@@ -2,7 +2,6 @@ import { getLatestProjects } from "$lib/data/projects";
 import { getPosts } from "$lib/data/posts";
 import { client } from "$lib/orpc";
 
-export const ssr = true;
 export const prerender = false;
 
 export async function load({ url }) {
