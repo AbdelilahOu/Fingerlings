@@ -2,9 +2,6 @@ import { getLatestProjects } from "$lib/data/projects";
 import { getPosts } from "$lib/data/posts";
 import { client } from "$lib/orpc";
 
-export const ssr = true;
-export const csr = false;
-
 export async function load({ url }) {
   const featuredProjects = getLatestProjects(2);
   const posts = await getPosts();
