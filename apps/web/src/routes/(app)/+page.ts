@@ -19,9 +19,6 @@ export async function load({ url }) {
     featuredProjects,
     latestPosts,
     githubContributions,
-    title: "Abdelilah Ouaadouch - Fullstack Developer",
-    description:
-      "Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.",
-    ogImage: `${url.origin}/og/image/og.png`,
+    url: url.origin,
   };
 }

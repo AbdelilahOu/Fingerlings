@@ -5,11 +5,11 @@
 
 	let { data }: { data: { content: Component; meta: PostMetadata; slug: string } } = $props();
 
-	let meta = data.meta;
-	let slug = data.slug;
-	let url = `${page.url.origin}/blog/${slug}`;
-	let image = `${page.url.origin}/og/image/blog/${slug}/og.png`;
-	let title = `${meta.title} - Abdelilah Ouaadouch`;
+	const meta = $derived(data.meta);
+	const slug = $derived(data.slug);
+	const url = $derived(`${page.url.origin}/blog/${data.slug}`);
+	const image = $derived(`${page.url.origin}/og/image/blog/${data.slug}/og.png`);
+	const title = $derived(`${data.meta.title} - Abdelilah Ouaadouch`);
 
 	function formatDate(dateStr: string): string {
 		return new Date(dateStr).toLocaleDateString('en-US', {

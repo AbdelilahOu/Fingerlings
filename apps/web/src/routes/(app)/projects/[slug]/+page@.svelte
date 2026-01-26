@@ -5,11 +5,11 @@
 
 	let { data } = $props();
 
-	let project = data.project;
-	let url = `${page.url.origin}/projects/${project.slug}`;
-	let image = `${page.url.origin}/og/image/projects/${project.slug}/og.png`;
-	let title = `${project.title} - Abdelilah Ouaadouch`;
-	let description = project.description;
+	const project = $derived(data.project);
+	const url = $derived(`${page.url.origin}/projects/${data.project.slug}`);
+	const image = $derived(`${page.url.origin}/og/image/projects/${data.project.slug}/og.png`);
+	const title = $derived(`${data.project.title} - Abdelilah Ouaadouch`);
+	const description = $derived(data.project.description);
 </script>
 
 <svelte:head>

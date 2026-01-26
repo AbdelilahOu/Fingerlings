@@ -8,8 +8,8 @@
 	const title = 'Projects - Abdelilah Ouaadouch';
 	const description =
 		'Portfolio of software projects including desktop apps, web applications, and developer tools. Built with Go, Rust, TypeScript, and modern frameworks.';
-	const url = `${page.url.origin}/projects`;
-	const image = `${page.url.origin}/og/image/projects/og.png`;
+	const url = $derived(`${page.url.origin}/projects`);
+	const image = $derived(`${page.url.origin}/og/image/projects/og.png`);
 </script>
 
 <svelte:head>
