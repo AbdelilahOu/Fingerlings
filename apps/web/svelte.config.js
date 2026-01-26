@@ -44,6 +44,7 @@ const config = {
     },
     prerender: {
       origin: "https://personal-website.ar7al.workers.dev",
+      crawl: true
     },
   },
 };
