@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SITE_ORIGIN } from '$lib/constants';
+	import { page } from '$app/state';
 	import type { Component } from 'svelte';
 	import type { PostMetadata } from '$lib/types';
 
@@ -7,8 +7,8 @@
 
 	let meta = data.meta;
 	let slug = data.slug;
-	let url = `${SITE_ORIGIN}/blog/${slug}`;
-	let image = `${SITE_ORIGIN}/og/image/blog/${slug}/og.png`;
+	let url = `${page.url.origin}/blog/${slug}`;
+	let image = `${page.url.origin}/og/image/blog/${slug}/og.png`;
 	let title = `${meta.title} - Abdelilah Ouaadouch`;
 
 	function formatDate(dateStr: string): string {

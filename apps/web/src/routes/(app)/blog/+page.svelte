@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SITE_ORIGIN } from '$lib/constants';
+	import { page } from '$app/state';
 	import type { Post } from '$lib/types';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 
@@ -8,8 +8,8 @@
 	const title = 'Blog - Abdelilah Ouaadouch';
 	const description =
 		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
-	const url = `${SITE_ORIGIN}/blog`;
-	const image = `${SITE_ORIGIN}/og/image/blog/og.png`;
+	const url = `${page.url.origin}/blog`;
+	const image = `${page.url.origin}/og/image/blog/og.png`;
 </script>
 
 <svelte:head>

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { SITE_ORIGIN } from '$lib/constants';
+	import { page } from '$app/state';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 
 	let { data } = $props();
 
 	let project = data.project;
-	let url = `${SITE_ORIGIN}/projects/${project.slug}`;
-	let image = `${SITE_ORIGIN}/og/image/projects/${project.slug}/og.png`;
+	let url = `${page.url.origin}/projects/${project.slug}`;
+	let image = `${page.url.origin}/og/image/projects/${project.slug}/og.png`;
 	let title = `${project.title} - Abdelilah Ouaadouch`;
 	let description = project.description;
 </script>
