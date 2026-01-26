@@ -1,6 +1,6 @@
 import { getLatestProjects } from "$lib/data/projects";
 import { getPosts } from "$lib/data/posts";
-import { GH_TOKEN } from "$env/static/public";
+import { GH_TOKEN } from "$env/static/private";
 
 
 interface GitHubContributionDay {
