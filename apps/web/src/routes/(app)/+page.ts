@@ -2,7 +2,7 @@ import { getLatestProjects } from "$lib/data/projects";
 import { getPosts } from "$lib/data/posts";
 import { client } from "$lib/orpc";
 
-export const prerender = false;
+export const ssr = true;
 
 export async function load() {
   const featuredProjects = getLatestProjects(2);
