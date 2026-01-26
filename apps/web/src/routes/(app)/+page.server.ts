@@ -90,7 +90,7 @@ export async function load({ url }) {
   const latestPosts = posts.slice(0, 2);
 
   const year = new Date().getFullYear() - 1;
-  const githubContributions = fetchGitHubContributions(year).catch((e) => {
+  const githubContributions = await fetchGitHubContributions(year).catch((e) => {
     console.error("Failed to fetch GitHub contributions:", e);
     return null;
   });
