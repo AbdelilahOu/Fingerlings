@@ -3,6 +3,8 @@ import { getPosts } from "$lib/data/posts";
 import { getLatestProjects } from "$lib/data/projects";
 import { type GitHubGraphQLResponse } from "$lib/types";
 
+export const prerender = true;
+
 async function fetchGitHubContributions(year: number) {
   const username = "AbdelilahOu";
 
