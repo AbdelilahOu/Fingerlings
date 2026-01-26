@@ -1,6 +1,7 @@
 import { publicProcedure } from "../index";
 import type { RouterClient } from "@orpc/server";
 import { env } from "cloudflare:workers";
+import { z } from "zod";
 
 interface GitHubContributionDay {
   contributionCount: number;
@@ -28,8 +29,10 @@ export const appRouter = {
   healthCheck: publicProcedure.handler(() => {
     return "OK";
   }),
-  githubContributions: publicProcedure.handler(async () => {
-    const currYr = new Date().getFullYear();
+  githubContributions: publicProcedure
+    .input(z.object({ year: z.number() }))
+    .handler(async ({ input }) => {
+    const currYr = input.year;
     const username = "AbdelilahOu";
 
     try {

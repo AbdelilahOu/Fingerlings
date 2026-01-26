@@ -16,6 +16,7 @@
 			latestPosts: Post[];
 			githubContributions: Promise<ContributionData | null>;
 			url: string;
+			year: number;
 		};
 	} = $props();
 
@@ -207,13 +208,13 @@
 	<div class="corner-brackets bg-[#131313] p-5">
 		{#await data.githubContributions}
 			<p class="mb-4 text-white">
-				Total Contributions in {new Date().getFullYear()}:
+				Total Contributions in {data.year}:
 				<span class="font-semibold text-gray-400">...</span>
 			</p>
 			<div class="text-gray-400">Loading contributions...</div>
 		{:then contributions}
 			<p class="mb-4 text-white">
-				Total Contributions in {new Date().getFullYear()}:
+				Total Contributions in {data.year}:
 				<span class="font-semibold text-green-400">
 					{contributions?.totalGH ?? 0}
 				</span>
@@ -225,7 +226,7 @@
 			{/if}
 		{:catch}
 			<p class="mb-4 text-white">
-				Total Contributions in {new Date().getFullYear()}:
+				Total Contributions in {data.year}:
 				<span class="font-semibold text-gray-400">0</span>
 			</p>
 			<div class="text-gray-400">Unable to load contributions</div>
