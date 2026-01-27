@@ -13,6 +13,7 @@
 			latestPosts: Post[];
 			githubContributions: Promise<ContributionData | null>;
 			year: number;
+			origin: string;
 		};
 	} = $props();
 
@@ -41,29 +42,29 @@
 		name="keywords"
 		content="Go, Golang, Typescript, Rust, Fullstack Developer, Software Engineer, Web Development, API Development, Portfolio, Hire Developer, Backend Developer, Frontend Developer, Abdelilah Ouaadouch"
 	/>
-	<link rel="canonical" href={"https://personal-website.ar7al.workers.dev"} />
+	<link rel="canonical" href={`${props.data.origin}/ar7al`} />
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={"https://personal-website.ar7al.workers.dev"} />
+	<meta property="og:url" content={`${props.data.origin}/ar7al`} />
 	<meta property="og:title" content="Abdelilah Ouaadouch - Fullstack Developer" />
 	<meta
 		property="og:description"
 		content="Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks."
 	/>
-	<meta property="og:image" content={`https://personal-website.ar7al.workers.dev/og/image/og.png`} />
+	<meta property="og:image" content={`${props.data.origin}/og/image/og.png`} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 	<meta property="og:locale" content="en" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:url" content={"https://personal-website.ar7al.workers.dev"} />
+	<meta name="twitter:url" content={`${props.data.origin}/ar7al`} />
 	<meta name="twitter:title" content="Abdelilah Ouaadouch - Fullstack Developer" />
 	<meta
 		name="twitter:description"
 		content="Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks."
 	/>
-	<meta name="twitter:image" content={`https://personal-website.ar7al.workers.dev/og/image/og.png`} />
+	<meta name="twitter:image" content={`${props.data.origin}/og/image/og.png`} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data - Person -->
@@ -75,8 +76,8 @@
 		"jobTitle": "Fullstack Developer",
 		"description": "Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.",
 		"email": "mailto:abdelilah4dev@gmail.com",
-		"url": "https://personal-website.ar7al.workers.dev",
-		"image": "https://personal-website.ar7al.workers.dev/og/image/og.png",
+		"url": `${props.data.origin}/ar7al`,
+		"image": `${props.data.origin}/og/image/og.png`,
 		"sameAs": [
 			"https://www.linkedin.com/in/ar7al/",
 			"https://github.com/AbdelilahOu",
@@ -90,7 +91,7 @@
 		"@context": "https://schema.org",
 		"@type": "WebSite",
 		"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
-		"url": "https://personal-website.ar7al.workers.dev",
+		"url": `${props.data.origin}/ar7al`,
 		"description": "Portfolio of Abdelilah Ouaadouch, a Fullstack Developer specializing in Go, Rust, and TypeScript.",
 		"author": {
 			"@type": "Person",

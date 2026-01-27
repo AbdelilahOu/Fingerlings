@@ -1,11 +1,11 @@
 <script lang="ts">
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 
-	let props = $props();
+	let props: { data: { project: any; origin: string } } = $props();
 
 	const project = props.data.project;
-	const url = `https://personal-website.ar7al.workers.dev/projects/${props.data.project.slug}`;
-	const image = `https://personal-website.ar7al.workers.dev/og/image/projects/${props.data.project.slug}/og.png`;
+	const url = `${props.data.origin}/projects/${props.data.project.slug}`;
+	const image = `${props.data.origin}/og/image/projects/${props.data.project.slug}/og.png`;
 	const title = `${props.data.project.title} - Abdelilah Ouaadouch`;
 	const description = props.data.project.description;
 </script>
@@ -46,7 +46,7 @@
 		"author": {
 			"@type": "Person",
 			"name": "Abdelilah Ouaadouch",
-			"url": "https://ar7al.com"
+			"url": `${props.data.origin}/ar7al`
 		},
 		"offers": {
 			"@type": "Offer",

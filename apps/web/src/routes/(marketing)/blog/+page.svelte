@@ -2,13 +2,13 @@
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import type { Post } from '$lib/types';
 
-	let props: { data: { posts: Post[]; url: string } } = $props();
+	let props: { data: { posts: Post[]; origin: string } } = $props();
 
 	const title = 'Blog - Abdelilah Ouaadouch';
 	const description =
 		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
-	const url = `https://personal-website.ar7al.workers.dev/blog`;
-	const image = `https://personal-website.ar7al.workers.dev/og/image/blog/og.png`;
+	const url = `${props.data.origin}/blog`;
+	const image = `${props.data.origin}/og/image/blog/og.png`;
 </script>
 
 <svelte:head>
@@ -46,7 +46,7 @@
 		"author": {
 			"@type": "Person",
 			"name": "Abdelilah Ouaadouch",
-			"url": "https://ar7al.com"
+			"url": `${props.data.origin}/ar7al`
 		}
 	})}</script>`}
 </svelte:head>

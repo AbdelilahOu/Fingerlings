@@ -4,7 +4,7 @@ import { getPosts } from "$lib/data/posts";
 
 export const prerender = true;
 
-export async function load() {
+export async function load({ url }) {
   const featuredProjects = getLatestProjects(2);
   const posts = await getPosts();
   const latestPosts = posts.slice(0, 2);
@@ -19,5 +19,6 @@ export async function load() {
     latestPosts,
     githubContributions,
     year: 2025,
+    origin: url.origin,
   };
 }

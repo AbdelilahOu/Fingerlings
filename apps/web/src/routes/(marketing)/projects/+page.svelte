@@ -2,13 +2,13 @@
 	import type { Project } from '$lib/data/projects';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
-	let props: { data: { projects: Project[]; url: string } } = $props();
+	let props: { data: { projects: Project[]; origin: string } } = $props();
 
 	const title = 'Projects - Abdelilah Ouaadouch';
 	const description =
 		'Portfolio of software projects including desktop apps, web applications, and developer tools. Built with Go, Rust, TypeScript, and modern frameworks.';
-	const url = `https://personal-website.ar7al.workers.dev/projects`;
-	const image = `https://personal-website.ar7al.workers.dev/og/image/projects/og.png`;
+	const url = `${props.data.origin}/projects`;
+	const image = `${props.data.origin}/og/image/projects/og.png`;
 </script>
 
 <svelte:head>
@@ -46,7 +46,7 @@
 		"author": {
 			"@type": "Person",
 			"name": "Abdelilah Ouaadouch",
-			"url": "https://ar7al.com"
+			"url": `${props.data.origin}/ar7al`
 		}
 	})}</script>`}
 </svelte:head>
