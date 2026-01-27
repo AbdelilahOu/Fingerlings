@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { Project } from '$lib/data/projects';
 	import type { ContributionData, Post } from '$lib/types';
-	import ContactsCard from '$lib/components/ContactsCard.svelte';
-	import ProjectCard from '$lib/components/ProjectCard.svelte';
-	import GithubGraph from '$lib/components/GithubGraph.svelte';
 	import BlogCard from '$lib/components/BlogCard.svelte';
+	import ContactsCard from '$lib/components/ContactsCard.svelte';
+	import GithubGraph from '$lib/components/GithubGraph.svelte';
+	import type { Project } from '$lib/data/projects';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
 
 	let props: {
@@ -88,19 +88,19 @@
 	</script>`}
 
 	<!-- JSON-LD Structured Data - WebSite -->
-	{@html `<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "WebSite",
-		"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
-		"url": "https://personal-website.ar7al.workers.dev",
-		"description": "Portfolio of Abdelilah Ouaadouch, a Fullstack Developer specializing in Go, Rust, and TypeScript.",
-		"author": {
-			"@type": "Person",
-			"name": "Abdelilah Ouaadouch"
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+			"url": "https://personal-website.ar7al.workers.dev",
+			"description": "Portfolio of Abdelilah Ouaadouch, a Fullstack Developer specializing in Go, Rust, and TypeScript.",
+			"author": {
+				"@type": "Person",
+				"name": "Abdelilah Ouaadouch"
+			}
 		}
-	}
-	</script>`}
+	</script>
 </svelte:head>
 
 <!-- Hero Section -->
@@ -226,26 +226,3 @@
 		</div>
 	{/if}
 </section>
-
-<!-- Footer -->
-<footer
-	class="font-display m-auto my-4 flex h-11 items-center justify-center text-center text-sm uppercase text-white md:text-md"
->
-	made with
-	<div class="tex-xs mx-2 grid size-12 grid-cols-2">
-		<span>1</span>
-		<span>0</span>
-		<span>0</span>
-		<span>1</span>
-	</div>
-	using
-	<a
-		href="https://svelte.dev"
-		title="Svelte"
-		target="_blank"
-		class="mx-1"
-		rel="noopener noreferrer"
-	>
-		Svelte
-	</a>
-</footer>

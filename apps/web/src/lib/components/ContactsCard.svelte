@@ -1,12 +1,9 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 </script>
 
 <div class="corner-brackets group relative w-full bg-[#131313] text-white">
-	{#if browser}
-		<BackgroundGrid />
-	{/if}
+	<BackgroundGrid />
 	<div class="relative z-10 space-y-2 p-5">
 		<a
 			href="mailto:abdelilah4dev@gmail.com"

@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import type { Post } from '$lib/types';
 	import BackgroundGrid from './BackgroundGrid.svelte';
+	import type { Post } from '$lib/types';
 
 	interface Props {
 		post: Post;
@@ -19,9 +18,7 @@
 </script>
 
 <article class="corner-brackets group relative bg-[#131313] p-5 transition-colors hover:bg-[#1a1a1a]">
-	{#if browser}
 		<BackgroundGrid />
-	{/if}
 	<a href="/blog/{post.slug}" class="relative z-10 block">
 		<h3 class="text-lg font-medium text-white md:text-xl">{post.title}</h3>
 		<p class="mt-2 text-gray-400">{post.description}</p>

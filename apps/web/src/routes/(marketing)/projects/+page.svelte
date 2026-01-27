@@ -49,8 +49,7 @@
 			"name": "Abdelilah Ouaadouch",
 			"url": "https://ar7al.com"
 		}
-	}
-	</script>`}
+	</script>
 </svelte:head>
 
 <!-- Projects Header -->
@@ -123,14 +122,3 @@
 		</div>
 	</div>
 </section>
-
-<!-- Footer -->
-<footer class="border-t border-neutral-800 pt-8">
-	<a
-		href="/ar7al"
-		class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
-	>
-		<span>{"<-"}</span>
-		<span>Back to Home</span>
-	</a>
-</footer>

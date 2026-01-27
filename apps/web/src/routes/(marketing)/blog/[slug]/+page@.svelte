@@ -69,10 +69,10 @@
 	</script>`}
 </svelte:head>
 
-<div class="min-h-screen w-screen bg-[#0d0d0d] px-4 py-8">
-	<div class="m-auto w-full max-w-3xl space-y-8">
+<div class="min-h-screen w-screen bg-[#0d0d0d] px-4 pb-8">
+	<div class="m-auto w-full max-w-3xl">
 		<!-- Back Navigation -->
-		<nav class="flex items-center gap-6 text-sm md:text-base">
+		<nav class="flex items-center gap-6 text-sm md:text-base bg-[#0d0d0d] sticky top-0 z-50 py-6">
 			<a
 				href="/blog"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
@@ -82,6 +82,7 @@
 			</a>
 		</nav>
 
+		<div class="space-y-8">
 		<!-- Post Header -->
 		<header class="space-y-4">
 			<h1 class="font-display text-3xl font-semibold text-white md:text-4xl">
@@ -118,15 +119,8 @@
 					</a>.
 				</p>
 			</div>
-
-			<a
-				href="/blog"
-				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
-			>
-				<span>{"<-"}</span>
-				<span>Back to all posts</span>
-			</a>
 		</footer>
+		</div>
 	</div>
 </div>
 

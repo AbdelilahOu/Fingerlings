@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BackgroundGrid from './BackgroundGrid.svelte';
 	import { page } from '$app/state';
 
 	const links = [
@@ -9,8 +10,8 @@
 
 </script>
 
-<nav class="flex items-center gap-6 text-sm md:text-base">
-	{#each links as link}
+<nav class="flex items-center sticky bg-[#0d0d0d] top-0 z-50 gap-6 py-6 text-sm md:text-base">
+    {#each links as link}
 		<a
 			href={link.href}
 			class="transition-colors {page.url.pathname === link.href

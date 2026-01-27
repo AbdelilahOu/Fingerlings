@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 
 	let props = $props();
@@ -61,10 +60,10 @@
 	</script>`}
 </svelte:head>
 
-<div class="min-h-screen w-screen bg-[#0d0d0d] px-4 py-8">
-	<div class="m-auto w-full max-w-3xl space-y-8">
+<div class="min-h-screen w-screen bg-[#0d0d0d] px-4 pb-8">
+	<div class="m-auto w-full max-w-3xl">
 		<!-- Back Navigation -->
-		<nav class="flex items-center gap-6 text-sm md:text-base">
+		<nav class="flex items-center gap-6 text-sm md:text-base py-6 bg-[#0d0d0d] sticky top-0 z-50">
 			<a
 				href="/projects"
 				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
@@ -73,6 +72,8 @@
 				<span>Back to Projects</span>
 			</a>
 		</nav>
+
+		<div class="space-y-8">
 
 		<!-- Project Header -->
 		<header class="space-y-4">
@@ -121,9 +122,7 @@
 				<span>$</span> cat ./about
 			</h2>
 			<div class="corner-brackets group relative bg-[#131313] p-5">
-				{#if browser}
 					<BackgroundGrid />
-				{/if}
 				<div class="relative z-10 space-y-4 text-gray-200">
 					{#each project.longDescription.split('\n\n') as paragraph}
 						<p>{paragraph}</p>
@@ -137,8 +136,9 @@
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> ls ./features
 			</h2>
-			<div class="corner-brackets bg-[#131313] p-5">
-				<ul class="space-y-2 text-gray-200">
+			<div class="corner-brackets group relative bg-[#131313] p-5">
+				<BackgroundGrid />
+			<ul class="space-y-2 relative text-gray-200 z-10">
 					{#each project.features as feature}
 						<li class="flex items-start gap-2">
 							<span class="text-green-400">-</span>
@@ -154,8 +154,9 @@
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> git log --challenges
 			</h2>
-			<div class="corner-brackets bg-[#131313] p-5">
-				<ul class="space-y-2 text-gray-200">
+			<div class="corner-brackets group relative bg-[#131313] p-5">
+				<BackgroundGrid />
+			<ul class="space-y-2 relative z-10 text-gray-200">
 					{#each project.challenges as challenge}
 						<li class="flex items-start gap-2">
 							<span class="text-yellow-400">*</span>
@@ -167,14 +168,22 @@
 		</section>
 
 		<!-- Footer -->
-		<footer class="border-t border-neutral-800 pt-8">
-			<a
-				href="/projects"
-				class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
-			>
-				<span>{"<-"}</span>
-				<span>Back to all projects</span>
-			</a>
+		<footer class="space-y-6 border-t border-neutral-800 pt-8">
+			<div class="corner-brackets bg-[#131313] p-5">
+				<p class="text-gray-300">
+					Thanks for reading! If you found this helpful, feel free to share it or connect with me
+					on
+					<a
+						href="https://x.com/Abdelilah4dev"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-blue-400 hover:text-blue-300"
+					>
+						Twitter
+					</a>.
+				</p>
+			</div>
 		</footer>
+		</div>
 	</div>
 </div>

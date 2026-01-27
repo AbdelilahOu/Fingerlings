@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Post } from '$lib/types';
 	import BlogCard from '$lib/components/BlogCard.svelte';
+	import type { Post } from '$lib/types';
 
 	let props: { data: { posts: Post[]; url: string } } = $props();
 
@@ -49,8 +49,7 @@
 			"name": "Abdelilah Ouaadouch",
 			"url": "https://ar7al.com"
 		}
-	}
-	</script>`}
+	</script>
 </svelte:head>
 
 <!-- Blog Header -->
@@ -103,19 +102,8 @@
 	<div class="corner-brackets bg-[#131313] p-5">
 		<div class="flex flex-wrap gap-3">
 			{#each ['Go/Golang', 'Rust', 'TypeScript', 'APIs', 'System Design', 'Developer Tools', 'Database Optimization', 'Desktop Apps'] as topic}
-				<span class="border border-neutral-600 px-3 py-1 text-gray-300">{topic}</span>
+				<span class="border border-neutral-600 px-3 py-1 text-gray-300 flex">{topic}</span>
 			{/each}
 		</div>
 	</div>
 </section>
-
-<!-- Footer -->
-<footer class="border-t border-neutral-800 pt-8">
-	<a
-		href="/ar7al"
-		class="inline-flex items-center gap-2 text-gray-400 transition-colors hover:text-white"
-	>
-		<span>{"<-"}</span>
-		<span>Back to Home</span>
-	</a>
-</footer>

@@ -1,6 +1,6 @@
-import { getPosts } from "$lib/data/posts";
-import { getLatestProjects } from "$lib/data/projects";
 import { fetchGitHubContributions } from "$lib/server/github";
+import { getLatestProjects } from "$lib/data/projects";
+import { getPosts } from "$lib/data/posts";
 
 export const prerender = true;
 
@@ -9,8 +9,7 @@ export async function load() {
   const posts = await getPosts();
   const latestPosts = posts.slice(0, 2);
 
-  const year = new Date().getFullYear() - 1;
-  const githubContributions = await fetchGitHubContributions(year).catch((e) => {
+  const githubContributions = fetchGitHubContributions(2025).catch((e) => {
     console.error("Failed to fetch GitHub contributions:", e);
     return null;
   });
@@ -19,6 +18,6 @@ export async function load() {
     featuredProjects,
     latestPosts,
     githubContributions,
-    year,
+    year: 2025,
   };
 }

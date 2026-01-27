@@ -1,8 +1,5 @@
 import type { RouterClient } from "@orpc/server";
 
-import { env } from "cloudflare:workers";
-import { z } from "zod";
-
 import { procedure } from "../index";
 
 export const appRouter = {

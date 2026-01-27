@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import BackgroundGrid from './BackgroundGrid.svelte';
 
 	interface Project {
@@ -19,9 +18,7 @@
 </script>
 
 <div class="corner-brackets group relative bg-[#131313] p-5">
-	{#if browser}
 		<BackgroundGrid />
-	{/if}
 
 	<article class="relative z-10">
 		<a href="/projects/{project.slug}" class="block" title="{project.title} - {project.description}">
