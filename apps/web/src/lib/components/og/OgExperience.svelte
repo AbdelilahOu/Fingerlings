@@ -36,7 +36,7 @@
 
 		<!-- Experience label -->
 		<div style="display: flex; margin-bottom: 16px;">
-			<span style="display: flex; background-color: #10b981; color: #ffffff; padding: 6px 16px; font-size: 18px; font-weight: 600;">
+			<span style="display: flex; background-color: #3b82f6; color: #ffffff; padding: 6px 16px; font-size: 18px; font-weight: 600;">
 				EXPERIENCE
 			</span>
 		</div>

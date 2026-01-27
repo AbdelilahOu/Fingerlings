@@ -139,7 +139,7 @@
 			<ul class="space-y-2 relative text-gray-200 z-10">
 					{#each project.features as feature}
 						<li class="flex items-start gap-2">
-							<span class="text-green-400">-</span>
+							<span class="text-blue-400">-</span>
 							<span>{feature}</span>
 						</li>
 					{/each}

@@ -147,7 +147,7 @@
 				<ul class="space-y-2 relative text-gray-200 z-10">
 					{#each experience.highlights as highlight}
 						<li class="flex items-start gap-2">
-							<span class="text-green-400">-</span>
+							<span class="text-blue-400">-</span>
 							<span>{highlight}</span>
 						</li>
 					{/each}

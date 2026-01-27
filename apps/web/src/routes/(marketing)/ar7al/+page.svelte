@@ -165,7 +165,7 @@
 		{:then contributions}
 			<p class="mb-4 text-white">
 				Total Contributions in {props.data.year}:
-				<span class="font-semibold text-green-400">
+				<span class="font-semibold text-blue-400">
 					{contributions?.totalGH ?? 0}
 				</span>
 			</p>
