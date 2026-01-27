@@ -22,21 +22,21 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/80668205/",
     type: "Full-time",
     description:
-      "Building backend-heavy apps for clients with Go and TypeScript. Designing APIs, modelling data in PostgreSQL, and building AI-powered automation helpers.",
-    longDescription: `I work with a remote team building backend-heavy apps for clients. Most of my time is spent in Go and TypeScript, designing APIs, modelling data in PostgreSQL and wiring everything up to clean frontends.
+      "Built backend-heavy apps for clients with Go and TypeScript. Designed APIs, modelled data in PostgreSQL, and built AI-powered automation helpers.",
+    longDescription: `I worked with a remote team building backend-heavy apps for clients. Most of my time was spent in Go and TypeScript, designing APIs, modelling data in PostgreSQL, and wiring everything up to clean frontends.
 
-Lately I've also been building small AI agents that plug into existing tools (dashboards, CRMs, internal panels) to automate boring tasks like data entry and reporting. I'm usually the person making sure these agents have the right backend hooks, permissions and observability so they're safe to run in production.`,
+Lately I also built small AI agents that plugged into existing tools (dashboards, CRMs, internal panels) to automate boring tasks like data entry and reporting. I was usually the person making sure these agents had the right backend hooks, permissions, and observability so they were safe to run in production.`,
     startDate: "2025-04",
     endDate: null,
     location: "Netherlands",
     locationType: "Remote",
     technologies: ["Go", "TypeScript", "PostgreSQL", "Next.js", "AI/LLM"],
     highlights: [
-      "Building backend-heavy applications for various clients",
-      "Designing and implementing REST APIs with Go and TypeScript",
-      "Data modelling and database architecture with PostgreSQL",
-      "Building AI-powered automation tools for internal workflows",
-      "Implementing proper observability and permissions for production AI agents",
+      "Built backend-heavy applications for various clients",
+      "Designed and implemented REST APIs with Go and TypeScript",
+      "Modelled data and shaped database architecture with PostgreSQL",
+      "Built AI-powered automation tools for internal workflows",
+      "Implemented observability and permissions for production AI agents",
     ],
   },
   {
@@ -47,17 +47,17 @@ Lately I've also been building small AI agents that plug into existing tools (da
     type: "Full-time",
     description:
       "Built an Electronic Medical Record and hospital management platform using Node.js, Go, Docker, PostgreSQL, and Kafka for event-driven architecture.",
-    longDescription: `We were building an Electronic Medical Record and hospital management platform. I worked on the backend services using Node.js and Go, with Dockerized microservices talking to PostgreSQL.
+    longDescription: `We built an Electronic Medical Record and hospital management platform. I worked on the backend services using Node.js and Go, with Dockerized microservices talking to PostgreSQL.
 
-I designed and maintained an event-driven pipeline with Kafka so patient data, billing and appointments stayed in sync across services. On top of that, I helped expose these services through clear REST APIs and collaborated with the frontend/devops teams whenever something weird happened in production.`,
+I designed and maintained an event-driven pipeline with Kafka so patient data, billing, and appointments stayed in sync across services. On top of that, I exposed these services through clear REST APIs and collaborated with the frontend/DevOps teams whenever something weird happened in production.`,
     startDate: "2023-06",
     endDate: "2025-04",
     location: "Marrakesh, Morocco",
     locationType: "Hybrid",
     technologies: ["Node.js", "Go", "Docker", "PostgreSQL", "Kafka", "REST APIs"],
     highlights: [
-      "Built backend services for Electronic Medical Record system",
-      "Designed event-driven architecture with Kafka for data synchronization",
+      "Built backend services for an Electronic Medical Record system",
+      "Designed an event-driven architecture with Kafka for data synchronization",
       "Implemented Dockerized microservices communicating with PostgreSQL",
       "Exposed services through clean REST APIs",
       "Collaborated with frontend and DevOps teams for production troubleshooting",
@@ -70,18 +70,18 @@ I designed and maintained an event-driven pipeline with Kafka so patient data, b
     companyUrl: "https://www.linkedin.com/company/96692614/",
     type: "Full-time",
     description:
-      "Built a school management system with Rust backend and React frontend, featuring bracelet-based scanner integration for automated attendance tracking.",
-    longDescription: `Built a school management system with a Rust backend and a React frontend to handle things like attendance and basic student records.
+      "Built a school management system with a Rust backend and React frontend, featuring bracelet-based scanner integration for automated attendance tracking.",
+    longDescription: `I built a school management system with a Rust backend and a React frontend to handle things like attendance and basic student records.
 
-The most fun bit was integrating bracelet-based scanners so attendance is recorded automatically when students walk in, no more manual lists. I also added simple dashboards for staff so they can quickly see who's in, who's late, and export data when they need it.`,
+The most fun bit was integrating bracelet-based scanners so attendance was recorded automatically when students walked in, no more manual lists. I also added simple dashboards for staff so they could quickly see who's in, who's late, and export data when they needed it.`,
     startDate: "2022-02",
     endDate: "2023-01",
-    location: "Morocco",
+    location: "Marrakesh, Morocco",
     locationType: "On-site",
     technologies: ["Rust", "React", "TypeScript", "PostgreSQL"],
     highlights: [
-      "Built complete school management system from scratch",
-      "Implemented Rust backend for high performance",
+      "Built a complete school management system from scratch",
+      "Implemented a Rust backend for high performance",
       "Integrated bracelet-based RFID scanners for automated attendance",
       "Created staff dashboards for attendance monitoring and reporting",
       "Built data export functionality for administrative needs",
@@ -95,7 +95,7 @@ The most fun bit was integrating bracelet-based scanners so attendance is record
     type: "Internship",
     description:
       "Helped migrate a legacy AngularJS codebase to modern Angular with TypeScript, including multi-language support implementation.",
-    longDescription: `Joined the team during a big migration from an old AngularJS codebase to modern Angular with TypeScript. I spent most days refactoring controllers into components, cleaning up templates and fixing UI bugs that showed up during the migration.
+    longDescription: `I joined the team during a big migration from an old AngularJS codebase to modern Angular with TypeScript. I spent most days refactoring controllers into components, cleaning up templates, and fixing UI bugs that showed up during the migration.
 
 I also helped add multi-language support using Angular's i18n tools so the app could be used comfortably in more than one language, without duplicating views.`,
     startDate: "2022-07",
@@ -104,9 +104,9 @@ I also helped add multi-language support using Angular's i18n tools so the app c
     locationType: "Remote",
     technologies: ["Angular", "AngularJS", "TypeScript", "i18n"],
     highlights: [
-      "Migrated legacy AngularJS codebase to modern Angular",
+      "Migrated a legacy AngularJS codebase to modern Angular",
       "Refactored controllers into Angular components",
-      "Fixed UI bugs during migration process",
+      "Fixed UI bugs during the migration process",
       "Implemented multi-language support using Angular i18n",
     ],
   },
