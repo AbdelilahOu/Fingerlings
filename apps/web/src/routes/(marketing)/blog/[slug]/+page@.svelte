@@ -6,7 +6,7 @@
 
 	const meta = props.data.meta;
 	const url = `${props.data.origin}/blog/${props.data.slug}`;
-	const image = `${props.data.origin}/og/image/blog/${props.data.slug}/og.png`;
+	const image = `${props.data.origin}/blog/${props.data.slug}/social.png`;
 	const title = `${props.data.meta.title} - Abdelilah Ouaadouch`;
 
 	function formatDate(dateStr: string): string {

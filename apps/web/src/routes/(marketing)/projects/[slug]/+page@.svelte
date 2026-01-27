@@ -5,7 +5,7 @@
 
 	const project = props.data.project;
 	const url = `${props.data.origin}/projects/${props.data.project.slug}`;
-	const image = `${props.data.origin}/og/image/projects/${props.data.project.slug}/og.png`;
+	const image = `${props.data.origin}/projects/${props.data.project.slug}/social.png`;
 	const title = `${props.data.project.title} - Abdelilah Ouaadouch`;
 	const description = props.data.project.description;
 </script>

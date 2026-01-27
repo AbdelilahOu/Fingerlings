@@ -6,7 +6,7 @@
 
 	const experience = props.data.experience;
 	const url = `${props.data.origin}/career/${experience.slug}`;
-	const image = `${props.data.origin}/og/image/career/${experience.slug}/og.png`;
+	const image = `${props.data.origin}/career/${experience.slug}/social.png`;
 	const title = `${experience.title} at ${experience.company} - Abdelilah Ouaadouch`;
 	const description = experience.description;
 </script>

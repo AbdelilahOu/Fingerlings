@@ -52,7 +52,7 @@
 		property="og:description"
 		content="Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks."
 	/>
-	<meta property="og:image" content={`${props.data.origin}/og/image/og.png`} />
+	<meta property="og:image" content={`${props.data.origin}/ar7al/social.png`} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 	<meta property="og:locale" content="en" />
 
@@ -64,7 +64,7 @@
 		name="twitter:description"
 		content="Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks."
 	/>
-	<meta name="twitter:image" content={`${props.data.origin}/og/image/og.png`} />
+	<meta name="twitter:image" content={`${props.data.origin}/ar7al/social.png`} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data - Person -->
@@ -77,7 +77,7 @@
 		"description": "Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.",
 		"email": "mailto:abdelilah4dev@gmail.com",
 		"url": `${props.data.origin}/ar7al`,
-		"image": `${props.data.origin}/og/image/og.png`,
+		"image": `${props.data.origin}/ar7al/social.png`,
 		"sameAs": [
 			"https://www.linkedin.com/in/ar7al/",
 			"https://github.com/AbdelilahOu",

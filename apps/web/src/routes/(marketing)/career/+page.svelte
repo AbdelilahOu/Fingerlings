@@ -8,7 +8,7 @@
 	const description =
 		'Professional experience as a Full Stack Engineer. Building backend systems with Go, Rust, TypeScript, and modern frameworks across healthcare, education, and enterprise applications.';
 	const url = `${props.data.origin}/career`;
-	const image = `${props.data.origin}/og/image/career/og.png`;
+	const image = `${props.data.origin}/career/social.png`;
 </script>
 
 <svelte:head>
