@@ -46,14 +46,13 @@
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data -->
-	{@html `<script type="application/ld+json">
-	{
+	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "BlogPosting",
-		"headline": "${meta.title}",
-		"description": "${meta.description}",
-		"url": "${url}",
-		"datePublished": "${meta.date}",
+		"headline": meta.title,
+		"description": meta.description,
+		"url": url,
+		"datePublished": meta.date,
 		"author": {
 			"@type": "Person",
 			"name": "Abdelilah Ouaadouch",
@@ -64,9 +63,8 @@
 			"name": "Abdelilah Ouaadouch",
 			"url": "https://ar7al.com"
 		},
-		"keywords": "${meta.tags.join(', ')}"
-	}
-	</script>`}
+		"keywords": meta.tags.join(", ")
+	})}</script>`}
 </svelte:head>
 
 <div class="min-h-screen w-screen bg-[#0d0d0d] px-4 pb-8">

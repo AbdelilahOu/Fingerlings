@@ -67,8 +67,7 @@
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data - Person -->
-	{@html `<script type="application/ld+json">
-	{
+	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "Person",
 		"name": "Abdelilah Ouaadouch",
@@ -84,23 +83,20 @@
 			"https://x.com/Abdelilah4dev"
 		],
 		"knowsAbout": ["Go", "Golang", "Typescript", "Rust", "Fullstack Development", "API Development", "Next.js", "Hono.js", "Gin", "Docker", "Tauri", "PostgreSQL", "MySQL"]
-	}
-	</script>`}
+	})}</script>`}
 
 	<!-- JSON-LD Structured Data - WebSite -->
-	<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
-			"url": "https://personal-website.ar7al.workers.dev",
-			"description": "Portfolio of Abdelilah Ouaadouch, a Fullstack Developer specializing in Go, Rust, and TypeScript.",
-			"author": {
-				"@type": "Person",
-				"name": "Abdelilah Ouaadouch"
-			}
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+		"url": "https://personal-website.ar7al.workers.dev",
+		"description": "Portfolio of Abdelilah Ouaadouch, a Fullstack Developer specializing in Go, Rust, and TypeScript.",
+		"author": {
+			"@type": "Person",
+			"name": "Abdelilah Ouaadouch"
 		}
-	</script>
+	})}</script>`}
 </svelte:head>
 
 <!-- Hero Section -->

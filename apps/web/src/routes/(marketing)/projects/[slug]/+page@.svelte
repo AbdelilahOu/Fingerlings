@@ -36,12 +36,11 @@
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data -->
-	{@html `<script type="application/ld+json">
-	{
+	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "SoftwareApplication",
-		"name": "${project.title}",
-		"description": "${project.description}",
+		"name": project.title,
+		"description": project.description,
 		"applicationCategory": "DeveloperApplication",
 		"operatingSystem": "Cross-platform",
 		"author": {
@@ -53,11 +52,10 @@
 			"@type": "Offer",
 			"price": "0",
 			"priceCurrency": "USD"
-		}${project.github ? `,
-		"downloadUrl": "${project.github}"` : ''}${project.web ? `,
-		"url": "${project.web}"` : ''}
-	}
-	</script>`}
+		},
+		...(project.github && { "downloadUrl": project.github }),
+		...(project.web && { "url": project.web })
+	})}</script>`}
 </svelte:head>
 
 <div class="min-h-screen w-screen bg-[#0d0d0d] px-4 pb-8">

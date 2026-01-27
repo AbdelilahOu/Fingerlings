@@ -37,19 +37,18 @@
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
 	<!-- JSON-LD Structured Data -->
-	{@html `<script type="application/ld+json">
-	{
+	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "Blog",
 		"name": "Abdelilah Ouaadouch's Blog",
-		"description": "${description}",
-		"url": "${url}",
+		"description": description,
+		"url": url,
 		"author": {
 			"@type": "Person",
 			"name": "Abdelilah Ouaadouch",
 			"url": "https://ar7al.com"
 		}
-	</script>
+	})}</script>`}
 </svelte:head>
 
 <!-- Blog Header -->
