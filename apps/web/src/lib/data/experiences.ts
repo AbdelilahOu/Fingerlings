@@ -25,7 +25,7 @@ export const experiences: Experience[] = [
       "Building backend-heavy apps for clients with Go and TypeScript. Designing APIs, modelling data in PostgreSQL, and building AI-powered automation helpers.",
     longDescription: `I work with a remote team building backend-heavy apps for clients. Most of my time is spent in Go and TypeScript, designing APIs, modelling data in PostgreSQL and wiring everything up to clean frontends.
 
-Lately I've also been building small AI-powered helpers that plug into existing tools (dashboards, CRMs, internal panels) to automate boring tasks like data entry and reporting. I'm usually the person making sure these agents have the right backend hooks, permissions and observability so they're safe to run in production.`,
+Lately I've also been building small AI agents that plug into existing tools (dashboards, CRMs, internal panels) to automate boring tasks like data entry and reporting. I'm usually the person making sure these agents have the right backend hooks, permissions and observability so they're safe to run in production.`,
     startDate: "2025-04",
     endDate: null,
     location: "Netherlands",
