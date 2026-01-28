@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { fade } from 'svelte/transition';
 	import type { Snippet } from 'svelte';
 
 	interface Props {
@@ -39,7 +38,6 @@
 	{#if browser}
 		<svg
 			bind:this={svgElement}
-			in:fade={{ duration: 300, delay: 100 }}
 			aria-hidden="true"
 			data-nosnippet
 			class="absolute left-0 top-0 z-0 h-full w-full"
