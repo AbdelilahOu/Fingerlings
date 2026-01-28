@@ -1,5 +1,6 @@
 <script lang="ts">
 	import BlogCard from '$lib/components/BlogCard.svelte';
+	import SkillsGrid from '$lib/components/SkillsGrid.svelte';
 	import type { Post } from '$lib/types';
 
 	let props: { data: { posts: Post[]; origin: string } } = $props();
@@ -98,11 +99,5 @@
 	<h2 class="text-xl font-bold text-white md:text-2xl">
 		<span>$</span> cat ./topics
 	</h2>
-	<div class="corner-brackets bg-[#131313] p-5">
-		<div class="flex flex-wrap gap-3">
-			{#each ['Go/Golang', 'Rust', 'TypeScript', 'APIs', 'System Design', 'Developer Tools', 'Database Optimization', 'Desktop Apps'] as topic}
-				<span class="border border-neutral-600 px-3 py-1 text-gray-300 flex">{topic}</span>
-			{/each}
-		</div>
-	</div>
+	<SkillsGrid skills={['Go/Golang', 'Rust', 'TypeScript', 'APIs', 'System Design', 'Developer Tools', 'Database Optimization', 'Desktop Apps']} />
 </section>

@@ -54,12 +54,12 @@
 		<div class="mt-1 text-sm text-gray-500">
 			{experience.location} - {experience.locationType}
 		</div>
-		<p class="mt-3 block text-base md:text-lg text-gray-200">
+		<p class="mt-2 text-base md:text-lg text-gray-400">
 			{experience.description}
 		</p>
 		<div class="mt-3 flex flex-wrap gap-2">
 			{#each experience.technologies as tech}
-				<span class="bg-neutral-600 px-2 py-1 text-sm text-white">
+				<span class="bg-neutral-700 px-2 py-1 text-xs text-gray-300">
 					{tech}
 				</span>
 			{/each}

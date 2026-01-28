@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Project } from '$lib/data/projects';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import SkillsGrid from '$lib/components/SkillsGrid.svelte';
 
 	let props: { data: { projects: Project[]; origin: string } } = $props();
 
@@ -113,11 +114,5 @@
 	<h2 class="text-xl font-bold text-white md:text-2xl">
 		<span>$</span> cat ./tech-stack
 	</h2>
-	<div class="corner-brackets bg-[#131313] p-5">
-		<div class="flex flex-wrap gap-3">
-			{#each ['Go/Golang', 'Rust', 'TypeScript', 'Next.js', 'Nuxt', 'Tauri', 'PostgreSQL', 'SQLite'] as tech}
-				<span class="border border-neutral-600 px-3 py-1 text-gray-300">{tech}</span>
-			{/each}
-		</div>
-	</div>
+	<SkillsGrid skills={['Go/Golang', 'Rust', 'TypeScript', 'Next.js', 'Nuxt', 'Tauri', 'PostgreSQL', 'SQLite']} />
 </section>

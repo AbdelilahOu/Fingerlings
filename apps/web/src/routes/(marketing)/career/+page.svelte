@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Experience } from '$lib/data/experiences';
 	import ExperienceCard from '$lib/components/ExperienceCard.svelte';
+	import SkillsGrid from '$lib/components/SkillsGrid.svelte';
 
 	let props: { data: { experiences: Experience[]; origin: string } } = $props();
 
@@ -114,11 +115,5 @@
 	<h2 class="text-xl font-bold text-white md:text-2xl">
 		<span>$</span> cat ./skills
 	</h2>
-	<div class="corner-brackets bg-[#131313] p-5">
-		<div class="flex flex-wrap gap-3">
-			{#each ['Go/Golang', 'Rust', 'TypeScript', 'Node.js', 'React', 'Angular', 'PostgreSQL', 'Docker', 'Kafka', 'REST APIs'] as skill}
-				<span class="border border-neutral-600 px-3 py-1 text-gray-300">{skill}</span>
-			{/each}
-		</div>
-	</div>
+	<SkillsGrid skills={['Go/Golang', 'Rust', 'TypeScript', 'Node.js', 'React', 'Angular', 'PostgreSQL', 'Docker', 'Kafka', 'REST APIs']} />
 </section>

@@ -20,7 +20,7 @@
 <BackgroundGrid>
 	<a href="/blog/{post.slug}" class="block">
 		<h3 class="text-lg font-medium text-white md:text-xl">{post.title}</h3>
-		<p class="mt-2 text-gray-400">{post.description}</p>
+		<p class="mt-2 text-base md:text-lg text-gray-400">{post.description}</p>
 		<div class="mt-3 flex items-center justify-between">
 			<div class="flex flex-wrap gap-2">
 				{#each post.tags as tag}
