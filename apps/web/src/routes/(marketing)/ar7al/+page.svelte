@@ -135,7 +135,7 @@
 </svelte:head>
 
 <section class="space-y-4">
-	<h1 class="font-display text-3xl font-semibold uppercase text-white md:text-4xl">
+	<h1 class="font-display text-3xl font-semibold text-white md:text-4xl">
 		Abdelilah Ouaadouch
 		<span class="block text-xl font-normal normal-case text-gray-300 md:text-2xl">
 			Fullstack Developer
