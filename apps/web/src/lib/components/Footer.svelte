@@ -1,6 +1,5 @@
 <footer class="border-t border-neutral-800 pt-8 pb-6 text-sm text-neutral-400">
 	<div class="grid grid-cols-2 gap-8 md:grid-cols-4 mb-8">
-		<!-- Navigation -->
 		<div class="space-y-3">
 			<h3 class="text-white font-medium">Navigation</h3>
 			<ul class="space-y-2">
@@ -11,7 +10,6 @@
 			</ul>
 		</div>
 
-		<!-- Connect -->
 		<div class="space-y-3">
 			<h3 class="text-white font-medium">Connect</h3>
 			<ul class="space-y-2">
@@ -48,7 +46,6 @@
 			</ul>
 		</div>
 
-		<!-- Contact -->
 		<div class="space-y-3">
 			<h3 class="text-white font-medium">Contact</h3>
 			<ul class="space-y-2">
@@ -63,7 +60,6 @@
 			</ul>
 		</div>
 
-		<!-- Built With -->
 		<div class="space-y-3">
 			<h3 class="text-white font-medium">Built With</h3>
 			<ul class="space-y-2">
@@ -91,7 +87,6 @@
 		</div>
 	</div>
 
-	<!-- Bottom bar -->
 	<div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-neutral-800">
 		<p class="text-neutral-500">
 			<span class="text-blue-400">$</span> echo "Made with 1s & 0s"

@@ -52,7 +52,6 @@
 	/>
 	<link rel="canonical" href={url} />
 
-	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={url} />
 	<meta property="og:title" content={title} />
@@ -60,7 +59,6 @@
 	<meta property="og:image" content={image} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 
-	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
@@ -68,7 +66,6 @@
 	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
-	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@graph": [
@@ -145,7 +142,6 @@
 	})}</script>`}
 </svelte:head>
 
-<!-- Career Header -->
 <header class="space-y-4">
 	<h1 class="font-display text-3xl font-semibold text-white md:text-4xl">
 		Career
@@ -159,7 +155,6 @@
 	</p>
 </header>
 
-<!-- Experience List -->
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
 		<span>$</span> cat ./experience
@@ -203,7 +198,6 @@
 	{/if}
 </section>
 
-<!-- Skills Summary -->
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
 		<span>$</span> cat ./skills

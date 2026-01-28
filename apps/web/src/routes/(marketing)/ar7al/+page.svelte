@@ -51,7 +51,6 @@
 	/>
 	<link rel="canonical" href={url} />
 
-	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={url} />
 	<meta property="og:title" content={title} />
@@ -60,7 +59,6 @@
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 	<meta property="og:locale" content="en" />
 
-	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
@@ -68,7 +66,6 @@
 	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
-	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@graph": [
@@ -137,7 +134,6 @@
 	})}</script>`}
 </svelte:head>
 
-<!-- Hero Section -->
 <section class="space-y-4">
 	<h1 class="font-display text-3xl font-semibold uppercase text-white md:text-4xl">
 		Abdelilah Ouaadouch
@@ -159,7 +155,6 @@
 </section>
 
 
-<!-- Skills Section -->
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
 		<span>$</span> cat ./skills
@@ -169,7 +164,6 @@
 	<SkillsGrid skills={tools} />
 </section>
 
-<!-- GitHub Contributions Section -->
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
 		<span>$</span> git log --stat
@@ -203,7 +197,6 @@
 	</div>
 </section>
 
-<!-- Featured Projects Section -->
 <section class="space-y-4">
 	<div class="flex items-center justify-between">
 		<h2 class="text-xl font-bold text-white md:text-2xl">
@@ -220,7 +213,6 @@
 	</div>
 </section>
 
-<!-- Latest Blog Posts Section -->
 <section class="space-y-4">
 	<div class="flex items-center justify-between">
 		<h2 class="text-xl font-bold text-white md:text-2xl">

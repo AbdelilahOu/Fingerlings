@@ -24,7 +24,6 @@
 	/>
 	<link rel="canonical" href={url} />
 
-	<!-- Open Graph -->
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content={url} />
 	<meta property="og:title" content={title} />
@@ -32,7 +31,6 @@
 	<meta property="og:image" content={image} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 
-	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
@@ -40,7 +38,6 @@
 	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
-	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
 		"@graph": [
@@ -144,7 +141,6 @@
 
 <div class="min-h-screen w-screen bg-[#0d0d0d] px-4 pb-8">
 	<div class="m-auto w-full max-w-3xl">
-		<!-- Back Navigation -->
 		<nav class="flex items-center gap-6 text-sm md:text-base py-6 bg-[#0d0d0d] sticky top-0 z-50">
 			<a
 				href="/projects"
@@ -157,7 +153,6 @@
 
 		<div class="space-y-8">
 
-		<!-- Project Header -->
 		<header class="space-y-4">
 			<h1 class="font-display text-3xl font-semibold text-white md:text-4xl">
 				{project.title}
@@ -172,7 +167,6 @@
 			</div>
 		</header>
 
-		<!-- Project Links -->
 		{#if project.github || project.web}
 			<section class="flex gap-4">
 				{#if project.github}
@@ -198,7 +192,6 @@
 			</section>
 		{/if}
 
-		<!-- About Section -->
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> cat ./about
@@ -212,7 +205,6 @@
 			</BackgroundGrid>
 		</section>
 
-		<!-- Features Section -->
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> ls ./features
@@ -229,7 +221,6 @@
 			</BackgroundGrid>
 		</section>
 
-		<!-- Challenges Section -->
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> git log --challenges
@@ -246,7 +237,6 @@
 			</BackgroundGrid>
 		</section>
 
-		<!-- Footer -->
 		<footer class="space-y-6 border-t border-neutral-800 pt-8">
 			<div class="corner-brackets bg-[#131313] p-5">
 				<p class="text-gray-300">
