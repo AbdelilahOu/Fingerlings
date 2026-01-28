@@ -3,7 +3,7 @@ import { json } from "@sveltejs/kit";
 
 export const prerender = true;
 
-export async function GET() {
-  const posts = await getPosts();
+export function GET() {
+  const posts = getPosts();
   return json(posts);
 }
