@@ -17,9 +17,8 @@
 	}
 </script>
 
-<article class="corner-brackets group relative bg-[#131313] p-5 transition-colors hover:bg-[#1a1a1a]">
-		<BackgroundGrid />
-	<a href="/blog/{post.slug}" class="relative z-10 block">
+<BackgroundGrid>
+	<a href="/blog/{post.slug}" class="block">
 		<h3 class="text-lg font-medium text-white md:text-xl">{post.title}</h3>
 		<p class="mt-2 text-gray-400">{post.description}</p>
 		<div class="mt-3 flex items-center justify-between">
@@ -31,4 +30,4 @@
 			<time class="text-sm text-gray-500">{formatDate(post.date)}</time>
 		</div>
 	</a>
-</article>
+</BackgroundGrid>

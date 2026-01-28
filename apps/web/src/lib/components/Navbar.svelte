@@ -1,5 +1,4 @@
 <script lang="ts">
-	import BackgroundGrid from './BackgroundGrid.svelte';
 	import { page } from '$app/state';
 
 	const links = [

@@ -23,10 +23,8 @@
 	let { experience }: Props = $props();
 </script>
 
-<div class="corner-brackets group relative bg-[#131313] p-5">
-	<BackgroundGrid />
-
-	<article class="relative z-10">
+<BackgroundGrid>
+	<article>
 		<a href="/career/{experience.slug}" class="block" title="{experience.title} at {experience.company}">
 			<h3 class="text-lg md:text-xl font-medium text-white hover:text-gray-300 transition-colors">
 				{experience.title}
@@ -88,4 +86,4 @@
 			{/if}
 		</div>
 	</article>
-</div>
+</BackgroundGrid>

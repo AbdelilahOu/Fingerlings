@@ -119,14 +119,13 @@
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> cat ./about
 			</h2>
-			<div class="corner-brackets group relative bg-[#131313] p-5">
-					<BackgroundGrid />
-				<div class="relative z-10 space-y-4 text-gray-200">
+			<BackgroundGrid>
+				<div class="space-y-4 text-gray-200">
 					{#each project.longDescription.split('\n\n') as paragraph}
 						<p>{paragraph}</p>
 					{/each}
 				</div>
-			</div>
+			</BackgroundGrid>
 		</section>
 
 		<!-- Features Section -->
@@ -134,9 +133,8 @@
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> ls ./features
 			</h2>
-			<div class="corner-brackets group relative bg-[#131313] p-5">
-				<BackgroundGrid />
-			<ul class="space-y-2 relative text-gray-200 z-10">
+			<BackgroundGrid>
+				<ul class="space-y-2 text-gray-200">
 					{#each project.features as feature}
 						<li class="flex items-start gap-2">
 							<span class="text-blue-400">-</span>
@@ -144,7 +142,7 @@
 						</li>
 					{/each}
 				</ul>
-			</div>
+			</BackgroundGrid>
 		</section>
 
 		<!-- Challenges Section -->
@@ -152,9 +150,8 @@
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> git log --challenges
 			</h2>
-			<div class="corner-brackets group relative bg-[#131313] p-5">
-				<BackgroundGrid />
-			<ul class="space-y-2 relative z-10 text-gray-200">
+			<BackgroundGrid>
+				<ul class="space-y-2 text-gray-200">
 					{#each project.challenges as challenge}
 						<li class="flex items-start gap-2">
 							<span class="text-yellow-400">*</span>
@@ -162,7 +159,7 @@
 						</li>
 					{/each}
 				</ul>
-			</div>
+			</BackgroundGrid>
 		</section>
 
 		<!-- Footer -->

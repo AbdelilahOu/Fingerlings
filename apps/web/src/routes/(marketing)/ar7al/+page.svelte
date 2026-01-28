@@ -3,6 +3,7 @@
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import ContactsCard from '$lib/components/ContactsCard.svelte';
 	import GithubGraph from '$lib/components/GithubGraph.svelte';
+	import SkillsGrid from '$lib/components/SkillsGrid.svelte';
 	import type { Project } from '$lib/data/projects';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 
@@ -127,27 +128,9 @@
 	<h2 class="text-xl font-bold text-white md:text-2xl">
 		<span>$</span> cat ./skills
 	</h2>
-	<div class="corner-brackets flex flex-wrap gap-5 bg-[#131313] p-5 text-sm text-white md:text-base">
-		{#each languages as language}
-			<span class="w-full flex-1 whitespace-nowrap border px-2 py-1 text-center text-white">
-				- {language} -
-			</span>
-		{/each}
-	</div>
-	<div class="corner-brackets flex flex-wrap gap-5 bg-[#131313] p-5 text-sm text-white md:text-base">
-		{#each frameworks as framework}
-			<span class="w-full flex-1 whitespace-nowrap border px-2 py-1 text-center text-white">
-				- {framework} -
-			</span>
-		{/each}
-	</div>
-	<div class="corner-brackets flex flex-wrap gap-5 bg-[#131313] p-5 text-sm text-white md:text-base">
-		{#each tools as tool}
-			<span class="w-full flex-1 whitespace-nowrap border px-2 py-1 text-center text-white">
-				- {tool} -
-			</span>
-		{/each}
-	</div>
+	<SkillsGrid skills={languages} />
+	<SkillsGrid skills={frameworks} />
+	<SkillsGrid skills={tools} />
 </section>
 
 <!-- GitHub Contributions Section -->

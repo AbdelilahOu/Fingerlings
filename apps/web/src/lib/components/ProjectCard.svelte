@@ -17,10 +17,8 @@
 	let { project }: Props = $props();
 </script>
 
-<div class="corner-brackets group relative bg-[#131313] p-5">
-		<BackgroundGrid />
-
-	<article class="relative z-10">
+<BackgroundGrid>
+	<article>
 		<a href="/projects/{project.slug}" class="block" title="{project.title} - {project.description}">
 			<h3 class="text-lg md:text-xl font-medium text-white hover:text-gray-300 transition-colors">
 				{project.title}
@@ -70,4 +68,4 @@
 			{/if}
 		</div>
 	</article>
-</div>
+</BackgroundGrid>

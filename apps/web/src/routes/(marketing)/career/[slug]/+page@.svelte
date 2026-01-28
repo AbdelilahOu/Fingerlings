@@ -127,14 +127,13 @@
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> cat ./about
 			</h2>
-			<div class="corner-brackets group relative bg-[#131313] p-5">
-				<BackgroundGrid />
-				<div class="relative z-10 space-y-4 text-gray-200">
+			<BackgroundGrid>
+				<div class="space-y-4 text-gray-200">
 					{#each experience.longDescription.split('\n\n') as paragraph}
 						<p>{paragraph}</p>
 					{/each}
 				</div>
-			</div>
+			</BackgroundGrid>
 		</section>
 
 		<!-- Highlights Section -->
@@ -142,9 +141,8 @@
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> ls ./highlights
 			</h2>
-			<div class="corner-brackets group relative bg-[#131313] p-5">
-				<BackgroundGrid />
-				<ul class="space-y-2 relative text-gray-200 z-10">
+			<BackgroundGrid>
+				<ul class="space-y-2 text-gray-200">
 					{#each experience.highlights as highlight}
 						<li class="flex items-start gap-2">
 							<span class="text-blue-400">-</span>
@@ -152,7 +150,7 @@
 						</li>
 					{/each}
 				</ul>
-			</div>
+			</BackgroundGrid>
 		</section>
 
 		<!-- Technologies Section -->
@@ -160,14 +158,13 @@
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> cat ./tech-stack
 			</h2>
-			<div class="corner-brackets group relative bg-[#131313] p-5">
-				<BackgroundGrid />
-				<div class="relative z-10 flex flex-wrap gap-3">
+			<BackgroundGrid>
+				<div class="flex flex-wrap gap-3">
 					{#each experience.technologies as tech}
 						<span class="border border-neutral-600 px-3 py-1 text-gray-300">{tech}</span>
 					{/each}
 				</div>
-			</div>
+			</BackgroundGrid>
 		</section>
 
 		<!-- Footer -->

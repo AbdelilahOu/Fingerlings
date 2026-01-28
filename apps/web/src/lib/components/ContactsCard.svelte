@@ -2,9 +2,8 @@
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
 </script>
 
-<div class="corner-brackets group relative w-full bg-[#131313] text-white">
-	<BackgroundGrid />
-	<div class="relative z-10 space-y-2 p-5">
+<BackgroundGrid>
+	<div class="space-y-2 text-white">
 		<a
 			href="mailto:abdelilah4dev@gmail.com"
 			title="abdelilah4dev@gmail.com"
@@ -46,4 +45,4 @@
 			<span class="inline-block">Twitter/x</span>
 		</a>
 	</div>
-</div>
+</BackgroundGrid>
