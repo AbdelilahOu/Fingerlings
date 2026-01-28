@@ -10,6 +10,25 @@
 		'Portfolio of software projects including desktop apps, web applications, and developer tools. Built with Go, Rust, TypeScript, and modern frameworks.';
 	const url = `${props.data.origin}/projects`;
 	const image = `${props.data.origin}/projects/social.png`;
+	const personId = `${props.data.origin}/ar7al#person`;
+	const websiteId = `${props.data.origin}/ar7al#website`;
+	const webpageId = `${url}#webpage`;
+	const breadcrumbId = `${url}#breadcrumb`;
+	const projectItems = props.data.projects.map((project, index) => ({
+		"@type": "ListItem",
+		"position": index + 1,
+		"item": {
+			"@type": "SoftwareSourceCode",
+			"@id": `${props.data.origin}/projects/${project.slug}#software`,
+			"name": project.title,
+			"description": project.description,
+			"url": `${props.data.origin}/projects/${project.slug}`,
+			"dateCreated": project.createdAt,
+			"programmingLanguage": project.tech,
+			...(project.github ? { "codeRepository": project.github } : {}),
+			...(project.web ? { "sameAs": [project.web] } : {})
+		}
+	}));
 </script>
 
 <svelte:head>
@@ -40,15 +59,77 @@
 	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		"name": "Abdelilah Ouaadouch's Projects",
-		"description": description,
-		"url": url,
-		"author": {
-			"@type": "Person",
-			"name": "Abdelilah Ouaadouch",
-			"url": `${props.data.origin}/ar7al`
-		}
+		"@graph": [
+			{
+				"@type": "Person",
+				"@id": personId,
+				"name": "Abdelilah Ouaadouch",
+				"alternateName": "Ar7al",
+				"jobTitle": "Fullstack Developer",
+				"url": `${props.data.origin}/ar7al`,
+				"image": `${props.data.origin}/ar7al/social.png`,
+				"sameAs": [
+					"https://www.linkedin.com/in/ar7al/",
+					"https://github.com/AbdelilahOu",
+					"https://x.com/Abdelilah4dev"
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": websiteId,
+				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+				"url": `${props.data.origin}/ar7al`,
+				"publisher": {
+					"@id": personId
+				}
+			},
+			{
+				"@type": "ItemList",
+				"@id": `${url}#project-list`,
+				"itemListElement": projectItems
+			},
+			{
+				"@type": "CollectionPage",
+				"@id": webpageId,
+				"name": title,
+				"description": description,
+				"url": url,
+				"isPartOf": {
+					"@id": websiteId
+				},
+				"about": {
+					"@id": personId
+				},
+				"mainEntity": {
+					"@id": `${url}#project-list`
+				},
+				"breadcrumb": {
+					"@id": breadcrumbId
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": image
+				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": breadcrumbId,
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": `${props.data.origin}/ar7al`
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Projects",
+						"item": url
+					}
+				]
+			}
+		]
 	})}</script>`}
 </svelte:head>
 

@@ -10,6 +10,37 @@
 		'Professional experience as a Full Stack Engineer. Building backend systems with Go, Rust, TypeScript, and modern frameworks across healthcare, education, and enterprise applications.';
 	const url = `${props.data.origin}/career`;
 	const image = `${props.data.origin}/career/social.png`;
+	const personId = `${props.data.origin}/ar7al#person`;
+	const websiteId = `${props.data.origin}/ar7al#website`;
+	const webpageId = `${url}#webpage`;
+	const breadcrumbId = `${url}#breadcrumb`;
+	const normalizeDate = (value: string | null) => {
+		if (!value) return undefined;
+		if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+		if (/^\d{4}-\d{2}$/.test(value)) return `${value}-01`;
+		if (/^\d{4}$/.test(value)) return `${value}-01-01`;
+		const parsed = new Date(value);
+		if (Number.isNaN(parsed.getTime())) return undefined;
+		return parsed.toISOString().slice(0, 10);
+	};
+	const experienceItems = props.data.experiences.map((experience, index) => ({
+		"@type": "ListItem",
+		"position": index + 1,
+		"item": {
+			"@type": "Role",
+			"roleName": experience.title,
+			"description": experience.description,
+			"startDate": normalizeDate(experience.startDate),
+			...(experience.endDate ? { "endDate": normalizeDate(experience.endDate) } : {}),
+			"employmentType": experience.type,
+			"worksFor": {
+				"@type": "Organization",
+				"name": experience.company,
+				...(experience.companyUrl ? { "url": experience.companyUrl } : {})
+			},
+			"location": experience.location
+		}
+	}));
 </script>
 
 <svelte:head>
@@ -40,15 +71,77 @@
 	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		"name": "Abdelilah Ouaadouch's Career",
-		"description": description,
-		"url": url,
-		"author": {
-			"@type": "Person",
-			"name": "Abdelilah Ouaadouch",
-			"url": `${props.data.origin}/ar7al`
-		}
+		"@graph": [
+			{
+				"@type": "Person",
+				"@id": personId,
+				"name": "Abdelilah Ouaadouch",
+				"alternateName": "Ar7al",
+				"jobTitle": "Fullstack Developer",
+				"url": `${props.data.origin}/ar7al`,
+				"image": `${props.data.origin}/ar7al/social.png`,
+				"sameAs": [
+					"https://www.linkedin.com/in/ar7al/",
+					"https://github.com/AbdelilahOu",
+					"https://x.com/Abdelilah4dev"
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": websiteId,
+				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+				"url": `${props.data.origin}/ar7al`,
+				"publisher": {
+					"@id": personId
+				}
+			},
+			{
+				"@type": "ItemList",
+				"@id": `${url}#experience-list`,
+				"itemListElement": experienceItems
+			},
+			{
+				"@type": "CollectionPage",
+				"@id": webpageId,
+				"name": title,
+				"description": description,
+				"url": url,
+				"isPartOf": {
+					"@id": websiteId
+				},
+				"about": {
+					"@id": personId
+				},
+				"mainEntity": {
+					"@id": `${url}#experience-list`
+				},
+				"breadcrumb": {
+					"@id": breadcrumbId
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": image
+				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": breadcrumbId,
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": `${props.data.origin}/ar7al`
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Career",
+						"item": url
+					}
+				]
+			}
+		]
 	})}</script>`}
 </svelte:head>
 

@@ -10,6 +10,23 @@
 		'Technical articles about Go, Rust, TypeScript, and fullstack development. Tips, tutorials, and insights from a fullstack developer.';
 	const url = `${props.data.origin}/blog`;
 	const image = `${props.data.origin}/blog/social.png`;
+	const personId = `${props.data.origin}/ar7al#person`;
+	const websiteId = `${props.data.origin}/ar7al#website`;
+	const webpageId = `${url}#webpage`;
+	const breadcrumbId = `${url}#breadcrumb`;
+	const blogId = `${url}#blog`;
+	const blogPosts = props.data.posts.map((post) => ({
+		"@type": "BlogPosting",
+		"@id": `${props.data.origin}/blog/${post.slug}#blogposting`,
+		"headline": post.title,
+		"description": post.description,
+		"datePublished": post.date,
+		"author": {
+			"@id": personId
+		},
+		"url": `${props.data.origin}/blog/${post.slug}`,
+		"keywords": post.tags
+	}));
 </script>
 
 <svelte:head>
@@ -40,15 +57,86 @@
 	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "Blog",
-		"name": "Abdelilah Ouaadouch's Blog",
-		"description": description,
-		"url": url,
-		"author": {
-			"@type": "Person",
-			"name": "Abdelilah Ouaadouch",
-			"url": `${props.data.origin}/ar7al`
-		}
+		"@graph": [
+			{
+				"@type": "Person",
+				"@id": personId,
+				"name": "Abdelilah Ouaadouch",
+				"alternateName": "Ar7al",
+				"jobTitle": "Fullstack Developer",
+				"url": `${props.data.origin}/ar7al`,
+				"image": `${props.data.origin}/ar7al/social.png`,
+				"sameAs": [
+					"https://www.linkedin.com/in/ar7al/",
+					"https://github.com/AbdelilahOu",
+					"https://x.com/Abdelilah4dev"
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": websiteId,
+				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+				"url": `${props.data.origin}/ar7al`,
+				"publisher": {
+					"@id": personId
+				}
+			},
+			{
+				"@type": "Blog",
+				"@id": blogId,
+				"name": "Abdelilah Ouaadouch's Blog",
+				"description": description,
+				"url": url,
+				"isPartOf": {
+					"@id": websiteId
+				},
+				"author": {
+					"@id": personId
+				},
+				"blogPost": blogPosts
+			},
+			{
+				"@type": "CollectionPage",
+				"@id": webpageId,
+				"name": title,
+				"description": description,
+				"url": url,
+				"isPartOf": {
+					"@id": websiteId
+				},
+				"about": {
+					"@id": personId
+				},
+				"mainEntity": {
+					"@id": blogId
+				},
+				"breadcrumb": {
+					"@id": breadcrumbId
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": image
+				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": breadcrumbId,
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": `${props.data.origin}/ar7al`
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Blog",
+						"item": url
+					}
+				]
+			}
+		]
 	})}</script>`}
 </svelte:head>
 

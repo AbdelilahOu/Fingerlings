@@ -9,6 +9,20 @@
 	const image = `${props.data.origin}/career/${experience.slug}/social.png`;
 	const title = `${experience.title} at ${experience.company} - Abdelilah Ouaadouch`;
 	const description = experience.description;
+	const personId = `${props.data.origin}/ar7al#person`;
+	const websiteId = `${props.data.origin}/ar7al#website`;
+	const webpageId = `${url}#webpage`;
+	const breadcrumbId = `${url}#breadcrumb`;
+	const roleId = `${url}#role`;
+	const normalizeDate = (value: string | null) => {
+		if (!value) return undefined;
+		if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+		if (/^\d{4}-\d{2}$/.test(value)) return `${value}-01`;
+		if (/^\d{4}$/.test(value)) return `${value}-01-01`;
+		const parsed = new Date(value);
+		if (Number.isNaN(parsed.getTime())) return undefined;
+		return parsed.toISOString().slice(0, 10);
+	};
 </script>
 
 <svelte:head>
@@ -39,21 +53,95 @@
 	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "JobPosting",
-		"title": experience.title,
-		"description": experience.description,
-		"employmentType": experience.type === "Full-time" ? "FULL_TIME" : experience.type === "Part-time" ? "PART_TIME" : experience.type === "Internship" ? "INTERN" : "CONTRACTOR",
-		"hiringOrganization": {
-			"@type": "Organization",
-			"name": experience.company,
-			...(experience.companyUrl && { "url": experience.companyUrl })
-		},
-		"jobLocation": {
-			"@type": "Place",
-			"address": experience.location
-		},
-		"datePosted": experience.startDate,
-		...(experience.endDate && { "validThrough": experience.endDate })
+		"@graph": [
+			{
+				"@type": "Person",
+				"@id": personId,
+				"name": "Abdelilah Ouaadouch",
+				"alternateName": "Ar7al",
+				"jobTitle": "Fullstack Developer",
+				"url": `${props.data.origin}/ar7al`,
+				"image": `${props.data.origin}/ar7al/social.png`,
+				"sameAs": [
+					"https://www.linkedin.com/in/ar7al/",
+					"https://github.com/AbdelilahOu",
+					"https://x.com/Abdelilah4dev"
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": websiteId,
+				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+				"url": `${props.data.origin}/ar7al`,
+				"publisher": {
+					"@id": personId
+				}
+			},
+			{
+				"@type": "OrganizationRole",
+				"@id": roleId,
+				"roleName": experience.title,
+				"description": experience.description,
+				"startDate": normalizeDate(experience.startDate),
+				...(experience.endDate ? { "endDate": normalizeDate(experience.endDate) } : {}),
+				"memberOf": {
+					"@type": "Organization",
+					"name": experience.company,
+					...(experience.companyUrl ? { "url": experience.companyUrl } : {})
+				},
+				"location": {
+					"@type": "Place",
+					"address": experience.location
+				}
+			},
+			{
+				"@type": "WebPage",
+				"@id": webpageId,
+				"name": title,
+				"description": description,
+				"url": url,
+				"isPartOf": {
+					"@id": websiteId
+				},
+				"about": {
+					"@id": personId
+				},
+				"mainEntity": {
+					"@id": roleId
+				},
+				"breadcrumb": {
+					"@id": breadcrumbId
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": image
+				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": breadcrumbId,
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": `${props.data.origin}/ar7al`
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Career",
+						"item": `${props.data.origin}/career`
+					},
+					{
+						"@type": "ListItem",
+						"position": 3,
+						"name": `${experience.title} at ${experience.company}`,
+						"item": url
+					}
+				]
+			}
+		]
 	})}</script>`}
 </svelte:head>
 

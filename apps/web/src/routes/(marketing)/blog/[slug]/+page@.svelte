@@ -8,6 +8,12 @@
 	const url = `${props.data.origin}/blog/${props.data.slug}`;
 	const image = `${props.data.origin}/blog/${props.data.slug}/social.png`;
 	const title = `${props.data.meta.title} - Abdelilah Ouaadouch`;
+	const personId = `${props.data.origin}/ar7al#person`;
+	const websiteId = `${props.data.origin}/ar7al#website`;
+	const blogId = `${props.data.origin}/blog#blog`;
+	const webpageId = `${url}#webpage`;
+	const breadcrumbId = `${url}#breadcrumb`;
+	const postingId = `${url}#blogposting`;
 
 	function formatDate(dateStr: string): string {
 		return new Date(dateStr).toLocaleDateString('en-US', {
@@ -48,22 +54,115 @@
 	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "BlogPosting",
-		"headline": meta.title,
-		"description": meta.description,
-		"url": url,
-		"datePublished": meta.date,
-		"author": {
-			"@type": "Person",
-			"name": "Abdelilah Ouaadouch",
-			"url": `${props.data.origin}/ar7al`
-		},
-		"publisher": {
-			"@type": "Person",
-			"name": "Abdelilah Ouaadouch",
-			"url": `${props.data.origin}/ar7al`
-		},
-		"keywords": meta.tags.join(", ")
+		"@graph": [
+			{
+				"@type": "Person",
+				"@id": personId,
+				"name": "Abdelilah Ouaadouch",
+				"alternateName": "Ar7al",
+				"jobTitle": "Fullstack Developer",
+				"url": `${props.data.origin}/ar7al`,
+				"image": `${props.data.origin}/ar7al/social.png`,
+				"sameAs": [
+					"https://www.linkedin.com/in/ar7al/",
+					"https://github.com/AbdelilahOu",
+					"https://x.com/Abdelilah4dev"
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": websiteId,
+				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+				"url": `${props.data.origin}/ar7al`,
+				"publisher": {
+					"@id": personId
+				}
+			},
+			{
+				"@type": "Blog",
+				"@id": blogId,
+				"name": "Abdelilah Ouaadouch's Blog",
+				"url": `${props.data.origin}/blog`,
+				"isPartOf": {
+					"@id": websiteId
+				},
+				"author": {
+					"@id": personId
+				}
+			},
+			{
+				"@type": "BlogPosting",
+				"@id": postingId,
+				"headline": meta.title,
+				"description": meta.description,
+				"url": url,
+				"datePublished": meta.date,
+				"author": {
+					"@id": personId
+				},
+				"publisher": {
+					"@id": personId
+				},
+				"isPartOf": {
+					"@id": blogId
+				},
+				"mainEntityOfPage": {
+					"@id": webpageId
+				},
+				"image": {
+					"@type": "ImageObject",
+					"url": image
+				},
+				"keywords": meta.tags
+			},
+			{
+				"@type": "WebPage",
+				"@id": webpageId,
+				"name": title,
+				"description": meta.description,
+				"url": url,
+				"isPartOf": {
+					"@id": websiteId
+				},
+				"about": {
+					"@id": personId
+				},
+				"mainEntity": {
+					"@id": postingId
+				},
+				"breadcrumb": {
+					"@id": breadcrumbId
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": image
+				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": breadcrumbId,
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": `${props.data.origin}/ar7al`
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Blog",
+						"item": `${props.data.origin}/blog`
+					},
+					{
+						"@type": "ListItem",
+						"position": 3,
+						"name": meta.title,
+						"item": url
+					}
+				]
+			}
+		]
 	})}</script>`}
 </svelte:head>
 

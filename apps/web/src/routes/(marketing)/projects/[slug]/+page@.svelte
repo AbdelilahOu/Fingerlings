@@ -8,6 +8,11 @@
 	const image = `${props.data.origin}/projects/${props.data.project.slug}/social.png`;
 	const title = `${props.data.project.title} - Abdelilah Ouaadouch`;
 	const description = props.data.project.description;
+	const personId = `${props.data.origin}/ar7al#person`;
+	const websiteId = `${props.data.origin}/ar7al#website`;
+	const webpageId = `${url}#webpage`;
+	const breadcrumbId = `${url}#breadcrumb`;
+	const projectId = `${url}#software`;
 </script>
 
 <svelte:head>
@@ -38,23 +43,102 @@
 	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "SoftwareApplication",
-		"name": project.title,
-		"description": project.description,
-		"applicationCategory": "DeveloperApplication",
-		"operatingSystem": "Cross-platform",
-		"author": {
-			"@type": "Person",
-			"name": "Abdelilah Ouaadouch",
-			"url": `${props.data.origin}/ar7al`
-		},
-		"offers": {
-			"@type": "Offer",
-			"price": "0",
-			"priceCurrency": "USD"
-		},
-		...(project.github && { "downloadUrl": project.github }),
-		...(project.web && { "url": project.web })
+		"@graph": [
+			{
+				"@type": "Person",
+				"@id": personId,
+				"name": "Abdelilah Ouaadouch",
+				"alternateName": "Ar7al",
+				"jobTitle": "Fullstack Developer",
+				"url": `${props.data.origin}/ar7al`,
+				"image": `${props.data.origin}/ar7al/social.png`,
+				"sameAs": [
+					"https://www.linkedin.com/in/ar7al/",
+					"https://github.com/AbdelilahOu",
+					"https://x.com/Abdelilah4dev"
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": websiteId,
+				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+				"url": `${props.data.origin}/ar7al`,
+				"publisher": {
+					"@id": personId
+				}
+			},
+			{
+				"@type": "SoftwareApplication",
+				"@id": projectId,
+				"name": project.title,
+				"description": project.description,
+				"applicationCategory": "DeveloperApplication",
+				"operatingSystem": "Cross-platform",
+				"url": url,
+				"author": {
+					"@id": personId
+				},
+				"creator": {
+					"@id": personId
+				},
+				"dateCreated": project.createdAt,
+				"softwareRequirements": project.tech,
+				...(project.github ? { "codeRepository": project.github } : {}),
+				...(project.web ? { "sameAs": [project.web] } : {}),
+				"offers": {
+					"@type": "Offer",
+					"price": "0",
+					"priceCurrency": "USD"
+				}
+			},
+			{
+				"@type": "WebPage",
+				"@id": webpageId,
+				"name": title,
+				"description": description,
+				"url": url,
+				"isPartOf": {
+					"@id": websiteId
+				},
+				"about": {
+					"@id": personId
+				},
+				"mainEntity": {
+					"@id": projectId
+				},
+				"breadcrumb": {
+					"@id": breadcrumbId
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": image
+				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": breadcrumbId,
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": `${props.data.origin}/ar7al`
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Projects",
+						"item": `${props.data.origin}/projects`
+					},
+					{
+						"@type": "ListItem",
+						"position": 3,
+						"name": project.title,
+						"item": url
+					}
+				]
+			}
+		]
 	})}</script>`}
 </svelte:head>
 

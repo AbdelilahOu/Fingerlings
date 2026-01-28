@@ -18,6 +18,15 @@
 		};
 	} = $props();
 
+	const title = 'Abdelilah Ouaadouch - Fullstack Developer';
+	const description =
+		'Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
+	const url = `${props.data.origin}/ar7al`;
+	const image = `${props.data.origin}/ar7al/social.png`;
+	const personId = `${props.data.origin}/ar7al#person`;
+	const websiteId = `${props.data.origin}/ar7al#website`;
+	const webpageId = `${url}#webpage`;
+
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];
 	const frameworks = [
 		'Next.js',
@@ -34,70 +43,97 @@
 </script>
 
 <svelte:head>
-	<title>Abdelilah Ouaadouch - Fullstack Developer</title>
-	<meta
-		name="description"
-		content="Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks."
-	/>
+	<title>{title}</title>
+	<meta name="description" content={description} />
 	<meta
 		name="keywords"
 		content="Go, Golang, Typescript, Rust, Fullstack Developer, Software Engineer, Web Development, API Development, Portfolio, Hire Developer, Backend Developer, Frontend Developer, Abdelilah Ouaadouch"
 	/>
-	<link rel="canonical" href={`${props.data.origin}/ar7al`} />
+	<link rel="canonical" href={url} />
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={`${props.data.origin}/ar7al`} />
-	<meta property="og:title" content="Abdelilah Ouaadouch - Fullstack Developer" />
-	<meta
-		property="og:description"
-		content="Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks."
-	/>
-	<meta property="og:image" content={`${props.data.origin}/ar7al/social.png`} />
+	<meta property="og:url" content={url} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={image} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 	<meta property="og:locale" content="en" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:url" content={`${props.data.origin}/ar7al`} />
-	<meta name="twitter:title" content="Abdelilah Ouaadouch - Fullstack Developer" />
-	<meta
-		name="twitter:description"
-		content="Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks."
-	/>
-	<meta name="twitter:image" content={`${props.data.origin}/ar7al/social.png`} />
+	<meta name="twitter:url" content={url} />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
-	<!-- JSON-LD Structured Data - Person -->
+	<!-- JSON-LD Structured Data -->
 	{@html `<script type="application/ld+json">${JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "Person",
-		"name": "Abdelilah Ouaadouch",
-		"alternateName": "Ar7al",
-		"jobTitle": "Fullstack Developer",
-		"description": "Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.",
-		"email": "mailto:abdelilah4dev@gmail.com",
-		"url": `${props.data.origin}/ar7al`,
-		"image": `${props.data.origin}/ar7al/social.png`,
-		"sameAs": [
-			"https://www.linkedin.com/in/ar7al/",
-			"https://github.com/AbdelilahOu",
-			"https://x.com/Abdelilah4dev"
-		],
-		"knowsAbout": ["Go", "Golang", "Typescript", "Rust", "Fullstack Development", "API Development", "Next.js", "Hono.js", "Gin", "Docker", "Tauri", "PostgreSQL", "MySQL"]
-	})}</script>`}
-
-	<!-- JSON-LD Structured Data - WebSite -->
-	{@html `<script type="application/ld+json">${JSON.stringify({
-		"@context": "https://schema.org",
-		"@type": "WebSite",
-		"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
-		"url": `${props.data.origin}/ar7al`,
-		"description": "Portfolio of Abdelilah Ouaadouch, a Fullstack Developer specializing in Go, Rust, and TypeScript.",
-		"author": {
-			"@type": "Person",
-			"name": "Abdelilah Ouaadouch"
-		}
+		"@graph": [
+			{
+				"@type": "Person",
+				"@id": personId,
+				"name": "Abdelilah Ouaadouch",
+				"alternateName": "Ar7al",
+				"jobTitle": "Fullstack Developer",
+				"description": description,
+				"email": "mailto:abdelilah4dev@gmail.com",
+				"url": url,
+				"image": image,
+				"sameAs": [
+					"https://www.linkedin.com/in/ar7al/",
+					"https://github.com/AbdelilahOu",
+					"https://x.com/Abdelilah4dev"
+				],
+				"knowsAbout": [
+					"Go",
+					"Golang",
+					"Typescript",
+					"Rust",
+					"Fullstack Development",
+					"API Development",
+					"Next.js",
+					"Hono.js",
+					"Gin",
+					"Docker",
+					"Tauri",
+					"PostgreSQL",
+					"MySQL"
+				]
+			},
+			{
+				"@type": "WebSite",
+				"@id": websiteId,
+				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+				"url": url,
+				"description": "Portfolio of Abdelilah Ouaadouch, a Fullstack Developer specializing in Go, Rust, and TypeScript.",
+				"publisher": {
+					"@id": personId
+				}
+			},
+			{
+				"@type": "ProfilePage",
+				"@id": webpageId,
+				"name": title,
+				"description": description,
+				"url": url,
+				"isPartOf": {
+					"@id": websiteId
+				},
+				"about": {
+					"@id": personId
+				},
+				"mainEntity": {
+					"@id": personId
+				},
+				"primaryImageOfPage": {
+					"@type": "ImageObject",
+					"url": image
+				}
+			}
+		]
 	})}</script>`}
 </svelte:head>
 
