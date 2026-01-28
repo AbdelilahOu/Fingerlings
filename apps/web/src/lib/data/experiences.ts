@@ -15,29 +15,29 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
- {
-  slug: "dev-up",
-  title: "Full Stack Engineer",
-  company: "DEV-UP",
-  companyUrl: "https://www.linkedin.com/company/80668205/",
-  type: "Full-time",
-  description:
-    "Build backend-heavy apps for clients with Go and TypeScript. Design APIs, model data in PostgreSQL, and build AI-powered automation helpers.",
-  longDescription: `I work with a remote team building backend-heavy apps for clients. Most of my time is spent in Go and TypeScript, designing APIs, modelling data in PostgreSQL, and wiring everything up to clean frontends.
+  {
+    slug: "dev-up",
+    title: "Full Stack Engineer",
+    company: "DEV-UP",
+    companyUrl: "https://www.linkedin.com/company/80668205/",
+    type: "Full-time",
+    description:
+      "Build backend-heavy apps for clients with Go and TypeScript. Design APIs, model data in PostgreSQL, and build AI-powered automation helpers.",
+    longDescription: `I work with a remote team building backend-heavy apps for clients. Most of my time is spent in Go and TypeScript, designing APIs, modelling data in PostgreSQL, and wiring everything up to clean frontends.
 
 Lately I also build small AI agents that plug into existing tools (dashboards, CRMs, internal panels) to automate boring tasks like data entry and reporting. I'm usually the person making sure these agents have the right backend hooks, permissions, and observability so they're safe to run in production.`,
-  startDate: "2025-04",
-  endDate: null,
-  location: "Netherlands",
-  locationType: "Remote",
-  technologies: ["Go", "TypeScript", "PostgreSQL", "Next.js", "AI/LLM"],
-  highlights: [
-    "Build backend-heavy applications for various clients",
-    "Design and implement REST APIs with Go and TypeScript",
-    "Model data and shape database architecture with PostgreSQL",
-    "Build AI-powered automation tools for internal workflows",
-  ],
-},
+    startDate: "2025-04",
+    endDate: null,
+    location: "Netherlands",
+    locationType: "Remote",
+    technologies: ["Go", "TypeScript", "PostgreSQL", "Next.js", "AI/LLM"],
+    highlights: [
+      "Build backend-heavy applications for various clients",
+      "Design and implement REST APIs with Go and TypeScript",
+      "Model data and shape database architecture with PostgreSQL",
+      "Build AI-powered automation tools for internal workflows",
+    ],
+  },
   {
     slug: "modoock-solutions",
     title: "Full Stack Engineer",
