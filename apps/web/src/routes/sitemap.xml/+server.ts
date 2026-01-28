@@ -63,3 +63,5 @@ export async function GET({ url }) {
     }
   });
 }
+
+export const prerender = true;
