@@ -36,7 +36,6 @@ Lately I also build small AI agents that plug into existing tools (dashboards, C
     "Design and implement REST APIs with Go and TypeScript",
     "Model data and shape database architecture with PostgreSQL",
     "Build AI-powered automation tools for internal workflows",
-    "Implement observability and permissions for production AI agents",
   ],
 },
   {
