@@ -88,10 +88,10 @@
 	</div>
 
 	<div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-neutral-800">
-		<p class="text-neutral-500">
+		<p class="text-neutral-300">
 			<span class="text-blue-400">$</span> echo "Made with 1s & 0s"
 		</p>
-		<p class="text-neutral-500">
+		<p class="text-neutral-300">
 			&copy; {new Date().getFullYear()} Abdelilah Ouaadouch
 		</p>
 	</div>
