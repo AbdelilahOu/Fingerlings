@@ -7,7 +7,7 @@ function escapeXml(value: string): string {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
-    .replace(/\"/g, "&quot;")
+    .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
 }
 
@@ -29,7 +29,7 @@ function normalizeLastmod(value?: string | null): string | undefined {
 
 export async function GET({ url }) {
   const origin = url.origin;
-  const posts =  getPosts();
+  const posts = getPosts();
 
   const urls: string[] = [];
 
@@ -51,7 +51,8 @@ export async function GET({ url }) {
     urls.push(urlEntry(`${origin}/career/${experience.slug}`, normalizeLastmod(lastmod)));
   }
 
-  const body = `<?xml version="1.0" encoding="UTF-8"?>` +
+  const body =
+    `<?xml version="1.0" encoding="UTF-8"?>` +
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">` +
     urls.join("") +
     `</urlset>`;
@@ -59,8 +60,8 @@ export async function GET({ url }) {
   return new Response(body, {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",
-      "Cache-Control": "public, max-age=0, s-maxage=3600"
-    }
+      "Cache-Control": "public, max-age=0, s-maxage=3600",
+    },
   });
 }
 
