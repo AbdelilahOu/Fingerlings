@@ -39,7 +39,7 @@ const config = {
 
   kit: {
     adapter: alchemy({
-      fallback: "plaintext"
+      fallback: "plaintext",
     }),
     alias: {
       "@posts": "src/posts",
