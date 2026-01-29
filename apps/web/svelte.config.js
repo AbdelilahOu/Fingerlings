@@ -39,6 +39,7 @@ const config = {
 
   kit: {
     adapter: alchemy({
+      config: "wrangler.toml",
       fallback: "plaintext",
     }),
     alias: {
@@ -47,6 +48,7 @@ const config = {
     prerender: {
       origin: "https://portfolio.ar7al.workers.dev",
       crawl: true,
+      entries: ["/404"],
     },
   },
 };
