@@ -39,7 +39,7 @@ const config = {
 
   kit: {
     adapter: alchemy({
-      fallback: "plaintext",
+      config: "wrangler.toml"
     }),
     alias: {
       "@posts": "src/posts",
