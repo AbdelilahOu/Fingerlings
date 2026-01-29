@@ -22,7 +22,7 @@ export const web = await SvelteKit("web", {
 
 export const server = await Worker("server", {
   cwd: "apps/server",
-  name: "api.portfolio",
+  name: "api-portfolio",
   adopt: true,
   entrypoint: "src/index.ts",
   compatibility: "node",
