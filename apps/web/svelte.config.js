@@ -45,7 +45,7 @@ const config = {
       "@posts": "src/posts",
     },
     prerender: {
-      origin: "https://api-portfolio.ar7al.workers.dev",
+      origin: "https://portfolio.ar7al.workers.dev",
       crawl: true,
     },
   },
