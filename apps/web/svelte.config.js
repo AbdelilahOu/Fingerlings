@@ -47,7 +47,6 @@ const config = {
     },
     prerender: {
       origin: "https://portfolio.ar7al.workers.dev",
-      entries: ["/404"],
     },
   },
 };
