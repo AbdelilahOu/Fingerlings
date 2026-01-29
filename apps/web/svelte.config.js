@@ -39,7 +39,6 @@ const config = {
 
   kit: {
     adapter: alchemy({
-      config: "wrangler.toml",
       fallback: "plaintext",
     }),
     alias: {
