@@ -38,7 +38,9 @@ const config = {
   preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 
   kit: {
-    adapter: alchemy(),
+    adapter: alchemy({
+      fallback: "plaintext"
+    }),
     alias: {
       "@posts": "src/posts",
     },
