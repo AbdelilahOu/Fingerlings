@@ -38,9 +38,7 @@ const config = {
   preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 
   kit: {
-    adapter: alchemy({
-      config: "wrangler.toml"
-    }),
+    adapter: alchemy(),
     alias: {
       "@posts": "src/posts",
     },
