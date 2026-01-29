@@ -12,7 +12,7 @@ const app = await alchemy("Personal-website", {
 
 export const web = await SvelteKit("web", {
   cwd: "apps/web",
-  name: "personal-website",
+  name: "portfolio",
   adopt: true,
   bindings: {
     PUBLIC_SERVER_URL: alchemy.env.PUBLIC_SERVER_URL!,
@@ -22,7 +22,7 @@ export const web = await SvelteKit("web", {
 
 export const server = await Worker("server", {
   cwd: "apps/server",
-  name: "api-personal-website",
+  name: "api.portfolio",
   adopt: true,
   entrypoint: "src/index.ts",
   compatibility: "node",
