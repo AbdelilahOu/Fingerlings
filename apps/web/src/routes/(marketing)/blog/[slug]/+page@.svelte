@@ -255,6 +255,11 @@
 		margin-bottom: 0.5rem;
 	}
 
+	:global(.prose li::before) {
+		content: '- ';
+		margin-right: 0.25rem;
+	}
+
 	:global(.prose strong) {
 		color: #fff;
 		font-weight: 600;
