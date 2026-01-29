@@ -8,8 +8,8 @@
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
-		background-color: #0d0d0d;
-		padding: 0px;
+		background-color: #131313;
+		padding: 15px;
 		font-family: JetBrains Mono, monospace;
 	"
 >
