@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "main": ".svelte-kit/cloudflare/_worker.js",
+  "compatibility_date": "2026-01-20",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "assets": {
+    "directory": ".svelte-kit/cloudflare",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": false
+  }
+}
