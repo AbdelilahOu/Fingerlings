@@ -40,11 +40,7 @@ const config = {
   kit: {
     adapter: alchemy({
       config: "wrangler.jsonc",
-      fallback: 'plaintext',
-			routes: {
-				include: ['/*'],
-				exclude: ['<all>']
-			}
+      fallback: 'spa',
     }),
     alias: {
       "@posts": "src/posts",
