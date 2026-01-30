@@ -38,10 +38,7 @@ const config = {
   preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 
   kit: {
-    adapter: alchemy({
-      config: "wrangler.jsonc",
-      fallback: 'spa',
-    }),
+    adapter: alchemy({}),
     alias: {
       "@posts": "src/posts",
     },
