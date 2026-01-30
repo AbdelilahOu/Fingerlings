@@ -1,9 +1,11 @@
 ﻿# Repository Guidelines
 
 ## Project Overview
+
 **Fingerlings**: A personal portfolio website built as a modern TypeScript monorepo. The project showcases career history, projects, and blog posts with a full-stack architecture using edge computing and type-safe APIs.
 
 ### Tech Stack
+
 - **Frontend**: SvelteKit 5 + Svelte 5 with TailwindCSS v4, mdsvex for markdown posts
 - **Backend**: Hono 4 running on Cloudflare Workers with compatibility: "node"
 - **API Layer**: oRPC (OpenAPI + RPC handlers) for end-to-end type safety
@@ -12,6 +14,7 @@
 - **Utilities**: Zod for schema validation, shiki for syntax highlighting, @ethercorps/sveltekit-og for OG images
 
 ## Project Structure & Module Organization
+
 ```
 portfolio/
 ├── apps/
@@ -63,6 +66,7 @@ portfolio/
 ```
 
 ## Key Features
+
 - **Type-Safe API**: oRPC with Zod validation ensures type safety from database to frontend
 - **Markdown Blog**: mdsvex converts .md files to Svelte components; shiki syntax highlighting
 - **OG Image Generation**: SvelteKit endpoint for dynamic social media card images
@@ -71,6 +75,7 @@ portfolio/
 - **Deployment**: Alchemy manages local dev & Cloudflare Workers deployment in one command
 
 ## Build, Test, and Development Commands
+
 - `npm run dev`: Run all apps via Alchemy (web + server).
 - `npm run dev:web`: Run only the SvelteKit app (port 5173).
 - `npm run dev:server`: Run only the API worker (port 3000).
@@ -82,6 +87,7 @@ portfolio/
 - `npm run fmt` / `npm run fmt:check`: Format with `oxfmt`.
 
 ## Coding Style & Naming Conventions
+
 - **TypeScript-first**: All source code is `.ts` or `.svelte` files; ESM modules.
 - **SvelteKit routing**: Use `+page.svelte`, `+page.ts`, `+server.ts`, `+layout.svelte` naming.
 - **API routers**: Define procedures in `packages/api/routers/*.ts`, export from `routers/index.ts`.
@@ -91,6 +97,7 @@ portfolio/
 - **Formatting/linting**: Run `npm run check` and `npm run fmt` before commits.
 
 ## Testing Guidelines
+
 - No dedicated test framework configured yet.
 - Use `npm run check-types` for TypeScript compilation checks.
 - Use `npm run check` for static linting (oxlint can catch many bugs).
@@ -98,6 +105,7 @@ portfolio/
 - If adding tests, document the command and location in this section.
 
 ## Deployment & Environment
+
 - **Alchemy**: Single command dev/deploy via `alchemy.run.ts`.
 - **Bindings**: Configured in `alchemy.run.ts` for web/server; synced from `.env` files.
 - **Web bindings**: `PUBLIC_SERVER_URL` (API endpoint URL).
@@ -109,12 +117,14 @@ portfolio/
   - `apps/server/.env`: `CORS_ORIGINS`, `GH_TOKEN`.
 
 ## Commit & Pull Request Guidelines
+
 - Commit history mixes conventional (`feat:`/`fix:`) and simple (`Update ...`).
 - Recommendation: use short, imperative messages; prefer `feat:` or `fix:` when meaningful.
 - PRs should include: clear summary, linked issues (if any), and screenshots for UI changes.
 - Always format before committing: `npm run fmt && npm run check` (auto-fixes linting issues).
 
 ## oRPC & API Architecture
+
 - **oRPC Router**: Defined in `packages/api/routers/index.ts` as `appRouter`.
 - **Procedures**: Each function in `appRouter` is an oRPC procedure with optional input/output Zod schemas.
 - **Server Handler**: `apps/server/src/index.ts` runs `RPCHandler` (for JSON-RPC calls) and `OpenAPIHandler` (for REST docs).
@@ -122,6 +132,7 @@ portfolio/
 - **Client Usage**: Import `AppRouter` type in frontend for end-to-end type safety.
 
 ## Common Development Workflows
+
 - **Add a new blog post**: Create `apps/web/src/posts/my-post.md`, mdsvex auto-renders it in `/blog` route.
 - **Add an API endpoint**: Define procedure in `packages/api/routers/index.ts`, re-run dev server.
 - **Update styling**: Edit Tailwind classes in `.svelte` files; v4 auto-scans and compiles.
