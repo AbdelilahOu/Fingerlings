@@ -50,7 +50,7 @@
 
 		<div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 32px; border-top: 1px solid #262626;">
 			<span style="display: flex; font-size: 24px; color: #ffffff; font-weight: 600;">ar7al.com/blog</span>
-			<span style="display: flex; font-size: 18px; color: #737373;">@AbdelilahOu</span>
+			<span style="display: flex; font-size: 24px; color: #737373;">@AbdelilahOu</span>
 		</div>
 	</div>
 </div>

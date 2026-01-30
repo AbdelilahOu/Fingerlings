@@ -51,7 +51,7 @@
 		{#if tech.length > 0}
 			<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px;">
 				{#each tech.slice(0, 5) as t}
-					<div style="display: flex; background-color: #262626; padding: 10px 20px; font-size: 20px; color: #d4d4d4; border: 1px solid #404040;">
+					<div style="display: flex; background-color: #262626; padding: 10px 20px; font-size: 24px; color: #d4d4d4; border: 1px solid #404040;">
 						{t}
 					</div>
 				{/each}
@@ -60,7 +60,7 @@
 
 		<div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 32px; border-top: 1px solid #262626;">
 			<span style="display: flex; font-size: 24px; color: #ffffff; font-weight: 600;">ar7al.com/projects</span>
-			<span style="display: flex; font-size: 18px; color: #737373;">@AbdelilahOu</span>
+			<span style="display: flex; font-size: 24px; color: #737373;">@AbdelilahOu</span>
 		</div>
 	</div>
 </div>
