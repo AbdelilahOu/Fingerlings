@@ -39,6 +39,7 @@ const config = {
 
   kit: {
     adapter: alchemy({
+      config: "wrangler.jsonc",
       fallback: 'plaintext',
 			routes: {
 				include: ['/*'],
