@@ -2,32 +2,18 @@
   import { navigating } from '$app/state';
   import { onDestroy } from 'svelte';
 
-  const links = [
-    { href: '/ar7al', label: 'Home' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/career', label: 'Career' },
-    { href: '/blog', label: 'Blog' }
-  ];
-
-  function isTopLevel(pathname: string | null | undefined): boolean {
-    return !!pathname && links.some(link => link.href === pathname);
-  }
-
   let progress = $state(0);
   let rafId: number | null = null;
   let finishing = $state(false);
 
   function tick() {
     if (!finishing) {
-
       progress = Math.min(90, progress + Math.max(0.4, (90 - progress) * 0.035));
     } else {
-
       progress = Math.min(100, progress + Math.max(1.2, (100 - progress) * 0.25));
     }
 
     if (finishing && progress >= 99.5) {
-
       progress = 100;
       setTimeout(() => {
         progress = 0;
@@ -42,41 +28,27 @@
 
   function start() {
     if (rafId !== null) return;
-    if (progress === 0) progress = 4;
+    progress = Math.max(progress, 4);
     rafId = requestAnimationFrame(tick);
   }
 
   function finish() {
+    if (progress === 0) return;
     finishing = true;
     if (rafId === null) start();
   }
 
-
   $effect(() => {
-
-    const nav = navigating;
-
-    if (nav?.from && nav?.to) {
-      const fromTop = isTopLevel(nav.from.url.pathname);
-      const toTop   = isTopLevel(nav.to.url.pathname);
-
-      if (fromTop && toTop) {
-
-        finishing = false;
-        start();
-        return;
-      }
+    if (navigating?.from !== null) {
+      finishing = false;
+      start();
+    } else {
+      finish();
     }
-
-
-    finish();
   });
 
   onDestroy(() => {
-    if (rafId !== null) {
-      cancelAnimationFrame(rafId);
-      rafId = null;
-    }
+    if (rafId !== null) cancelAnimationFrame(rafId);
   });
 </script>
 
