@@ -35,40 +35,9 @@ There are other interesting properties of map implementations like checking whet
 
 ## What is a `sharded` lock?
 
-First, a lock is a synchronization mechanism from the `sync` package, specifically the `Mutex` type. It controls access to a shared resource so only one goroutine can touch it at a time.
+First, a lock is a synchronization mechanism from the `sync` package, specifically the `Mutex` type. It controls access to a shared resource so only one goroutine can touch it at a time, which prevents race conditions.
 
-This prevents race conditions where multiple goroutines might try to modify the same thing at once, leading to unpredictable behavior.
-
-In Go, the `sync` package provides two types of locks: `RLock` (read lock) and `Lock` (write lock).
-
-### Write lock (`Lock`)
-
-The `Lock` provides exclusive access to a shared resource, allowing only one goroutine to modify it at a time. It ensures that no other goroutines can read or write while the write lock is held, ensuring consistency and preventing conflicts.
-
-```go
-type TicketReservation struct {
- availableSeats int
- mu             sync.Mutex
-}
-```
-
-### Read lock (`RLock`)
-
-The `RLock` allows multiple goroutines to read a shared resource simultaneously. It ensures that concurrent readers don't interfere with each other and provides a level of concurrency.
-
-```go
-type Article struct {
- Title   string
- Content string
-}
-
-type ArticleStore struct {
- articles map[string]Article
- rwMutex  sync.RWMutex
-}
-```
-
-In simple words, `RLock` is designed for read-heavy scenarios. For example, in an online article system, lots of users can read articles at the same time, but only one user can submit or edit at once.
+In Go, the `sync` package gives us `Lock` (write lock) and `RLock` (read lock). `RLock` is designed for read-heavy scenarios where many goroutines can read concurrently, while writes stay exclusive.
 
 ### Sharding, hash functions
 
@@ -78,7 +47,7 @@ What is a hash function? It's a function that takes a `key` of unknown length an
 hash(key) -> integer // fixed-size integer output
 ```
 
-That hash value is almost always an integer for reasons we'll see in a moment.
+That hash value is usually an integer.
 
 Now the idea of sharding is simple: instead of one big map with one big lock, we split the map into multiple small maps (shards). Each shard has its own lock. When we want to read or write a key, we hash the key and use that hash to pick a shard.
 
@@ -112,7 +81,7 @@ Each bucket embeds an `RWMutex`, so reads can happen in parallel while writes st
 
 ### Constructor
 
-We allocate the shards and initialize each inner map. If the user passes `0` shards, we default to 1 so the API stays safe.
+We allocate the shards and initialize each inner map, defaulting to 1 shard if `0` is passed.
 
 ```go
 func NewShardedMap[K comparable, V any](numShards uint64) *ShardedMap[K, V] {
@@ -198,7 +167,7 @@ This is the key point: no global lock. Each shard can be used independently, whi
 
 ### Keys
 
-Collecting all keys requires locking each shard one by one. We take a read lock per shard and append all keys.
+Collecting all keys requires locking each shard one by one.
 
 ```go
 func (sm *ShardedMap[K, V]) Keys() []K {
