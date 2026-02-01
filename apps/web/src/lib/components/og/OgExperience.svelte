@@ -33,7 +33,7 @@
 		</div>
 
 		<div style="display: flex; margin-bottom: 16px;">
-			<span style="display: flex; background-color: #3b82f6; color: #ffffff; padding: 6px 16px; font-size: 18px; font-weight: 600;">
+			<span style="display: flex; background-color: #3b82f6; color: #ffffff; padding: 6px 16px; font-size: 22px; font-weight: 600;">
 				EXPERIENCE
 			</span>
 		</div>
@@ -55,7 +55,7 @@
 		{#if technologies.length > 0}
 			<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px;">
 				{#each technologies.slice(0, 5) as tech}
-					<div style="display: flex; background-color: #262626; padding: 8px 16px; font-size: 18px; color: #d4d4d4; border: 1px solid #404040;">
+					<div style="display: flex; background-color: #262626; padding: 8px 16px; font-size: 18px; color: #d4d4d4;">
 						{tech}
 					</div>
 				{/each}

@@ -33,7 +33,7 @@
 		</div>
 
 		<div style="display: flex; margin-bottom: 16px;">
-			<span style="display: flex; background-color: #3b82f6; color: #ffffff; padding: 6px 16px; font-size: 18px; font-weight: 600;">
+			<span style="display: flex; background-color: #3b82f6; color: #ffffff; padding: 6px 16px; font-size: 22px; font-weight: 600;">
 				PROJECT
 			</span>
 		</div>
@@ -51,7 +51,7 @@
 		{#if tech.length > 0}
 			<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px;">
 				{#each tech.slice(0, 5) as t}
-					<div style="display: flex; background-color: #262626; padding: 10px 20px; font-size: 24px; color: #d4d4d4; border: 1px solid #404040;">
+					<div style="display: flex; background-color: #262626; padding: 10px 20px; font-size: 24px; color: #d4d4d4;">
 						{t}
 					</div>
 				{/each}

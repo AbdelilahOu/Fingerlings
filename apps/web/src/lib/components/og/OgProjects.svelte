@@ -42,7 +42,7 @@
 
 		<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px;">
 			{#each projects as project}
-				<div style="display: flex; background-color: #262626; padding: 12px 24px; font-size: 22px; color: #d4d4d4; border: 1px solid #404040;">
+				<div style="display: flex; background-color: #262626; padding: 12px 24px; font-size: 22px; color: #d4d4d4;">
 					{project}
 				</div>
 			{/each}

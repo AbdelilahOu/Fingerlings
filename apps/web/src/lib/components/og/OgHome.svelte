@@ -46,7 +46,7 @@
 
 		<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px;">
 			{#each skills as skill}
-				<div style="display: flex; background-color: #262626; padding: 10px 20px; font-size: 24px; color: #d4d4d4; border: 1px solid #404040;">
+				<div style="display: flex; background-color: #262626; padding: 10px 20px; font-size: 24px; color: #d4d4d4;">
 					{skill}
 				</div>
 			{/each}
