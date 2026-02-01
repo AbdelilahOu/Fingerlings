@@ -6,7 +6,7 @@ tags:
   - Go/Golang
   - Kata 02
   - Go Concurrency
-published: false
+published: true
 ---
 
 In this post, I'll walk through how to build a concurrent map with sharded locks. It's based on the [KATA-02 exercise](https://github.com/MedUnes/go-kata).
