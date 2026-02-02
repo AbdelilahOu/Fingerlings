@@ -1,7 +1,7 @@
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
-import { createHighlighter } from "shiki";
 import alchemy from "alchemy/cloudflare/sveltekit";
 import { escapeSvelte, mdsvex } from "mdsvex";
+import { createHighlighter } from "shiki";
 
 const theme = "poimandres";
 const langs = ["go", "markdown"];

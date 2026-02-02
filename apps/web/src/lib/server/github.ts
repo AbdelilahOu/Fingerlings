@@ -1,5 +1,5 @@
-import { type GitHubGraphQLResponse } from "$lib/types";
 import { env } from "$env/dynamic/private";
+import { type GitHubGraphQLResponse } from "$lib/types";
 
 export async function fetchGitHubContributions(year: number) {
   const username = "AbdelilahOu";

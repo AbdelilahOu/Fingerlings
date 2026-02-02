@@ -1,7 +1,7 @@
 ---
 title: The Concurrent Map with Sharded Locks
 description: Build a type-safe sharded map in Go using fnv hashing and sync.RWMutex for fast, race-free concurrent access.
-date: '2026-02-01'
+date: "2026-02-01"
 tags:
   - Go/Golang
   - Kata 02

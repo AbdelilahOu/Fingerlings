@@ -1,4 +1,9 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": ["dist/**", ".alchemy/**", ".svelte-kit/**", ".turbo/**"]
+  "ignorePatterns": ["dist", ".alchemy", ".svelte-kit", ".turbo"],
+  "experimentalSortImports": {
+    "order": "asc"
+  },
+  "bracketSpacing": true,
+  "singleQuote": false
 }

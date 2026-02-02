@@ -1,7 +1,7 @@
 ---
 title: Errgroup - The fail-fast data aggregator
 description: Learn Golang's concurrency control (errgroup), Context Propagation & Functional Options.
-date: '2026-01-23'
+date: "2026-01-23"
 tags:
   - Go/Golang
   - Kata 01

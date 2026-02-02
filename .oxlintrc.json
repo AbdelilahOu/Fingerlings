@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["unicorn", "typescript", "oxc"],
   "categories": {},
   "rules": {
@@ -139,5 +140,5 @@
     "builtin": true
   },
   "globals": {},
-  "ignorePatterns": ["dist/**", ".alchemy/**", ".svelte-kit/**", ".turbo/**"]
+  "ignorePatterns": ["dist", ".alchemy", ".svelte-kit", ".turbo"]
 }

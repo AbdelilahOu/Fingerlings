@@ -1,6 +1,6 @@
-import { fetchGitHubContributions } from "$lib/server/github";
-import { getLatestProjects } from "$lib/data/projects";
 import { getLatestPosts } from "$lib/data/posts";
+import { getLatestProjects } from "$lib/data/projects";
+import { fetchGitHubContributions } from "$lib/server/github";
 
 export const prerender = true;
 

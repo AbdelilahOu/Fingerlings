@@ -1,7 +1,7 @@
 ---
 title: Hello World - My First Blog Post
 description: Welcome to my blog where I share thoughts on Go, Rust, TypeScript, and building software.
-date: '2026-01-22'
+date: "2026-01-22"
 tags:
   - General
   - Introduction

@@ -1,6 +1,6 @@
+import { experiences } from "$lib/data/experiences";
 import { getPosts } from "$lib/data/posts";
 import { projects } from "$lib/data/projects";
-import { experiences } from "$lib/data/experiences";
 
 function escapeXml(value: string): string {
   return value
