@@ -7,4 +7,4 @@ Allow: /
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://ar7al.com/sitemap.xml
+Sitemap: https://portfolio.ar7al.workers.dev/sitemap.xml
