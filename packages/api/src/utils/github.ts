@@ -1,16 +1,37 @@
-import { env } from "$env/dynamic/private";
-import { type GitHubGraphQLResponse } from "$lib/types";
+export type GitHubGraphQLResponse = {
+  data?: {
+    user?: {
+      contributionsCollection?: {
+        contributionCalendar?: {
+          totalContributions: number;
+          weeks: Array<{
+            contributionDays: Array<{
+              contributionCount: number;
+              date: string;
+            }>;
+          }>;
+        };
+      };
+    };
+  };
+};
 
-export async function fetchGitHubContributions(year: number) {
-  const username = "AbdelilahOu";
-
+export async function fetchGitHubContributions({
+  year,
+  token,
+  username = "AbdelilahOu",
+}: {
+  year: number;
+  token: string;
+  username?: string;
+}) {
   try {
     const response = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: `Bearer ${env.GH_TOKEN}`,
+        Authorization: `Bearer ${token}`,
         "User-Agent": "portfolio-app",
       },
       body: JSON.stringify({
@@ -48,6 +69,7 @@ export async function fetchGitHubContributions(year: number) {
       for (const week of ghCalData) {
         for (const day of week.contributionDays) {
           if (!cal[day.date]) cal[day.date] = { github: 0 };
+          //@ts-ignore
           cal[day.date].github = day.contributionCount;
         }
       }

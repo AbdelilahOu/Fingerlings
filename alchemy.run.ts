@@ -16,7 +16,6 @@ export const web = await SvelteKit("web", {
   adopt: true,
   bindings: {
     PUBLIC_SERVER_URL: alchemy.env.PUBLIC_SERVER_URL!,
-    GH_TOKEN: alchemy.secret(process.env.GH_TOKEN!),
   },
 });
 
@@ -27,6 +26,7 @@ export const server = await Worker("server", {
   entrypoint: "src/index.ts",
   compatibility: "node",
   bindings: {
+    GH_TOKEN: alchemy.secret(process.env.GH_TOKEN!),
     CORS_ORIGINS: alchemy.env.CORS_ORIGINS!,
   },
   dev: {
