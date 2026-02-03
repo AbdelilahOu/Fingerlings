@@ -21,9 +21,3 @@ export const contributions = procedure
 
     return fetchGitHubContributions({ year: input.year, token });
   });
-
-export const router = {
-  github: {
-    contributions,
-  },
-};

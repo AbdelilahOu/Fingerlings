@@ -1,9 +1,11 @@
 import type { RouterClient } from "@orpc/server";
 
-import { router as ghRoutes } from "./github";
+import { contributions } from "./github";
 
 export const appRouter = {
-  ...ghRoutes,
+  github: {
+    contributions,
+  },
 };
 export type AppRouter = typeof appRouter;
 export type AppRouterClient = RouterClient<typeof appRouter>;
