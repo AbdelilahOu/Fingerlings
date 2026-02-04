@@ -22,7 +22,7 @@ export const experiences: Experience[] = [
     companyUrl: "https://www.linkedin.com/company/80668205/",
     type: "Full-time",
     description:
-      "Build backend-heavy apps for clients with Go and TypeScript. Design APIs, model data in PostgreSQL, and build AI-powered automation helpers.",
+      "Build backend-heavy apps for clients with Go and TypeScript. Design APIs, model data in PostgreSQL, and build AI-powered automations & AI-agents.",
     longDescription: `I work with a remote team building backend-heavy apps for clients. Most of my time is spent in Go and TypeScript, designing APIs, modelling data in PostgreSQL, and wiring everything up to clean frontends.
 
 Lately I also build small AI agents that plug into existing tools (dashboards, CRMs, internal panels) to automate boring tasks like data entry and reporting. I'm usually the person making sure these agents have the right backend hooks, permissions, and observability so they're safe to run in production.`,
