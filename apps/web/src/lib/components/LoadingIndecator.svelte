@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { navigating } from '$app/state';
+  import { navigating, page } from '$app/state';
   import { onDestroy } from 'svelte';
 
   let progress = $state(0);
@@ -39,7 +39,8 @@
   }
 
   $effect(() => {
-    if (navigating?.from !== null) {
+    const {from, to} = navigating
+    if (from !== null && from.url.href !== to?.url.href && to?.url.origin === page.url.origin) {
       finishing = false;
       start();
     } else {
