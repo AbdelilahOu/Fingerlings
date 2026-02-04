@@ -39,8 +39,7 @@
   }
 
   $effect(() => {
-    const {from, to} = navigating
-    if (from !== null && from.url.href !== to?.url.href && to?.url.origin === page.url.origin) {
+    if (navigating?.from !== null && navigating?.from.url.href !== navigating?.to?.url.href && navigating?.to?.url.origin === page.url.origin) {
       finishing = false;
       start();
     } else {
