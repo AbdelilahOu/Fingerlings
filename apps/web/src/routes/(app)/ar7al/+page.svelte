@@ -141,7 +141,7 @@
 			Fullstack Developer
 		</span>
 	</h1>
-	<p class="text-base text-white md:text-lg">
+ <p class="text-base text-gray-300 md:text-lg">
 		With expertise in Go (Golang), TypeScript, and Rust. 2+ years building performant APIs,
 		full-stack apps, and desktop tools using Gin, Next.js, Tauri, and more.
 	</p>
