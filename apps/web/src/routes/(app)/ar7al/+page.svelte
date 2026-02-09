@@ -20,7 +20,7 @@
 
 	const title = 'Abdelilah Ouaadouch - Fullstack Developer';
 	const description =
-		'Fullstack Developer specializing in Go (Golang), Rust, and TypeScript. Building fast, reliable systems with modern tech stacks.';
+		'Fullstack engineer specializing in Go, Rust, and TypeScript. I build dependable backends, desktop apps, and AI tools.';
 	const url = `${props.data.origin}/ar7al`;
 	const image = `${props.data.origin}/ar7al/social.png`;
 	const personId = `${props.data.origin}/ar7al#person`;
@@ -142,8 +142,8 @@
 		</span>
 	</h1>
  <p class="text-base text-gray-300 md:text-lg">
-		With expertise in Go (Golang), TypeScript, and Rust. 2+ years building performant APIs,
-		full-stack apps, and desktop tools using Gin, Next.js, Tauri, and more.
+		2+ years building production APIs, full-stack products, desktop apps, and AI tools from backend
+		services to polished UI with Go, Rust, TypeScript, Gin, Next.js, and Tauri.
 	</p>
 </section>
 
