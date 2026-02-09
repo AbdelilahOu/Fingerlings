@@ -162,7 +162,7 @@
 			{/each}
 		</div>
 	{:else}
-		<div class="corner-brackets bg-[#131313] p-8 text-center">
+		<div class="corner-brackets bg-[#101010] p-8 text-center">
 			<p class="text-gray-400">
 				No posts yet. Check back soon for technical articles and tutorials.
 			</p>

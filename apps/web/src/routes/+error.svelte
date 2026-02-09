@@ -9,7 +9,7 @@
 
 <div class="flex min-h-screen w-screen flex-col items-center justify-center bg-[#0d0d0d] px-4">
 	<div class="m-auto w-full max-w-lg space-y-6 text-center">
-		<div class="corner-brackets bg-[#131313] p-8">
+		<div class="corner-brackets bg-[#101010] p-8">
 			<h1 class="font-display text-6xl font-bold text-white md:text-8xl">
 				{page.status}
 			</h1>
@@ -39,7 +39,7 @@
 
 		<a
 			href="/ar7al"
-			class="corner-brackets inline-block bg-[#131313] px-6 py-3 text-white transition-colors hover:bg-[#1a1a1a]"
+			class="corner-brackets inline-block bg-[#101010] px-6 py-3 text-white transition-colors hover:bg-[#1a1a1a]"
 		>
 			<span class="text-blue-400">$</span> cd ~
 		</a>

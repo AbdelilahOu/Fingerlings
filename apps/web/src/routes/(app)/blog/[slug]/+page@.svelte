@@ -195,7 +195,7 @@
 		</article>
 
 		<footer class="space-y-6 border-t border-neutral-800 pt-8">
-			<div class="corner-brackets bg-[#131313] p-5">
+			<div class="corner-brackets bg-[#101010] p-5">
 				<p class="text-gray-300">
 					Thanks for reading! If you found this helpful, feel free to share it or connect with me
 					on
@@ -274,7 +274,7 @@
 
 	:global(.prose pre) {
 		position: relative;
-		background-color: #131313 !important;
+		background-color: #101010 !important;
 		padding: 1.25rem;
 		overflow-x: auto;
 		margin-bottom: 1rem;
@@ -282,7 +282,7 @@
 		--width: 2px;
 		--color: gray;
 		/* Corner brackets as background on the element itself - stays fixed when scrolling */
-		background-color: #131313;
+		background-color: #101010;
 		background-image:
 			/* Top-left corner */
 			linear-gradient(var(--color), var(--color)),

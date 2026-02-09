@@ -174,7 +174,7 @@
 						href={project.github}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="corner-brackets bg-[#131313] px-4 py-2 text-blue-400 transition-colors hover:text-blue-300"
+						class="corner-brackets bg-[#101010] px-4 py-2 text-blue-400 transition-colors hover:text-blue-300"
 					>
 						View on GitHub
 					</a>
@@ -184,7 +184,7 @@
 						href={project.web}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="corner-brackets bg-[#131313] px-4 py-2 text-blue-400 transition-colors hover:text-blue-300"
+						class="corner-brackets bg-[#101010] px-4 py-2 text-blue-400 transition-colors hover:text-blue-300"
 					>
 						View Live Demo
 					</a>
@@ -238,7 +238,7 @@
 		</section>
 
 		<footer class="space-y-6 border-t border-neutral-800 pt-8">
-			<div class="corner-brackets bg-[#131313] p-5">
+			<div class="corner-brackets bg-[#101010] p-5">
 				<p class="text-gray-300">
 					Thanks for reading! If you found this helpful, feel free to share it or connect with me
 					on

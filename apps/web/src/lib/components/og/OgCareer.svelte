@@ -8,7 +8,7 @@
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
-		background-color: #131313;
+		background-color: #101010;
 		padding: 15px;
 		font-family: JetBrains Mono, monospace;
 	"
@@ -19,7 +19,7 @@
 			flex-direction: column;
 			flex: 1;
 			position: relative;
-			background-color: #131313;
+			background-color: #101010;
 			padding: 48px;
 		"
 	>

@@ -167,7 +167,7 @@
 			{/each}
 		</div>
 
-		<div class="corner-brackets bg-[#131313] p-5 text-center">
+		<div class="corner-brackets bg-[#101010] p-5 text-center">
 			<p class="text-gray-400">
 				Want to connect? Find me on
 				<a
@@ -190,7 +190,7 @@
 			</p>
 		</div>
 	{:else}
-		<div class="corner-brackets bg-[#131313] p-8 text-center">
+		<div class="corner-brackets bg-[#101010] p-8 text-center">
 			<p class="text-gray-400">
 				No experience entries yet. Check back soon.
 			</p>

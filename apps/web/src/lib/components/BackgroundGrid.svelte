@@ -34,7 +34,7 @@
 	});
 </script>
 
-<div class="corner-brackets group relative bg-[#131313] p-5">
+<div class="corner-brackets group relative bg-[#101010] p-5">
 	{#if browser}
 		<svg
 			bind:this={svgElement}
