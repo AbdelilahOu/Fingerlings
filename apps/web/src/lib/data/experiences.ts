@@ -30,7 +30,7 @@ Lately I also build small AI agents that plug into existing tools (dashboards, C
     endDate: null,
     location: "Netherlands",
     locationType: "Remote",
-    technologies: ["Go", "TypeScript", "PostgreSQL", "Next.js", "AI/LLM"],
+    technologies: ["Go", "TypeScript", "PostgreSQL", "Next.js", "AI-Agents"],
     highlights: [
       "Build backend-heavy applications for various clients",
       "Design and implement REST APIs with Go and TypeScript",
