@@ -19,8 +19,6 @@ export const web = await SvelteKit("web", {
   },
 });
 
-// export const AiWorkers = Ai();
-
 export const server = await Worker("server", {
   cwd: "apps/server",
   name: "api-portfolio",
@@ -30,7 +28,6 @@ export const server = await Worker("server", {
   bindings: {
     GH_TOKEN: alchemy.secret(process.env.GH_TOKEN!),
     CORS_ORIGINS: alchemy.env.CORS_ORIGINS!,
-    // AI: AiWorkers,
   },
   dev: {
     port: 3000,
