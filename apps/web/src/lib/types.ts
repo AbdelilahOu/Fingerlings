@@ -2,6 +2,8 @@ export interface Post {
   title: string;
   slug: string;
   description: string;
+  seoDescription?: string;
+  seoKeywords?: string[];
   date: string;
   tags: string[];
   published: boolean;
@@ -10,6 +12,8 @@ export interface Post {
 export interface PostMetadata {
   title: string;
   description: string;
+  seoDescription?: string;
+  seoKeywords?: string[];
   date: string;
   tags: string[];
   published: boolean;

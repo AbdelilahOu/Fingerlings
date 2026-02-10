@@ -1,6 +1,13 @@
 ---
 title: Hello World - My First Blog Post
 description: Welcome to my blog where I share thoughts on Go, Rust, TypeScript, and building software.
+seoDescription: A quick intro to my new developer blog, covering Go, Rust, TypeScript, and the kind of software I plan to build and share.
+seoKeywords:
+  - developer blog
+  - Go tutorials
+  - Rust programming
+  - TypeScript tips
+  - fullstack development
 date: "2026-01-22"
 tags:
   - General

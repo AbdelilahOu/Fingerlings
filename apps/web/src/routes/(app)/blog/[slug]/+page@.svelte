@@ -8,6 +8,8 @@
 	const url = `${props.data.origin}/blog/${props.data.slug}`;
 	const image = `${props.data.origin}/blog/${props.data.slug}/social.png`;
 	const title = `${props.data.meta.title} - Abdelilah Ouaadouch`;
+	const description = meta.seoDescription ?? meta.description;
+	const keywords = (meta.seoKeywords && meta.seoKeywords.length > 0) ? meta.seoKeywords : meta.tags;
 	const personId = `${props.data.origin}/ar7al#person`;
 	const websiteId = `${props.data.origin}/ar7al#website`;
 	const blogId = `${props.data.origin}/blog#blog`;
@@ -26,14 +28,14 @@
 
 <svelte:head>
 	<title>{title}</title>
-	<meta name="description" content={meta.description} />
-	<meta name="keywords" content="{meta.tags.join(', ')}, Blog, Abdelilah Ouaadouch" />
+	<meta name="description" content={description} />
+	<meta name="keywords" content="{keywords.join(', ')}, Blog, Abdelilah Ouaadouch" />
 	<link rel="canonical" href={url} />
 
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content={url} />
 	<meta property="og:title" content={title} />
-	<meta property="og:description" content={meta.description} />
+	<meta property="og:description" content={description} />
 	<meta property="og:image" content={image} />
 	<meta property="og:site_name" content="Abdelilah Ouaadouch" />
 	<meta property="article:published_time" content={meta.date} />
@@ -45,7 +47,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:url" content={url} />
 	<meta name="twitter:title" content={title} />
-	<meta name="twitter:description" content={meta.description} />
+	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
@@ -91,7 +93,7 @@
 				"@type": "BlogPosting",
 				"@id": postingId,
 				"headline": meta.title,
-				"description": meta.description,
+				"description": description,
 				"url": url,
 				"datePublished": meta.date,
 				"author": {
@@ -110,13 +112,13 @@
 					"@type": "ImageObject",
 					"url": image
 				},
-				"keywords": meta.tags
+				"keywords": keywords
 			},
 			{
 				"@type": "WebPage",
 				"@id": webpageId,
 				"name": title,
-				"description": meta.description,
+				"description": description,
 				"url": url,
 				"isPartOf": {
 					"@id": websiteId
