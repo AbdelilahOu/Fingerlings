@@ -16,11 +16,17 @@ tags:
 published: true
 ---
 
-As I dive deeper into Go and its concurrency model, I’ve been building various CLI tools and backend services,etc.
+As I dive deeper into Go and its concurrency model, I’ve been building various CLI tools and backend services, etc.
 
 I'm relying on this [Github repo](https://github.com/MedUnes/go-kata) that explores those concepts using problem solving, for example the first Kata is about building a fail-fast data aggregator using solely [errgroup](https://pkg.go.dev/golang.org/x/sync/errgroup).
 
 Package errgroup provides synchronization, error propagation and context cancellation for groups of goroutines working on subtasks.
+
+## Key Concepts
+
+- Fail-fast aggregation with `errgroup`
+- Context cancellation and timeouts
+- Functional options for configuration
 
 ## The scenario
 

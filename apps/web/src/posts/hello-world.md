@@ -17,6 +17,12 @@ published: true
 
 Welcome to my blog! This is my first post where I'll be sharing my journey as a fullstack developer.
 
+## Key Concepts
+
+- Topics: Go, Rust, TypeScript, and developer tools
+- Focus: practical tutorials, projects, and learnings
+- Goal: share solutions and connect with the community
+
 ## What to Expect
 
 I'll be writing about:
