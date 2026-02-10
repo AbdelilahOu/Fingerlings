@@ -12,14 +12,14 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "dependencies": {
-    "@orpc/client": "^1.13.4",
-    "@portfolio/api": "*",
-    "dotenv": "^17.2.3",
+    "@orpc/client": "catalog:",
+    "@portfolio/api": "workspace:*",
+    "dotenv": "catalog:",
     "shiki": "^3.21.0"
   },
   "devDependencies": {
     "@ethercorps/sveltekit-og": "^4.2.1",
-    "@portfolio/config": "*",
+    "@portfolio/config": "workspace:*",
     "@sveltejs/adapter-auto": "^6.1.1",
     "@sveltejs/adapter-cloudflare": "^7.2.6",
     "@sveltejs/kit": "^2.50.1",
@@ -30,7 +30,7 @@
     "svelte": "^5.48.2",
     "svelte-check": "^4.3.5",
     "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3",
+    "typescript": "catalog:",
     "vite": "^7.3.1"
   }
 }

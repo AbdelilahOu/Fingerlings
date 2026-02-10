@@ -14,7 +14,7 @@
   "examples": [],
   "auth": "none",
   "payments": "none",
-  "packageManager": "npm",
+  "packageManager": "bun",
   "dbSetup": "none",
   "api": "orpc",
   "webDeploy": "alchemy",

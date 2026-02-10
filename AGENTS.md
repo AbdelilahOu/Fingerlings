@@ -76,15 +76,15 @@ portfolio/
 
 ## Build, Test, and Development Commands
 
-- `npm run dev`: Run all apps via Alchemy (web + server).
-- `npm run dev:web`: Run only the SvelteKit app (port 5173).
-- `npm run dev:server`: Run only the API worker (port 3000).
-- `npm run build`: Build all apps with Turborepo.
-- `npm run deploy`: Deploy via Alchemy to Cloudflare.
-- `npm run destroy`: Tear down Alchemy environment.
-- `npm run check`: Lint/auto-fix with `oxlint --fix --fix-suggestions --fix-dangerously`.
-- `npm run check-types`: Type-check all packages with Turborepo.
-- `npm run fmt` / `npm run fmt:check`: Format with `oxfmt`.
+- `bun run dev`: Run all apps via Alchemy (web + server).
+- `bun run dev:web`: Run only the SvelteKit app (port 5173).
+- `bun run dev:server`: Run only the API worker (port 3000).
+- `bun run build`: Build all apps with Turborepo.
+- `bun run deploy`: Deploy via Alchemy to Cloudflare.
+- `bun run destroy`: Tear down Alchemy environment.
+- `bun run check`: Lint/auto-fix with `oxlint --fix --fix-suggestions --fix-dangerously`.
+- `bun run check-types`: Type-check all packages with Turborepo.
+- `bun run fmt` / `bun run fmt:check`: Format with `oxfmt`.
 
 ## Coding Style & Naming Conventions
 
@@ -94,14 +94,14 @@ portfolio/
 - **Markdown posts**: Place `.md` files in `apps/web/src/posts/` for mdsvex processing.
 - **Tailwind**: Use TailwindCSS v4 utilities; no custom CSS classes unless necessary.
 - **Zod schemas**: Use for API validation and type inference; define in api layer.
-- **Formatting/linting**: Run `npm run check` and `npm run fmt` before commits.
+- **Formatting/linting**: Run `bun run check` and `bun run fmt` before commits.
 
 ## Testing Guidelines
 
 - No dedicated test framework configured yet.
-- Use `npm run check-types` for TypeScript compilation checks.
-- Use `npm run check` for static linting (oxlint can catch many bugs).
-- Integration testing: manually via `npm run dev` during development.
+- Use `bun run check-types` for TypeScript compilation checks.
+- Use `bun run check` for static linting (oxlint can catch many bugs).
+- Integration testing: manually via `bun run dev` during development.
 - If adding tests, document the command and location in this section.
 
 ## Deployment & Environment
@@ -121,7 +121,7 @@ portfolio/
 - Commit history mixes conventional (`feat:`/`fix:`) and simple (`Update ...`).
 - Recommendation: use short, imperative messages; prefer `feat:` or `fix:` when meaningful.
 - PRs should include: clear summary, linked issues (if any), and screenshots for UI changes.
-- Always format before committing: `npm run fmt && npm run check` (auto-fixes linting issues).
+- Always format before committing: `bun run fmt && bun run check` (auto-fixes linting issues).
 
 ## oRPC & API Architecture
 

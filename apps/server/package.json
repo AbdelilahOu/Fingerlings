@@ -11,21 +11,21 @@
     "destroy": "alchemy destroy"
   },
   "dependencies": {
-    "@orpc/openapi": "^1.12.2",
-    "@orpc/server": "^1.12.2",
-    "@orpc/zod": "^1.12.2",
-    "@portfolio/api": "*",
-    "dotenv": "^17.2.2",
-    "hono": "^4.8.2",
-    "zod": "^4.1.13"
+    "@orpc/openapi": "catalog:",
+    "@orpc/server": "catalog:",
+    "@orpc/zod": "catalog:",
+    "@portfolio/api": "workspace:*",
+    "dotenv": "catalog:",
+    "hono": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20251213.0",
-    "@portfolio/config": "*",
-    "@types/node": "^22.13.11",
-    "alchemy": "^0.81.2",
+    "@cloudflare/workers-types": "catalog:",
+    "@portfolio/config": "workspace:*",
+    "@types/node": "catalog:",
+    "alchemy": "catalog:",
     "tsdown": "^0.16.5",
-    "typescript": "^5",
+    "typescript": "catalog:",
     "wrangler": "^4.54.0"
   }
 }

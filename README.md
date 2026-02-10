@@ -16,13 +16,13 @@ Personal portfolio website built with a modern TypeScript monorepo stack.
 Install dependencies:
 
 ```bash
-npm install
+bun install
 ```
 
 Run the development server:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 - Web app: [http://localhost:5173](http://localhost:5173)
@@ -53,8 +53,8 @@ portfolio/
 
 ## Scripts
 
-- `npm run dev` - Start all apps in development mode
-- `npm run build` - Build all applications
-- `npm run deploy` - Deploy to Cloudflare Workers
-- `npm run dev:web` - Start only the web app
-- `npm run dev:server` - Start only the server
+- `bun run dev` - Start all apps in development mode
+- `bun run build` - Build all applications
+- `bun run deploy` - Deploy to Cloudflare Workers
+- `bun run dev:web` - Start only the web app
+- `bun run dev:server` - Start only the server
