@@ -1,4 +1,3 @@
-import type { IncomingRequestCfProperties } from "@cloudflare/workers-types";
 import type { Context as HonoContext } from "hono";
 
 export type CreateContextOptions = {
@@ -6,13 +5,16 @@ export type CreateContextOptions = {
 };
 
 export async function createContext({ context }: CreateContextOptions) {
-  const cf = (context.req.raw as Request & { cf?: IncomingRequestCfProperties })
-    .cf;
+  const rawRequest = context.req.raw;
+  const headers = rawRequest.headers;
+  const ip =
+    headers.get("cf-connecting-ip") ??
+    headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    null;
 
   return {
-    session: null,
     honoContext: context,
-    cf,
+    ip,
   };
 }
 
