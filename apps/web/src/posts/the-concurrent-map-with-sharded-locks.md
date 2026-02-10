@@ -18,12 +18,6 @@ published: true
 
 In this post, I'll walk through how to build a concurrent map with sharded locks. It's based on the [KATA-02 exercise](https://github.com/MedUnes/go-kata).
 
-## Key Concepts
-
-- Why sharding reduces lock contention
-- How hashing maps keys to shards
-- Using `sync.RWMutex` for safe concurrent reads/writes
-
 ## What is a map?
 
 To understand how a map works, let's start with the basic idea. A map maps one value to another. Given one value, called a `key`, it returns a second value.

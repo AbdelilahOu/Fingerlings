@@ -22,12 +22,6 @@ I'm relying on this [Github repo](https://github.com/MedUnes/go-kata) that explo
 
 Package errgroup provides synchronization, error propagation and context cancellation for groups of goroutines working on subtasks.
 
-## Key Concepts
-
-- Fail-fast aggregation with `errgroup`
-- Context cancellation and timeouts
-- Functional options for configuration
-
 ## The scenario
 
 Imagine we want to build a dashboard, for this dashboard we must fetch data from two independent services, and we must fetch them in parallel, however, if either fails or global timeout is reached, the entire operation must abort immediately.
