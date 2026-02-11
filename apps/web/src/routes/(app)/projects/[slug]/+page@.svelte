@@ -194,7 +194,7 @@
 
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> cat ./about
+				<span>$</span> Overview
 			</h2>
 			<BackgroundGrid>
 				<div class="space-y-4 text-gray-200">
@@ -207,7 +207,7 @@
 
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> ls ./features
+				<span>$</span> Key Features
 			</h2>
 			<BackgroundGrid>
 				<ul class="space-y-2 text-gray-200">
@@ -223,7 +223,7 @@
 
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> git log --challenges
+				<span>$</span> Challenges
 			</h2>
 			<BackgroundGrid>
 				<ul class="space-y-2 text-gray-200">

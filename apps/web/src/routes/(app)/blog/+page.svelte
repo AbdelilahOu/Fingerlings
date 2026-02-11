@@ -152,7 +152,7 @@
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> ls ./posts
+		<span>$</span> Blog Posts
 	</h2>
 
 	{#if props.data.posts.length > 0}
@@ -179,7 +179,7 @@
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> cat ./topics
+		<span>$</span> Topics
 	</h2>
 	<SkillsGrid skills={['Go/Golang', 'Rust', 'TypeScript', 'APIs', 'System Design', 'Developer Tools', 'Database Optimization', 'Desktop Apps']} />
 </section>

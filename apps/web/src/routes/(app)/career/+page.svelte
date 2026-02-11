@@ -157,7 +157,7 @@
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> cat ./experience
+		<span>$</span> Work Experience
 	</h2>
 
 	{#if props.data.experiences.length > 0}
@@ -200,7 +200,7 @@
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> cat ./skills
+		<span>$</span> Skills
 	</h2>
 	<SkillsGrid skills={['Go/Golang', 'Rust', 'TypeScript', 'Node.js', 'React', 'Angular', 'PostgreSQL', 'Docker', 'Kafka', 'REST APIs']} />
 </section>

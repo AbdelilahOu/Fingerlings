@@ -145,7 +145,7 @@
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> ls ./projects
+		<span>$</span> Projects
 	</h2>
 
 	{#if props.data.projects.length > 0}
@@ -187,7 +187,7 @@
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> cat ./tech-stack
+		<span>$</span> Tech Stack
 	</h2>
 	<SkillsGrid skills={['Go/Golang', 'Rust', 'TypeScript', 'Next.js', 'Nuxt', 'Tauri', 'PostgreSQL', 'SQLite']} />
 </section>

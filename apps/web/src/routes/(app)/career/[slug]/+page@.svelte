@@ -206,7 +206,7 @@
 
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> cat ./about
+				<span>$</span> Overview
 			</h2>
 			<BackgroundGrid>
 				<div class="space-y-4 text-gray-200">
@@ -219,7 +219,7 @@
 
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> ls ./highlights
+				<span>$</span> Highlights
 			</h2>
 			<BackgroundGrid>
 				<ul class="space-y-2 text-gray-200">
@@ -235,7 +235,7 @@
 
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> cat ./tech-stack
+				<span>$</span> Tech Stack
 			</h2>
 			<BackgroundGrid>
 				<div class="flex flex-wrap gap-3">

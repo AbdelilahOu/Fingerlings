@@ -149,7 +149,7 @@
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> ls -contacts
+		<span>$</span> Contact
 	</h2>
 	<ContactsCard />
 </section>
@@ -157,7 +157,7 @@
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> cat ./skills
+		<span>$</span> Skills
 	</h2>
 	<SkillsGrid skills={languages} />
 	<SkillsGrid skills={frameworks} />
@@ -166,7 +166,7 @@
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> git log --stat
+		<span>$</span> GitHub Activity
 	</h2>
 	<div class="corner-brackets bg-[#101010] p-5">
 		{#await props.data.githubContributions}
@@ -200,7 +200,7 @@
 <section class="space-y-4">
 	<div class="flex items-center justify-between">
 		<h2 class="text-xl font-bold text-white md:text-2xl">
-			<span>$</span> ls ./projects
+			<span>$</span> Featured Projects
 		</h2>
 		<a href="/projects" class="text-sm text-gray-400 transition-colors hover:text-white">
 			View all {"->"}
@@ -216,7 +216,7 @@
 <section class="space-y-4">
 	<div class="flex items-center justify-between">
 		<h2 class="text-xl font-bold text-white md:text-2xl">
-			<span>$</span> head ./latest-posts
+			<span>$</span> Latest Posts
 		</h2>
 		<a href="/blog" class="text-sm text-gray-400 transition-colors hover:text-white">
 			View all {"->"}
