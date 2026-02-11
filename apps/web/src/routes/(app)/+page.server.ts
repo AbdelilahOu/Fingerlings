@@ -1,13 +1,17 @@
-import { getLatestPosts } from "$lib/data/posts";
 import { getLatestProjects } from "$lib/data/projects";
 import { client } from "$lib/orpc";
+import type { Post } from "$lib/types";
 
-export const prerender = true;
+export const ssr = true;
+export const prerender = false;
 
-export function load({ url }) {
+export async function load({ fetch, url }) {
+  const postsResponse = await fetch("/api/posts?limit=2");
+  const latestPosts = (await postsResponse.json()) as Post[];
+
   return {
     featuredProjects: getLatestProjects(2),
-    latestPosts: getLatestPosts(2),
+    latestPosts,
     githubContributions: client.github.contributions({ year: 2025 }),
     year: 2025,
     origin: url.origin,

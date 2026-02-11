@@ -15,18 +15,105 @@
 	const webpageId = `${url}#webpage`;
 	const breadcrumbId = `${url}#breadcrumb`;
 	const blogId = `${url}#blog`;
-	const blogPosts = props.data.posts.map((post) => ({
-		"@type": "BlogPosting",
-		"@id": `${props.data.origin}/blog/${post.slug}#blogposting`,
-		"headline": post.title,
-		"description": post.description,
-		"datePublished": post.date,
-		"author": {
-			"@id": personId
-		},
-		"url": `${props.data.origin}/blog/${post.slug}`,
-		"keywords": post.tags
-	}));
+
+	function getBlogSchema(posts: Post[]) {
+		const blogPosts = posts.map((post) => ({
+			"@type": "BlogPosting",
+			"@id": `${props.data.origin}/blog/${post.slug}#blogposting`,
+			"headline": post.title,
+			"description": post.description,
+			"datePublished": post.date,
+			"author": {
+				"@id": personId
+			},
+			"url": `${props.data.origin}/blog/${post.slug}`,
+			"keywords": post.tags
+		}));
+
+		return JSON.stringify({
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Person",
+					"@id": personId,
+					"name": "Abdelilah Ouaadouch",
+					"alternateName": "Ar7al",
+					"jobTitle": "Fullstack Developer",
+					"url": `${props.data.origin}`,
+					"image": `${props.data.origin}/social.png`,
+					"sameAs": [
+						"https://www.linkedin.com/in/ar7al/",
+						"https://github.com/AbdelilahOu",
+						"https://x.com/Abdelilah4dev"
+					]
+				},
+				{
+					"@type": "WebSite",
+					"@id": websiteId,
+					"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+					"url": `${props.data.origin}`,
+					"publisher": {
+						"@id": personId
+					}
+				},
+				{
+					"@type": "Blog",
+					"@id": blogId,
+					"name": "Abdelilah Ouaadouch's Blog",
+					"description": description,
+					"url": url,
+					"isPartOf": {
+						"@id": websiteId
+					},
+					"author": {
+						"@id": personId
+					},
+					"blogPost": blogPosts
+				},
+				{
+					"@type": "CollectionPage",
+					"@id": webpageId,
+					"name": title,
+					"description": description,
+					"url": url,
+					"isPartOf": {
+						"@id": websiteId
+					},
+					"about": {
+						"@id": personId
+					},
+					"mainEntity": {
+						"@id": blogId
+					},
+					"breadcrumb": {
+						"@id": breadcrumbId
+					},
+					"primaryImageOfPage": {
+						"@type": "ImageObject",
+						"url": image
+					}
+				},
+				{
+					"@type": "BreadcrumbList",
+					"@id": breadcrumbId,
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Home",
+							"item": `${props.data.origin}`
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"name": "Blog",
+							"item": url
+						}
+					]
+				}
+			]
+		});
+	}
 </script>
 
 <svelte:head>
@@ -52,89 +139,7 @@
 	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
-	{@html `<script type="application/ld+json">${JSON.stringify({
-		"@context": "https://schema.org",
-		"@graph": [
-			{
-				"@type": "Person",
-				"@id": personId,
-				"name": "Abdelilah Ouaadouch",
-				"alternateName": "Ar7al",
-				"jobTitle": "Fullstack Developer",
-				"url": `${props.data.origin}`,
-				"image": `${props.data.origin}/social.png`,
-				"sameAs": [
-					"https://www.linkedin.com/in/ar7al/",
-					"https://github.com/AbdelilahOu",
-					"https://x.com/Abdelilah4dev"
-				]
-			},
-			{
-				"@type": "WebSite",
-				"@id": websiteId,
-				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
-				"url": `${props.data.origin}`,
-				"publisher": {
-					"@id": personId
-				}
-			},
-			{
-				"@type": "Blog",
-				"@id": blogId,
-				"name": "Abdelilah Ouaadouch's Blog",
-				"description": description,
-				"url": url,
-				"isPartOf": {
-					"@id": websiteId
-				},
-				"author": {
-					"@id": personId
-				},
-				"blogPost": blogPosts
-			},
-			{
-				"@type": "CollectionPage",
-				"@id": webpageId,
-				"name": title,
-				"description": description,
-				"url": url,
-				"isPartOf": {
-					"@id": websiteId
-				},
-				"about": {
-					"@id": personId
-				},
-				"mainEntity": {
-					"@id": blogId
-				},
-				"breadcrumb": {
-					"@id": breadcrumbId
-				},
-				"primaryImageOfPage": {
-					"@type": "ImageObject",
-					"url": image
-				}
-			},
-			{
-				"@type": "BreadcrumbList",
-				"@id": breadcrumbId,
-				"itemListElement": [
-					{
-						"@type": "ListItem",
-						"position": 1,
-						"name": "Home",
-						"item": `${props.data.origin}`
-					},
-					{
-						"@type": "ListItem",
-						"position": 2,
-						"name": "Blog",
-						"item": url
-					}
-				]
-			}
-		]
-	})}</script>`}
+	{@html `<script type="application/ld+json">${getBlogSchema(props.data.posts)}</script>`}
 </svelte:head>
 
 <header class="space-y-4">
