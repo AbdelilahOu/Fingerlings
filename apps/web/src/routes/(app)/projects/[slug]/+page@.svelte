@@ -8,8 +8,8 @@
 	const image = `${props.data.origin}/projects/${props.data.project.slug}/social.png`;
 	const title = `${props.data.project.title} - Abdelilah Ouaadouch`;
 	const description = props.data.project.description;
-	const personId = `${props.data.origin}/ar7al#person`;
-	const websiteId = `${props.data.origin}/ar7al#website`;
+	const personId = `${props.data.origin}#person`;
+	const websiteId = `${props.data.origin}#website`;
 	const webpageId = `${url}#webpage`;
 	const breadcrumbId = `${url}#breadcrumb`;
 	const projectId = `${url}#software`;
@@ -47,8 +47,8 @@
 				"name": "Abdelilah Ouaadouch",
 				"alternateName": "Ar7al",
 				"jobTitle": "Fullstack Developer",
-				"url": `${props.data.origin}/ar7al`,
-				"image": `${props.data.origin}/ar7al/social.png`,
+				"url": `${props.data.origin}`,
+				"image": `${props.data.origin}/social.png`,
 				"sameAs": [
 					"https://www.linkedin.com/in/ar7al/",
 					"https://github.com/AbdelilahOu",
@@ -59,7 +59,7 @@
 				"@type": "WebSite",
 				"@id": websiteId,
 				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
-				"url": `${props.data.origin}/ar7al`,
+				"url": `${props.data.origin}`,
 				"publisher": {
 					"@id": personId
 				}
@@ -119,7 +119,7 @@
 						"@type": "ListItem",
 						"position": 1,
 						"name": "Home",
-						"item": `${props.data.origin}/ar7al`
+						"item": `${props.data.origin}`
 					},
 					{
 						"@type": "ListItem",

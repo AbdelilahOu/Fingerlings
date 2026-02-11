@@ -3,7 +3,7 @@
 		<div class="space-y-3">
 			<h3 class="text-white font-medium">Navigation</h3>
 			<ul class="space-y-2">
-				<li><a href="/ar7al" class="hover:text-white transition-colors">Home</a></li>
+				<li><a href="/" class="hover:text-white transition-colors">Home</a></li>
 				<li><a href="/projects" class="hover:text-white transition-colors">Projects</a></li>
 				<li><a href="/career" class="hover:text-white transition-colors">Career</a></li>
 				<li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>

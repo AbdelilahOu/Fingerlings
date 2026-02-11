@@ -38,7 +38,7 @@
 		</div>
 
 		<a
-			href="/ar7al"
+			href="/"
 			class="corner-brackets inline-block bg-[#101010] px-6 py-3 text-white transition-colors hover:bg-[#1a1a1a]"
 		>
 			<span class="text-blue-400">$</span> cd ~

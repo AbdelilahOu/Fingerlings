@@ -21,10 +21,10 @@
 	const title = 'Abdelilah Ouaadouch - Fullstack Developer';
 	const description =
 		'Fullstack engineer specializing in Go, Rust, and TypeScript. I build dependable backends, desktop apps, and AI tools.';
-	const url = `${props.data.origin}/ar7al`;
-	const image = `${props.data.origin}/ar7al/social.png`;
-	const personId = `${props.data.origin}/ar7al#person`;
-	const websiteId = `${props.data.origin}/ar7al#website`;
+	const url = `${props.data.origin}`;
+	const image = `${props.data.origin}/social.png`;
+	const personId = `${props.data.origin}#person`;
+	const websiteId = `${props.data.origin}#website`;
 	const webpageId = `${url}#webpage`;
 
 	const languages = ['Golang', 'Rust', 'Typescript', 'Javascript', 'Html', 'Css'];

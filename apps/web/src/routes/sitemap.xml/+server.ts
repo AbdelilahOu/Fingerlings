@@ -33,7 +33,7 @@ export async function GET({ url }) {
 
   const urls: string[] = [];
 
-  urls.push(urlEntry(`${origin}/ar7al`));
+  urls.push(urlEntry(origin));
   urls.push(urlEntry(`${origin}/blog`));
   urls.push(urlEntry(`${origin}/projects`));
   urls.push(urlEntry(`${origin}/career`));

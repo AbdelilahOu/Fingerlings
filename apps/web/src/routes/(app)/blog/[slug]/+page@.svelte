@@ -10,8 +10,8 @@
 	const title = `${props.data.meta.title} - Abdelilah Ouaadouch`;
 	const description = meta.seoDescription ?? meta.description;
 	const keywords = (meta.seoKeywords && meta.seoKeywords.length > 0) ? meta.seoKeywords : meta.tags;
-	const personId = `${props.data.origin}/ar7al#person`;
-	const websiteId = `${props.data.origin}/ar7al#website`;
+	const personId = `${props.data.origin}#person`;
+	const websiteId = `${props.data.origin}#website`;
 	const blogId = `${props.data.origin}/blog#blog`;
 	const webpageId = `${url}#webpage`;
 	const breadcrumbId = `${url}#breadcrumb`;
@@ -60,8 +60,8 @@
 				"name": "Abdelilah Ouaadouch",
 				"alternateName": "Ar7al",
 				"jobTitle": "Fullstack Developer",
-				"url": `${props.data.origin}/ar7al`,
-				"image": `${props.data.origin}/ar7al/social.png`,
+				"url": `${props.data.origin}`,
+				"image": `${props.data.origin}/social.png`,
 				"sameAs": [
 					"https://www.linkedin.com/in/ar7al/",
 					"https://github.com/AbdelilahOu",
@@ -72,7 +72,7 @@
 				"@type": "WebSite",
 				"@id": websiteId,
 				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
-				"url": `${props.data.origin}/ar7al`,
+				"url": `${props.data.origin}`,
 				"publisher": {
 					"@id": personId
 				}
@@ -145,7 +145,7 @@
 						"@type": "ListItem",
 						"position": 1,
 						"name": "Home",
-						"item": `${props.data.origin}/ar7al`
+						"item": `${props.data.origin}`
 					},
 					{
 						"@type": "ListItem",
