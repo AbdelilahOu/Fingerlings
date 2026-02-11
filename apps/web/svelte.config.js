@@ -38,7 +38,7 @@ const config = {
   preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 
   kit: {
-    adapter: alchemy({ routes: { include: ["/*"], exclude: ["<all>"] } }),
+    adapter: alchemy(),
     alias: {
       "@posts": "src/posts",
     },
