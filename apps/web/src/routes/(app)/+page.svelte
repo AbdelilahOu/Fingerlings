@@ -11,7 +11,7 @@
 	let props: {
 		data: {
 			featuredProjects: Project[];
-			latestPosts: Post[];
+			latestPosts: Promise<Post[]>;
 			githubContributions: Promise<ContributionData | null>;
 			year: number;
 			origin: string;
@@ -222,15 +222,25 @@
 			View all {"->"}
 		</a>
 	</div>
-	{#if props.data.latestPosts.length > 0}
-		<div class="space-y-4">
-			{#each props.data.latestPosts as post}
-				<BlogCard {post} />
-			{/each}
-		</div>
-	{:else}
+	{#await props.data.latestPosts}
 		<div class="corner-brackets bg-[#101010] p-5 text-center">
-			<p class="text-gray-400">No blog posts yet. Check back soon!</p>
+			<p class="text-gray-400">Loading posts...</p>
 		</div>
-	{/if}
+	{:then latestPosts}
+		{#if latestPosts.length > 0}
+			<div class="space-y-4">
+				{#each latestPosts as post}
+					<BlogCard {post} />
+				{/each}
+			</div>
+		{:else}
+			<div class="corner-brackets bg-[#101010] p-5 text-center">
+				<p class="text-gray-400">No blog posts yet. Check back soon!</p>
+			</div>
+		{/if}
+	{:catch}
+		<div class="corner-brackets bg-[#101010] p-5 text-center">
+			<p class="text-gray-400">Unable to load posts right now.</p>
+		</div>
+	{/await}
 </section>

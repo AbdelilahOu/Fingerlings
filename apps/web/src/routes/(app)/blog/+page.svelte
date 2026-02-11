@@ -3,7 +3,7 @@
 	import SkillsGrid from '$lib/components/SkillsGrid.svelte';
 	import type { Post } from '$lib/types';
 
-	let props: { data: { posts: Post[]; origin: string } } = $props();
+	let props: { data: { posts: Promise<Post[]>; origin: string } } = $props();
 
 	const title = 'Blog - Abdelilah Ouaadouch';
 	const description =
@@ -15,18 +15,105 @@
 	const webpageId = `${url}#webpage`;
 	const breadcrumbId = `${url}#breadcrumb`;
 	const blogId = `${url}#blog`;
-	const blogPosts = props.data.posts.map((post) => ({
-		"@type": "BlogPosting",
-		"@id": `${props.data.origin}/blog/${post.slug}#blogposting`,
-		"headline": post.title,
-		"description": post.description,
-		"datePublished": post.date,
-		"author": {
-			"@id": personId
-		},
-		"url": `${props.data.origin}/blog/${post.slug}`,
-		"keywords": post.tags
-	}));
+
+	function getBlogSchema(posts: Post[]) {
+		const blogPosts = posts.map((post) => ({
+			"@type": "BlogPosting",
+			"@id": `${props.data.origin}/blog/${post.slug}#blogposting`,
+			"headline": post.title,
+			"description": post.description,
+			"datePublished": post.date,
+			"author": {
+				"@id": personId
+			},
+			"url": `${props.data.origin}/blog/${post.slug}`,
+			"keywords": post.tags
+		}));
+
+		return JSON.stringify({
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Person",
+					"@id": personId,
+					"name": "Abdelilah Ouaadouch",
+					"alternateName": "Ar7al",
+					"jobTitle": "Fullstack Developer",
+					"url": `${props.data.origin}`,
+					"image": `${props.data.origin}/social.png`,
+					"sameAs": [
+						"https://www.linkedin.com/in/ar7al/",
+						"https://github.com/AbdelilahOu",
+						"https://x.com/Abdelilah4dev"
+					]
+				},
+				{
+					"@type": "WebSite",
+					"@id": websiteId,
+					"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
+					"url": `${props.data.origin}`,
+					"publisher": {
+						"@id": personId
+					}
+				},
+				{
+					"@type": "Blog",
+					"@id": blogId,
+					"name": "Abdelilah Ouaadouch's Blog",
+					"description": description,
+					"url": url,
+					"isPartOf": {
+						"@id": websiteId
+					},
+					"author": {
+						"@id": personId
+					},
+					"blogPost": blogPosts
+				},
+				{
+					"@type": "CollectionPage",
+					"@id": webpageId,
+					"name": title,
+					"description": description,
+					"url": url,
+					"isPartOf": {
+						"@id": websiteId
+					},
+					"about": {
+						"@id": personId
+					},
+					"mainEntity": {
+						"@id": blogId
+					},
+					"breadcrumb": {
+						"@id": breadcrumbId
+					},
+					"primaryImageOfPage": {
+						"@type": "ImageObject",
+						"url": image
+					}
+				},
+				{
+					"@type": "BreadcrumbList",
+					"@id": breadcrumbId,
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Home",
+							"item": `${props.data.origin}`
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"name": "Blog",
+							"item": url
+						}
+					]
+				}
+			]
+		});
+	}
 </script>
 
 <svelte:head>
@@ -52,89 +139,11 @@
 	<meta name="twitter:image" content={image} />
 	<meta name="twitter:creator" content="@Abdelilah4dev" />
 
-	{@html `<script type="application/ld+json">${JSON.stringify({
-		"@context": "https://schema.org",
-		"@graph": [
-			{
-				"@type": "Person",
-				"@id": personId,
-				"name": "Abdelilah Ouaadouch",
-				"alternateName": "Ar7al",
-				"jobTitle": "Fullstack Developer",
-				"url": `${props.data.origin}`,
-				"image": `${props.data.origin}/social.png`,
-				"sameAs": [
-					"https://www.linkedin.com/in/ar7al/",
-					"https://github.com/AbdelilahOu",
-					"https://x.com/Abdelilah4dev"
-				]
-			},
-			{
-				"@type": "WebSite",
-				"@id": websiteId,
-				"name": "Abdelilah Ouaadouch - Fullstack Developer Portfolio",
-				"url": `${props.data.origin}`,
-				"publisher": {
-					"@id": personId
-				}
-			},
-			{
-				"@type": "Blog",
-				"@id": blogId,
-				"name": "Abdelilah Ouaadouch's Blog",
-				"description": description,
-				"url": url,
-				"isPartOf": {
-					"@id": websiteId
-				},
-				"author": {
-					"@id": personId
-				},
-				"blogPost": blogPosts
-			},
-			{
-				"@type": "CollectionPage",
-				"@id": webpageId,
-				"name": title,
-				"description": description,
-				"url": url,
-				"isPartOf": {
-					"@id": websiteId
-				},
-				"about": {
-					"@id": personId
-				},
-				"mainEntity": {
-					"@id": blogId
-				},
-				"breadcrumb": {
-					"@id": breadcrumbId
-				},
-				"primaryImageOfPage": {
-					"@type": "ImageObject",
-					"url": image
-				}
-			},
-			{
-				"@type": "BreadcrumbList",
-				"@id": breadcrumbId,
-				"itemListElement": [
-					{
-						"@type": "ListItem",
-						"position": 1,
-						"name": "Home",
-						"item": `${props.data.origin}`
-					},
-					{
-						"@type": "ListItem",
-						"position": 2,
-						"name": "Blog",
-						"item": url
-					}
-				]
-			}
-		]
-	})}</script>`}
+	{#await props.data.posts}
+		{@html `<script type="application/ld+json">${getBlogSchema([])}</script>`}
+	{:then posts}
+		{@html `<script type="application/ld+json">${getBlogSchema(posts)}</script>`}
+	{/await}
 </svelte:head>
 
 <header class="space-y-4">
@@ -155,26 +164,36 @@
 		<span>$</span> ls ./posts
 	</h2>
 
-	{#if props.data.posts.length > 0}
-		<div class="space-y-4">
-			{#each props.data.posts as post}
-				<BlogCard {post} />
-			{/each}
-		</div>
-	{:else}
+	{#await props.data.posts}
 		<div class="corner-brackets bg-[#101010] p-8 text-center">
-			<p class="text-gray-400">
-				No posts yet. Check back soon for technical articles and tutorials.
-			</p>
-			<p class="mt-2 text-sm text-gray-500">
-				In the meantime, check out my
-				<a href="https://github.com/AbdelilahOu" class="text-blue-400 hover:text-blue-300">
-					GitHub
-				</a>
-				for code and projects.
-			</p>
+			<p class="text-gray-400">Loading posts...</p>
 		</div>
-	{/if}
+	{:then posts}
+		{#if posts.length > 0}
+			<div class="space-y-4">
+				{#each posts as post}
+					<BlogCard {post} />
+				{/each}
+			</div>
+		{:else}
+			<div class="corner-brackets bg-[#101010] p-8 text-center">
+				<p class="text-gray-400">
+					No posts yet. Check back soon for technical articles and tutorials.
+				</p>
+				<p class="mt-2 text-sm text-gray-500">
+					In the meantime, check out my
+					<a href="https://github.com/AbdelilahOu" class="text-blue-400 hover:text-blue-300">
+						GitHub
+					</a>
+					for code and projects.
+				</p>
+			</div>
+		{/if}
+	{:catch}
+		<div class="corner-brackets bg-[#101010] p-8 text-center">
+			<p class="text-gray-400">Unable to load posts right now.</p>
+		</div>
+	{/await}
 </section>
 
 <section class="space-y-4">
