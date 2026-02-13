@@ -43,7 +43,7 @@ const config = {
       "@posts": "src/posts",
     },
     prerender: {
-      origin: "https://portfolio.ar7al.workers.dev",
+      origin: "https://ar7al.dev",
     },
   },
 };
