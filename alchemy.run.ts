@@ -14,7 +14,7 @@ export const web = await SvelteKit("web", {
   cwd: "apps/web",
   name: "portfolio",
   adopt: true,
-  domains: ["ar7al.dev", "www.ar7al.dev"],
+  domains: ["ar7al.dev"],
   spa: false,
   assets: {
     not_found_handling: "404-page",
@@ -29,7 +29,7 @@ export const server = await Worker("server", {
   cwd: "apps/server",
   name: "api-portfolio",
   adopt: true,
-  domains: ["api.ar7al.dev", "www.api.ar7al.dev"],
+  domains: ["api.ar7al.dev"],
   entrypoint: "src/index.ts",
   compatibility: "node",
   bindings: {
