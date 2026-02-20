@@ -6,6 +6,7 @@
 		slug: string;
 		title: string;
 		company: string;
+		companyWebsite?: string;
 		companyUrl?: string;
 		type: string;
 		description: string;
@@ -31,9 +32,9 @@
 			</h3>
 		</a>
 		<div class="mt-1 flex flex-wrap items-center gap-2 text-sm md:text-base text-gray-400">
-			{#if experience.companyUrl}
+			{#if experience.companyWebsite || experience.companyUrl}
 				<a
-					href={experience.companyUrl}
+					href={experience.companyWebsite ?? experience.companyUrl}
 					target="_blank"
 					rel="noopener noreferrer"
 					class="text-blue-400 hover:text-blue-300 transition-colors"
@@ -72,8 +73,18 @@
 			>
 				View Details
 			</a>
+			{#if experience.companyWebsite}
+				<a
+					href={experience.companyWebsite}
+					target="_blank"
+					rel="noopener noreferrer"
+					title="View {experience.company} website"
+					class="text-blue-400 hover:text-blue-300 transition-colors text-sm md:text-base"
+				>
+					Website
+				</a>
+			{/if}
 			{#if experience.companyUrl}
-				-
 				<a
 					href={experience.companyUrl}
 					target="_blank"
@@ -81,7 +92,7 @@
 					title="View {experience.company} on LinkedIn"
 					class="text-blue-400 hover:text-blue-300 transition-colors text-sm md:text-base"
 				>
-					Company
+					LinkedIn
 				</a>
 			{/if}
 		</div>

@@ -2,6 +2,7 @@ export interface Experience {
   slug: string;
   title: string;
   company: string;
+  companyWebsite?: string;
   companyUrl?: string;
   type: "Full-time" | "Part-time" | "Contract" | "Internship";
   description: string;
@@ -19,6 +20,7 @@ export const experiences: Experience[] = [
     slug: "dev-up",
     title: "Full Stack Engineer",
     company: "DEV-UP",
+    companyWebsite: "https://dev-up.io/",
     companyUrl: "https://www.linkedin.com/company/80668205/",
     type: "Full-time",
     description:
@@ -42,6 +44,7 @@ Lately I also build small AI agents that plug into existing tools (dashboards, C
     slug: "modoock-solutions",
     title: "Full Stack Engineer",
     company: "Modoock Solutions",
+    companyWebsite: "https://www.modoock.com/",
     companyUrl: "https://www.linkedin.com/company/102614308/",
     type: "Full-time",
     description:

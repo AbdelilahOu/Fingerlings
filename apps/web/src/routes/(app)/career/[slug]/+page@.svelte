@@ -1,5 +1,6 @@
 <script lang="ts">
 	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
+    import SkillsGrid from '$lib/components/SkillsGrid.svelte';
 	import { formatDateRange, calculateDuration, type Experience } from '$lib/data/experiences';
 
 	let props: { data: { experience: Experience; origin: string } } = $props();
@@ -161,9 +162,9 @@
 				{experience.title}
 			</h1>
 			<div class="flex flex-wrap items-center gap-2 text-lg text-gray-300">
-				{#if experience.companyUrl}
+				{#if experience.companyWebsite || experience.companyUrl}
 					<a
-						href={experience.companyUrl}
+						href={experience.companyWebsite ?? experience.companyUrl}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-blue-400 hover:text-blue-300 transition-colors"
@@ -191,8 +192,19 @@
 			</div>
 		</header>
 
-		{#if experience.companyUrl}
+		{#if experience.companyWebsite || experience.companyUrl}
 			<section class="flex gap-4">
+				{#if experience.companyWebsite}
+					<a
+						href={experience.companyWebsite}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="corner-brackets bg-[#101010] px-4 py-2 text-blue-400 transition-colors hover:text-blue-300"
+					>
+						View Company Website
+					</a>
+				{/if}
+				{#if experience.companyUrl}
 				<a
 					href={experience.companyUrl}
 					target="_blank"
@@ -201,6 +213,7 @@
 				>
 					View Company on LinkedIn
 				</a>
+				{/if}
 			</section>
 		{/if}
 
@@ -237,13 +250,7 @@
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> Tech Stack
 			</h2>
-			<BackgroundGrid>
-				<div class="flex flex-wrap gap-3">
-					{#each experience.technologies as tech}
-						<span class="border border-neutral-600 px-3 py-1 text-gray-300">{tech}</span>
-					{/each}
-				</div>
-			</BackgroundGrid>
+			<SkillsGrid skills={experience.technologies}/>
 		</section>
 
 		<footer class="space-y-6 border-t border-neutral-800 pt-8">

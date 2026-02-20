@@ -145,6 +145,17 @@
 		2+ years building production APIs, full-stack products, desktop apps, and AI tools from backend
 		services to polished UI with Go, Rust, TypeScript, Gin, Next.js, and Tauri.
 	</p>
+	<p class="text-sm text-gray-400 md:text-base">
+		Currently working at
+		<a
+			href="https://dev-up.io/"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-blue-400 transition-colors hover:text-blue-300"
+		>
+			DEV-UP
+		</a>.
+	</p>
 </section>
 
 <section class="space-y-4">
