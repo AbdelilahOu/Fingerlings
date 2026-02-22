@@ -74,6 +74,7 @@
 				View Details
 			</a>
 			{#if experience.companyWebsite}
+			-
 				<a
 					href={experience.companyWebsite}
 					target="_blank"
@@ -85,6 +86,7 @@
 				</a>
 			{/if}
 			{#if experience.companyUrl}
+			-
 				<a
 					href={experience.companyUrl}
 					target="_blank"
