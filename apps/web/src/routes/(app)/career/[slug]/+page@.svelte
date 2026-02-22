@@ -193,13 +193,13 @@
 		</header>
 
 		{#if experience.companyWebsite || experience.companyUrl}
-			<section class="flex gap-4">
+			<section class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
 				{#if experience.companyWebsite}
 					<a
 						href={experience.companyWebsite}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="corner-brackets bg-[#101010] px-4 py-2 text-blue-400 transition-colors hover:text-blue-300"
+						class="corner-brackets inline-flex w-fit items-center bg-[#101010] px-3 py-2 text-sm text-blue-400 transition-colors hover:text-blue-300 md:px-4 md:text-base"
 					>
 						View Company Website
 					</a>
@@ -209,7 +209,7 @@
 					href={experience.companyUrl}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="corner-brackets bg-[#101010] px-4 py-2 text-blue-400 transition-colors hover:text-blue-300"
+					class="corner-brackets inline-flex w-fit items-center bg-[#101010] px-3 py-2 text-sm text-blue-400 transition-colors hover:text-blue-300 md:px-4 md:text-base"
 				>
 					View Company on LinkedIn
 				</a>
