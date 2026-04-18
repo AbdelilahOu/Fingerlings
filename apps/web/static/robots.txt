@@ -1,7 +1,7 @@
-# robots.txt for ar7al.com
-
 User-agent: *
 Allow: /
+
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 # Disallow internal/API routes
 Disallow: /api/
