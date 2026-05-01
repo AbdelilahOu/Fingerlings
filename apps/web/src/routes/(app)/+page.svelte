@@ -166,14 +166,6 @@
 </section>
 
 
-<section class="space-y-4">
-	<h2 class="text-xl font-bold text-white md:text-2xl">
-		<span>$</span> Skills
-	</h2>
-	<SkillsGrid skills={languages} />
-	<SkillsGrid skills={frameworks} />
-	<SkillsGrid skills={tools} />
-</section>
 
 <section class="space-y-4">
 	<h2 class="text-xl font-bold text-white md:text-2xl">
@@ -244,4 +236,13 @@
 			<p class="text-gray-400">No blog posts yet. Check back soon!</p>
 		</div>
 	{/if}
+</section>
+
+<section class="space-y-4">
+	<h2 class="text-xl font-bold text-white md:text-2xl">
+		<span>$</span> Skills
+	</h2>
+	<SkillsGrid skills={languages} />
+	<SkillsGrid skills={frameworks} />
+	<SkillsGrid skills={tools} />
 </section>
