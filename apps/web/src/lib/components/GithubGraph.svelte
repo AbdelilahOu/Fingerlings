@@ -7,7 +7,7 @@
 	}
 
 	interface Props {
-		data: ContributionData;
+		data: ContributionData | null;
 		year: number;
 	}
 
@@ -56,7 +56,7 @@
 			}
 
 			const dateIdx = toDateString(date);
-			const contributions = props.data.cal[dateIdx]?.github ?? 0;
+			const contributions = props.data?.cal[dateIdx]?.github ?? 0;
 
 
 			const isFuture = props.year === today.getFullYear() && date > today;

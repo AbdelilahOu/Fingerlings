@@ -177,7 +177,7 @@
 				Total Contributions in {props.data.year}:
 				<span class="font-semibold text-gray-400">...</span>
 			</p>
-			<div class="text-gray-400">Loading contributions...</div>
+			<GithubGraph data={null} year={props.data.year} />
 		{:then contributions}
 			<p class="mb-4 text-white">
 				Total Contributions in {props.data.year}:
@@ -185,17 +185,13 @@
 					{contributions?.totalGH ?? 0}
 				</span>
 			</p>
-			{#if contributions}
-				<GithubGraph data={contributions} year={props.data.year} />
-			{:else}
-				<div class="text-gray-400">Unable to load contributions</div>
-			{/if}
+			<GithubGraph data={contributions ?? null} year={props.data.year} />
 		{:catch}
 			<p class="mb-4 text-white">
 				Total Contributions in {props.data.year}:
 				<span class="font-semibold text-gray-400">0</span>
 			</p>
-			<div class="text-gray-400">Unable to load contributions</div>
+			<GithubGraph data={null} year={props.data.year} />
 		{/await}
 	</div>
 </section>
