@@ -1,7 +1,9 @@
 import type { Post, PostMetadata } from "../types";
 
 export function getPosts(): Post[] {
-  const paths = import.meta.glob<{ metadata: PostMetadata }>("/src/posts/*.md", { eager: true });
+  const paths = import.meta.glob<{ metadata: PostMetadata }>("/src/content/blog-posts/*.md", {
+    eager: true,
+  });
 
   const posts: Post[] = [];
 

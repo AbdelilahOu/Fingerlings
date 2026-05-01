@@ -40,7 +40,9 @@ const config = {
   kit: {
     adapter: alchemy(),
     alias: {
-      "@posts": "src/posts",
+      "@posts": "src/content/blog-posts",
+      "@projects": "src/content/projects",
+      "@career": "src/content/career",
     },
     prerender: {
       origin: "https://ar7al.dev",

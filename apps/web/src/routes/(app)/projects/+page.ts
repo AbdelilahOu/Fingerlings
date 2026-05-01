@@ -1,7 +1,7 @@
-import { projects } from "$lib/data/projects";
+import { getProjects } from "$lib/data/projects";
 
 export const prerender = true;
 
 export function load({ url }) {
-  return { projects, origin: url.origin };
+  return { projects: getProjects(), origin: url.origin };
 }

@@ -1,13 +1,14 @@
 <script lang="ts">
-	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
+	import type { Component } from 'svelte';
+	import type { ProjectMetadata } from '$lib/data/projects';
 
-	let props: { data: { project: any; origin: string } } = $props();
+	let props: { data: { content: Component; meta: ProjectMetadata; slug: string; origin: string } } = $props();
 
-	const project = props.data.project;
-	const url = `${props.data.origin}/projects/${props.data.project.slug}`;
-	const image = `${props.data.origin}/projects/${props.data.project.slug}/social.png`;
-	const title = `${props.data.project.title} - Abdelilah Ouaadouch`;
-	const description = props.data.project.description;
+	const meta = props.data.meta;
+	const url = `${props.data.origin}/projects/${props.data.slug}`;
+	const image = `${props.data.origin}/projects/${props.data.slug}/social.png`;
+	const title = `${meta.title} - Abdelilah Ouaadouch`;
+	const description = meta.description;
 	const personId = `${props.data.origin}#person`;
 	const websiteId = `${props.data.origin}#website`;
 	const webpageId = `${url}#webpage`;
@@ -20,7 +21,7 @@
 	<meta name="description" content={description} />
 	<meta
 		name="keywords"
-		content="{project.tech.join(', ')}, Portfolio, Project, Abdelilah Ouaadouch"
+		content="{meta.tech.join(', ')}, Portfolio, Project, Abdelilah Ouaadouch"
 	/>
 	<link rel="canonical" href={url} />
 
@@ -67,8 +68,8 @@
 			{
 				"@type": "SoftwareApplication",
 				"@id": projectId,
-				"name": project.title,
-				"description": project.description,
+				"name": meta.title,
+				"description": meta.description,
 				"applicationCategory": "DeveloperApplication",
 				"operatingSystem": "Cross-platform",
 				"url": url,
@@ -78,10 +79,10 @@
 				"creator": {
 					"@id": personId
 				},
-				"dateCreated": project.createdAt,
-				"softwareRequirements": project.tech,
-				...(project.github ? { "codeRepository": project.github } : {}),
-				...(project.web ? { "sameAs": [project.web] } : {}),
+				"dateCreated": meta.createdAt,
+				"softwareRequirements": meta.tech,
+				...(meta.github ? { "codeRepository": meta.github } : {}),
+				...(meta.web ? { "sameAs": [meta.web] } : {}),
 				"offers": {
 					"@type": "Offer",
 					"price": "0",
@@ -130,7 +131,7 @@
 					{
 						"@type": "ListItem",
 						"position": 3,
-						"name": project.title,
+						"name": meta.title,
 						"item": url
 					}
 				]
@@ -155,23 +156,23 @@
 
 		<header class="space-y-4">
 			<h1 class="font-display text-3xl font-semibold text-white md:text-4xl">
-				{project.title}
+				{meta.title}
 			</h1>
 			<p class="text-base md:text-lg text-gray-300">
-				{project.description}
+				{meta.description}
 			</p>
 			<div class="flex flex-wrap gap-2">
-				{#each project.tech as tech}
+				{#each meta.tech as tech}
 					<span class="bg-neutral-700 px-3 py-1 text-sm text-white">{tech}</span>
 				{/each}
 			</div>
 		</header>
 
-		{#if project.github || project.web}
+		{#if meta.github || meta.web}
 			<section class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-				{#if project.github}
+				{#if meta.github}
 					<a
-						href={project.github}
+						href={meta.github}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="corner-brackets inline-flex w-fit items-center bg-[#101010] px-3 py-2 text-sm text-blue-400 transition-colors hover:text-blue-300 md:px-4 md:text-base"
@@ -179,9 +180,9 @@
 						View on GitHub
 					</a>
 				{/if}
-				{#if project.web}
+				{#if meta.web}
 					<a
-						href={project.web}
+						href={meta.web}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="corner-brackets inline-flex w-fit items-center bg-[#101010] px-3 py-2 text-sm text-blue-400 transition-colors hover:text-blue-300 md:px-4 md:text-base"
@@ -192,50 +193,9 @@
 			</section>
 		{/if}
 
-		<section class="space-y-4">
-			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> Overview
-			</h2>
-			<BackgroundGrid>
-				<div class="space-y-4 text-gray-200">
-					{#each project.longDescription.split('\n\n') as paragraph}
-						<p>{paragraph}</p>
-					{/each}
-				</div>
-			</BackgroundGrid>
-		</section>
-
-		<section class="space-y-4">
-			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> Key Features
-			</h2>
-			<BackgroundGrid>
-				<ul class="space-y-2 text-gray-200">
-					{#each project.features as feature}
-						<li class="flex items-start gap-2">
-							<span class="text-blue-400">-</span>
-							<span>{feature}</span>
-						</li>
-					{/each}
-				</ul>
-			</BackgroundGrid>
-		</section>
-
-		<section class="space-y-4">
-			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> Challenges
-			</h2>
-			<BackgroundGrid>
-				<ul class="space-y-2 text-gray-200">
-					{#each project.challenges as challenge}
-						<li class="flex items-start gap-2">
-							<span class="text-yellow-400">*</span>
-							<span>{challenge}</span>
-						</li>
-					{/each}
-				</ul>
-			</BackgroundGrid>
-		</section>
+		<article class="prose prose-invert prose-lg max-w-none">
+			<props.data.content />
+		</article>
 
 		<footer class="space-y-6 border-t border-neutral-800 pt-8">
 			<div class="corner-brackets bg-[#101010] p-5">
@@ -256,3 +216,85 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	:global(.prose h2) {
+		color: #fff;
+		font-weight: 700;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	:global(.prose h3) {
+		color: #fff;
+		font-weight: 600;
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	:global(.prose p) {
+		color: #d1d5db;
+		margin-bottom: 1rem;
+		line-height: 1.75;
+	}
+
+	:global(.prose a) {
+		color: #60a5fa;
+	}
+
+	:global(.prose a:hover) {
+		color: #93c5fd;
+	}
+
+	:global(.prose ul),
+	:global(.prose ol) {
+		color: #d1d5db;
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	:global(.prose li) {
+		margin-bottom: 0.5rem;
+	}
+
+	:global(.prose li::before) {
+		content: '- ';
+		margin-right: 0.25rem;
+	}
+
+	:global(.prose strong) {
+		color: #fff;
+		font-weight: 600;
+	}
+
+	:global(.prose code) {
+		background-color: #202020;
+		padding: 0.125rem 0.375rem;
+		font-size: 0.875em;
+		color: #f9fafb;
+	}
+
+	:global(.prose pre) {
+		background-color: #101010 !important;
+		padding: 1.25rem;
+		overflow-x: auto;
+		margin-bottom: 1rem;
+	}
+
+	:global(.prose pre code) {
+		background-color: transparent;
+		padding: 0;
+	}
+
+	:global(.prose blockquote) {
+		border-left: 4px solid #4b5563;
+		padding-left: 1rem;
+		color: #9ca3af;
+		font-style: italic;
+	}
+
+	:global(.prose hr) {
+		border-color: #374151;
+		margin: 2rem 0;
+	}
+</style>

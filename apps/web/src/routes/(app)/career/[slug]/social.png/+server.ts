@@ -1,7 +1,7 @@
 import { read } from "$app/server";
 import fontSource from "$lib/assets/fonts/JetBrainsMono-Regular.ttf";
 import OgExperience from "$lib/components/og/OgExperience.svelte";
-import { getExperienceBySlug, experiences } from "$lib/data/experiences";
+import { getExperienceBySlug, getExperiences } from "$lib/data/experiences";
 import { ImageResponse } from "@ethercorps/sveltekit-og";
 import { CustomFont, resolveFonts } from "@ethercorps/sveltekit-og/fonts";
 
@@ -33,7 +33,7 @@ export const GET = async ({ params }) => {
 };
 
 export function entries() {
-  return experiences.map((e) => ({ slug: e.slug }));
+  return getExperiences().map((e) => ({ slug: e.slug }));
 }
 
 export const prerender = true;

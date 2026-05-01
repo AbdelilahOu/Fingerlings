@@ -1,6 +1,6 @@
-import { experiences } from "$lib/data/experiences";
+import { getExperiences } from "$lib/data/experiences";
 import { getPosts } from "$lib/data/posts";
-import { projects } from "$lib/data/projects";
+import { getProjects } from "$lib/data/projects";
 
 function escapeXml(value: string): string {
   return value
@@ -30,6 +30,8 @@ function normalizeLastmod(value?: string | null): string | undefined {
 export async function GET({ url }) {
   const origin = url.origin;
   const posts = getPosts();
+  const projects = getProjects();
+  const experiences = getExperiences();
 
   const urls: string[] = [];
 

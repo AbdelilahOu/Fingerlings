@@ -1,7 +1,7 @@
 import { read } from "$app/server";
 import fontSource from "$lib/assets/fonts/JetBrainsMono-Regular.ttf";
 import OgProject from "$lib/components/og/OgProject.svelte";
-import { getProjectBySlug, projects } from "$lib/data/projects";
+import { getProjectBySlug, getProjects } from "$lib/data/projects";
 import { ImageResponse } from "@ethercorps/sveltekit-og";
 import { CustomFont, resolveFonts } from "@ethercorps/sveltekit-og/fonts";
 
@@ -32,7 +32,7 @@ export const GET = async ({ params }) => {
 };
 
 export function entries() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return getProjects().map((p) => ({ slug: p.slug }));
 }
 
 export const prerender = true;

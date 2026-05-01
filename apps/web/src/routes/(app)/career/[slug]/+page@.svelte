@@ -1,15 +1,15 @@
 <script lang="ts">
-	import BackgroundGrid from '$lib/components/BackgroundGrid.svelte';
-    import SkillsGrid from '$lib/components/SkillsGrid.svelte';
-	import { formatDateRange, calculateDuration, type Experience } from '$lib/data/experiences';
+	import type { Component } from 'svelte';
+	import SkillsGrid from '$lib/components/SkillsGrid.svelte';
+	import { formatDateRange, calculateDuration, type ExperienceMetadata } from '$lib/data/experiences';
 
-	let props: { data: { experience: Experience; origin: string } } = $props();
+	let props: { data: { content: Component; meta: ExperienceMetadata; slug: string; origin: string } } = $props();
 
-	const experience = props.data.experience;
-	const url = `${props.data.origin}/career/${experience.slug}`;
-	const image = `${props.data.origin}/career/${experience.slug}/social.png`;
-	const title = `${experience.title} at ${experience.company} - Abdelilah Ouaadouch`;
-	const description = experience.description;
+	const meta = props.data.meta;
+	const url = `${props.data.origin}/career/${props.data.slug}`;
+	const image = `${props.data.origin}/career/${props.data.slug}/social.png`;
+	const title = `${meta.title} at ${meta.company} - Abdelilah Ouaadouch`;
+	const description = meta.description;
 	const personId = `${props.data.origin}#person`;
 	const websiteId = `${props.data.origin}#website`;
 	const webpageId = `${url}#webpage`;
@@ -31,7 +31,7 @@
 	<meta name="description" content={description} />
 	<meta
 		name="keywords"
-		content="{experience.technologies.join(', ')}, {experience.company}, Career, Experience, Abdelilah Ouaadouch"
+		content="{meta.technologies.join(', ')}, {meta.company}, Career, Experience, Abdelilah Ouaadouch"
 	/>
 	<link rel="canonical" href={url} />
 
@@ -78,18 +78,18 @@
 			{
 				"@type": "OrganizationRole",
 				"@id": roleId,
-				"roleName": experience.title,
-				"description": experience.description,
-				"startDate": normalizeDate(experience.startDate),
-				...(experience.endDate ? { "endDate": normalizeDate(experience.endDate) } : {}),
+				"roleName": meta.title,
+				"description": meta.description,
+				"startDate": normalizeDate(meta.startDate),
+				...(meta.endDate ? { "endDate": normalizeDate(meta.endDate) } : {}),
 				"memberOf": {
 					"@type": "Organization",
-					"name": experience.company,
-					...(experience.companyUrl ? { "url": experience.companyUrl } : {})
+					"name": meta.company,
+					...(meta.companyUrl ? { "url": meta.companyUrl } : {})
 				},
 				"location": {
 					"@type": "Place",
-					"address": experience.location
+					"address": meta.location
 				}
 			},
 			{
@@ -134,7 +134,7 @@
 					{
 						"@type": "ListItem",
 						"position": 3,
-						"name": `${experience.title} at ${experience.company}`,
+						"name": `${meta.title} at ${meta.company}`,
 						"item": url
 					}
 				]
@@ -159,44 +159,44 @@
 
 		<header class="space-y-4">
 			<h1 class="font-display text-3xl font-semibold text-white md:text-4xl">
-				{experience.title}
+				{meta.title}
 			</h1>
 			<div class="flex flex-wrap items-center gap-2 text-lg text-gray-300">
-				{#if experience.companyWebsite || experience.companyUrl}
+				{#if meta.companyWebsite || meta.companyUrl}
 					<a
-						href={experience.companyWebsite ?? experience.companyUrl}
+						href={meta.companyWebsite ?? meta.companyUrl}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-blue-400 hover:text-blue-300 transition-colors"
 					>
-						{experience.company}
+						{meta.company}
 					</a>
 				{:else}
-					<span>{experience.company}</span>
+					<span>{meta.company}</span>
 				{/if}
 				<span>-</span>
-				<span>{experience.type}</span>
+				<span>{meta.type}</span>
 			</div>
 			<div class="text-gray-400">
-				<span>{formatDateRange(experience.startDate, experience.endDate)}</span>
+				<span>{formatDateRange(meta.startDate, meta.endDate)}</span>
 				<span class="mx-2">-</span>
-				<span>{calculateDuration(experience.startDate, experience.endDate)}</span>
+				<span>{calculateDuration(meta.startDate, meta.endDate)}</span>
 			</div>
 			<div class="text-gray-400">
-				{experience.location} - {experience.locationType}
+				{meta.location} - {meta.locationType}
 			</div>
 			<div class="flex flex-wrap gap-2">
-				{#each experience.technologies as tech}
+				{#each meta.technologies as tech}
 					<span class="bg-neutral-700 px-3 py-1 text-sm text-white">{tech}</span>
 				{/each}
 			</div>
 		</header>
 
-		{#if experience.companyWebsite || experience.companyUrl}
+		{#if meta.companyWebsite || meta.companyUrl}
 			<section class="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-				{#if experience.companyWebsite}
+				{#if meta.companyWebsite}
 					<a
-						href={experience.companyWebsite}
+						href={meta.companyWebsite}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="corner-brackets inline-flex w-fit items-center bg-[#101010] px-3 py-2 text-sm text-blue-400 transition-colors hover:text-blue-300 md:px-4 md:text-base"
@@ -204,53 +204,28 @@
 						View Company Website
 					</a>
 				{/if}
-				{#if experience.companyUrl}
-				<a
-					href={experience.companyUrl}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="corner-brackets inline-flex w-fit items-center bg-[#101010] px-3 py-2 text-sm text-blue-400 transition-colors hover:text-blue-300 md:px-4 md:text-base"
-				>
-					View Company on LinkedIn
-				</a>
+				{#if meta.companyUrl}
+					<a
+						href={meta.companyUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="corner-brackets inline-flex w-fit items-center bg-[#101010] px-3 py-2 text-sm text-blue-400 transition-colors hover:text-blue-300 md:px-4 md:text-base"
+					>
+						View Company on LinkedIn
+					</a>
 				{/if}
 			</section>
 		{/if}
 
-		<section class="space-y-4">
-			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> Overview
-			</h2>
-			<BackgroundGrid>
-				<div class="space-y-4 text-gray-200">
-					{#each experience.longDescription.split('\n\n') as paragraph}
-						<p>{paragraph}</p>
-					{/each}
-				</div>
-			</BackgroundGrid>
-		</section>
-
-		<section class="space-y-4">
-			<h2 class="text-xl md:text-2xl font-bold text-white">
-				<span>$</span> Highlights
-			</h2>
-			<BackgroundGrid>
-				<ul class="space-y-2 text-gray-200">
-					{#each experience.highlights as highlight}
-						<li class="flex items-start gap-2">
-							<span class="text-blue-400">-</span>
-							<span>{highlight}</span>
-						</li>
-					{/each}
-				</ul>
-			</BackgroundGrid>
-		</section>
+		<article class="prose prose-invert prose-lg max-w-none">
+			<props.data.content />
+		</article>
 
 		<section class="space-y-4">
 			<h2 class="text-xl md:text-2xl font-bold text-white">
 				<span>$</span> Tech Stack
 			</h2>
-			<SkillsGrid skills={experience.technologies}/>
+			<SkillsGrid skills={meta.technologies} />
 		</section>
 
 		<footer class="space-y-6 border-t border-neutral-800 pt-8">
@@ -280,3 +255,85 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	:global(.prose h2) {
+		color: #fff;
+		font-weight: 700;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	:global(.prose h3) {
+		color: #fff;
+		font-weight: 600;
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	:global(.prose p) {
+		color: #d1d5db;
+		margin-bottom: 1rem;
+		line-height: 1.75;
+	}
+
+	:global(.prose a) {
+		color: #60a5fa;
+	}
+
+	:global(.prose a:hover) {
+		color: #93c5fd;
+	}
+
+	:global(.prose ul),
+	:global(.prose ol) {
+		color: #d1d5db;
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	:global(.prose li) {
+		margin-bottom: 0.5rem;
+	}
+
+	:global(.prose li::before) {
+		content: '- ';
+		margin-right: 0.25rem;
+	}
+
+	:global(.prose strong) {
+		color: #fff;
+		font-weight: 600;
+	}
+
+	:global(.prose code) {
+		background-color: #202020;
+		padding: 0.125rem 0.375rem;
+		font-size: 0.875em;
+		color: #f9fafb;
+	}
+
+	:global(.prose pre) {
+		background-color: #101010 !important;
+		padding: 1.25rem;
+		overflow-x: auto;
+		margin-bottom: 1rem;
+	}
+
+	:global(.prose pre code) {
+		background-color: transparent;
+		padding: 0;
+	}
+
+	:global(.prose blockquote) {
+		border-left: 4px solid #4b5563;
+		padding-left: 1rem;
+		color: #9ca3af;
+		font-style: italic;
+	}
+
+	:global(.prose hr) {
+		border-color: #374151;
+		margin: 2rem 0;
+	}
+</style>

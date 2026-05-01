@@ -1,18 +1,23 @@
-import { getProjectBySlug, projects } from "$lib/data/projects";
+import { getProjects } from "$lib/data/projects";
 import { error } from "@sveltejs/kit";
-
-export function load({ params, url }) {
-  const project = getProjectBySlug(params.slug);
-
-  if (!project) {
-    throw error(404, "Project not found");
-  }
-
-  return { project, origin: url.origin };
-}
 
 export const prerender = true;
 
 export function entries() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return getProjects().map((p) => ({ slug: p.slug }));
+}
+
+export async function load({ params, url }) {
+  try {
+    const post = await import(`@projects/${params.slug}.md`);
+
+    return {
+      content: post.default,
+      meta: post.metadata,
+      slug: params.slug,
+      origin: url.origin,
+    };
+  } catch {
+    throw error(404, `Project not found: ${params.slug}`);
+  }
 }
